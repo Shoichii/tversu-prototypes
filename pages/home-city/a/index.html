@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Город-университет: Видео · ТвГУ прототипы</title>
+  <meta name="description" content="Тверской государственный университет: 129 программ в центре Твери с 1870 года.">
+  <meta name="theme-color" content="#0a0f2c">
+  <link rel="preload" href="../../../assets/fonts/golos-text-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../../assets/stub/video/den-znaniy-obzor-2-dvor-pervokursniki.jpg" as="image">
+  <link rel="stylesheet" href="../../../system/tokens.css">
+  <link rel="stylesheet" href="../../../system/base.css">
+  <link rel="stylesheet" href="../../../system/stub.css">
+  <link rel="stylesheet" href="../../../system/theme-dark.css">
+  <link rel="stylesheet" href="../../../system/motion.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="../../../system/motion.js"></script>
+  <script src="../../../system/partials.js" defer></script>
+  <script src="../../../system/ui.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div data-include="header"></div>
+
+  <main id="main">
+    <!-- 1. Оффер. Сцена: окно в город распахивается при загрузке, по скроллу складывается в рамку, рядом встают цифры.
+         Без JS и при reduced-motion — обычный hero с цифрами одной строкой на постере. -->
+    <section class="hero" aria-labelledby="hero-title" data-hero>
+      <div class="hero__pin">
+        <div class="hero__media" data-hero-media>
+          <div class="hero__open">
+            <video class="hero__video" muted loop playsinline preload="none"
+              poster="../../../assets/stub/video/den-znaniy-obzor-2-dvor-pervokursniki.jpg"
+              data-src="../../../assets/stub/video/den-znaniy-obzor-2-dvor-pervokursniki.mp4"
+              data-src-small="../../../assets/stub/video/480/den-znaniy-obzor-2-dvor-pervokursniki.mp4"
+              data-poster-small="../../../assets/stub/video/480/den-znaniy-obzor-2-dvor-pervokursniki.jpg"
+              aria-hidden="true" tabindex="-1" data-hero-video></video>
+            <div class="hero__scrim" aria-hidden="true" data-hero-scrim></div>
+          </div>
+        </div>
+
+        <div class="container hero__inner">
+          <div class="hero__copy" data-hero-copy>
+            <h1 class="hero__title" id="hero-title" data-m="words" data-m-delay="260">Университет, в&nbsp;котором живёт город</h1>
+            <p class="hero__lead m-blur" data-m="up" data-m-delay="560">15 факультетов и институтов в историческом центре Твери, между Москвой и Петербургом.</p>
+            <div class="hero__actions m-blur" data-m="up" data-m-delay="680">
+              <a class="btn btn--accent btn--lg" href="#programs" data-magnetic>Поступить</a>
+              <button class="hero__watch" type="button" data-video-open aria-haspopup="dialog">
+                <span class="hero__watch-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+                Смотреть кампус
+              </button>
+            </div>
+          </div>
+
+          <dl class="hero__facts" data-hero-facts>
+            <div><dt>основан</dt><dd class="num" data-hero-count data-count-from="1700">1870</dd></div>
+            <div><dt>образовательных программ</dt><dd class="num" data-hero-count>129</dd></div>
+            <div><dt>место в России, Round University Ranking 2026</dt><dd class="num" data-hero-count>93-е</dd></div>
+            <div><dt>Национальный агрегированный рейтинг 2026</dt><dd>Топ-200</dd></div>
+          </dl>
+        </div>
+
+        <button class="hero__toggle" type="button" data-hero-toggle hidden>
+          <svg class="i i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg>
+          <svg class="i i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>
+          <span data-hero-toggle-label>Пауза</span>
+        </button>
+      </div>
+      <span class="hero__cue" aria-hidden="true" data-hero-cue></span>
+    </section>
+
+    <!-- 2. Доказательства: люди и партнёры -->
+    <section class="section proof" aria-labelledby="proof-title">
+      <div class="container">
+        <div class="proof__grid">
+          <h2 class="proof__title" id="proof-title" data-m="words">Вуз города, а&nbsp;не филиал столичного</h2>
+          <div class="proof__body">
+            <p class="proof__intro">Среди выпускников и сотрудников ТвГУ</p>
+            <ul class="people" role="list" data-m-stagger style="--m-step: 90ms">
+              <li class="m-blur" data-m="up"><span class="people__name">Николай Кун</span><span class="people__role">автор «Легенд и мифов Древней Греции»</span></li>
+              <li class="m-blur" data-m="up"><span class="people__name">Александр Александров</span><span class="people__role">композитор, автор музыки гимна России</span></li>
+              <li class="m-blur" data-m="up"><span class="people__name">Андрей Дементьев</span><span class="people__role">поэт</span></li>
+              <li class="m-blur" data-m="up"><span class="people__name">Наталья Непряева</span><span class="people__role">олимпийская чемпионка</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="partners ribbon proof__partners" data-ribbon data-m="fade">
+          <div class="ribbon__head">
+            <h2 class="band-label" id="partners-title">Партнёры и работодатели</h2>
+            <div class="ribbon__nav">
+              <button class="btn-circle" type="button" data-ribbon-prev><span class="icon icon--arrow-left" aria-hidden="true"></span><span class="visually-hidden">Назад</span></button>
+              <button class="btn-circle" type="button" data-ribbon-next><span class="icon icon--arrow-right" aria-hidden="true"></span><span class="visually-hidden">Вперёд</span></button>
+            </div>
+          </div>
+          <div class="ribbon__track" role="list" aria-labelledby="partners-title">
+            <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 1]</span></div>
+            <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 2]</span></div>
+            <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 3]</span></div>
+            <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 4]</span></div>
+            <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 5]</span></div>
+            <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 6]</span></div>
+            <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 7]</span></div>
+            <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 8]</span></div>
+            <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 9]</span></div>
+            <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 10]</span></div>
+            <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 11]</span></div>
+            <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 12]</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Действие: программы -->
+    <section class="section programs" id="programs" aria-labelledby="programs-title">
+      <div class="container ribbon ribbon--bleed" data-ribbon>
+        <div class="ribbon__head">
+          <h2 id="programs-title"><span class="num">129</span> программ. Найди свою</h2>
+          <div class="ribbon__nav">
+            <button class="btn-circle" type="button" data-ribbon-prev><span class="icon icon--arrow-left" aria-hidden="true"></span><span class="visually-hidden">Назад</span></button>
+            <button class="btn-circle" type="button" data-ribbon-next><span class="icon icon--arrow-right" aria-hidden="true"></span><span class="visually-hidden">Вперёд</span></button>
+          </div>
+        </div>
+        <ul class="ribbon__track programs__track" role="list">
+          <li class="prog">
+            <a class="prog__link" href="#">
+              <span class="prog__frame" data-m="mask" style="--m-i: 0"><img class="prog__img" src="../../../assets/stub/photos/800/students-za-noutbukom.jpg" alt="Студентка за ноутбуком с рабочими карточками" loading="lazy" width="800" height="533"></span>
+              <span class="prog__name">IT и математика</span>
+              <span class="prog__meta"><span class="num">[N]</span> программ: бакалавриат и магистратура</span>
+            </a>
+          </li>
+          <li class="prog">
+            <a class="prog__link" href="#">
+              <span class="prog__frame" data-m="mask" style="--m-i: 1"><img class="prog__img" src="../../../assets/stub/photos/800/lab-opyt-nauka-shou.jpg" alt="Опыт на научном шоу перед зрителями" loading="lazy" width="800" height="533"></span>
+              <span class="prog__name">Естественные науки</span>
+              <span class="prog__meta"><span class="num">[N]</span> программ: биология, химия, физика, география</span>
+            </a>
+          </li>
+          <li class="prog">
+            <a class="prog__link" href="#">
+              <span class="prog__frame" data-m="mask" style="--m-i: 2"><img class="prog__img" src="../../../assets/stub/photos/800/students-biblioteka-diskussiya.jpg" alt="Студенты спорят в библиотеке у книжных полок" loading="lazy" width="800" height="533"></span>
+              <span class="prog__name">Гуманитарные</span>
+              <span class="prog__meta"><span class="num">[N]</span> программ: филология, история, языки</span>
+            </a>
+          </li>
+          <li class="prog">
+            <a class="prog__link" href="#">
+              <span class="prog__frame" data-m="mask" style="--m-i: 3"><img class="prog__img" src="../../../assets/stub/photos/800/lecture-klass-seminar.jpg" alt="Семинар в учебной аудитории" loading="lazy" width="800" height="533"></span>
+              <span class="prog__name">Педагогика и психология</span>
+              <span class="prog__meta"><span class="num">[N]</span> программ: учитель, психолог, социальные технологии</span>
+            </a>
+          </li>
+          <li class="prog">
+            <a class="prog__link" href="#">
+              <span class="prog__frame" data-m="mask" style="--m-i: 4"><img class="prog__img" src="../../../assets/stub/photos/800/event-vystuplenie-za-stolom.jpg" alt="Выступление за столом переговоров" loading="lazy" width="800" height="533"></span>
+              <span class="prog__name">Экономика и право</span>
+              <span class="prog__meta"><span class="num">[N]</span> программ: экономика, управление, юриспруденция</span>
+            </a>
+          </li>
+          <li class="prog">
+            <a class="prog__link" href="#">
+              <span class="prog__frame" data-m="mask" style="--m-i: 5"><img class="prog__img" src="../../../assets/stub/photos/800/sport-voleybol-zhenskaya-komanda.jpg" alt="Женская волейбольная команда с кубком" loading="lazy" width="800" height="533"></span>
+              <span class="prog__name">Спорт</span>
+              <span class="prog__meta"><span class="num">[N]</span> программ: физическая культура и тренерство</span>
+            </a>
+          </li>
+        </ul>
+        <a class="btn btn--primary btn--lg programs__all" href="#">Подобрать программу</a>
+      </div>
+    </section>
+
+    <!-- 4. Город: кадр в окне + три места -->
+    <section class="section city" id="city" aria-labelledby="city-title">
+      <div class="container city__grid">
+        <div class="city__copy">
+          <h2 id="city-title">Кампус&nbsp;— это центр Твери</h2>
+          <p class="city__lead">От главного корпуса до Волги пешком. Общежития — в студенческом городке.</p>
+          <ul class="places" role="list">
+            <li><span class="places__name">Главный корпус</span><span class="places__meta">ул. Желябова, 33, здесь же приёмная комиссия</span></li>
+            <li><span class="places__name">Студенческий городок</span><span class="places__meta">[N] общежитий, [N] мест для иногородних</span></li>
+            <li><span class="places__name">Набережная Волги</span><span class="places__meta">[N] минут пешком от главного корпуса</span></li>
+          </ul>
+        </div>
+        <div class="city__media">
+          <figure class="city__frame" data-m="wipe">
+            <img class="is-bright" src="../../../assets/stub/photos/city-dobro-pozhalovat-tver-noch.jpg" alt="Студенты вечером у стелы «Добро пожаловать» в Твери" loading="lazy" width="1200" height="800">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Возражения -->
+    <section class="section faq" aria-labelledby="faq-title">
+      <div class="container faq__grid">
+        <h2 class="faq__title" id="faq-title">Вопросы перед поступлением</h2>
+        <div class="accordion" data-m="fade">
+          <details class="accordion__item" name="faq">
+            <summary class="accordion__summary">Сколько бюджетных мест и какие проходные баллы?</summary>
+            <div class="accordion__body"><p>[N бюджетных мест] по всем программам. Проходные баллы прошлых лет по каждому направлению — в каталоге программ: [N] в среднем.</p></div>
+          </details>
+          <details class="accordion__item" name="faq">
+            <summary class="accordion__summary">Дадут ли общежитие, если я не из Твери?</summary>
+            <div class="accordion__body"><p>Иногородним студентам очной формы: [N мест] в студенческом городке, стоимость [N ₽ в месяц]. Заявление на заселение подаётся вместе с документами.</p></div>
+          </details>
+          <details class="accordion__item" name="faq">
+            <summary class="accordion__summary">Сколько стоит платное обучение?</summary>
+            <div class="accordion__body"><p>От [N ₽ в год] в зависимости от программы. Есть скидки и рассрочка: [условия].</p></div>
+          </details>
+          <details class="accordion__item" name="faq">
+            <summary class="accordion__summary">Можно подать документы через Госуслуги?</summary>
+            <div class="accordion__body"><p>Да, заявление подаётся через Госуслуги, в личном кабинете абитуриента или лично в приёмной комиссии на Желябова, 33.</p></div>
+          </details>
+          <details class="accordion__item" name="faq">
+            <summary class="accordion__summary">Что такое целевое обучение и как на него попасть?</summary>
+            <div class="accordion__body"><p>Работодатель оплачивает или поддерживает учёбу, а вы после выпуска работаете у него [N лет]. Отдельный конкурс: [N мест].</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Срочность + мягкий лид -->
+    <section class="section campaign" id="campaign" aria-labelledby="campaign-title">
+      <div class="container campaign__grid">
+        <div class="campaign__dates">
+          <h2 id="campaign-title" data-m="words">Приёмная кампания 2027</h2>
+          <ol class="dates" role="list" data-m-stagger style="--m-step: 90ms">
+            <li data-m="up"><span class="dates__when">[дата]</span><span class="dates__what">Старт приёма документов</span></li>
+            <li class="is-deadline" data-m="up"><span class="dates__when">[дата]</span><span class="dates__what">Последний день подачи на бюджет</span></li>
+            <li data-m="up"><span class="dates__when">[дата]</span><span class="dates__what">Публикация конкурсных списков</span></li>
+            <li data-m="up"><span class="dates__when">[дата]</span><span class="dates__what">Зачисление</span></li>
+          </ol>
+          <p class="campaign__soon" data-m="up" data-m-delay="420"><span class="num" data-countdown="09-27" data-countdown-format="long"></span> — День открытых дверей на Желябова, 33.</p>
+        </div>
+
+        <form class="ask m-blur" action="#" data-lead novalidate data-m="up" data-m-delay="240">
+          <h3 class="ask__title">Задайте вопрос приёмной комиссии</h3>
+          <p class="ask__text">Ответим в течение [N часов] в рабочие дни. Без рассылок.</p>
+          <div class="field">
+            <label class="field__label" for="lead-contact">Телефон или ник в Telegram</label>
+            <input class="input" id="lead-contact" name="contact" type="text" autocomplete="tel" placeholder="+7 900 000-00-00 или @username" aria-describedby="lead-err" required>
+            <p class="field__error" id="lead-err" hidden>Укажите номер из 11 цифр или ник, начинающийся с @</p>
+          </div>
+          <button class="btn btn--primary btn--block" type="submit">Получить ответ</button>
+          <p class="ask__done" role="status" hidden>Спасибо! Приёмная комиссия свяжется с вами.</p>
+          <a class="btn btn--text ask__tg" href="#">Или спросите в Telegram-боте <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Мобильная липкая панель действия -->
+  <div class="action-bar" data-action-bar aria-hidden="true">
+    <a class="btn btn--accent btn--block" href="#programs" tabindex="-1">Поступить</a>
+  </div>
+
+  <!-- Модалка «Смотреть кампус» -->
+  <dialog class="video-modal" aria-labelledby="vm-title" data-video-modal>
+    <div class="video-modal__head">
+      <h2 class="video-modal__title" id="vm-title">Кампус ТвГУ: Ботанический сад</h2>
+      <button class="btn-circle video-modal__close" type="button" data-video-close>
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        <span class="visually-hidden">Закрыть видео</span>
+      </button>
+    </div>
+    <video class="video-modal__video" controls playsinline preload="none"
+      poster="../../../assets/stub/video/botsad-gashenie-marki-prud-park.jpg"
+      data-src="../../../assets/stub/video/botsad-gashenie-marki-prud-park.mp4"
+      data-src-small="../../../assets/stub/video/480/botsad-gashenie-marki-prud-park.mp4"></video>
+    <p class="video-modal__caption">Фрагмент 10 секунд без звука. Полный видеотур появится после съёмки: [ссылка на RuTube].</p>
+  </dialog>
+
+  <div data-include="footer"></div>
+</body>
+</html>

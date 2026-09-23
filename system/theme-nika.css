@@ -1,0 +1,557 @@
+/* ТвГУ — язык Ники (CC11): partner.spb.hse.ru в сине-серой гамме.
+   Правила и пояснения: docs/nika-language.md. Кит: pages/nika-kit/.
+
+   Подключение (только nika-страницы, после base.css и stub.css, до style.css варианта):
+     <link rel="stylesheet" href="../../../system/tokens.css">
+     <link rel="stylesheet" href="../../../system/base.css">
+     <link rel="stylesheet" href="../../../system/stub.css">
+     <link rel="stylesheet" href="../../../system/theme-nika.css">
+     <link rel="stylesheet" href="style.css">
+     <body class="theme-nika" data-header="dark" data-nav="…">
+
+   Всё ниже действует только под .theme-nika — _shell и остальные варианты не затронуты.
+   Антиква выбирается ОДНОЙ переменной --nika-serif (см. блок «Выбор антиквы»). */
+
+/* ───── Шрифты: антиквы-кандидаты (грузится только та, что используется) ───── */
+@font-face { font-family: "PT Serif"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url("../assets/fonts/pt-serif-regular-cyrillic.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "PT Serif"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url("../assets/fonts/pt-serif-regular-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "PT Serif"; font-style: italic; font-weight: 400; font-display: swap;
+  src: url("../assets/fonts/pt-serif-italic-cyrillic.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "PT Serif"; font-style: italic; font-weight: 400; font-display: swap;
+  src: url("../assets/fonts/pt-serif-italic-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+@font-face { font-family: "Vollkorn"; font-style: normal; font-weight: 400 700; font-display: swap;
+  src: url("../assets/fonts/vollkorn-regular-cyrillic.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "Vollkorn"; font-style: normal; font-weight: 400 700; font-display: swap;
+  src: url("../assets/fonts/vollkorn-regular-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Vollkorn"; font-style: italic; font-weight: 400; font-display: swap;
+  src: url("../assets/fonts/vollkorn-italic-cyrillic.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "Vollkorn"; font-style: italic; font-weight: 400; font-display: swap;
+  src: url("../assets/fonts/vollkorn-italic-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+@font-face { font-family: "Source Serif 4"; font-style: normal; font-weight: 300 700; font-display: swap;
+  src: url("../assets/fonts/source-serif-4-regular-cyrillic.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "Source Serif 4"; font-style: normal; font-weight: 300 700; font-display: swap;
+  src: url("../assets/fonts/source-serif-4-regular-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Source Serif 4"; font-style: italic; font-weight: 400; font-display: swap;
+  src: url("../assets/fonts/source-serif-4-italic-cyrillic.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "Source Serif 4"; font-style: italic; font-weight: 400; font-display: swap;
+  src: url("../assets/fonts/source-serif-4-italic-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+@font-face { font-family: "Literata"; font-style: normal; font-weight: 300 700; font-display: swap;
+  src: url("../assets/fonts/literata-regular-cyrillic.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "Literata"; font-style: normal; font-weight: 300 700; font-display: swap;
+  src: url("../assets/fonts/literata-regular-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Literata"; font-style: italic; font-weight: 400; font-display: swap;
+  src: url("../assets/fonts/literata-italic-cyrillic.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "Literata"; font-style: italic; font-weight: 400; font-display: swap;
+  src: url("../assets/fonts/literata-italic-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+/* ═════════════ ТОКЕНЫ ═════════════ */
+.theme-nika {
+  /* ── Выбор антиквы: ОДНА строка. Решение 13.09 — Source Serif 4 (обоснование в docs/nika-language.md) ── */
+  --nika-serif: var(--nika-serif-source);
+
+  --nika-serif-pt: "PT Serif", Georgia, "Times New Roman", serif;
+  --nika-serif-vollkorn: "Vollkorn", Georgia, "Times New Roman", serif;
+  --nika-serif-source: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --nika-serif-literata: "Literata", Georgia, "Times New Roman", serif;
+  --font-serif: var(--nika-serif);
+
+  /* Цвет (CC11) */
+  --c-text: #1b2433;
+  --c-text-2: #626d7d;          /* бриф #6B7686 даёт 4.22:1 на #F3F5F8 — затемнено до 4.80:1 (5.25:1 на белом) */
+  --c-text-3: #626d7d;
+  --c-line: #d9dee6;
+  --c-line-strong: #b7bfcc;
+  --c-control-line: #8a94a8;    /* рамка полей и чекбокса: 3.05:1 на белом (граница контрола, WCAG 1.4.11) */
+  --c-bg: #fff;
+  --c-bg-grey: #f3f5f8;
+  --c-bg-stub: #f3f5f8;
+  --c-navy: #1f2a44;            /* в языке Ники все тёмные полосы — #1F2A44 */
+  --c-slate: #1f2a44;
+  --c-on-dark-2: #c5cbe0;       /* 8.8:1 на #1F2A44 */
+  --c-line-dark: #3a4763;
+  --c-red-text: #c4033e;        /* дедлайн текстом на сером: 5.5:1 (#E10447 даёт 4.46) */
+
+  /* Типографика */
+  --fs-h1: clamp(2.25rem, 1.2rem + 4.2vw, 4.5rem);      /* 36 → 72 */
+  --fs-h2: clamp(1.75rem, 1.35rem + 1.6vw, 2.75rem);    /* 28 → 44 */
+  --fs-h3: clamp(1.25rem, 1.15rem + 0.4vw, 1.5rem);     /* 20 → 24, гротеск */
+  --fs-lead: clamp(1.125rem, 1.07rem + 0.25vw, 1.3125rem);
+  --tracking-caps: 0.08em;
+  --measure: 720px;
+
+  /* Плотность: по умолчанию средняя (104). Модификаторы .nika-air / .nika-compact ниже */
+  --section-y: clamp(56px, 2.55rem + 4.94vw, 104px);
+
+  /* Иконки: stroke 1.5 (бриф), Tabler Icons MIT */
+  --icon-arrow-right: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 18l6-6M13 6l6 6'/%3E%3C/svg%3E");
+  --icon-arrow-left: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M5 12l6 6M5 12l6-6'/%3E%3C/svg%3E");
+  --icon-plus: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 4v16M4 12h16'/%3E%3C/svg%3E");
+  --icon-arrow-up-right: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M17 7L7 17M8 7h9v9'/%3E%3C/svg%3E");
+  --icon-download: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2M7 11l5 5 5-5M12 4v12'/%3E%3C/svg%3E");
+  --icon-chevron-down: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+
+  color: var(--c-text);
+}
+/* Модификаторы для кита и длинных страниц. Антиквы-модификаторы — ТОЛЬКО для кита:
+   на nika-страницах антиква одна, из --nika-serif. */
+.theme-nika.nika-air { --section-y: clamp(56px, 1.9rem + 7.64vw, 128px); }      /* 56 → 128 */
+.theme-nika.nika-compact { --section-y: clamp(56px, 2.76rem + 4.04vw, 96px); }  /* 56 → 96 */
+.theme-nika.nika-serif-pt { --nika-serif: var(--nika-serif-pt); }
+.theme-nika.nika-serif-vollkorn { --nika-serif: var(--nika-serif-vollkorn); }
+.theme-nika.nika-serif-source { --nika-serif: var(--nika-serif-source); }
+.theme-nika.nika-serif-literata { --nika-serif: var(--nika-serif-literata); }
+
+.theme-nika .icon--arrow-up-right { --icon: var(--icon-arrow-up-right); }
+.theme-nika .icon--download { --icon: var(--icon-download); }
+.theme-nika svg.i { stroke-width: 1.5; }
+
+/* ═════════════ ТИПОГРАФИКА ═════════════ */
+/* h1–h2 в main — лёгкая антиква Regular. В шапке и подвале заголовки остаются гротеском. */
+.theme-nika main :where(h1, h2, .h1, .h2),
+.theme-nika .n-serif {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  font-optical-sizing: auto;
+}
+.theme-nika main :where(h1, .h1) { font-size: var(--fs-h1); }
+.theme-nika main :where(h2, .h2) { font-size: var(--fs-h2); }
+.theme-nika main :where(h1, h2, .h1, .h2) em,
+.theme-nika .n-serif em { font-style: italic; }
+.theme-nika main :where(h3, .h3) { font-size: var(--fs-h3); font-weight: 500; line-height: 1.3; letter-spacing: -0.005em; }
+.theme-nika main :where(h4, .h4) { font-weight: 500; }
+.theme-nika .n-sans { font-family: var(--font-sans); }
+.theme-nika .lead { font-size: var(--fs-lead); line-height: 1.55; color: var(--c-text-2); }
+.theme-nika .measure, .theme-nika .n-text { max-width: var(--measure); }
+.theme-nika .n-text > * + * { margin-top: 1em; }
+@media (min-width: 1024px) { .theme-nika .n-text { font-size: 1.125rem; } }
+
+/* лейбл полосы: капс 13 px, разрядка 0.08em. Специфичность выше, чем у h2 в main. */
+.theme-nika .band-label,
+.theme-nika main .band-label {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--c-text-2);
+}
+.theme-nika .section--slate .band-label { color: var(--c-on-dark-2); }
+
+/* крупное высказывание гротеском (миссия, обращение): 20 → 26 */
+.theme-nika .n-statement {
+  max-width: 34em;
+  font-size: clamp(1.25rem, 1.1rem + 0.6vw, 1.625rem);
+  font-weight: 400; line-height: 1.45; letter-spacing: -0.01em;
+  text-wrap: pretty;
+}
+
+.theme-nika .caption { color: var(--c-text-2); }
+.theme-nika ::selection { background: var(--c-blue); color: #fff; }
+.theme-nika .section--slate ::selection { background: #fff; color: var(--c-slate); }
+
+/* ═════════════ ПОЛОСЫ ═════════════ */
+/* Полосы разделены линией 1 px, не тенью. Тёмная полоса линию не несёт. */
+.theme-nika main > .section { border-top: 1px solid var(--c-line); }
+.theme-nika main > .section:first-child,
+.theme-nika main > .section--slate,
+.theme-nika main > .section--slate + .section { border-top: 0; }
+.theme-nika .section--slate { background: var(--c-slate); color: #fff; }
+
+/* Полоса: лейбл 3 из 12 слева, содержимое 9 справа. Мобильный: лейбл над содержимым, между ними линия. */
+.theme-nika .band { gap: 0; }
+@media (max-width: 1023.98px) { .theme-nika .band { grid-template-columns: minmax(0, 1fr); } }
+.theme-nika .band > * { min-width: 0; }
+.theme-nika .band > .band-label { padding-bottom: 16px; margin-bottom: 24px; border-bottom: 1px solid var(--c-line); }
+.theme-nika .section--slate .band > .band-label { border-bottom-color: var(--c-line-dark); }
+@media (min-width: 1024px) {
+  .theme-nika .band { column-gap: var(--grid-gap); row-gap: 0; }
+  .theme-nika .band > .band-label,
+  .theme-nika .band > .band__aside {
+    grid-column: 1 / span 3; align-self: start;
+    padding: 0.2em 0 0; margin: 0; border: 0;
+  }
+  .theme-nika .band > .band__aside { position: sticky; top: calc(var(--header-h-compact) + 32px); }
+  .theme-nika .band > .band__aside > .band-label { padding: 0; border: 0; margin: 0; }
+}
+/* .band__aside — лейбл + под ним кнопка или пояснение (как «ОБРАЩЕНИЕ К ПАРТНЁРАМ» + «Состав совета →») */
+.theme-nika .band__aside { display: grid; gap: 20px; align-content: start; padding-bottom: 16px; margin-bottom: 24px; border-bottom: 1px solid var(--c-line); }
+.theme-nika .section--slate .band__aside { border-bottom-color: var(--c-line-dark); }
+
+/* Шапка полосы на всю ширину: лейбл слева, стрелки ленты справа */
+.theme-nika .n-band-head {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  min-height: var(--hit); margin-bottom: 24px;
+}
+.theme-nika .n-band-head .band-label { padding: 0; margin: 0; border: 0; }
+.theme-nika .n-band-head .ribbon__nav { display: flex; }
+
+/* ═════════════ КНОПКИ ═════════════ */
+.theme-nika .btn { font-weight: 500; border-radius: 6px; letter-spacing: 0; }
+.theme-nika .btn .icon { width: 1.125em; height: 1.125em; transition: transform var(--dur-ui) var(--ease-out); }
+@media (hover: hover) and (pointer: fine) {
+  .theme-nika .btn:hover .icon--arrow-right { transform: translateX(4px); }
+  .theme-nika .btn:hover .icon--arrow-up-right { transform: translate(2px, -2px); }
+}
+/* Контурная — основная форма кнопки языка */
+.theme-nika .btn--outline { --btn-bd: var(--c-blue); --btn-fg: var(--c-blue); }
+.theme-nika .btn--outline:hover { --btn-bg: var(--c-blue-tint); }
+.theme-nika .section--grey .btn--outline:hover { --btn-bg: #fff; }
+/* Малая капсом, как «СОСТАВ СОВЕТА →» */
+.theme-nika .btn--caps { min-height: var(--hit); padding: 0 16px; font-size: 0.8125rem; letter-spacing: var(--tracking-caps); text-transform: uppercase; }
+/* Заливка — одна кнопка на экран: синяя (.btn--primary) или красная главная (.btn--accent, одна на страницу) */
+.theme-nika .section--slate .btn--primary { --btn-bg: #fff; --btn-fg: var(--c-slate); }
+.theme-nika .section--slate .btn--primary:hover { --btn-bg: #e3e7f0; }
+.theme-nika .section--slate .btn--outline { --btn-bd: rgb(255 255 255 / 0.55); --btn-fg: #fff; }
+.theme-nika .section--slate .btn--outline:hover { --btn-bg: rgb(255 255 255 / 0.08); --btn-bd: #fff; }
+.theme-nika .btn-circle { border-color: var(--c-line-strong); color: var(--c-text); }
+.theme-nika .btn-circle .icon { width: 20px; height: 20px; }
+.theme-nika .section--slate .btn-circle { color: #fff; border-color: var(--c-line-dark); }
+.theme-nika .section--slate .btn-circle:hover { border-color: #fff; }
+
+/* Дедлайн — второе красное пятно */
+.theme-nika .n-deadline {
+  display: inline-flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+  font-size: var(--fs-small); color: var(--c-text-2);
+}
+.theme-nika .n-deadline strong { color: var(--c-red-text); font-weight: 600; }
+.theme-nika .section--slate .n-deadline { color: var(--c-on-dark-2); }
+.theme-nika .section--slate .n-deadline strong { color: #ff6f96; } /* 5.0:1 на #1F2A44 */
+
+/* ═════════════ ПОЛЯ ═════════════ */
+.theme-nika .input, .theme-nika .select, .theme-nika .textarea { border-color: var(--c-control-line); border-radius: 6px; }
+.theme-nika .input:hover, .theme-nika .select:hover, .theme-nika .textarea:hover { border-color: var(--c-text-2); }
+.theme-nika .input:focus-visible, .theme-nika .select:focus-visible, .theme-nika .textarea:focus-visible { border-color: var(--c-blue); box-shadow: 0 0 0 1px var(--c-blue); }
+.theme-nika .field__label { font-weight: 500; }
+.theme-nika .check input { border-color: var(--c-control-line); border-radius: 2px; }
+
+/* ═════════════ ТАБЫ: прямоугольные чипы, активный залит синим ═════════════ */
+.theme-nika .tabs__list { gap: 8px; }
+.theme-nika .tab {
+  padding: 0 18px; border-radius: 8px;
+  font-weight: 500; color: var(--c-text);
+  border-color: var(--c-line-strong); background: transparent;
+}
+.theme-nika .tab:hover { border-color: var(--c-blue); color: var(--c-blue); }
+.theme-nika .tab[aria-selected="true"] { background: var(--c-blue); border-color: var(--c-blue); color: #fff; }
+.theme-nika .chip { border-radius: 8px; }
+
+/* ═════════════ АККОРДЕОН ═════════════ */
+.theme-nika .accordion__summary {
+  min-height: 64px; padding: 18px 56px 18px 0;
+  font-size: clamp(1.0625rem, 1rem + 0.25vw, 1.25rem); font-weight: 500; letter-spacing: -0.005em;
+}
+.theme-nika .accordion__summary::before { display: none; }         /* без кружка: тонкий «+» */
+.theme-nika .accordion__summary::after {
+  width: 24px; height: 24px; margin-top: -12px; right: 4px;
+  background: var(--c-text);
+}
+.theme-nika .accordion__item[open] > .accordion__summary { color: var(--c-blue); }
+.theme-nika .accordion__item[open] > .accordion__summary::after { background: var(--c-blue); }
+/* раскрытое — белая карточка на сером фоне полосы */
+.theme-nika .accordion__body {
+  max-width: none; margin: 0 0 24px; padding: 24px;
+  color: var(--c-text); background: #fff;
+  border: 1px solid var(--c-line); border-radius: 8px;
+}
+.theme-nika .accordion__body > p, .theme-nika .accordion__body > ul { max-width: 68ch; }
+@media (min-width: 768px) { .theme-nika .accordion__body { padding: 28px 32px; } }
+@media (min-width: 1024px) { .theme-nika .accordion__summary { min-height: 72px; } }
+
+/* ═════════════ КАРТОЧКА ПРОЕКТА ═════════════ */
+.theme-nika .n-cards {
+  display: grid; gap: var(--grid-gap);
+  grid-template-columns: minmax(0, 1fr);
+  list-style: none; padding: 0;
+}
+@media (min-width: 640px) { .theme-nika .n-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .theme-nika .n-cards--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+.theme-nika .n-card {
+  position: relative;
+  display: flex; flex-direction: column; justify-content: space-between; gap: 40px;
+  height: 100%; min-height: 240px; padding: 24px;
+  color: var(--c-text); text-decoration: none;
+  background: #fff; border: 1px solid var(--c-line); border-radius: 8px;
+  transition: border-color var(--dur-fast) ease;
+}
+@media (min-width: 1024px) { .theme-nika .n-card { min-height: 300px; padding: 28px; } }
+.theme-nika .n-card__mark { display: grid; place-items: center start; min-height: 48px; color: var(--c-text-2); }
+.theme-nika .n-card__mark svg.i { width: 40px; height: 40px; stroke-width: 1.25; }
+.theme-nika .n-card__logo {                   /* плейсхолдер логотипа партнёра */
+  display: grid; place-items: center;
+  width: 96px; height: 48px;
+  border: 1px solid var(--c-line); border-radius: 2px;
+  font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c-text-2);
+}
+.theme-nika .n-card__body { display: grid; gap: 8px; }
+.theme-nika .n-card__meta { font-size: var(--fs-caption); line-height: 1.4; color: var(--c-text-2); }
+.theme-nika .n-card__title {
+  font-family: var(--font-sans); font-size: 1.125rem; font-weight: 500; line-height: 1.35; letter-spacing: -0.005em;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
+@media (min-width: 1024px) { .theme-nika .n-card__title { font-size: 1.1875rem; } }
+.theme-nika .n-card__arrow {
+  position: absolute; top: 24px; right: 24px;
+  width: 28px; height: 28px; color: var(--c-blue);
+  opacity: 0; transform: translate(-6px, 6px);
+  transition: opacity var(--dur-fast) ease, transform var(--dur-ui) var(--ease-out);
+}
+.theme-nika .n-card:focus-visible { outline-offset: 3px; border-radius: 8px; }
+.theme-nika .n-card.is-hover,
+.theme-nika .n-card:focus-visible { border-color: var(--c-blue); }
+.theme-nika .n-card.is-hover .n-card__arrow,
+.theme-nika .n-card:focus-visible .n-card__arrow { opacity: 1; transform: none; }
+.theme-nika .n-card.is-hover .n-card__mark,
+.theme-nika .n-card:focus-visible .n-card__mark { color: var(--c-blue); }
+@media (hover: hover) and (pointer: fine) {
+  .theme-nika .n-card:hover { border-color: var(--c-blue); }
+  .theme-nika .n-card:hover .n-card__arrow { opacity: 1; transform: none; }
+  .theme-nika .n-card:hover .n-card__mark { color: var(--c-blue); }
+}
+/* на сенсорных экранах стрелка видна всегда — наведения нет */
+@media (hover: none) { .theme-nika .n-card__arrow { opacity: 1; transform: none; } }
+
+/* ═════════════ ЛЕНТА ПАРТНЁРОВ ═════════════ */
+.theme-nika .partners .ribbon__track { border: 1px solid var(--c-line); border-radius: 8px; background: #fff; }
+.theme-nika .partner { gap: 10px; color: var(--c-text-2); }
+.theme-nika .partner__logo {
+  background: transparent; border: 1px solid var(--c-line); border-radius: 2px;
+  color: var(--c-text-2); font-weight: 600; filter: none;
+  transition: color var(--dur-fast) ease, border-color var(--dur-fast) ease;
+}
+.theme-nika .partner img { filter: grayscale(1); opacity: 0.6; transition: opacity var(--dur-fast) ease, filter var(--dur-fast) ease; }
+@media (hover: hover) and (pointer: fine) {
+  .theme-nika .partner:hover { background: #fff; color: var(--c-text); }
+  .theme-nika .partner:hover .partner__logo { color: var(--c-blue); border-color: var(--c-blue); }
+  .theme-nika .partner:hover img { filter: none; opacity: 1; }
+}
+
+/* ═════════════ ТАБЛИЦА: только горизонтальные линии ═════════════ */
+.theme-nika .n-table-wrap { overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: thin; }
+.theme-nika .n-table-wrap:focus-visible { outline-offset: 4px; }
+.theme-nika .n-table { width: 100%; min-width: 600px; border-collapse: collapse; font-variant-numeric: tabular-nums lining-nums; }
+.theme-nika .n-table caption { text-align: left; padding-bottom: 12px; }
+.theme-nika .n-table th {
+  padding: 0 24px 12px 0; text-align: left; vertical-align: bottom;
+  font-size: 0.75rem; font-weight: 500; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--c-text-2);
+  border-bottom: 1px solid var(--c-text);
+}
+.theme-nika .n-table td { padding: 18px 24px 18px 0; vertical-align: top; border-bottom: 1px solid var(--c-line); }
+.theme-nika .n-table :is(th, td):last-child { padding-right: 0; }
+.theme-nika .n-table .num { text-align: right; white-space: nowrap; }
+.theme-nika .n-table tbody tr { transition: background-color var(--dur-fast) ease; }
+@media (hover: hover) and (pointer: fine) { .theme-nika .n-table tbody tr:hover { background: color-mix(in srgb, var(--c-bg-grey) 70%, transparent); } }
+
+/* ═════════════ ДОКУМЕНТ С ЭП ═════════════ */
+.theme-nika .n-docs { list-style: none; padding: 0; border-top: 1px solid var(--c-line); }
+.theme-nika .n-doc {
+  display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: 4px 16px; align-items: start;
+  padding: 20px 0; border-bottom: 1px solid var(--c-line);
+}
+.theme-nika .n-doc > svg.i { width: 28px; height: 28px; color: var(--c-text-2); stroke-width: 1.25; grid-row: span 3; }
+.theme-nika .n-doc__title { font-weight: 500; line-height: 1.4; color: var(--c-text); text-decoration: none; }
+.theme-nika a.n-doc__title:hover { color: var(--c-blue); text-decoration: underline; text-decoration-thickness: 1px; }
+.theme-nika .n-doc__meta { font-size: var(--fs-small); color: var(--c-text-2); }
+.theme-nika .n-sign {
+  display: inline-flex; align-items: center; gap: 6px; justify-self: start;
+  min-height: 28px; padding: 0 10px 0 8px;
+  font-size: var(--fs-caption); font-weight: 500; color: var(--c-blue);
+  border: 1px solid var(--c-line); border-radius: 6px; background: #fff;
+}
+.theme-nika .n-sign svg.i { width: 16px; height: 16px; }
+.theme-nika .n-doc__action { grid-column: 2; justify-self: start; }
+@media (min-width: 768px) {
+  .theme-nika .n-doc { grid-template-columns: 32px minmax(0, 1fr) auto auto; align-items: center; gap: 4px 24px; }
+  .theme-nika .n-doc > svg.i { grid-row: span 2; }
+  .theme-nika .n-doc__title { grid-column: 2; }
+  .theme-nika .n-doc__meta { grid-column: 2; }
+  .theme-nika .n-sign { grid-column: 3; grid-row: 1 / span 2; }
+  .theme-nika .n-doc__action { grid-column: 4; grid-row: 1 / span 2; }
+}
+
+/* ═════════════ ПОРТРЕТ ═════════════ */
+.theme-nika .n-person { display: grid; gap: 16px; align-content: start; }
+.theme-nika .n-person__photo { position: relative; aspect-ratio: 3 / 4; overflow: hidden; border: 1px solid var(--c-line); border-radius: 2px; background: var(--c-bg-grey); }
+.theme-nika .n-person__photo > img { width: 100%; height: 100%; object-fit: cover; }
+.theme-nika .n-person__photo > .stub { height: 100%; min-height: 0; border: 0; border-radius: 0; }
+.theme-nika .n-mono { filter: grayscale(1) contrast(1.04); }                   /* ч/б поверх stub-файла */
+.theme-nika .n-muted { filter: grayscale(0.85) contrast(0.95) brightness(1.02); } /* приглушённое */
+.theme-nika .n-person__more { position: absolute; right: 16px; bottom: 16px; background: rgb(255 255 255 / 0.9); border-color: var(--c-line); }
+.theme-nika .n-person__more:hover { background: #fff; }
+.theme-nika .n-person__name { font-size: 0.8125rem; font-weight: 600; line-height: 1.4; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--c-text); }
+.theme-nika .n-person__role { margin-top: 4px; font-size: var(--fs-small); line-height: 1.45; color: var(--c-text-2); }
+.theme-nika .section--slate .n-person__photo { border-color: var(--c-line-dark); }
+.theme-nika .section--slate .n-person__name { color: #fff; }
+.theme-nika .section--slate .n-person__role { color: var(--c-on-dark-2); }
+
+/* ═════════════ НОВОСТЬ (карточка ленты «Новости / События») ═════════════ */
+.theme-nika .n-news { display: grid; gap: 12px; align-content: start; color: var(--c-text); text-decoration: none; }
+.theme-nika .n-news__media { position: relative; aspect-ratio: 16 / 10; overflow: hidden; border-radius: 2px; }
+.theme-nika .n-news__media > img { width: 100%; height: 100%; object-fit: cover; }
+.theme-nika .n-news__media > .stub { height: 100%; min-height: 0; border-radius: 2px; }
+.theme-nika .n-news__date { font-size: var(--fs-caption); color: var(--c-text-2); }
+.theme-nika .n-news__title { font-size: 1.0625rem; font-weight: 500; line-height: 1.4; }
+.theme-nika .n-news__text { font-size: var(--fs-small); color: var(--c-text-2); }
+@media (hover: hover) and (pointer: fine) { .theme-nika a.n-news:hover .n-news__title { color: var(--c-blue); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.22em; } }
+
+/* ═════════════ СПИСОК-НАПРАВЛЕНИЯ (строки с линией и стрелкой в кружке) ═════════════ */
+.theme-nika .n-links { list-style: none; padding: 0; border-top: 1px solid var(--c-line); }
+.theme-nika .n-links > li { border-bottom: 1px solid var(--c-line); }
+.theme-nika .n-links a {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  min-height: 72px; padding: 12px 0;
+  font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.3125rem); font-weight: 400; line-height: 1.3;
+  color: var(--c-text); text-decoration: none;
+}
+.theme-nika .n-links a > span:first-child { display: grid; gap: 2px; }
+.theme-nika .n-links small { font-size: var(--fs-small); color: var(--c-text-2); }
+.theme-nika .n-links .btn-circle { flex: none; pointer-events: none; }
+@media (hover: hover) and (pointer: fine) {
+  .theme-nika .n-links a:hover { color: var(--c-blue); }
+  .theme-nika .n-links a:hover .btn-circle { border-color: var(--c-blue); color: var(--c-blue); }
+}
+
+/* ═════════════ ЛИНЕЙНАЯ ГРАФИКА ═════════════ */
+/* Все линии — 1 px (vector-effect: non-scaling-stroke держит толщину при масштабе). Цвета — только токены. */
+.theme-nika .n-art { display: block; overflow: visible; }
+.theme-nika .n-art :is(circle, line, path, polyline, rect) { vector-effect: non-scaling-stroke; }
+.theme-nika .n-art .l { fill: none; stroke: var(--c-line-strong); stroke-width: 1; }
+.theme-nika .n-art .l-soft { fill: none; stroke: var(--c-line); stroke-width: 1; }
+.theme-nika .n-art .l-accent { fill: none; stroke: var(--c-blue); stroke-width: 1; }
+.theme-nika .n-art .dot { fill: var(--c-text); }
+.theme-nika .n-art .dot-accent { fill: var(--c-blue); }
+.theme-nika .n-art .dot-open { fill: #fff; stroke: var(--c-blue); stroke-width: 1; }
+.theme-nika .section--grey .n-art .dot-open { fill: var(--c-bg-grey); }
+.theme-nika .section--slate .n-art .l { stroke: var(--c-line-dark); }
+.theme-nika .section--slate .n-art .l-soft { stroke: #2d3853; }
+.theme-nika .section--slate .n-art .l-accent { stroke: #8f9ce6; }
+.theme-nika .section--slate .n-art .dot { fill: #fff; }
+.theme-nika .section--slate .n-art .dot-accent { fill: #8f9ce6; }
+.theme-nika .section--slate .n-art .dot-open { fill: var(--c-slate); stroke: #fff; }
+
+/* Подписи к графике — HTML поверх SVG, позиция в % от сторон рисунка: style="--x:42%; --y:61%" */
+.theme-nika .n-figure { position: relative; }
+.theme-nika .n-figure__label {
+  position: absolute; left: var(--x); top: var(--y);
+  font-size: var(--fs-caption); line-height: 1.3; color: var(--c-text-2); white-space: nowrap;
+  transform: translate(var(--tx, 12px), -50%);
+}
+.theme-nika .n-figure__label b { display: block; font-weight: 500; color: var(--c-text); font-size: var(--fs-small); }
+.theme-nika .section--slate .n-figure__label { color: var(--c-on-dark-2); }
+.theme-nika .section--slate .n-figure__label b { color: #fff; }
+
+/* Маршрут: шаги на линии с точками. Горизонтально от 768, вертикально на мобильном. */
+.theme-nika .n-route { list-style: none; padding: 0; display: grid; gap: 0; counter-reset: none; }
+.theme-nika .n-route__step { position: relative; display: grid; gap: 6px; padding: 0 0 32px 36px; }
+.theme-nika .n-route__step::before {            /* линия */
+  content: ""; position: absolute; left: 6px; top: 14px; bottom: -2px; width: 1px; background: var(--c-line-strong);
+}
+.theme-nika .n-route__step:last-child::before { display: none; }
+.theme-nika .n-route__step::after {             /* точка */
+  content: ""; position: absolute; left: 0; top: 4px; width: 13px; height: 13px; border-radius: 50%;
+  background: #fff; border: 1px solid var(--c-text);
+}
+.theme-nika .section--grey .n-route__step::after { background: var(--c-bg-grey); }
+.theme-nika .n-route__step.is-current::after { background: var(--c-blue); border-color: var(--c-blue); box-shadow: 0 0 0 5px var(--c-blue-tint); }
+.theme-nika .n-route__when { font-size: 0.75rem; font-weight: 500; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--c-text-2); }
+.theme-nika .n-route__what { font-size: 1.0625rem; font-weight: 500; line-height: 1.35; }
+.theme-nika .n-route__note { font-size: var(--fs-small); color: var(--c-text-2); max-width: 32ch; }
+@media (min-width: 768px) {
+  .theme-nika .n-route { grid-template-columns: repeat(var(--steps, 4), minmax(0, 1fr)); gap: var(--grid-gap); }
+  .theme-nika .n-route__step { padding: 40px 0 0; }
+  .theme-nika .n-route__step::before { left: 6px; right: calc(-1 * var(--grid-gap)); top: 10px; bottom: auto; width: auto; height: 1px; }
+  .theme-nika .n-route__step:last-child::before { display: block; right: 0; }
+  .theme-nika .n-route__step::after { top: 4px; }
+}
+
+/* Орбита: концентрические окружности слева, строки-направления справа, точки там, где линия строки пересекает окружность.
+   Геометрия фиксирована: рисунок 480×480, строки ровно по 80 px, 4 строки. Меньше 1024 — только список. */
+.theme-nika .n-orbit { position: relative; }
+.theme-nika .n-orbit__intro { position: relative; z-index: 1; max-width: 30rem; margin-bottom: 32px; }
+.theme-nika .n-orbit__intro > * + * { margin-top: 16px; }
+.theme-nika .n-orbit__art { display: none; }
+@media (min-width: 1024px) {
+  .theme-nika .n-orbit { padding-top: 8px; }
+  .theme-nika .n-orbit__intro { margin: 0 0 56px max(40%, 420px); }
+  .theme-nika .n-orbit__art { display: block; position: absolute; left: 0; bottom: 0; width: 480px; height: 480px; overflow: hidden; pointer-events: none; }
+  .theme-nika .n-orbit .n-links { position: relative; border-top: 0; }
+  .theme-nika .n-orbit .n-links > li { height: 80px; }
+  .theme-nika .n-orbit .n-links > li:last-child { border-bottom-color: var(--c-line-strong); }
+  .theme-nika .n-orbit .n-links a { height: 79px; min-height: 0; padding-left: max(40%, 420px); }
+}
+
+/* Схема на всю ширину с HTML-подписями: пропорции контейнера = viewBox рисунка. Узкий вариант схемы — .n-only-narrow */
+.theme-nika .n-map { position: relative; aspect-ratio: var(--ratio, 5 / 2); }
+.theme-nika .n-map > svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.theme-nika .n-only-narrow { display: block; }
+.theme-nika .n-only-wide { display: none; }
+@media (min-width: 768px) {
+  .theme-nika .n-only-narrow { display: none; }
+  .theme-nika .n-only-wide { display: block; }
+}
+
+/* Движение: линии рисуются один раз при загрузке (единственный авторский момент). Без JS, reduced-motion — статично. */
+@media (prefers-reduced-motion: no-preference) {
+  .theme-nika .n-draw .draw {
+    animation: nika-draw 1400ms var(--ease-out) backwards;
+    animation-delay: calc(var(--i, 0) * 140ms + 120ms);
+  }
+  .theme-nika .n-draw .pop {
+    animation: nika-pop 420ms var(--ease-out) backwards;
+    animation-delay: calc(var(--i, 0) * 140ms + 700ms);
+    transform-box: fill-box; transform-origin: center;
+  }
+  .theme-nika .n-draw .fade {
+    animation: nika-fade 500ms ease backwards;
+    animation-delay: calc(var(--i, 0) * 140ms + 800ms);
+  }
+}
+@keyframes nika-draw { from { stroke-dasharray: 1; stroke-dashoffset: 1; } to { stroke-dasharray: 1; stroke-dashoffset: 0; } }
+@keyframes nika-pop { from { opacity: 0; transform: scale(0.6); } to { opacity: 1; transform: none; } }
+@keyframes nika-fade { from { opacity: 0; } to { opacity: 1; } }
+
+/* ═════════════ ШАПКА И ПОДВАЛ (партиалы system/partials, стилизация под язык) ═════════════ */
+.theme-nika[data-header="dark"] .site-header { --hdr-bg: var(--c-slate); --hdr-line: var(--c-line-dark); --hdr-fg-2: var(--c-on-dark-2); }
+.theme-nika .hdr-nav__link { font-weight: 400; }
+.theme-nika .hdr-nav__link::after { height: 1px; bottom: 8px; }
+.theme-nika .hdr-nav__link[aria-current="page"]::after { height: 2px; }
+.theme-nika .hdr-link { font-weight: 400; }
+.theme-nika .lang a { font-weight: 500; letter-spacing: var(--tracking-caps); }
+.theme-nika .menu__link { font-weight: 400; }
+.theme-nika .menu__nav li { border-color: var(--c-line); }
+
+.theme-nika .site-footer { background: var(--c-slate); }
+.theme-nika .site-footer .brand__name { font-weight: 600; }
+.theme-nika .ftr-col h2 { font-weight: 500; letter-spacing: var(--tracking-caps); }
+.theme-nika .ftr-legal__main { font-weight: 500; border-color: var(--c-line-dark); }
+.theme-nika .pos-widget { border: 1px solid var(--c-line-dark); }   /* без пунктиров */
+.theme-nika .socials a { font-weight: 500; border-color: var(--c-line-dark); }
+.theme-nika .ftr-bottom { border-top-color: var(--c-line-dark); }
+
+/* stub в тёмной полосе */
+.theme-nika .stub--dark { background: #26314d; border-color: var(--c-line-dark); }
+.theme-nika .stub--dark::after { background: rgb(31 42 68 / 0.9); border-color: var(--c-line-dark); }

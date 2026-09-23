@@ -1,0 +1,172 @@
+{
+ "source": "RuTube ТвГУ https://rutube.ru/channel/24144175",
+ "items": [
+  {
+   "file": "video/loops/den-znaniy-obzor-2-dvor-pervokursniki.mp4",
+   "poster": "video/loops/den-znaniy-obzor-2-dvor-pervokursniki.jpg",
+   "source_title": "День знаний в ТвГУ_обзор (2)",
+   "source_url": "https://rutube.ru/video/c5027ed97bb4c1e2ca8a39c884272c1e/",
+   "source_duration_s": 344,
+   "start_s": 72,
+   "end_s": 82.5,
+   "loop_duration_s": 10,
+   "what": "День знаний: первокурсницы машут руками во дворе, флагштоки, деревья; в конце — две студентки позируют",
+   "tags": [
+    "students",
+    "event",
+    "campus"
+   ],
+   "tone": "light",
+   "synthetic": false,
+   "notes": "кроссфейд 0,5 с конец→начало; логотип ТвГУ в углу размыт delogo"
+  },
+  {
+   "file": "video/loops/den-znaniy-obzor-2-obnyavshis-pesnya.mp4",
+   "poster": "video/loops/den-znaniy-obzor-2-obnyavshis-pesnya.jpg",
+   "source_title": "День знаний в ТвГУ_обзор (2)",
+   "source_url": "https://rutube.ru/video/c5027ed97bb4c1e2ca8a39c884272c1e/",
+   "source_duration_s": 344,
+   "start_s": 309.5,
+   "end_s": 318.0,
+   "loop_duration_s": 8,
+   "what": "День знаний: студенты в белых рубашках стоят обнявшись и поют, двор с флагами",
+   "tags": [
+    "students",
+    "ceremony",
+    "campus"
+   ],
+   "tone": "light",
+   "synthetic": false,
+   "notes": "кроссфейд 0,5 с конец→начало; логотип ТвГУ в углу размыт delogo"
+  },
+  {
+   "file": "video/loops/den-znaniy-obzor-2-gazon-lekciya.mp4",
+   "poster": "video/loops/den-znaniy-obzor-2-gazon-lekciya.jpg",
+   "source_title": "День знаний в ТвГУ_обзор (2)",
+   "source_url": "https://rutube.ru/video/c5027ed97bb4c1e2ca8a39c884272c1e/",
+   "source_duration_s": 344,
+   "start_s": 241.5,
+   "end_s": 250.0,
+   "loop_duration_s": 8,
+   "what": "Лекция на газоне: студенты на мешках-креслах, преподаватель; в конце шатёр «Центр традиционной культуры»",
+   "tags": [
+    "students",
+    "campus",
+    "nature"
+   ],
+   "tone": "light",
+   "synthetic": false,
+   "notes": "кроссфейд 0,5 с конец→начало; логотип ТвГУ в углу размыт delogo"
+  },
+  {
+   "file": "video/loops/vals-para-krupno.mp4",
+   "poster": "video/loops/vals-para-krupno.jpg",
+   "source_title": "Вальс",
+   "source_url": "https://rutube.ru/video/ff47f7b92f703285ef10b409915656d9/",
+   "source_duration_s": 189,
+   "start_s": 29,
+   "end_s": 40.5,
+   "loop_duration_s": 11,
+   "what": "Выпускной вальс: пары в белых рубашках и лентах, синий звёздный задник, средние планы",
+   "tags": [
+    "dance",
+    "students",
+    "ceremony"
+   ],
+   "tone": "dark",
+   "synthetic": false,
+   "notes": "кроссфейд 0,5 с конец→начало"
+  },
+  {
+   "file": "video/loops/vals-scena-obshiy.mp4",
+   "poster": "video/loops/vals-scena-obshiy.jpg",
+   "source_title": "Вальс",
+   "source_url": "https://rutube.ru/video/ff47f7b92f703285ef10b409915656d9/",
+   "source_duration_s": 189,
+   "start_s": 90,
+   "end_s": 103.5,
+   "loop_duration_s": 13,
+   "what": "Выпускной вальс: общий план всей сцены, синий свет, много пар",
+   "tags": [
+    "dance",
+    "ceremony"
+   ],
+   "tone": "dark",
+   "synthetic": false,
+   "notes": "кроссфейд 0,5 с конец→начало"
+  },
+  {
+   "file": "video/loops/botsad-gashenie-marki-prud-park.mp4",
+   "poster": "video/loops/botsad-gashenie-marki-prud-park.jpg",
+   "source_title": "Гашение марки в Ботаничесом саду",
+   "source_url": "https://rutube.ru/video/edc27b086b64e05a3f1a6b07d21f8a28/",
+   "source_duration_s": 78,
+   "start_s": 66,
+   "end_s": 77.0,
+   "loop_duration_s": 10.5,
+   "what": "Ботанический сад ТвГУ весной: пруд, вазон, деревья, гости идут по дорожке",
+   "tags": [
+    "nature",
+    "campus"
+   ],
+   "tone": "light",
+   "synthetic": false,
+   "notes": "кроссфейд 0,5 с конец→начало; логотип ТвГУ в углу размыт delogo"
+  },
+  {
+   "file": "video/loops/gala-studvesna-2026-tanec-scena.mp4",
+   "poster": "video/loops/gala-studvesna-2026-tanec-scena.jpg",
+   "source_title": "Гала-концерт Студенческой весны",
+   "source_url": "https://rutube.ru/video/49f8c5fb9cadab25f2301fb49391c998/",
+   "source_duration_s": 65,
+   "start_s": 42,
+   "end_s": 50.5,
+   "loop_duration_s": 8,
+   "what": "Гала-концерт Студвесны: танцоры на тёмной сцене, контровой свет",
+   "tags": [
+    "dance",
+    "event"
+   ],
+   "tone": "dark",
+   "synthetic": false,
+   "notes": "кроссфейд 0,5 с конец→начало"
+  },
+  {
+   "file": "video/loops/den-otkrytyh-dverey-2-arheologiya-ruki.mp4",
+   "poster": "video/loops/den-otkrytyh-dverey-2-arheologiya-ruki.jpg",
+   "source_title": "День открытых дверей в ТвГУ (2)",
+   "source_url": "https://rutube.ru/video/02a74821ee6f934b1062ecd64e4bdf4b/",
+   "source_duration_s": 160,
+   "start_s": 110,
+   "end_s": 119.0,
+   "loop_duration_s": 8.5,
+   "what": "День открытых дверей: руки собирают археологические черепки, белые столы",
+   "tags": [
+    "students",
+    "event"
+   ],
+   "tone": "light",
+   "synthetic": false,
+   "notes": "кроссфейд 0,5 с конец→начало; логотип ТвГУ в углу размыт delogo"
+  },
+  {
+   "file": "video/loops/den-otkrytyh-dverey-2-mikroskop-mineraly.mp4",
+   "poster": "video/loops/den-otkrytyh-dverey-2-mikroskop-mineraly.jpg",
+   "source_title": "День открытых дверей в ТвГУ (2)",
+   "source_url": "https://rutube.ru/video/02a74821ee6f934b1062ecd64e4bdf4b/",
+   "source_duration_s": 160,
+   "start_s": 136,
+   "end_s": 146.5,
+   "loop_duration_s": 10,
+   "what": "День открытых дверей: абитуриентка смотрит в микроскоп, образцы минералов",
+   "tags": [
+    "students",
+    "event",
+    "lab"
+   ],
+   "tone": "light",
+   "synthetic": false,
+   "notes": "кроссфейд 0,5 с конец→начало; логотип ТвГУ в углу размыт delogo"
+  }
+ ]
+}

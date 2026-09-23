@@ -1,0 +1,260 @@
+/* home-nika/b — «Кино». Компоненты — system/theme-nika.css (в том числе .n-orbit, .n-links, .n-person, .n-news);
+   здесь раскладка крупных полос: сцена, портреты, кадр-лидер, ось «В цифрах», счётчик приёма, липкая панель. */
+
+/* ═════════ HERO: сцена ═════════ */
+.cine { position: relative; padding: 0; overflow: hidden; isolation: isolate; }
+.cine__media { position: absolute; inset: 0; z-index: -2; background: var(--c-slate); }
+.cine__media picture, .cine__poster, .cine__video { display: block; width: 100%; height: 100%; }
+.cine__poster, .cine__video { object-fit: cover; object-position: 50% 60%; filter: grayscale(1) contrast(1.08); opacity: 0.3; }
+.cine__video { position: absolute; inset: 0; opacity: 0; transition: opacity 1200ms var(--ease-out); }
+.cine__video.is-on { opacity: 0.3; }
+@media (prefers-reduced-motion: reduce) { .cine__video { transition: none; } }
+
+.cine__rings { position: absolute; z-index: -1; pointer-events: none; width: 150vw; max-width: none; right: -70vw; top: -10vw; }
+.cine__inner {
+  display: flex; flex-direction: column; justify-content: flex-end; gap: 40px;
+  min-height: clamp(560px, 88svh, 900px); padding-block: 48px 20px;
+}
+.cine__copy > * + * { margin-top: 28px; }
+.cine__copy h1 { max-width: 15em; text-wrap: balance; }
+.cine__copy h1 em { color: var(--c-on-dark-2); }
+.theme-nika .cine__lead { max-width: 34em; color: var(--c-on-dark-2); }
+.cine__row { display: grid; gap: 28px; }
+.cine__act { display: grid; gap: 20px; justify-items: start; }
+.theme-nika .n-band-head { flex-wrap: wrap; row-gap: 12px; }
+.cine__buttons { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; }
+.theme-nika .section--slate .cine__go:hover { --btn-bg: var(--c-blue); --btn-fg: #fff; }
+@media (max-width: 479px) { .cine__go { width: 100%; } .cine__buttons { width: 100%; } }
+.cine__foot {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  min-height: 60px; padding-top: 16px; border-top: 1px solid var(--c-line-dark);
+}
+.cine__credit { font-size: var(--fs-caption); color: var(--c-on-dark-2); }
+.theme-nika .section--slate .cine__pause { background: rgb(31 42 68 / 0.6); }
+
+@media (min-width: 768px) {
+  .cine__rings { width: 72vw; right: -16vw; top: 50%; transform: translateY(-50%); }
+}
+@media (min-width: 1024px) {
+  .cine__inner { padding-block: 96px 24px; gap: 64px; }
+  .cine__row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--grid-gap); align-items: end; }
+  .cine__act { justify-items: end; }
+  .cine__rings { width: min(64vw, 960px); right: -8vw; }
+}
+
+/* ═════════ МИССИЯ И ВЫПУСКНИКИ ═════════ */
+.mission__statement { font-family: var(--font-serif); font-size: clamp(1.625rem, 1.2rem + 1.6vw, 2.5rem); line-height: 1.2; letter-spacing: -0.01em; max-width: 22em; text-wrap: pretty; }
+.mission__text { margin-top: 24px; color: var(--c-text-2); }
+.alumni { list-style: none; padding: 0; margin-top: 48px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 0; }
+.alumni > li { padding: 4px 16px 4px 16px; border-left: 1px solid var(--c-line); }
+.alumni__name { font-family: var(--font-serif); font-size: clamp(1.1875rem, 1rem + 0.6vw, 1.5rem); line-height: 1.2; }
+.alumni__what { margin-top: 6px; font-size: var(--fs-small); line-height: 1.4; color: var(--c-text-2); }
+.mission__links { margin-top: 48px; }
+@media (min-width: 1024px) { .alumni { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+/* ═════════ ОБРАЩЕНИЕ: крупные портреты ═════════ */
+.faces { list-style: none; padding: 0; display: grid; gap: 56px var(--grid-gap); }
+.theme-nika .face { gap: 24px; }
+.theme-nika .face__photo { aspect-ratio: 4 / 5; }
+.theme-nika .face__photo > img { object-position: 50% 20%; }
+.face__cap { display: grid; gap: 4px; }
+.face__quote { margin: 0 0 16px; font-family: var(--font-serif); font-size: clamp(1.25rem, 1.1rem + 0.6vw, 1.625rem); line-height: 1.35; max-width: 28em; }
+@media (min-width: 768px) {
+  .faces { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1024px) { .theme-nika .face__photo { aspect-ratio: 1 / 1; } }
+
+/* ═════════ ПРОГРАММЫ: крупные строки ═════════ */
+.big-links { list-style: none; padding: 0; border-top: 1px solid var(--c-line-strong); }
+.big-links > li { border-bottom: 1px solid var(--c-line); }
+.big-links__row {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 20px; align-items: center;
+  min-height: 88px; padding: 18px 0; color: var(--c-text); text-decoration: none;
+}
+.big-links__name { font-family: var(--font-serif); font-size: clamp(1.625rem, 1.1rem + 2.2vw, 3rem); line-height: 1.1; letter-spacing: -0.01em; }
+.big-links__meta { grid-column: 1; font-size: var(--fs-small); color: var(--c-text-2); }
+.big-links__meta b { font-weight: 500; color: var(--c-text); }
+.big-links__row .btn-circle { grid-column: 2; grid-row: 1 / span 2; pointer-events: none; }
+.big-links__row .icon { transition: transform var(--dur-ui) var(--ease-out); }
+.big-links__row.is-hover .big-links__name { color: var(--c-blue); }
+.big-links__row.is-hover .btn-circle { border-color: var(--c-blue); color: var(--c-blue); }
+.big-links__row.is-hover .icon { transform: translateX(4px); }
+@media (hover: hover) and (pointer: fine) {
+  .big-links__row:hover .big-links__name { color: var(--c-blue); }
+  .big-links__row:hover .btn-circle { border-color: var(--c-blue); color: var(--c-blue); }
+  .big-links__row:hover .icon { transform: translateX(4px); }
+}
+.big-links__top { display: none; }
+.big-links__all { margin-top: 32px; }
+@media (min-width: 768px) {
+  .big-links__row { grid-template-columns: minmax(0, 1fr) minmax(0, 24rem) 44px; min-height: 112px; }
+  .big-links__meta { grid-column: auto; }
+  .big-links__row .btn-circle { grid-column: auto; grid-row: auto; }
+  .theme-nika .big-links__top { display: inline-flex; }
+  .big-links__all { display: none; }
+}
+
+/* ═════════ ПАРТНЁРЫ ═════════ */
+.partners__facts { display: flex; flex-wrap: wrap; gap: 8px 32px; margin-top: 20px; font-size: var(--fs-small); color: var(--c-text-2); }
+.partners__facts b { font-weight: 500; color: var(--c-text); }
+
+/* ═════════ НОВОСТИ: кадр-лидер ═════════ */
+.news-head { flex-wrap: wrap; justify-content: flex-start; column-gap: 32px; }
+@media (max-width: 767.98px) { .news-head .band-label { flex-basis: 100%; } }
+.reel { list-style: none; padding: 0; display: grid; gap: 40px var(--grid-gap); }
+.theme-nika .reel__title { font-family: var(--font-serif); font-weight: 400; font-size: 1.375rem; line-height: 1.25; }
+.theme-nika .reel__lead .n-news__media { aspect-ratio: 16 / 9; }
+.theme-nika .reel__lead .reel__title { font-size: clamp(1.625rem, 1.3rem + 1.2vw, 2.25rem); line-height: 1.15; max-width: 22em; }
+.reel__lead .n-news__text { font-size: 1rem; max-width: 40em; }
+/* медленный зум кадра: заход и возврат по одной кривой, прерывается с текущего значения (transition, не keyframes) */
+.reel__item .n-news__media img { transition: transform 1400ms var(--ease-expo); }
+.reel__arrow { width: 0.8em; height: 0.8em; margin-left: 4px; vertical-align: -0.02em; color: var(--c-blue); opacity: 0; transform: translateX(-4px); transition: opacity var(--dur-ui) ease, transform var(--dur-ui) var(--ease-out); }
+.reel__item.is-hover .n-news__title { color: var(--c-blue); }
+.reel__item.is-hover .reel__arrow { opacity: 1; transform: none; }
+.reel__item.is-hover .n-news__media img { transform: scale(1.06); }
+@media (hover: hover) and (pointer: fine) {
+  .reel__item:hover .reel__arrow { opacity: 1; transform: none; }
+  .reel__item:hover .n-news__media img { transform: scale(1.06); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reel__item .n-news__media img, .reel__item.is-hover .n-news__media img { transition: none; transform: none; }
+}
+.reel__all { margin-top: 32px; }
+@media (min-width: 768px) {
+  .reel { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .reel__lead { grid-column: 1 / -1; }
+}
+@media (min-width: 1024px) {
+  .reel { grid-template-columns: repeat(12, minmax(0, 1fr)); grid-template-rows: auto auto; row-gap: 32px; }
+  .reel__lead { grid-column: 1 / span 8; grid-row: 1 / span 2; }
+  .reel > li:not(.reel__lead) { grid-column: 9 / -1; }
+}
+
+/* ═════════ НАПРАВЛЕНИЯ: орбита на тёмном ═════════ */
+.theme-nika .section--slate .n-links { border-top-color: var(--c-line-dark); }
+.theme-nika .section--slate .n-links > li { border-bottom-color: var(--c-line-dark); }
+.theme-nika .section--slate .n-links a { color: #fff; }
+.theme-nika .section--slate .n-links small { color: var(--c-on-dark-2); }
+@media (hover: hover) and (pointer: fine) {
+  .theme-nika .section--slate .n-links a:hover { color: #c9d0ff; }
+  .theme-nika .section--slate .n-links a:hover .btn-circle { border-color: #fff; color: #fff; }
+}
+@media (min-width: 1024px) {
+  .theme-nika .section--slate .n-orbit .n-links > li:last-child { border-bottom-color: #5a6785; }
+}
+
+/* ═════════ В ЦИФРАХ: ось времени ═════════ */
+.axis__note { font-size: var(--fs-caption); }
+@media (max-width: 767.98px) { .facts-head, .axis__note { display: none; } }
+.axis { list-style: none; padding: 0; position: relative; display: grid; }
+.axis::before { content: ""; position: absolute; left: 5px; top: 8px; bottom: 8px; width: 1px; background: var(--c-line-strong); }
+.axis__cell { position: relative; padding: 0 0 32px 36px; min-width: 0; }
+.axis__cell:last-child { padding-bottom: 0; }
+.axis__cell::after {
+  content: ""; position: absolute; left: 0; top: 10px; width: 11px; height: 11px; border-radius: 50%;
+  border: 1px solid var(--c-blue); background: var(--c-bg-grey);
+}
+.axis__cell--start::after, .axis__cell--now::after { background: var(--c-blue); }
+.axis__cell--now::after { box-shadow: 0 0 0 5px var(--c-blue-tint); }
+.axis__num { font-family: var(--font-serif); font-size: clamp(2.5rem, 1.9rem + 2.2vw, 4rem); line-height: 1; letter-spacing: -0.015em; }
+.axis__cap { margin-top: 10px; font-size: var(--fs-small); line-height: 1.45; color: var(--c-text-2); max-width: 24ch; }
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .axis__cell { display: grid; grid-template-columns: 200px minmax(0, 1fr); align-items: baseline; gap: 24px; }
+  .axis__cap { margin-top: 0; }
+}
+@media (min-width: 1024px) {
+  .axis { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: var(--grid-gap); padding-top: 8px; }
+  .axis::before { left: 0; right: 0; top: 13px; bottom: auto; width: auto; height: 1px; }
+  .axis__cell { padding: 56px 0 0; }
+  .axis__cell::before { content: ""; position: absolute; left: 5px; top: 24px; height: 20px; width: 1px; background: var(--c-line-strong); }
+  .axis__cell::after { top: 0; }
+}
+
+/* ═════════ ПРИЁМ 2026: счётчик и даты ═════════ */
+.count { display: grid; gap: 40px; padding-top: 16px; border-top: 1px solid var(--c-line-strong); }
+.count__big { display: grid; gap: 12px; align-content: start; }
+.count__num { font-family: var(--font-serif); font-size: clamp(6rem, 3rem + 12vw, 13rem); line-height: 0.85; letter-spacing: -0.03em; }
+.count__cap { margin-top: 20px; font-size: var(--fs-lead); line-height: 1.4; color: var(--c-text-2); max-width: 18em; }
+.dates { display: grid; }
+.dates > div { display: grid; grid-template-columns: 8.5rem minmax(0, 1fr); gap: 16px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid var(--c-line); }
+.dates dt { font-family: var(--font-serif); font-size: 1.25rem; }
+.dates dd { color: var(--c-text-2); }
+.count__cta { display: grid; gap: 10px; justify-items: start; margin-top: 32px; }
+@media (max-width: 479px) { .count__cta .btn { width: 100%; } }
+@media (min-width: 1024px) {
+  .count { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--grid-gap); padding-top: 32px; }
+}
+
+/* ═════════ КОНТАКТЫ + ЛИД ═════════ */
+.meet { display: grid; gap: 56px; }
+.ask { display: grid; gap: 20px; align-content: start; }
+.theme-nika main .ask__title { font-family: var(--font-serif); font-weight: 400; font-size: clamp(1.75rem, 1.35rem + 1.6vw, 2.75rem); line-height: 1.15; max-width: 16em; }
+.ask__text { color: var(--c-text-2); font-size: var(--fs-lead); }
+.ask__fields { display: grid; gap: 20px var(--grid-gap); }
+.ask__foot { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; }
+.ask__done { padding: 16px; border-left: 2px solid var(--c-blue); background: var(--c-bg-grey); }
+@media (max-width: 479px) { .ask__foot .btn--primary { width: 100%; } }
+.meet__list { display: grid; margin-top: 8px; }
+.meet__list > div { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--c-line); }
+.meet__list dt { font-size: 0.75rem; font-weight: 500; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--c-text-2); padding-top: 0.2em; }
+.meet__list a { color: var(--c-text); text-decoration-color: var(--c-line-strong); text-underline-offset: 0.22em; }
+.meet__list a:hover { color: var(--c-blue); }
+@media (min-width: 768px) { .ask__fields { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) {
+  .meet { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--grid-gap); column-gap: 64px; }
+}
+
+/* ═════════ ЛИПКАЯ ПАНЕЛЬ (мобильный) ═════════ */
+.dock { display: none; }
+@media (max-width: 767.98px) {
+  .dock {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    padding: 10px var(--gutter, 16px) calc(10px + env(safe-area-inset-bottom));
+    background: var(--c-slate); color: var(--c-on-dark-2); border-top: 1px solid var(--c-line-dark);
+    transform: translateY(100%); visibility: hidden;
+    transition: transform var(--dur-ui) var(--ease-out), visibility 0s linear var(--dur-ui);
+  }
+  .dock.is-visible { transform: none; visibility: visible; transition: transform var(--dur-ui) var(--ease-out), visibility 0s; }
+  .dock__when { font-size: var(--fs-small); line-height: 1.3; }
+  .dock__when strong { color: #ff6f96; font-weight: 600; }
+  .theme-nika .dock__btn { --btn-bg: #fff; --btn-fg: var(--c-slate); min-height: var(--hit); padding: 0 18px; }
+}
+@media (max-width: 767.98px) and (prefers-reduced-motion: reduce) {
+  .dock, .dock.is-visible { transition: none; }
+}
+
+/* ═════════ ДВИЖЕНИЕ «Кино» (слой system/motion.*) ═════════
+   1. Кадр открывается шторкой от горизонта (как проектор), затем видео проявляется из затемнения с медленным наездом.
+   2. При прокрутке сцена уходит в глубину: кадр уменьшается и темнеет, окружности доворачиваются, текст уезжает чуть быстрее.
+      Scroll-timeline под @supports; без него — один rAF в script.js. Reduced-motion: ничего из этого, постер на месте. */
+@media (prefers-reduced-motion: no-preference) {
+  .m-on .cine__media { animation: cine-open 1500ms var(--ease-in-out) 60ms both; }
+  .m-on .cine__video { transform: scale(1.08); transition: opacity 1400ms var(--ease-out), transform 3200ms var(--ease-expo); }
+  .m-on .cine__video.is-on { transform: none; }
+
+  @supports (animation-timeline: scroll()) {
+    .m-on .cine__media {
+      animation: cine-open 1500ms var(--ease-in-out) 60ms both, cine-depth linear both;
+      animation-timeline: auto, scroll(root);
+      animation-range-start: normal, 0px;
+      animation-range-end: normal, 100vh;
+    }
+    .m-on .cine__rings { animation: cine-rings linear both; animation-timeline: scroll(root); animation-range: 0px 100vh; }
+    .m-on .cine__inner { animation: cine-lift linear both; animation-timeline: scroll(root); animation-range: 0px 100vh; }
+  }
+
+  /* портреты: шторка длиннее, наезд медленнее — «доезд» камеры */
+  .m-on .face__photo[data-m="mask"] { --m-dur-long: 1400ms; }
+  .m-on .face__photo[data-m="mask"] > img { transition-duration: 2400ms; }
+  .m-on .alumni > li[data-m] { --m-shift: 16px; }
+
+  /* ось «В цифрах» и даты приёма вертикальные на узком экране — линия рисуется сверху вниз */
+  @media (max-width: 1023.98px) {
+    .m-on .axis[data-m="wipe"]:not(.m-in) { clip-path: inset(0 0 100% 0); }
+  }
+}
+@keyframes cine-open { from { clip-path: inset(47% 0 47% 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes cine-depth { to { transform: scale(0.88); opacity: 0.3; } }
+@keyframes cine-rings { to { rotate: 28deg; scale: 1.12; } }
+@keyframes cine-lift { to { translate: 0 -12vh; } }

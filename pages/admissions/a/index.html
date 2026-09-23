@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0f2c">
+  <title>Приёмная комиссия ТвГУ: поступление 2027 · вариант «Дедлайн»</title>
+  <meta name="description" content="Поступай в Тверской государственный университет в 2027 году: сколько дней до этапов приёма, проверка баллов ЕГЭ, ответы про стоимость, общежитие и Госуслуги.">
+  <link rel="preload" href="../../../assets/fonts/golos-text-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../../system/tokens.css">
+  <link rel="stylesheet" href="../../../system/base.css">
+  <link rel="stylesheet" href="../../../system/stub.css">
+  <link rel="stylesheet" href="../../../system/theme-dark.css">
+  <link rel="stylesheet" href="../../../system/motion.css">
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="../../../system/motion.js"></script>
+  <script src="../../../system/partials.js" defer></script>
+  <script src="../../../system/ui.js" defer></script>
+  <script src="common.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body data-nav="applicants">
+  <div data-include="header"></div>
+
+  <main id="main">
+    <!-- ═════ 1. Оффер + табло + этапы ═════ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero__grid">
+          <div class="hero__copy">
+            <h1 id="hero-title" data-m="words">Поступай в ТвГУ в&nbsp;2027</h1>
+            <p class="hero__lead" data-m="blur" data-m-delay="320">Бюджетные места, общежитие и 129 программ в Твери, между Москвой и Петербургом.</p>
+            <div class="hero__actions" data-m="blur" data-m-delay="440">
+              <a class="btn btn--accent btn--lg" href="#" data-primary-cta data-magnetic>Подать документы</a>
+              <a class="btn btn--text hero__link" href="#calc">Проверить баллы <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+            </div>
+          </div>
+
+          <div class="board" data-next-deadline>
+            <p class="board__label" data-next-label>До старта приёма документов</p>
+            <p class="board__value"><span class="num board__num" data-next-days>[N]</span> <span class="board__unit" data-next-unit>дней</span></p>
+            <p class="board__meta">[дата], 18:00 по Москве. Даты в макете условные, счёт дней настоящий</p>
+          </div>
+        </div>
+
+        <!-- этапы: механика от data-date (даты-примеры), видимый текст — [дата] -->
+        <div class="campaign" id="timeline" aria-labelledby="campaign-title">
+          <div class="campaign__head">
+            <h2 class="campaign__title" id="campaign-title">Этапы приёма 2027</h2>
+            <p class="campaign__note">Нажми на этап, и табло покажет дни до него</p>
+          </div>
+          <div class="campaign__scale">
+            <div class="campaign__track" aria-hidden="true"><span class="campaign__fill" data-campaign-fill></span><span class="campaign__today" data-campaign-today><span>сегодня</span></span></div>
+            <ol class="campaign__list" role="list" data-m-stagger style="--m-step: 70ms">
+              <li class="stage" data-m="fade" data-m-delay="500" data-date="2027-06-20" data-kind="start">
+                <span class="stage__date">[дата]</span>
+                <span class="stage__name">Старт приёма документов</span>
+                <span class="stage__status" data-stage-status></span>
+              </li>
+              <li class="stage" data-m="fade" data-m-delay="500" data-date="2027-07-10">
+                <span class="stage__date">[дата]</span>
+                <span class="stage__name">Конец приёма на творческие и внутренние испытания</span>
+                <span class="stage__status" data-stage-status></span>
+              </li>
+              <li class="stage" data-m="fade" data-m-delay="500" data-date="2027-07-25" data-kind="end">
+                <span class="stage__date">[дата]</span>
+                <span class="stage__name">Конец приёма по результатам ЕГЭ</span>
+                <span class="stage__status" data-stage-status></span>
+              </li>
+              <li class="stage" data-m="fade" data-m-delay="500" data-date="2027-07-30">
+                <span class="stage__date">[дата]</span>
+                <span class="stage__name">Согласие на зачисление</span>
+                <span class="stage__status" data-stage-status></span>
+              </li>
+              <li class="stage" data-m="fade" data-m-delay="500" data-date="2027-08-09">
+                <span class="stage__date">[дата]</span>
+                <span class="stage__name">Приказ о зачислении</span>
+                <span class="stage__status" data-stage-status></span>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════ 2. Доказательства одной строкой + партнёры ═════ -->
+    <section class="proof" aria-label="Почему ТвГУ">
+      <div class="container">
+        <ul class="facts" role="list" data-m="wipe">
+          <li><b class="num" data-count data-count-dur="1100">93-е</b> <span>место в России в Round University Ranking 2026</span></li>
+          <li><b>Топ-200</b> <span>Национального агрегированного рейтинга 2026</span></li>
+          <li><b class="num" data-count data-count-from="1700" data-count-dur="1400">1870</b> <span>год основания, от учительской школы Максимовича</span></li>
+          <li><b class="num" data-count>129</b> <span>программ на 15 факультетах и в институтах</span></li>
+        </ul>
+
+        <div class="partners ribbon" data-ribbon data-m="fade">
+          <div class="ribbon__head">
+            <h2 class="partners__title" id="partners-title">Практика и работа у партнёров</h2>
+            <div class="ribbon__nav">
+              <button class="btn-circle" type="button" data-ribbon-prev><span class="icon icon--arrow-left" aria-hidden="true"></span><span class="visually-hidden">Назад</span></button>
+              <button class="btn-circle" type="button" data-ribbon-next><span class="icon icon--arrow-right" aria-hidden="true"></span><span class="visually-hidden">Вперёд</span></button>
+            </div>
+          </div>
+          <div class="ribbon__track" role="list" aria-labelledby="partners-title">
+            <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Работодатель 1]</span></div>
+            <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Работодатель 2]</span></div>
+            <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Работодатель 3]</span></div>
+            <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Работодатель 4]</span></div>
+            <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Работодатель 5]</span></div>
+            <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Работодатель 6]</span></div>
+            <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Работодатель 7]</span></div>
+            <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Работодатель 8]</span></div>
+            <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Работодатель 9]</span></div>
+            <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Работодатель 10]</span></div>
+            <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Работодатель 11]</span></div>
+            <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Работодатель 12]</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════ 3. Проверка баллов ═════ -->
+    <section class="section calc" id="calc" aria-labelledby="calc-title">
+      <div class="container calc__grid">
+        <div class="calc__intro">
+          <h2 id="calc-title" data-m="words">Проверь, куда проходишь</h2>
+          <p class="calc__lead" data-m="blur" data-m-delay="120">Введи три предмета ЕГЭ. Покажем направления, где набор подходит, и проходной балл прошлого года.</p>
+          <form class="calc-form" data-calc data-calc-result="#calc-result" novalidate data-m="blur" data-m-delay="220">
+            <div class="calc-form__cols" aria-hidden="true"><span>Предмет</span><span>Балл</span></div>
+            <div class="calc-row" data-calc-row>
+              <label class="visually-hidden" for="s1">Предмет 1</label>
+              <select class="select" id="s1" data-calc-subject data-default="rus"><option value="">Выберите предмет</option></select>
+              <input class="input calc-score" id="b1" data-calc-score inputmode="numeric" pattern="[0-9]*" maxlength="3" placeholder="балл" aria-label="Балл, предмет 1">
+              <p class="calc-row__error" aria-live="polite"></p>
+            </div>
+            <div class="calc-row" data-calc-row>
+              <label class="visually-hidden" for="s2">Предмет 2</label>
+              <select class="select" id="s2" data-calc-subject data-default="math"><option value="">Выберите предмет</option></select>
+              <input class="input calc-score" id="b2" data-calc-score inputmode="numeric" pattern="[0-9]*" maxlength="3" placeholder="балл" aria-label="Балл, предмет 2">
+              <p class="calc-row__error" aria-live="polite"></p>
+            </div>
+            <div class="calc-row" data-calc-row>
+              <label class="visually-hidden" for="s3">Предмет 3</label>
+              <select class="select" id="s3" data-calc-subject><option value="">Третий предмет</option></select>
+              <input class="input calc-score" id="b3" data-calc-score inputmode="numeric" pattern="[0-9]*" maxlength="3" placeholder="балл" aria-label="Балл, предмет 3">
+              <p class="calc-row__error" aria-live="polite"></p>
+            </div>
+            <p class="calc-error" data-calc-error aria-live="polite"></p>
+            <div class="calc-form__actions">
+              <button class="btn btn--primary btn--lg" type="submit">Показать, куда прохожу</button>
+              <a class="btn btn--text" href="#">Все 129 программ <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+            </div>
+          </form>
+        </div>
+        <div class="calc__out" aria-live="polite">
+          <div class="calc-empty" data-calc-empty>
+            <p class="calc-empty__title">Здесь появятся направления</p>
+            <p class="calc-empty__text">Русский язык и математика уже выбраны: добавь третий предмет и баллы.</p>
+            <ul class="calc-empty__skel" role="list" aria-hidden="true" data-m-stagger style="--m-step: 90ms">
+              <li data-m="wipe" data-m-delay="300"></li><li data-m="wipe" data-m-delay="300"></li><li data-m="wipe" data-m-delay="300"></li>
+            </ul>
+          </div>
+          <div id="calc-result" data-calc-result hidden></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════ 4. Истории ═════ -->
+    <section class="section stories" aria-labelledby="stories-title">
+      <div class="container stories__grid">
+        <figure class="stories__photo" data-m="mask">
+          <img src="../../../assets/stub/photos/portrait-studentka-v-ochkah.jpg" alt="Студентка в очках слушает лекцию" width="2000" height="1333" loading="lazy">
+        </figure>
+        <div class="stories__body">
+          <h2 id="stories-title" data-m="words">Почему они выбрали ТвГУ</h2>
+          <figure class="quote" data-m="blur" data-m-delay="160">
+            <blockquote><p>«[Цитата-пример] Сравнила баллы в трёх вузах, здесь прошла на бюджет и осталась рядом с домом».</p></blockquote>
+            <figcaption><b>[Имя Фамилия]</b> Юриспруденция, 1 курс</figcaption>
+          </figure>
+          <ul class="quotes" role="list" data-m-stagger style="--m-step: 110ms">
+            <li data-m="blur" data-m-delay="320">
+              <figure class="quote quote--small">
+                <blockquote><p>«[Цитата-пример] Программирую с первого семестра, а не с третьего».</p></blockquote>
+                <figcaption><b>[Имя Фамилия]</b> Прикладная математика и информатика</figcaption>
+              </figure>
+            </li>
+            <li data-m="blur" data-m-delay="320">
+              <figure class="quote quote--small">
+                <blockquote><p>«[Цитата-пример] Приехал из области, в сентябре уже вёл посвящение».</p></blockquote>
+                <figcaption><b>[Имя Фамилия]</b> История, 1 курс</figcaption>
+              </figure>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════ 5. Вопросы-возражения ═════ -->
+    <section class="section faq" id="faq" aria-labelledby="faq-title">
+      <div class="container faq__grid">
+        <div class="faq__side">
+          <h2 id="faq-title" data-m="words">Вопросы перед подачей</h2>
+          <p class="faq__text" data-m="fade" data-m-delay="200">Не нашли ответ? Ответим в течение рабочего дня.</p>
+          <a class="btn btn--text" href="#ask" data-m="fade" data-m-delay="260">Задать свой вопрос <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+        </div>
+        <div class="accordion faq__list" data-m-stagger style="--m-step: 45ms">
+          <details data-m="fade" class="accordion__item" name="faq" id="faq-steps">
+            <summary class="accordion__summary">Как поступить: пять шагов</summary>
+            <div class="accordion__body">
+              <ol class="faq-steps" role="list">
+                <li><b>Выбери направления.</b> До [N] направлений в одном вузе, порядок приоритетов решаешь сам.</li>
+                <li><b>Проверь баллы</b> в калькуляторе выше: сравни свои ЕГЭ с проходными прошлого года.</li>
+                <li><b>Подай заявление</b> на Госуслугах, в личном кабинете абитуриента или лично на Желябова, 33.</li>
+                <li><b>Дай согласие на зачисление</b> до срока и следи за конкурсными списками.</li>
+                <li><b>Зачисление:</b> приказ, заселение в общежитие и 1 сентября во дворе на Желябова.</li>
+              </ol>
+            </div>
+          </details>
+          <details data-m="fade" class="accordion__item" name="faq" id="faq-cost">
+            <summary class="accordion__summary">Сколько стоит обучение и есть ли стипендия?</summary>
+            <div class="accordion__body"><p>Платное обучение от [N] ₽ в год, цена зависит от программы и формы. Можно оплатить материнским капиталом и вернуть налоговый вычет. Стипендия от [N] ₽ в месяц: академическая, социальная, повышенная за учёбу, науку, спорт и творчество.</p></div>
+          </details>
+          <details data-m="fade" class="accordion__item" name="faq" id="faq-dorm">
+            <summary class="accordion__summary">Дадут ли общежитие на первом курсе?</summary>
+            <div class="accordion__body"><p>Иногородним студентам очной формы. [N] корпусов, мест для первого курса: [N], стоимость [N] ₽ в месяц; льготные категории по закону живут бесплатно. Заявку на заселение подают вместе с документами.</p></div>
+          </details>
+          <details data-m="fade" class="accordion__item" name="faq">
+            <summary class="accordion__summary">Сколько бюджетных мест и какие были проходные?</summary>
+            <div class="accordion__body"><p>Бюджетных мест в 2027: [N]. Проходные баллы 2025 по программам: [N], они есть в калькуляторе и в карточке программы. Индивидуальные достижения (медаль, ГТО, волонтёрство) добавляют до 10 баллов.</p></div>
+          </details>
+          <details data-m="fade" class="accordion__item" name="faq" id="faq-gosuslugi">
+            <summary class="accordion__summary">Как подать документы через Госуслуги?</summary>
+            <div class="accordion__body"><p>В сервисе «Поступление в вуз онлайн» выберите ТвГУ, направления и приоритеты, приложите паспорт, документ об образовании, СНИЛС и документы о достижениях. Статус заявления виден там же и в личном кабинете абитуриента. Полный список: [ссылка на правила приёма 2027].</p></div>
+          </details>
+          <details data-m="fade" class="accordion__item" name="faq">
+            <summary class="accordion__summary">Как попасть на целевое обучение?</summary>
+            <div class="accordion__body"><p>Найдите заказчика на Госуслугах в «Работе России», подайте заявку на целевое, затем заявление в ТвГУ. Конкурс отдельный: [N] целевых мест, оплата учёбы и стипендия от заказчика, работа после диплома. Заказчики: [организации региона].</p></div>
+          </details>
+          <details data-m="fade" class="accordion__item" name="faq">
+            <summary class="accordion__summary">Поступаю из другой страны. С чего начать?</summary>
+            <div class="accordion__body"><p>Квота Правительства РФ и контракт [уточнить], подготовка по русскому языку [уточнить], помощь с визой и общежитием. Раздел для иностранных абитуриентов есть на <span lang="en">English</span>, <span lang="fr">Français</span> и <span lang="zh">中文</span>.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════ 6. Срочность + лид + контакты ═════ -->
+    <section class="section ask" id="ask" aria-labelledby="ask-title">
+      <div class="container ask__grid">
+        <div class="ask__copy">
+          <p class="ask__deadline" data-m="fade" data-ask-deadline>До конца приёма документов: [N] дней</p>
+          <h2 id="ask-title" data-m="words" data-m-delay="80">Не успеваешь разобраться? Спроси нас</h2>
+          <p class="ask__lead" data-m="blur" data-m-delay="200">Ответим в Telegram или по телефону и напомним за три дня до конца приёма.</p>
+          <div class="ask__contacts" id="contacts" data-m="fade" data-m-delay="320">
+            <a class="ask__phone num" href="tel:+74822321514">+7 (4822) 32-15-14</a>
+            <p>Тверь, ул. Желябова, 33, кабинет [N]. [Дни и часы работы]</p>
+            <a class="btn btn--text" href="#">День открытых дверей [дата]: записаться <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+          </div>
+        </div>
+        <form class="lead-form" data-lead novalidate data-m="blur" data-m-delay="260">
+          <div data-lead-body class="lead-form__body">
+            <div class="field">
+              <label class="field__label" for="lead-contact">Телефон или Telegram</label>
+              <input class="input" id="lead-contact" name="contact" type="text" inputmode="text" autocomplete="tel" placeholder="+7 900 000-00-00 или @ник" aria-describedby="lead-contact-err">
+              <p class="field__error" id="lead-contact-err" hidden></p>
+            </div>
+            <div class="field">
+              <label class="field__label" for="lead-q">Вопрос</label>
+              <input class="input" id="lead-q" name="question" type="text" placeholder="Есть ли бюджет на психологии?" aria-describedby="lead-q-err">
+              <p class="field__error" id="lead-q-err" hidden></p>
+            </div>
+            <button class="btn btn--primary btn--lg" type="submit">Задать вопрос</button>
+            <p class="lead-form__legal">Нажимая кнопку, соглашаетесь на обработку персональных данных</p>
+          </div>
+          <div class="lead-done" data-lead-done tabindex="-1" role="status" hidden>
+            <p class="lead-done__title"><svg class="ti" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10"/></svg>Вопрос отправлен</p>
+            <p>Ответим в течение рабочего дня. А пока проверьте, куда проходите по баллам.</p>
+            <div class="lead-done__actions">
+              <a class="btn btn--text" href="#calc">Проверить баллы <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+              <button class="btn btn--text" type="button" data-lead-again>Задать ещё вопрос</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="footer"></div>
+
+  <!-- липкая панель действия (мобильный) -->
+  <div class="sticky-cta is-hidden" data-sticky-cta>
+    <p class="sticky-cta__meta"><b data-sticky-days>Приём 2027</b>документы онлайн за 15 минут</p>
+    <a class="btn btn--accent" href="#">Подать документы</a>
+  </div>
+
+  <!-- чат -->
+  <div class="chat-fab" data-chat>
+    <div class="chat-fab__panel" id="chat-panel" data-chat-panel role="dialog" aria-labelledby="chat-title" hidden>
+      <div class="chat-fab__head">
+        <div>
+          <p class="chat-fab__title" id="chat-title">Приёмная комиссия онлайн</p>
+          <p class="chat-fab__sub">Отвечаем с [часы] по будням</p>
+        </div>
+        <button class="chat-fab__close" type="button" data-chat-close><svg class="ti" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6l-12 12"/><path d="M6 6l12 12"/></svg><span class="visually-hidden">Закрыть чат</span></button>
+      </div>
+      <ul class="chat-fab__list" role="list">
+        <li><a href="#calc">Куда я прохожу с моими баллами? <span class="icon icon--arrow-right" aria-hidden="true"></span></a></li>
+        <li><a href="#faq-dorm">Сколько стоит общежитие? <span class="icon icon--arrow-right" aria-hidden="true"></span></a></li>
+        <li><a href="#faq-gosuslugi">Как подать через Госуслуги? <span class="icon icon--arrow-right" aria-hidden="true"></span></a></li>
+      </ul>
+      <div class="chat-fab__foot"><a class="btn btn--primary btn--block" href="#">Написать в Telegram [бот]</a></div>
+    </div>
+    <button class="chat-fab__btn" type="button" aria-expanded="false" aria-controls="chat-panel" data-chat-toggle>
+      <svg class="ti" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20l1.3 -3.9c-2.324 -3.437 -1.426 -7.872 2.1 -10.374c3.526 -2.501 8.59 -2.296 11.845 .48c3.255 2.777 3.695 7.266 1.029 10.501c-2.666 3.235 -7.615 4.215 -11.574 2.293l-4.7 1"/></svg>
+      <span class="visually-hidden">Чат с приёмной комиссией</span>
+    </button>
+  </div>
+</body>
+</html>

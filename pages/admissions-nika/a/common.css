@@ -1,0 +1,295 @@
+/* admissions-nika — общие компоненты приёмки в языке Ники (одинаковый файл в a/b/c).
+   Только то, чего нет в system/theme-nika.css. Кандидаты на подъём в тему: .adm-sub, .adm-dates, .adm-bar, .adm-fab, .calc, .lead. */
+
+.theme-nika main { --adm-sub-h: 48px; }
+.theme-nika main :where(h1, h2) { text-wrap: balance; }
+.theme-nika ::placeholder { color: var(--c-text-2); }
+html { scroll-padding-top: calc(var(--header-h-compact) + var(--adm-sub-h, 48px) + 16px); }
+
+/* ═════════ Подменю раздела: тонкий капс через вертикальные линии, лента на мобильном, липкое ═════════ */
+.adm-sub {
+  position: sticky; top: 0; z-index: 90;
+  background: #fff; border-bottom: 1px solid var(--c-line);
+  transition: top var(--dur-ui) var(--ease-out);
+}
+.hdr-compact .adm-sub { top: var(--header-h-compact); }
+.adm-sub__inner { position: relative; }
+.adm-search-wrap, .adm-actions, .adm-dates { min-width: 0; }
+.adm-sub .adm-sub__list {
+  display: flex; list-style: none; padding: 0; margin: 0 calc(-1 * var(--gutter));
+  padding-inline: var(--gutter); scroll-padding-inline: var(--gutter);
+  overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: none;
+  overscroll-behavior-x: contain;
+}
+.adm-sub__list::-webkit-scrollbar { display: none; }
+.adm-sub__list > li { flex: none; scroll-snap-align: start; display: flex; align-items: center; }
+.adm-sub__list > li + li::before { content: ""; width: 1px; height: 16px; background: var(--c-line-strong); }
+.adm-sub__link {
+  display: inline-flex; align-items: center; min-height: 48px; padding: 0 16px;
+  font-size: 0.8125rem; font-weight: 500; letter-spacing: var(--tracking-caps); text-transform: uppercase;
+  color: var(--c-text); text-decoration: none; white-space: nowrap;
+  transition: color var(--dur-fast) ease;
+}
+.adm-sub__list > li:first-child .adm-sub__link { padding-left: 0; }
+.adm-sub__link:hover { color: var(--c-blue); }
+.adm-sub__link[aria-current="true"] { color: var(--c-blue); box-shadow: inset 0 -2px 0 var(--c-blue); }
+@media (min-width: 1280px) {
+  .adm-sub .adm-sub__list { margin: 0; padding: 0; overflow: visible; justify-content: space-between; }
+  .adm-sub__list > li:last-child .adm-sub__link { padding-right: 0; }
+}
+@media (max-width: 1279.98px) {           /* видимый край ленты справа */
+  .adm-sub__inner::after {
+    content: ""; position: absolute; top: 0; bottom: 0; right: 0; width: 40px; pointer-events: none;
+    background: linear-gradient(to right, rgb(255 255 255 / 0), #fff);
+  }
+}
+/* подменю на тёмной полосе (вариант b) */
+.adm-sub--slate { background: var(--c-slate); border-bottom-color: var(--c-line-dark); }
+.adm-sub--slate .adm-sub__link { color: #fff; }
+.adm-sub--slate .adm-sub__link:hover { color: #c5cbe0; }
+.adm-sub--slate .adm-sub__list > li + li::before { background: var(--c-line-dark); }
+@media (max-width: 1279.98px) { .adm-sub--slate .adm-sub__inner::after { background: linear-gradient(to right, rgb(31 42 68 / 0), var(--c-slate)); } }
+
+/* ═════════ Поиск программы в тонкой рамке ═════════ */
+.adm-search { display: flex; align-items: stretch; max-width: 560px; border: 1px solid var(--c-control-line); border-radius: 6px; background: #fff; transition: border-color var(--dur-fast) ease, box-shadow var(--dur-fast) ease; }
+.adm-search:focus-within { border-color: var(--c-blue); box-shadow: 0 0 0 1px var(--c-blue); }
+.adm-search svg.i { align-self: center; margin-left: 14px; color: var(--c-text-2); width: 20px; height: 20px; }
+.adm-search input {
+  flex: 1 1 0; width: 0; min-width: 0; min-height: 52px; padding: 0 12px;
+  font: inherit; font-size: 1rem; color: var(--c-text); background: transparent; border: 0; outline: none;
+}
+.adm-search input::-webkit-search-cancel-button { display: none; }
+.adm-search button {
+  flex: none; min-height: 44px; margin: 4px; padding: 0 16px;
+  font: inherit; font-weight: 500; color: var(--c-blue); background: transparent;
+  border: 0; border-left: 1px solid var(--c-line); border-radius: 0 4px 4px 0; cursor: pointer;
+}
+.adm-search button:hover { color: var(--c-blue-hover); background: var(--c-blue-tint); }
+.adm-search__hint { margin-top: 8px; font-size: var(--fs-small); color: var(--c-text-2); }
+/* ответ поиска: до трёх строк через тонкие линии */
+.adm-hits { list-style: none; padding: 0; margin-top: 8px; max-width: 560px; border-top: 1px solid var(--c-line); }
+.adm-hits > li { border-bottom: 1px solid var(--c-line); }
+.adm-hits a { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 12px; min-height: 44px; padding: 10px 0; color: var(--c-text); text-decoration: none; }
+.adm-hits__name { font-weight: 500; }
+.adm-hits__fac { font-size: var(--fs-small); color: var(--c-text-2); }
+.adm-hits a:hover .adm-hits__name { color: var(--c-blue); }
+.section--slate .adm-hits { border-top-color: var(--c-line-dark); }
+.section--slate .adm-hits > li { border-bottom-color: var(--c-line-dark); }
+.section--slate .adm-hits a { color: #fff; }
+.section--slate .adm-hits__fac { color: var(--c-on-dark-2); }
+.section--slate .adm-hits a:hover .adm-hits__name { color: #c5cbe0; }
+@media (prefers-reduced-motion: no-preference) {
+  .adm-hits > li { animation: adm-hit 220ms var(--ease-out) both; animation-delay: calc(var(--k, 0) * 50ms); }
+  @keyframes adm-hit { from { opacity: 0; transform: translate3d(0, 8px, 0); } }
+}
+.section--slate .adm-search { border-color: rgb(255 255 255 / 0.55); background: rgb(31 42 68 / 0.72); }
+.section--slate .adm-search:focus-within { border-color: #fff; box-shadow: 0 0 0 1px #fff; }
+.section--slate .adm-search input { color: #fff; }
+.section--slate .adm-search input::placeholder { color: var(--c-on-dark-2); }
+.section--slate .adm-search svg.i { color: var(--c-on-dark-2); }
+.section--slate .adm-search button { color: #fff; border-left-color: var(--c-line-dark); }
+.section--slate .adm-search button:hover { background: rgb(255 255 255 / 0.08); color: #fff; }
+.section--slate .adm-search__hint { color: var(--c-on-dark-2); }
+
+.adm-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; }
+@media (max-width: 479.98px) { .adm-actions .btn { width: 100%; } }
+
+/* ═════════ Ключевые даты: строки «дата — событие» с линиями ═════════ */
+.adm-dates { background: #fff; border: 1px solid var(--c-line); border-radius: 8px; padding: 24px; }
+@media (min-width: 768px) { .adm-dates { padding: 28px 32px; } }
+.adm-dates__head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding-bottom: 16px; }
+.adm-dates__list { list-style: none; padding: 0; border-top: 1px solid var(--c-text); }
+.adm-dates__row { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--c-line); }
+.adm-dates__when { font-weight: 500; font-variant-numeric: tabular-nums lining-nums; }
+.adm-dates__what { color: var(--c-text); line-height: 1.45; }
+.adm-dates__what small { display: block; margin-top: 2px; font-size: var(--fs-small); color: var(--c-text-2); }
+.adm-dates__row.is-deadline .adm-dates__when { color: var(--c-red-text); }
+.adm-dates__foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; padding-top: 12px; }
+
+/* ═════════ Факты-доказательства строками ═════════ */
+.adm-facts { display: grid; grid-template-columns: minmax(0, 1fr); border-top: 1px solid var(--c-line); }
+.adm-facts > div { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); align-items: baseline; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--c-line); }
+.adm-facts dd { order: -1; font-family: var(--font-serif); font-size: 2.25rem; line-height: 1; font-variant-numeric: lining-nums; letter-spacing: -0.01em; }
+.adm-facts dt { color: var(--c-text-2); line-height: 1.4; }
+.adm-facts dt b { display: block; font-weight: 500; color: var(--c-text); }
+
+/* ═════════ Уровни: число программ антиквой 40 px ═════════ */
+.adm-count { font-family: var(--font-serif); font-size: 2.5rem; line-height: 1; color: var(--c-text); font-variant-numeric: lining-nums; }
+.n-card:hover .adm-count, .n-card:focus-visible .adm-count { color: var(--c-blue); }
+.adm-count small { display: block; margin-top: 8px; font-family: var(--font-sans); font-size: var(--fs-small); color: var(--c-text-2); }
+.adm-more { display: inline-flex; align-items: center; gap: 8px; font-weight: 500; color: var(--c-blue); }
+.adm-more .icon { width: 1.1em; height: 1.1em; }
+
+/* ═════════ Сроки и правила: карточка аккордеона ═════════ */
+.adm-rule > * + * { margin-top: 20px; }
+.theme-nika .adm-rule > .n-docs { max-width: none; }
+.theme-nika .n-table tbody th[scope="row"] {
+  font-size: inherit; font-weight: 500; letter-spacing: 0; text-transform: none; color: var(--c-text);
+  border-bottom: 1px solid var(--c-line); padding: 18px 24px 18px 0; text-align: left; vertical-align: top;
+}
+.adm-rule .n-docs { margin-top: 24px; }
+
+/* ═════════ Калькулятор баллов ═════════ */
+.calc-card { background: #fff; border: 1px solid var(--c-line); border-radius: 8px; padding: 24px 20px; }
+@media (min-width: 768px) { .calc-card { padding: 32px; } }
+@media (min-width: 1024px) { .calc-card { padding: 40px; } }
+.calc fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+.calc legend { padding: 0; margin-bottom: 12px; font-weight: 500; font-size: 1.0625rem; }
+.calc__rows { display: grid; gap: 12px; }
+.calc__row { display: grid; grid-template-columns: minmax(0, 1fr) 6rem; gap: 8px 12px; align-items: start; }
+.calc__row .field { gap: 6px; min-width: 0; }
+.calc .select { width: 100%; min-width: 0; }
+.calc__row .field__label { font-size: var(--fs-small); color: var(--c-text-2); font-weight: 400; }
+.calc__row .input { text-align: right; font-variant-numeric: tabular-nums; }
+.calc__row .field__error { grid-column: 1 / -1; margin-top: -4px; }
+.calc .calc__checks { display: grid; gap: 0; margin-top: 28px; }
+.calc__checks .check { width: 100%; }
+.calc__checks .check small { color: var(--c-text-2); font-size: var(--fs-small); margin-left: 4px; }
+.calc__submit { margin-top: 20px; white-space: normal; text-align: left; }
+@media (max-width: 479.98px) { .calc__submit { width: 100%; } }
+.calc__demo { margin-top: 16px; font-size: var(--fs-small); color: var(--c-text-2); max-width: 46ch; }
+
+.calc-out { min-width: 0; }
+.calc-out__empty { display: grid; gap: 12px; align-content: start; color: var(--c-text-2); }
+.calc-out__empty svg { width: 100%; max-width: 280px; height: auto; }
+.calc-out__sum { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; padding-bottom: 16px; border-bottom: 1px solid var(--c-text); }
+.calc-out__total { font-family: var(--font-serif); font-size: clamp(2.5rem, 2rem + 2vw, 3.5rem); line-height: 1; font-variant-numeric: lining-nums tabular-nums; }
+.calc-out__label { color: var(--c-text-2); }
+.calc-res { list-style: none; padding: 0; }
+.calc-res__item { display: grid; gap: 8px; padding: 18px 0; border-bottom: 1px solid var(--c-line); }
+.calc-res__name { font-weight: 500; font-size: 1.0625rem; line-height: 1.35; }
+.calc-res__fac { font-size: var(--fs-small); color: var(--c-text-2); }
+.calc-res__nums { display: flex; flex-wrap: wrap; gap: 4px 20px; font-size: var(--fs-small); color: var(--c-text-2); font-variant-numeric: tabular-nums; }
+.calc-res__nums b { font-weight: 500; color: var(--c-text); }
+.calc-res__status {
+  justify-self: start; display: inline-flex; align-items: center; min-height: 26px; padding: 0 8px;
+  font-size: var(--fs-small); font-weight: 500; border-radius: 6px; border: 1px solid var(--c-line);
+}
+.calc-res__status.is-pass { color: var(--c-blue); border-color: var(--c-blue); }
+.calc-res__status.is-near { color: var(--c-text); border-color: var(--c-line-strong); }
+.calc-res__status.is-paid { color: var(--c-text-2); }
+.calc-res__scale { position: relative; height: 18px; margin-top: 4px; }
+.calc-res__scale::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: var(--c-line-strong); }
+.calc-res__tick { position: absolute; top: 1px; bottom: 1px; width: 1px; background: var(--c-text); left: var(--tick); }
+.calc-res__dot {
+  position: absolute; top: 50%; left: 0; width: 11px; height: 11px; margin: -5.5px 0 0 -5.5px; border-radius: 50%;
+  background: var(--c-blue); box-shadow: 0 0 0 4px var(--c-blue-tint);
+  transform: translateX(var(--dot, 0px));
+  transition: transform 520ms var(--ease-out);
+}
+/* Ответ калькулятора в движении: строка встаёт (слой data-m), шкала прочерчивается слева направо,
+   риска порога падает резко, точка «ваш балл» доезжает до своего места. Всё привязано к .m-in строки. */
+@media (prefers-reduced-motion: no-preference) {
+  .m-on .calc-res__scale::before { transform-origin: left center; transition: transform 700ms var(--ease-in-out); transition-delay: calc(var(--m-i, 0) * 60ms + 120ms); }
+  .m-on .calc-res__item:not(.m-in) .calc-res__scale::before { transform: scaleX(0); }
+  .m-on .calc-res__tick { transform-origin: center bottom; transition: transform 140ms var(--ease-out), opacity 0ms linear; transition-delay: calc(var(--m-i, 0) * 60ms + 620ms); }
+  .m-on .calc-res__item:not(.m-in) .calc-res__tick { transform: scaleY(0); opacity: 0; }
+  .m-on .calc-res__dot { transition: transform 900ms var(--ease-expo), opacity 160ms ease-out; transition-delay: calc(var(--m-i, 0) * 60ms + 420ms); }
+  .m-on .calc-res__item:not(.m-in) .calc-res__dot { transform: translateX(0); opacity: 0; }
+}
+/* Своя «прорисовка» варианта (data-m="draw"): контейнер виден сразу, движутся его части — правила в style.css варианта */
+.m-on [data-m="draw"]:not(.m-in) { opacity: 1; transform: none; }
+.calc-out__foot .btn { white-space: normal; text-align: left; }
+.calc-out__foot { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; padding-top: 20px; }
+.calc-out__note { margin-top: 12px; font-size: var(--fs-small); color: var(--c-text-2); }
+
+/* ═════════ Документы: два действия ═════════ */
+.adm-doc-actions { display: flex; flex-wrap: wrap; gap: 0 20px; grid-column: 2; }
+.adm-doc-actions .btn--text { min-height: 44px; }
+@media (min-width: 768px) {
+  .theme-nika .n-doc .adm-doc-actions { grid-column: 4; grid-row: 1 / span 2; }
+}
+.n-sign small { font-weight: 400; color: var(--c-text-2); }
+
+/* ═════════ Обращение ═════════ */
+.adm-address { display: grid; gap: 28px; }
+.adm-address__person { max-width: 240px; }
+.adm-quote { font-family: var(--font-serif); font-style: italic; font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.25rem); line-height: 1.3; letter-spacing: -0.01em; max-width: 30ch; text-wrap: pretty; }
+.adm-address__text { display: grid; gap: 24px; align-content: start; }
+@media (min-width: 768px) { .adm-address { grid-template-columns: 220px minmax(0, 1fr); gap: 48px; align-items: start; } }
+
+/* ═════════ Мягкий лид: форма «Задать вопрос» ═════════ */
+.ask-form { display: grid; gap: 20px var(--grid-gap); max-width: var(--measure); }
+.ask-form .textarea { min-height: 112px; }
+.ask-form__consent { font-size: var(--fs-small); color: var(--c-text-2); }
+.ask-form__consent a { color: inherit; }
+@media (min-width: 768px) { .ask-form { grid-template-columns: repeat(2, minmax(0, 1fr)); } .ask-form__wide { grid-column: 1 / -1; } }
+.ask-form__row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+@media (max-width: 479.98px) { .ask-form__row .btn { width: 100%; } }
+.lead-sent { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 4px 16px; align-items: start; max-width: var(--measure); padding: 24px; background: #fff; border: 1px solid var(--c-line); border-radius: 8px; }
+.lead-sent svg.i { width: 32px; height: 32px; color: var(--c-blue); grid-row: span 3; stroke-width: 1.5; }
+.lead-sent__title { font-weight: 500; font-size: 1.125rem; }
+.lead-sent p:not(.lead-sent__title) { color: var(--c-text-2); }
+.lead-sent .btn--text { justify-self: start; }
+.section--slate .lead-sent { background: transparent; border-color: var(--c-line-dark); }
+.section--slate .lead-sent p:not(.lead-sent__title) { color: var(--c-on-dark-2); }
+.section--slate .lead-sent svg.i { color: #8f9ce6; }
+
+/* ═════════ Контакты ═════════ */
+.adm-contacts { display: grid; gap: 32px var(--grid-gap); }
+.adm-contacts > *, .adm-contacts__list dd { min-width: 0; overflow-wrap: anywhere; }
+.adm-contacts__list { border-top: 1px solid var(--c-line); }
+.adm-contacts__list > div { display: grid; gap: 4px; padding: 16px 0; border-bottom: 1px solid var(--c-line); }
+.adm-contacts__list dt { font-size: 0.75rem; font-weight: 500; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--c-text-2); }
+.adm-contacts__list dd { font-size: 1.0625rem; }
+.adm-contacts__list a { color: var(--c-text); text-decoration-thickness: 1px; text-underline-offset: 0.22em; }
+.adm-contacts__list a:hover { color: var(--c-blue); }
+.adm-phone { font-family: var(--font-serif); font-size: 1.75rem !important; line-height: 1.2; }
+.adm-map { border-radius: 4px; }
+@media (min-width: 1024px) { .adm-contacts { grid-template-columns: 5fr 4fr; align-items: start; } }
+
+/* ═════════ Липкая панель «Подать документы» на мобильном ═════════ */
+.adm-bar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 95;
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px var(--gutter) calc(10px + env(safe-area-inset-bottom));
+  background: #fff; border-top: 1px solid var(--c-line);
+  box-shadow: 0 -8px 24px -12px rgb(31 42 68 / 0.18);
+  transform: translateY(0);
+  transition: transform var(--dur-ui) var(--ease-out), visibility 0s linear 0s;
+}
+.adm-bar.is-hidden { transform: translateY(110%); visibility: hidden; transition: transform var(--dur-ui) var(--ease-out), visibility 0s linear var(--dur-ui); }
+.adm-bar__note { flex: 1; min-width: 0; font-size: var(--fs-small); line-height: 1.3; color: var(--c-text-2); }
+.adm-bar__note strong { display: block; color: var(--c-red-text); font-weight: 600; }
+.adm-bar .btn { flex: none; min-height: 48px; padding: 0 18px; }
+.adm-bar-space { height: 76px; }
+@media (min-width: 1024px) { .adm-bar, .adm-bar-space { display: none; } }
+
+/* ═════════ Плавающая «Задать вопрос» в кружке ═════════ */
+.adm-fab {
+  position: fixed; right: var(--gutter); bottom: calc(88px + env(safe-area-inset-bottom)); z-index: 94;
+  display: inline-grid; place-items: center; width: 56px; height: 56px;
+  color: var(--c-blue); background: #fff; border: 1px solid var(--c-line-strong); border-radius: 50%;
+  box-shadow: var(--shadow-pop);
+  text-decoration: none;
+  transition: border-color var(--dur-fast) ease, color var(--dur-fast) ease, opacity var(--dur-ui) ease, transform var(--dur-ui) var(--ease-out), visibility 0s linear 0s;
+}
+.adm-fab svg.i { width: 26px; height: 26px; stroke-width: 1.5; }
+.adm-fab:hover { border-color: var(--c-blue); }
+.adm-fab:active { transform: scale(0.96); }
+.adm-fab.is-hidden { opacity: 0; transform: scale(0.92); visibility: hidden; pointer-events: none; transition: opacity var(--dur-ui) ease, transform var(--dur-ui) var(--ease-out), visibility 0s linear var(--dur-ui); }
+.adm-fab__tip {
+  position: absolute; right: calc(100% + 12px); top: 50%; transform: translateY(-50%);
+  padding: 6px 10px; font-size: var(--fs-small); font-weight: 500; white-space: nowrap;
+  color: var(--c-text); background: #fff; border: 1px solid var(--c-line); border-radius: 6px;
+  opacity: 0; pointer-events: none; transition: opacity var(--dur-fast) ease;
+}
+@media (hover: hover) and (pointer: fine) { .adm-fab:hover .adm-fab__tip, .adm-fab:focus-visible .adm-fab__tip { opacity: 1; } }
+@media (min-width: 1024px) { .adm-fab { bottom: 32px; right: 32px; } }
+
+/* ═════════ Мелкое ═════════ */
+.adm-note { font-size: var(--fs-small); color: var(--c-text-2); }
+.adm-lead-in { max-width: 40rem; }
+.adm-band-intro { margin-bottom: 32px; }
+.adm-band-intro > * + * { margin-top: 12px; }
+.adm-photo { position: relative; overflow: hidden; border-radius: 2px; background: var(--c-bg-grey); }
+.adm-photo > img { width: 100%; height: 100%; object-fit: cover; }
+.theme-nika .partners .ribbon__track { scroll-snap-type: x mandatory; }
+.adm-red { color: var(--c-red-text); font-weight: 600; }
+.section--slate .adm-red { color: #ff6f96; }
+
+/* карточки стоимости: без пустоты между числом и подписью */
+.adm-cost-cards .n-card { min-height: 0; gap: 28px; justify-content: flex-start; }
+@media (min-width: 1024px) { .adm-cost-cards .n-card { min-height: 240px; justify-content: space-between; } }
+
+.adm-contacts__cta .btn { white-space: normal; text-align: left; max-width: 100%; }

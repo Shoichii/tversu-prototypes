@@ -1,0 +1,99 @@
+/* admissions-nika / a — «Белый»: страница как сверстанный документ кампании. */
+
+/* ───── Hero: белый, h1 и поиск слева, карточка дат справа ───── */
+.a-hero { padding-block: clamp(40px, 2rem + 4vw, 88px) clamp(48px, 2rem + 4vw, 96px); }
+.a-hero__grid { row-gap: 40px; align-items: start; }
+.a-hero__copy { display: grid; gap: 24px; align-content: start; min-width: 0; }
+.a-hero__copy > * { min-width: 0; }
+.a-calc > * { min-width: 0; }
+.a-hero__copy h1 { max-width: 16em; }
+.a-hero__lead { max-width: 36rem; }
+.a-hero__copy .adm-actions { margin-top: 8px; }
+@media (min-width: 1024px) {
+  .a-hero__copy { padding-right: 24px; }
+  .a-hero__dates { padding-top: 8px; }
+}
+
+/* ───── Доказательства: приглушённый кадр ярмарки + факты строками ───── */
+.a-proof__grid { row-gap: 32px; align-items: start; }
+.a-proof__media { display: grid; gap: 12px; }
+.a-proof__photo { aspect-ratio: 3 / 2; }
+.a-proof__facts { display: grid; gap: 20px; align-content: start; }
+.a-proof__facts .band-label { padding-bottom: 4px; }
+.a-proof__rank { color: var(--c-text); }
+.a-proof__rank b { font-weight: 600; }
+.a-proof__alumni { color: var(--c-text-2); max-width: 40ch; }
+@media (min-width: 1024px) {
+  .a-proof__photo { aspect-ratio: 4 / 3; }
+  .a-proof__facts { padding-left: 16px; }
+}
+
+/* ───── Как поступить ───── */
+.a-how__foot { margin-top: 8px; }
+@media (min-width: 768px) { .a-how__foot { margin-top: 32px; } }
+
+/* ───── Уровни: 2×2 → 4 в ряд на широком ───── */
+.a-levels .n-card { min-height: 220px; }
+.a-levels .n-card__body { gap: 6px; }
+.a-levels .adm-more { margin-top: 10px; }
+@media (min-width: 1280px) { .a-levels { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+/* ───── Калькулятор: белая карточка «поля | ответ» ───── */
+.a-calc { display: grid; gap: 32px; }
+@media (min-width: 1024px) {
+  .a-calc { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 48px; }
+  .a-calc .calc-out { padding-left: 48px; border-left: 1px solid var(--c-line); }
+}
+@media (max-width: 1023.98px) { .a-calc .calc-out { padding-top: 28px; border-top: 1px solid var(--c-line); } }
+
+/* ───── Ключевые даты: линии-шкала вместо рамок строк (одинаково в покое и в движении) ───── */
+.a-hero .adm-dates__list { position: relative; border-top: 0; }
+.a-hero .adm-dates__list::before,
+.a-hero .adm-dates__row::after { content: ""; position: absolute; left: 0; right: 0; height: 1px; pointer-events: none; }
+.a-hero .adm-dates__list::before { top: 0; background: var(--c-text); }
+.a-hero .adm-dates__row { position: relative; border-bottom: 0; }
+.a-hero .adm-dates__row::after { bottom: 0; background: var(--c-line); }
+/* ближайший дедлайн — красная точка на полях у даты */
+.a-hero .adm-dates__when { position: relative; }
+.a-hero .adm-dates__row.is-deadline .adm-dates__when::before {
+  content: ""; position: absolute; left: -15px; top: 0.5em; width: 7px; height: 7px; border-radius: 50%; background: var(--c-red);
+}
+@media (min-width: 768px) { .a-hero .adm-dates__row.is-deadline .adm-dates__when::before { left: -19px; } }
+
+/* Авторский момент a: карточка проявляется, верхняя линия-шкала прочерчивается слева направо,
+   даты встают на неё лесенкой вместе со своими линиями, красная точка дедлайна появляется последней — резко. */
+@media (prefers-reduced-motion: no-preference) {
+  .m-on .adm-dates[data-m="draw"] { transition: opacity 500ms ease-out 200ms; }
+  .m-on .adm-dates[data-m="draw"]:not(.m-in) { opacity: 0; }
+  .m-on .adm-dates[data-m="draw"] .adm-dates__list::before { transform-origin: left center; transition: transform 1000ms var(--ease-in-out) 420ms; }
+  .m-on .adm-dates[data-m="draw"]:not(.m-in) .adm-dates__list::before { transform: scaleX(0); }
+  .m-on .adm-dates[data-m="draw"] .adm-dates__row > span { transition: opacity 700ms var(--ease-expo), transform 900ms var(--ease-expo); }
+  .m-on .adm-dates[data-m="draw"] .adm-dates__row::after { transform-origin: left center; transition: transform 800ms var(--ease-in-out); }
+  .m-on .adm-dates[data-m="draw"] .adm-dates__row:nth-child(1) > span,
+  .m-on .adm-dates[data-m="draw"] .adm-dates__row:nth-child(1)::after { transition-delay: 820ms; }
+  .m-on .adm-dates[data-m="draw"] .adm-dates__row:nth-child(2) > span,
+  .m-on .adm-dates[data-m="draw"] .adm-dates__row:nth-child(2)::after { transition-delay: 920ms; }
+  .m-on .adm-dates[data-m="draw"] .adm-dates__row:nth-child(3) > span,
+  .m-on .adm-dates[data-m="draw"] .adm-dates__row:nth-child(3)::after { transition-delay: 1020ms; }
+  .m-on .adm-dates[data-m="draw"] .adm-dates__row:nth-child(4) > span,
+  .m-on .adm-dates[data-m="draw"] .adm-dates__row:nth-child(4)::after { transition-delay: 1120ms; }
+  .m-on .adm-dates[data-m="draw"]:not(.m-in) .adm-dates__row > span { opacity: 0; transform: translate3d(0, 14px, 0); }
+  .m-on .adm-dates[data-m="draw"]:not(.m-in) .adm-dates__row::after { transform: scaleX(0); }
+  .m-on .adm-dates[data-m="draw"] .adm-dates__foot { transition: opacity 600ms ease-out 1300ms; }
+  .m-on .adm-dates[data-m="draw"]:not(.m-in) .adm-dates__foot { opacity: 0; }
+  /* точка: без плавного проявления — возникает крупной и за 160 мс садится на место */
+  .m-on .adm-dates[data-m="draw"] .adm-dates__row.is-deadline .adm-dates__when::before { transition: opacity 0ms linear 1750ms, transform 160ms var(--ease-out) 1750ms; }
+  .m-on .adm-dates[data-m="draw"]:not(.m-in) .adm-dates__row.is-deadline .adm-dates__when::before { opacity: 0; transform: scale(2.4); }
+
+  /* Как поступить: сегменты линии маршрута прочерчиваются по очереди, точки встают, когда линия дошла */
+  .m-on .n-route[data-m="draw"] .n-route__step::before { transform-origin: center top; transition: transform 560ms var(--ease-in-out); transition-delay: calc(var(--k, 0) * 200ms + 120ms); }
+  .m-on .n-route[data-m="draw"] .n-route__step::after { transition: opacity 0ms linear, transform 200ms var(--ease-out); transition-delay: calc(var(--k, 0) * 200ms + 60ms); }
+  .m-on .n-route[data-m="draw"] .n-route__step > span { transition: opacity 600ms var(--ease-expo), transform 800ms var(--ease-expo); transition-delay: calc(var(--k, 0) * 200ms + 140ms); }
+  .m-on .n-route[data-m="draw"]:not(.m-in) .n-route__step::before { transform: scaleY(0); }
+  .m-on .n-route[data-m="draw"]:not(.m-in) .n-route__step::after { opacity: 0; transform: scale(1.8); }
+  .m-on .n-route[data-m="draw"]:not(.m-in) .n-route__step > span { opacity: 0; transform: translate3d(0, 10px, 0); }
+  @media (min-width: 768px) {
+    .m-on .n-route[data-m="draw"] .n-route__step::before { transform-origin: left center; }
+    .m-on .n-route[data-m="draw"]:not(.m-in) .n-route__step::before { transform: scaleX(0); }
+  }
+}

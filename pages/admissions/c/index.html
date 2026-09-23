@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0f2c">
+  <meta name="color-scheme" content="dark">
+  <title>Приёмная комиссия ТвГУ: поступление 2027 · вариант «Видео-приглашение»</title>
+  <meta name="description" content="Сцена, друзья и профессия в Твери. Поступай в ТвГУ в 2027: сроки, калькулятор баллов ЕГЭ, общежитие и стоимость.">
+  <link rel="preload" href="../../../assets/fonts/golos-text-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../../system/tokens.css">
+  <link rel="stylesheet" href="../../../system/base.css">
+  <link rel="stylesheet" href="../../../system/stub.css">
+  <link rel="stylesheet" href="../../../system/theme-dark.css">
+  <link rel="stylesheet" href="../../../system/motion.css">
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="../../../system/motion.js"></script>
+  <script src="../../../system/partials.js" defer></script>
+  <script src="../../../system/ui.js" defer></script>
+  <script src="common.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body data-nav="applicants">
+  <div data-include="header"></div>
+
+  <main id="main">
+    <!-- ═════ HERO: луп гала-концерта ═════ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__frame" data-hero-frame>
+        <video class="hero__video" data-bg data-hero-video muted loop playsinline preload="none"
+          poster="../../../assets/stub/video/gala-studvesna-2026-tanec-scena.jpg"
+          data-src="../../../assets/stub/video/gala-studvesna-2026-tanec-scena.mp4"
+          data-src-mobile="../../../assets/stub/video/480/gala-studvesna-2026-tanec-scena.mp4"
+          aria-label="Фоновое видео: танцоры на сцене гала-концерта Студенческой весны ТвГУ"></video>
+        <div class="hero__shade" aria-hidden="true"></div>
+
+        <div class="container hero__content">
+          <p class="hero__dates" data-m="up" data-m-delay="120">Приём документов с <b>[дата]</b> по <b>[дата]</b> 2027</p>
+          <h1 id="hero-title" data-m="words" data-m-delay="200">Поступай в ТвГУ в&nbsp;2027</h1>
+          <p class="hero__lead" data-m="up" data-m-delay="520">Сцена, друзья и профессия в Твери. 129 программ, бюджетные места и общежитие.</p>
+          <div class="hero__actions" data-m="up" data-m-delay="620">
+            <a class="btn btn--accent btn--lg" href="#" data-primary-cta data-magnetic>Подать документы</a>
+            <a class="btn btn--outline btn--lg" href="#calc">Посчитать шансы</a>
+          </div>
+          <form class="hero-search" role="search" data-hero-search data-m="up" data-m-delay="720">
+            <label class="visually-hidden" for="hero-q">Найти программу</label>
+            <svg class="ti" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"/><path d="M21 21l-6 -6"/></svg>
+            <input class="hero-search__input" id="hero-q" type="search" placeholder="Найти программу: психология, право, IT" autocomplete="off">
+          </form>
+        </div>
+
+        <div class="hero__controls">
+          <button class="hero__play" type="button" data-hero-play hidden>
+            <svg class="ti" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg>
+            <span>Смотреть ролик</span>
+          </button>
+          <button class="hero__pause" type="button" data-hero-pause aria-pressed="false" hidden>
+            <svg class="ti ti--pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14h-4z"/><path d="M14 5h4v14h-4z"/></svg>
+            <svg class="ti ti--play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16l13 -8z"/></svg>
+            <span class="visually-hidden" data-hero-pause-label>Пауза видео</span>
+          </button>
+          <span class="hero__credit">Гала-концерт «Студенческой весны», 2026</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════ Полоса счётчиков под hero ═════ -->
+    <section class="counters" data-counters data-start="2027-06-20" data-end="2027-07-25" aria-label="Приёмная кампания 2027">
+      <div class="container counters__grid" data-m-stagger style="--m-step: 80ms">
+        <div class="counter counter--deadline" data-m="up">
+          <p class="counter__label" data-counter-label>До конца приёма документов</p>
+          <p class="counter__value"><span class="num" data-counter-days>—</span> <span class="counter__unit" data-counter-unit>дней</span></p>
+        </div>
+        <div class="counter" data-m="up">
+          <p class="counter__label">Бюджетных мест</p>
+          <p class="counter__value"><span class="num">[N]</span></p>
+        </div>
+        <div class="counter" data-m="up">
+          <p class="counter__label">Заявлений подано</p>
+          <p class="counter__value"><span class="num">[N]</span></p>
+        </div>
+        <a class="counters__link" href="#steps" data-m="up">Сроки и этапы <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+      </div>
+    </section>
+
+    <nav class="subnav" aria-label="Разделы приёмной комиссии">
+      <div class="container subnav__inner">
+        <ul class="subnav__track" role="list">
+          <li><a class="subnav__link" href="#programs">Программы</a></li>
+          <li><a class="subnav__link" href="#steps">Сроки и правила</a></li>
+          <li><a class="subnav__link" href="#calc">Калькулятор баллов</a></li>
+          <li><a class="subnav__link" href="#target">Целевое обучение</a></li>
+          <li><a class="subnav__link" href="#cost">Стоимость</a></li>
+          <li><a class="subnav__link" href="#dorm">Общежития</a></li>
+          <li><a class="subnav__link" href="#faq">Документы</a></li>
+          <li><a class="subnav__link" href="#contacts">Контакты</a></li>
+        </ul>
+        <a class="btn btn--accent btn--sm subnav__cta" href="#">Подать документы</a>
+      </div>
+    </nav>
+
+    <!-- ═════ Доказательства: люди и рейтинги ═════ -->
+    <section class="section proof" aria-labelledby="proof-title">
+      <div class="container proof__grid">
+        <div class="proof__intro">
+          <h2 id="proof-title" data-m="words">Имена, которые знает вся страна</h2>
+          <p class="lead" data-m="up" data-m-delay="160">Среди выпускников и сотрудников ТвГУ разных лет. Университет с 1870 года: 15 факультетов и институтов, 129 программ.</p>
+        </div>
+        <ul class="proof__people" role="list" data-m-stagger style="--m-step: 80ms">
+          <li data-m="up"><b>Николай Кун</b><span>автор «Легенд и мифов Древней Греции»</span></li>
+          <li data-m="up"><b>Александр Александров</b><span>композитор, автор музыки гимна России</span></li>
+          <li data-m="up"><b>Андрей Дементьев</b><span>поэт</span></li>
+          <li data-m="up"><b>Наталья Непряева</b><span>олимпийская чемпионка</span></li>
+        </ul>
+        <ul class="proof__ranks" role="list" data-m-stagger style="--m-step: 90ms">
+          <li data-m="up" data-tilt="3"><b class="num" data-count data-count-dur="1100">93-е</b> место в России в Round University Ranking 2026</li>
+          <li data-m="up" data-tilt="3"><b>Топ-200</b> Национального агрегированного рейтинга 2026, вторая лига</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ═════ 5 шагов ═════ -->
+    <section class="section section--grey steps" id="steps" aria-labelledby="steps-title">
+      <div class="container">
+        <div class="sec-head">
+          <h2 id="steps-title" data-m="words">От заявления до первого курса</h2>
+          <a class="btn btn--text" href="#">Правила приёма 2027 <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+        </div>
+        <ol class="steps__list" role="list" data-m-stagger style="--m-step: 70ms">
+          <li class="step" data-m="up"><span class="step__n num">1</span><h3 class="step__title">Выбери направления</h3><p class="step__text">До [N] направлений в одном вузе с приоритетами.</p></li>
+          <li class="step" data-m="up"><span class="step__n num">2</span><h3 class="step__title">Проверь баллы</h3><p class="step__text">Калькулятор ниже сравнит ЕГЭ с проходными 2025.</p></li>
+          <li class="step" data-m="up"><span class="step__n num">3</span><h3 class="step__title">Подай документы</h3><p class="step__text">Госуслуги, личный кабинет или лично на Желябова, 33.</p></li>
+          <li class="step" data-m="up"><span class="step__n num">4</span><h3 class="step__title">Дай согласие</h3><p class="step__text">Следи за списками и подтверди выбор до [дата].</p></li>
+          <li class="step step--last" data-m="up"><span class="step__n num">5</span><h3 class="step__title">Зачисление и первый курс</h3><p class="step__text">Приказ, заселение и посвящение в студенты.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ═════ Уровни ═════ -->
+    <section class="section levels" id="programs" aria-labelledby="levels-title">
+      <div class="container">
+        <div class="sec-head">
+          <h2 id="levels-title" data-m="words">Выбери уровень</h2>
+          <a class="btn btn--text" href="#">Каталог 129 программ <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+        </div>
+        <ul class="levels__grid" role="list" data-m-stagger style="--m-step: 80ms">
+          <li data-m="up"><a class="lv" href="#"><span class="lv__count"><b class="num">[N]</b> программ</span><span class="lv__name">Бакалавриат и специалитет</span><span class="lv__meta">После школы или колледжа</span><span class="lv__go">Смотреть <span class="icon icon--arrow-right" aria-hidden="true"></span></span></a></li>
+          <li data-m="up"><a class="lv" href="#"><span class="lv__count"><b class="num">[N]</b> программ</span><span class="lv__name">Магистратура</span><span class="lv__meta">После бакалавриата</span><span class="lv__go">Смотреть <span class="icon icon--arrow-right" aria-hidden="true"></span></span></a></li>
+          <li data-m="up"><a class="lv" href="#"><span class="lv__count"><b class="num">[N]</b> программ</span><span class="lv__name">Аспирантура</span><span class="lv__meta">После магистратуры или специалитета</span><span class="lv__go">Смотреть <span class="icon icon--arrow-right" aria-hidden="true"></span></span></a></li>
+          <li data-m="up"><a class="lv" href="#"><span class="lv__count"><b class="num">[N]</b> программ</span><span class="lv__name">СПО и колледж</span><span class="lv__meta">[есть ли колледж при ТвГУ: уточнить]</span><span class="lv__go">Смотреть <span class="icon icon--arrow-right" aria-hidden="true"></span></span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ═════ Калькулятор в тёмной полосе ═════ -->
+    <section class="section section--dark calc" id="calc" aria-labelledby="calc-title">
+      <div class="container calc__grid">
+        <div class="calc__intro">
+          <h2 id="calc-title" data-m="words">Проверь себя за минуту</h2>
+          <p class="lead" data-m="up" data-m-delay="160">Выбери предметы ЕГЭ и баллы. Покажем, на какие направления подходит твой набор.</p>
+        </div>
+        <form class="calc-card" data-calc novalidate data-m="up" data-m-delay="200">
+          <div class="calc-row" data-calc-row>
+            <label class="field__label" for="s1">Предмет 1</label>
+            <select class="select" id="s1" data-calc-subject data-default="rus"><option value="">Выберите предмет</option></select>
+            <input class="input calc-score" id="b1" data-calc-score inputmode="numeric" pattern="[0-9]*" maxlength="3" placeholder="балл" aria-label="Балл, предмет 1">
+            <p class="calc-row__error" aria-live="polite"></p>
+          </div>
+          <div class="calc-row" data-calc-row>
+            <label class="field__label" for="s2">Предмет 2</label>
+            <select class="select" id="s2" data-calc-subject data-default="math"><option value="">Выберите предмет</option></select>
+            <input class="input calc-score" id="b2" data-calc-score inputmode="numeric" pattern="[0-9]*" maxlength="3" placeholder="балл" aria-label="Балл, предмет 2">
+            <p class="calc-row__error" aria-live="polite"></p>
+          </div>
+          <div class="calc-row" data-calc-row>
+            <label class="field__label" for="s3">Предмет 3</label>
+            <select class="select" id="s3" data-calc-subject><option value="">Выберите предмет</option></select>
+            <input class="input calc-score" id="b3" data-calc-score inputmode="numeric" pattern="[0-9]*" maxlength="3" placeholder="балл" aria-label="Балл, предмет 3">
+            <p class="calc-row__error" aria-live="polite"></p>
+          </div>
+          <fieldset class="calc-achs">
+            <legend>Индивидуальные достижения</legend>
+            <div class="calc-achs__list">
+              <label class="check"><input type="checkbox" data-calc-ach> <span>Золотая медаль</span></label>
+              <label class="check"><input type="checkbox" data-calc-ach> <span>Знак ГТО</span></label>
+              <label class="check"><input type="checkbox" data-calc-ach> <span>Волонтёрство</span></label>
+            </div>
+          </fieldset>
+          <p class="calc-error" data-calc-error aria-live="polite"></p>
+          <button class="btn btn--primary btn--lg btn--block" type="submit">Показать программы, куда прохожу</button>
+          <div class="calc-card__result" data-calc-result aria-live="polite" hidden></div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ═════ Истории: ролик + фото ═════ -->
+    <section class="section stories" aria-labelledby="stories-title">
+      <div class="container">
+        <div class="sec-head">
+          <h2 id="stories-title" data-m="words">Истории поступивших</h2>
+          <p class="sec-head__aside">Первый курс, 2026</p>
+        </div>
+        <div class="stories__grid" data-m-stagger style="--m-step: 100ms">
+          <figure class="vcard">
+            <button class="vcard__btn" type="button" data-video-open aria-haspopup="dialog" data-m="mask">
+              <img src="../../../assets/stub/video/vals-para-krupno.jpg" alt="Выпускной вальс: пары в белых рубашках на фоне синего звёздного задника" width="1280" height="720" loading="lazy">
+              <span class="vcard__play" aria-hidden="true"><svg class="ti" viewBox="0 0 24 24"><path d="M7 4v16l13 -8z"/></svg></span>
+              <span class="visually-hidden">Смотреть ролик: выпускной вальс</span>
+            </button>
+            <figcaption class="vcard__cap" data-m="up" data-m-delay="200">
+              <b>Выпускной вальс ТвГУ</b>
+              <span>Так заканчивается учёба. Фрагмент 0:11, полная версия на RuTube ТвГУ</span>
+            </figcaption>
+          </figure>
+          <figure class="story" data-m="up">
+            <img src="../../../assets/stub/photos/students-za-stolom-ulybayutsya.jpg" alt="Студентки за столом на мероприятии, одна улыбается в камеру" width="2000" height="1333" loading="lazy">
+            <figcaption>
+              <blockquote class="story__quote"><p>«[Цитата-пример] В первую неделю попала в команду Студвесны, и Тверь стала своей».</p></blockquote>
+              <span class="story__who"><b>[Имя Фамилия]</b> Филология, 1 курс</span>
+            </figcaption>
+          </figure>
+          <figure class="story" data-m="up">
+            <img src="../../../assets/stub/photos/portrait-inostrannye-studenty-ulica.jpg" alt="Трое студентов смеются на улице Твери" width="2000" height="1333" loading="lazy">
+            <figcaption>
+              <blockquote class="story__quote"><p>«[Цитата-пример] Приехал учиться по квоте, а через месяц уже водил друзей по набережной».</p></blockquote>
+              <span class="story__who"><b>[Имя Фамилия]</b> Экономика, 1 курс</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════ Стоимость и общежитие ═════ -->
+    <section class="section section--grey cost" id="cost" aria-labelledby="cost-title">
+      <div class="container cost__grid">
+        <div class="cost__body">
+          <h2 id="cost-title" data-m="words">Сколько стоит и где жить</h2>
+          <ul class="cost__list" role="list" data-m-stagger>
+            <li data-m="up"><span class="cost__k">Платное обучение</span><span class="cost__v">от <b class="num">[N]</b> ₽ в год</span><span class="cost__n">Материнский капитал и налоговый вычет</span></li>
+            <li id="dorm" data-m="up"><span class="cost__k">Общежитие</span><span class="cost__v"><b class="num">[N]</b> ₽ в месяц</span><span class="cost__n">Иногородним первокурсникам очной формы, корпусов: [N]</span></li>
+            <li data-m="up"><span class="cost__k">Стипендия</span><span class="cost__v">от <b class="num">[N]</b> ₽ в месяц</span><span class="cost__n">Академическая, социальная и повышенная</span></li>
+          </ul>
+          <a class="btn btn--primary" href="#">Стоимость по программам</a>
+        </div>
+        <figure class="cost__photo" data-m="mask">
+          <img src="../../../assets/stub/photos/sport-trenazhernyy-zal.jpg" alt="Тренажёрный зал: скамьи, беговая дорожка и тренажёры" width="2000" height="1333" loading="lazy">
+          <figcaption>Тренажёрный зал для студентов [где находится: уточнить]</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ═════ Целевое и иностранным ═════ -->
+    <section class="section duo" id="target" aria-label="Целевое обучение и иностранным абитуриентам">
+      <div class="container duo__grid" data-m-stagger style="--m-step: 100ms">
+        <article class="duo__target" data-m="up">
+          <h2 class="h3">Целевое обучение</h2>
+          <p>Отдельный конкурс, оплата учёбы от предприятия и работа после диплома. Целевых мест: [N], заказчики: [организации региона].</p>
+          <a class="btn btn--outline" href="#">Найти заказчика</a>
+        </article>
+        <article class="duo__intl" data-m="up">
+          <img src="../../../assets/stub/photos/city-naberezhnaya-inostrannye-studenty.jpg" alt="Иностранные студенты на набережной Волги в Твери" width="2000" height="1333" loading="lazy">
+          <div class="duo__intl-body">
+            <h2 class="h3">Иностранным абитуриентам</h2>
+            <p>Квота Правительства РФ и контракт [уточнить], подготовка по русскому языку [уточнить], помощь с визой. Студенты из [N] стран.</p>
+            <p class="duo__langs"><span lang="en">Admissions</span> · <span lang="fr">Admission</span> · <span lang="zh">招生</span></p>
+            <a class="btn btn--outline" href="#">Поступление для иностранцев</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ═════ Партнёры ═════ -->
+    <section class="section section--grey partners-sec" aria-labelledby="partners-title">
+      <div class="container partners ribbon" data-ribbon data-m="fade">
+        <div class="ribbon__head">
+          <h2 class="h3" id="partners-title">Практика и работа у партнёров</h2>
+          <div class="ribbon__nav">
+            <button class="btn-circle" type="button" data-ribbon-prev><span class="icon icon--arrow-left" aria-hidden="true"></span><span class="visually-hidden">Назад</span></button>
+            <button class="btn-circle" type="button" data-ribbon-next><span class="icon icon--arrow-right" aria-hidden="true"></span><span class="visually-hidden">Вперёд</span></button>
+          </div>
+        </div>
+        <div class="ribbon__track" role="list" aria-label="Работодатели-партнёры, листаются">
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Работодатель 1]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Работодатель 2]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Работодатель 3]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Работодатель 4]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Работодатель 5]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Работодатель 6]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Работодатель 7]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Работодатель 8]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Работодатель 9]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Работодатель 10]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Работодатель 11]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Работодатель 12]</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════ FAQ ═════ -->
+    <section class="section faq" id="faq" aria-labelledby="faq-title">
+      <div class="container faq__wrap">
+        <h2 id="faq-title" data-m="words">Что спрашивают перед поступлением</h2>
+        <div class="accordion faq__list" data-m-stagger style="--m-step: 45ms">
+          <details data-m="up" class="accordion__item" name="faq">
+            <summary class="accordion__summary">Сколько стоит платное обучение?</summary>
+            <div class="accordion__body"><p>От [N] ₽ в год, зависит от программы и формы. Можно оплатить материнским капиталом и вернуть налоговый вычет. Скидки: [условия].</p></div>
+          </details>
+          <details data-m="up" class="accordion__item" name="faq">
+            <summary class="accordion__summary">Дадут ли общежитие на первом курсе?</summary>
+            <div class="accordion__body"><p>Иногородним студентам очной формы. Мест: [N], стоимость [N] ₽ в месяц. Заявку на заселение подают вместе с документами.</p></div>
+          </details>
+          <details data-m="up" class="accordion__item" name="faq">
+            <summary class="accordion__summary">Как попасть на целевое обучение?</summary>
+            <div class="accordion__body"><p>Выберите заказчика на Госуслугах в «Работе России», подайте заявку на целевое, затем заявление в ТвГУ. Конкурс отдельный, проходные по целевому в 2025: [N].</p></div>
+          </details>
+          <details data-m="up" class="accordion__item" name="faq">
+            <summary class="accordion__summary">Как подать документы через Госуслуги?</summary>
+            <div class="accordion__body"><p>Сервис «Поступление в вуз онлайн»: выберите ТвГУ, направления и приоритеты, приложите сканы. Статус заявления виден там же.</p></div>
+          </details>
+          <details data-m="up" class="accordion__item" name="faq" id="docs">
+            <summary class="accordion__summary">Какие документы нужны?</summary>
+            <div class="accordion__body"><p>Паспорт, аттестат или диплом, СНИЛС, документы о достижениях и льготах, если есть. Полный список: [ссылка на правила приёма 2027].</p></div>
+          </details>
+          <details data-m="up" class="accordion__item" name="faq">
+            <summary class="accordion__summary">Сколько бюджетных мест и какие были проходные?</summary>
+            <div class="accordion__body"><p>Бюджетных мест в 2027: [N]. Проходные баллы 2025 по каждой программе: [N], смотрите в калькуляторе.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════ Контакты + вопрос ═════ -->
+    <section class="section contacts" id="contacts" aria-labelledby="contacts-title">
+      <div class="container contacts__grid">
+        <div class="contacts__body">
+          <h2 id="contacts-title" data-m="words">Приходи знакомиться</h2>
+          <div class="contacts__dod" data-m="up" data-m-delay="120">
+            <p>День открытых дверей [дата], главный корпус на Желябова, 33</p>
+            <a class="btn btn--outline btn--lg" href="#">Записаться на день открытых дверей</a>
+          </div>
+          <dl class="contacts__list" data-m-stagger>
+            <div data-m="up"><dt>Телефон</dt><dd><a class="contacts__phone num" href="tel:+74822321514">+7 (4822) 32-15-14</a></dd></div>
+            <div data-m="up"><dt>Адрес</dt><dd>170100, Тверь, ул. Желябова, 33, кабинет [N]</dd></div>
+            <div data-m="up"><dt>Часы</dt><dd>[дни и часы], в кампанию [часы]</dd></div>
+          </dl>
+          <div class="stub contacts__map" data-m="mask" role="img" aria-label="Заглушка: карта, главный корпус на Желябова, 33">
+            <span class="stub__caption">карта: главный корпус ТвГУ, ул. Желябова, 33</span>
+          </div>
+        </div>
+
+        <div class="ask" id="ask" data-m="up" data-m-delay="160">
+          <h2 class="h3" id="ask-title">Задай вопрос приёмной комиссии</h2>
+          <form class="lead-form" data-lead novalidate aria-labelledby="ask-title">
+            <div data-lead-body class="lead-form__body">
+              <div class="field">
+                <label class="field__label" for="lead-contact">Телефон или Telegram</label>
+                <input class="input" id="lead-contact" name="contact" type="text" autocomplete="tel" placeholder="+7 900 000-00-00 или @ник" aria-describedby="lead-contact-err">
+                <p class="field__error" id="lead-contact-err" hidden></p>
+              </div>
+              <div class="field">
+                <label class="field__label" for="lead-q">Вопрос</label>
+                <input class="input" id="lead-q" name="question" type="text" placeholder="Как заселиться в общежитие?" aria-describedby="lead-q-err">
+                <p class="field__error" id="lead-q-err" hidden></p>
+              </div>
+              <button class="btn btn--primary btn--block" type="submit">Задать вопрос приёмной комиссии</button>
+              <p class="lead-form__legal">Нажимая кнопку, соглашаетесь на обработку персональных данных</p>
+            </div>
+            <div class="lead-done" data-lead-done tabindex="-1" role="status" hidden>
+              <p class="lead-done__title"><svg class="ti" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10"/></svg>Вопрос отправлен</p>
+              <p>Ответим в течение рабочего дня.</p>
+              <div class="lead-done__actions">
+                <button class="btn btn--outline" type="button" data-lead-again>Задать ещё вопрос</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="footer"></div>
+
+  <!-- модалка ролика -->
+  <dialog class="vmodal" data-video-modal aria-labelledby="vmodal-title">
+    <div class="vmodal__head">
+      <p class="vmodal__title" id="vmodal-title">Выпускной вальс ТвГУ</p>
+      <button class="vmodal__close" type="button" data-video-close><svg class="ti" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6l-12 12"/><path d="M6 6l12 12"/></svg><span class="visually-hidden">Закрыть видео</span></button>
+    </div>
+    <video class="vmodal__video" controls playsinline preload="none" poster="../../../assets/stub/video/vals-para-krupno.jpg"
+      data-src="../../../assets/stub/video/vals-para-krupno.mp4" data-src-mobile="../../../assets/stub/video/480/vals-para-krupno.mp4"
+      aria-label="Видео: выпускной вальс ТвГУ, без звука"></video>
+    <p class="vmodal__note">Фрагмент без звука. Полная версия: RuTube ТвГУ</p>
+  </dialog>
+
+  <div class="sticky-cta is-hidden" data-sticky-cta>
+    <p class="sticky-cta__meta"><b data-sticky-days>Приём 2027</b>документы онлайн</p>
+    <a class="btn btn--accent" href="#">Подать документы</a>
+  </div>
+
+  <div class="chat-fab" data-chat>
+    <div class="chat-fab__panel" id="chat-panel" data-chat-panel role="dialog" aria-labelledby="chat-title" hidden>
+      <div class="chat-fab__head">
+        <div>
+          <p class="chat-fab__title" id="chat-title">Приёмная комиссия онлайн</p>
+          <p class="chat-fab__sub">Отвечаем с [часы] по будням</p>
+        </div>
+        <button class="chat-fab__close" type="button" data-chat-close><svg class="ti" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6l-12 12"/><path d="M6 6l12 12"/></svg><span class="visually-hidden">Закрыть чат</span></button>
+      </div>
+      <ul class="chat-fab__list" role="list">
+        <li><a href="#calc">Куда я прохожу с моими баллами? <span class="icon icon--arrow-right" aria-hidden="true"></span></a></li>
+        <li><a href="#dorm">Сколько стоит общежитие? <span class="icon icon--arrow-right" aria-hidden="true"></span></a></li>
+        <li><a href="#faq">Как подать через Госуслуги? <span class="icon icon--arrow-right" aria-hidden="true"></span></a></li>
+      </ul>
+      <div class="chat-fab__foot"><a class="btn btn--primary btn--block" href="#">Написать в Telegram [бот]</a></div>
+    </div>
+    <button class="chat-fab__btn" type="button" aria-expanded="false" aria-controls="chat-panel" data-chat-toggle>
+      <svg class="ti" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20l1.3 -3.9c-2.324 -3.437 -1.426 -7.872 2.1 -10.374c3.526 -2.501 8.59 -2.296 11.845 .48c3.255 2.777 3.695 7.266 1.029 10.501c-2.666 3.235 -7.615 4.215 -11.574 2.293l-4.7 1"/></svg>
+      <span class="visually-hidden">Чат с приёмной комиссией</span>
+    </button>
+  </div>
+</body>
+</html>

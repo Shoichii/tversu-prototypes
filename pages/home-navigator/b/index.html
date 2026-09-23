@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0f2c">
+  <meta name="color-scheme" content="dark">
+  <title>Тверской государственный университет · Навигатор</title>
+  <meta name="description" content="ТвГУ: 129 программ, 15 факультетов и институтов, с 1870 года. Выберите, кто вы, и получите свой путь: программы, расписание, сервисы.">
+  <link rel="preload" href="../../../assets/fonts/golos-text-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../../system/tokens.css">
+  <link rel="stylesheet" href="../../../system/base.css">
+  <link rel="stylesheet" href="../../../system/stub.css">
+  <link rel="stylesheet" href="../../../system/theme-dark.css">
+  <link rel="stylesheet" href="../../../system/motion.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="../../../system/motion.js"></script>
+  <script src="../../../system/partials.js" defer></script>
+  <script src="../../../system/ui.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body data-nav="applicants">
+  <div data-include="header"></div>
+
+  <main id="main">
+    <!-- ═══ Hero: переключатель слева, сцена справа ═══ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero__grid">
+        <div class="who" data-m="up">
+          <p class="who__label" id="who-label">Я —</p>
+          <div class="who__chips chips" role="group" aria-labelledby="who-label" data-audience-chips>
+            <button class="chip" type="button" data-audience="abiturient" aria-pressed="true">абитуриент</button>
+            <button class="chip" type="button" data-audience="student" aria-pressed="false">студент</button>
+            <button class="chip" type="button" data-audience="parent" aria-pressed="false">родитель</button>
+            <button class="chip" type="button" data-audience="staff" aria-pressed="false">сотрудник</button>
+            <button class="chip" type="button" data-audience="partner" aria-pressed="false">партнёр</button>
+            <button class="chip" type="button" data-audience="foreign" aria-pressed="false">иностранный абитуриент</button>
+          </div>
+        </div>
+
+        <div class="stage" data-scene-stage>
+          <div class="stage__frame" data-m="mask" data-m-delay="80">
+            <figure class="scene is-active" data-scene="abiturient">
+              <video class="scene__media" data-scene-video muted loop playsinline preload="none" aria-hidden="true"
+                     poster="../../../assets/stub/video/den-znaniy-obzor-2-gazon-lekciya.jpg"
+                     data-src="../../../assets/stub/video/den-znaniy-obzor-2-gazon-lekciya.mp4"
+                     data-src-mobile="../../../assets/stub/video/480/den-znaniy-obzor-2-gazon-lekciya.mp4"></video>
+            </figure>
+            <figure class="scene" data-scene="student">
+              <img class="scene__media" src="../../../assets/stub/photos/800/lecture-amfiteatr-sverhu.jpg" srcset="../../../assets/stub/photos/800/lecture-amfiteatr-sverhu.jpg 800w, ../../../assets/stub/photos/lecture-amfiteatr-sverhu.jpg 2000w" sizes="(min-width: 1024px) 58vw, 100vw" alt="" loading="lazy" decoding="async" style="--pos: 50% 40%">
+            </figure>
+            <figure class="scene" data-scene="parent">
+              <img class="scene__media" src="../../../assets/stub/photos/800/campus-obshchezhitie-stolovaya.jpg" srcset="../../../assets/stub/photos/800/campus-obshchezhitie-stolovaya.jpg 800w, ../../../assets/stub/photos/campus-obshchezhitie-stolovaya.jpg 2000w" sizes="(min-width: 1024px) 58vw, 100vw" alt="" loading="lazy" decoding="async">
+            </figure>
+            <figure class="scene" data-scene="staff">
+              <img class="scene__media" src="../../../assets/stub/photos/800/lab-opyt-nauka-shou.jpg" srcset="../../../assets/stub/photos/800/lab-opyt-nauka-shou.jpg 800w, ../../../assets/stub/photos/lab-opyt-nauka-shou.jpg 2000w" sizes="(min-width: 1024px) 58vw, 100vw" alt="" loading="lazy" decoding="async">
+            </figure>
+            <figure class="scene" data-scene="partner">
+              <img class="scene__media" src="../../../assets/stub/photos/800/campus-stela-dvor.jpg" srcset="../../../assets/stub/photos/800/campus-stela-dvor.jpg 800w, ../../../assets/stub/photos/campus-stela-dvor.jpg 2000w" sizes="(min-width: 1024px) 58vw, 100vw" alt="" loading="lazy" decoding="async">
+            </figure>
+            <figure class="scene" data-scene="foreign">
+              <img class="scene__media" src="../../../assets/stub/photos/800/portrait-inostrannye-studenty-ulica.jpg" srcset="../../../assets/stub/photos/800/portrait-inostrannye-studenty-ulica.jpg 800w, ../../../assets/stub/photos/portrait-inostrannye-studenty-ulica.jpg 2000w" sizes="(min-width: 1024px) 58vw, 100vw" alt="" loading="lazy" decoding="async">
+            </figure>
+
+            <p class="stage__note" data-stage-note>Приём документов на 2027 год: с [20 июня]</p>
+            <button class="stage__play" type="button" data-stage-play aria-pressed="false">
+              <span class="stage__play-icon" aria-hidden="true"></span><span data-stage-play-label>Смотреть видео</span>
+            </button>
+          </div>
+          <p class="stage__caption" data-m="up" data-m-delay="520"><span class="stage__index" data-stage-index>01 / 06</span> <span data-stage-caption>День знаний: лекция на газоне во дворе университета</span></p>
+        </div>
+
+        <div class="hero__copy" aria-live="polite">
+          <h1 class="hero__title" id="hero-title" data-offer-title data-m="words" data-m-delay="120">Поступай в ТвГУ: 129 программ и пять шагов до зачисления</h1>
+          <p class="hero__lead" data-offer-lead data-m="up" data-m-delay="320">Выбери направление, посчитай баллы ЕГЭ и подай документы онлайн. Подскажем на каждом шаге.</p>
+          <a class="btn btn--accent btn--lg hero__cta" href="#programs" data-offer-cta data-m="up" data-m-delay="420" data-magnetic>Подобрать программу</a>
+        </div>
+
+        <form class="hero__search" role="search" action="#" data-search data-m="up" data-m-delay="480">
+          <label class="visually-hidden" for="q">Поиск по сайту</label>
+          <div class="input-group">
+            <input class="input" id="q" type="search" name="q" placeholder="Найти программу, преподавателя, документ…" autocomplete="off">
+            <button class="btn btn--outline" type="submit">Найти</button>
+          </div>
+        </form>
+
+        <ul class="quick" aria-label="Быстрые действия" data-quick data-m-stagger>
+          <li data-m="up" data-m-delay="540"><a class="quick__link" href="#programs"><span class="quick__t">Каталог программ</span><span class="quick__h">129 программ, фильтр по ЕГЭ</span><span class="icon icon--arrow-right" aria-hidden="true"></span></a></li>
+          <li data-m="up" data-m-delay="540"><a class="quick__link" href="#"><span class="quick__t">Калькулятор баллов</span><span class="quick__h">Куда проходишь с твоими баллами</span><span class="icon icon--arrow-right" aria-hidden="true"></span></a></li>
+          <li data-m="up" data-m-delay="540"><a class="quick__link" href="#deadline"><span class="quick__t">Сроки приёма</span><span class="quick__h">Даты кампании 2027</span><span class="icon icon--arrow-right" aria-hidden="true"></span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ═══ Доказательства полосой ═══ -->
+    <section class="proof" aria-label="ТвГУ коротко">
+      <div class="container">
+        <ul class="proof__list" data-m-stagger>
+          <li data-m="up" class="proof__item"><span class="proof__n num" data-count>93</span><span class="proof__t">место в России<br>Round University Ranking 2026</span></li>
+          <li data-m="up" class="proof__item"><span class="proof__n num">топ-200</span><span class="proof__t">Национальный агрегированный<br>рейтинг 2026, вторая лига</span></li>
+          <li data-m="up" class="proof__item"><span class="proof__n num" data-count data-count-from="1800">1870</span><span class="proof__t">год основания, учительская<br>школа Максимовича</span></li>
+          <li data-m="up" class="proof__item proof__item--names"><span class="proof__t">Здесь учились и работали Николай Кун, Александр Александров, Андрей Дементьев, Наталья Непряева</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ═══ Твой путь ═══ -->
+    <section class="section path" id="path" aria-labelledby="path-title">
+      <div class="container">
+        <div class="path__head">
+          <h2 id="path-title" data-m="words">Твой путь</h2>
+          <p class="path__for" data-path-for data-m="up" data-m-delay="200">Пять шагов абитуриента: от выбора программы до приказа о зачислении</p>
+        </div>
+        <ol class="steps" data-steps data-m-stagger style="--m-step: 90ms">
+          <li class="step" data-m="up"><a class="step__link" href="#programs"><span class="step__n num">1</span><span class="step__t">Выбрать программу</span><span class="step__h">Фильтр по ЕГЭ, уровню и форме</span></a></li>
+          <li class="step" data-m="up"><a class="step__link" href="#"><span class="step__n num">2</span><span class="step__t">Посчитать баллы</span><span class="step__h">Сравнить с проходными прошлого года</span></a></li>
+          <li class="step" data-m="up"><a class="step__link" href="#"><span class="step__n num">3</span><span class="step__t">Подать документы</span><span class="step__h">Госуслуги или приёмная комиссия</span></a></li>
+          <li class="step" data-m="up"><a class="step__link" href="#"><span class="step__n num">4</span><span class="step__t">Следить за конкурсом</span><span class="step__h">Место в списках каждый день</span></a></li>
+          <li class="step" data-m="up"><a class="step__link" href="#"><span class="step__n num">5</span><span class="step__t">Зачисление</span><span class="step__h">Согласие и приказ</span></a></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ═══ Срочность ═══ -->
+    <section class="deadline" id="deadline" aria-labelledby="deadline-title">
+      <div class="container deadline__inner">
+        <div class="deadline__count" data-countdown="2027-06-20" data-m="up">
+          <span class="deadline__num num" data-countdown-num data-count data-count-dur="900">[N]</span>
+          <span class="deadline__unit" data-countdown-unit>дней до старта приёма</span>
+        </div>
+        <div class="deadline__text">
+          <h2 class="deadline__title" id="deadline-title" data-m="words" data-m-delay="120">Приём документов на 2027 год: с [20 июня]</h2>
+          <p class="deadline__note" data-m="up" data-m-delay="260">Дата-пример, точная появится в правилах приёма. Программу и баллы можно выбрать уже сейчас.</p>
+        </div>
+        <dl class="deadline__dates" data-m-stagger>
+          <div data-m="up" data-m-delay="200"><dt>Старт приёма</dt><dd>[20 июня]</dd></div>
+          <div data-m="up" data-m-delay="200"><dt>Конец приёма на бюджет</dt><dd>[N июля]</dd></div>
+          <div data-m="up" data-m-delay="200"><dt>Приказы о зачислении</dt><dd>[N августа]</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ═══ Блоки 4–6: порядок меняется под аудиторию ═══ -->
+    <div class="blocks" data-blocks>
+      <!-- 4. Программы -->
+      <section class="section programs" id="programs" data-block="programs" aria-labelledby="programs-title">
+        <div class="container">
+          <div class="programs__head">
+            <h2 id="programs-title" data-m="words">Программы под тебя</h2>
+            <p class="programs__count" data-prog-count aria-live="polite">Показаны 6 из 6</p>
+            <button class="btn btn--outline programs__filters-btn" type="button" data-filters-open aria-controls="filters" aria-expanded="false">Фильтры <span class="programs__badge" data-filters-badge hidden></span></button>
+          </div>
+
+          <div class="filters-backdrop" data-filters-backdrop hidden></div>
+          <form class="filters" id="filters" data-filters aria-label="Фильтр программ" action="#">
+            <div class="filters__head">
+              <p class="filters__title">Фильтры</p>
+              <button class="filters__close" type="button" data-filters-close><span class="icon icon--plus" aria-hidden="true"></span><span class="visually-hidden">Закрыть фильтры</span></button>
+            </div>
+            <div class="filters__fields">
+              <div class="field">
+                <label class="field__label" for="f-level">Уровень</label>
+                <select class="select" id="f-level" name="level">
+                  <option value="">Любой</option>
+                  <option value="bachelor">Бакалавриат</option>
+                  <option value="specialist">Специалитет</option>
+                  <option value="master">Магистратура</option>
+                </select>
+              </div>
+              <div class="field">
+                <label class="field__label" for="f-form">Форма</label>
+                <select class="select" id="f-form" name="form">
+                  <option value="">Любая</option>
+                  <option value="full">Очная</option>
+                  <option value="mixed">Очно-заочная</option>
+                  <option value="distance">Заочная</option>
+                </select>
+              </div>
+              <div class="field">
+                <label class="field__label" for="f-dir">Направление</label>
+                <select class="select" id="f-dir" name="dir">
+                  <option value="">Любое</option>
+                  <option value="it">Математика и IT</option>
+                  <option value="nature">Естественные науки</option>
+                </select>
+              </div>
+              <div class="field">
+                <label class="field__label" for="f-basis">Основа</label>
+                <select class="select" id="f-basis" name="basis">
+                  <option value="">Бюджет и платно</option>
+                  <option value="budget">Бюджет</option>
+                  <option value="paid">Платно</option>
+                </select>
+              </div>
+            </div>
+            <div class="filters__foot">
+              <button class="btn btn--text" type="reset">Сбросить</button>
+              <button class="btn btn--primary filters__apply" type="button" data-filters-apply>Показать 6 программ</button>
+            </div>
+          </form>
+
+          <ul class="cards" data-cards data-m-stagger>
+            <li data-m="up" class="card" data-level="bachelor" data-form="full" data-dir="it" data-basis="budget paid">
+              <p class="card__code num">02.03.01</p>
+              <h3 class="card__name"><a class="card__link" href="#">Математика и компьютерные науки</a></h3>
+              <dl class="card__meta">
+                <div><dt>Факультет</dt><dd>Математический</dd></div>
+                <div><dt>Уровень</dt><dd>Бакалавриат, очная, 4 года</dd></div>
+              </dl>
+              <dl class="card__stats">
+                <div><dt>бюджетных мест</dt><dd class="num">[N]</dd></div>
+                <div><dt>проходной балл 2026</dt><dd class="num">[N]</dd></div>
+              </dl>
+            </li>
+            <li data-m="up" class="card" data-level="bachelor" data-form="full" data-dir="it" data-basis="budget paid">
+              <p class="card__code num">09.03.03</p>
+              <h3 class="card__name"><a class="card__link" href="#">Прикладная информатика</a></h3>
+              <dl class="card__meta">
+                <div><dt>Факультет</dt><dd>[факультет]</dd></div>
+                <div><dt>Уровень</dt><dd>Бакалавриат, очная, 4 года</dd></div>
+              </dl>
+              <dl class="card__stats">
+                <div><dt>бюджетных мест</dt><dd class="num">[N]</dd></div>
+                <div><dt>проходной балл 2026</dt><dd class="num">[N]</dd></div>
+              </dl>
+            </li>
+            <li data-m="up" class="card" data-level="specialist" data-form="full" data-dir="it" data-basis="budget paid">
+              <p class="card__code num">10.05.01</p>
+              <h3 class="card__name"><a class="card__link" href="#">Компьютерная безопасность</a></h3>
+              <dl class="card__meta">
+                <div><dt>Факультет</dt><dd>[факультет]</dd></div>
+                <div><dt>Уровень</dt><dd>Специалитет, очная, 5,5 лет</dd></div>
+              </dl>
+              <dl class="card__stats">
+                <div><dt>бюджетных мест</dt><dd class="num">[N]</dd></div>
+                <div><dt>проходной балл 2026</dt><dd class="num">[N]</dd></div>
+              </dl>
+            </li>
+            <li data-m="up" class="card" data-level="bachelor" data-form="full" data-dir="nature" data-basis="budget paid">
+              <p class="card__code num">06.03.01</p>
+              <h3 class="card__name"><a class="card__link" href="#">Биология</a></h3>
+              <dl class="card__meta">
+                <div><dt>Факультет</dt><dd>Биологический</dd></div>
+                <div><dt>Уровень</dt><dd>Бакалавриат, очная, 4 года</dd></div>
+              </dl>
+              <dl class="card__stats">
+                <div><dt>бюджетных мест</dt><dd class="num">[N]</dd></div>
+                <div><dt>проходной балл 2026</dt><dd class="num">[N]</dd></div>
+              </dl>
+            </li>
+            <li data-m="up" class="card" data-level="bachelor" data-form="full" data-dir="nature" data-basis="budget paid">
+              <p class="card__code num">05.03.06</p>
+              <h3 class="card__name"><a class="card__link" href="#">Экология и природопользование</a></h3>
+              <dl class="card__meta">
+                <div><dt>Факультет</dt><dd>[факультет]</dd></div>
+                <div><dt>Уровень</dt><dd>Бакалавриат, очная, 4 года</dd></div>
+              </dl>
+              <dl class="card__stats">
+                <div><dt>бюджетных мест</dt><dd class="num">[N]</dd></div>
+                <div><dt>проходной балл 2026</dt><dd class="num">[N]</dd></div>
+              </dl>
+            </li>
+            <li data-m="up" class="card" data-level="bachelor" data-form="full" data-dir="it" data-basis="budget paid">
+              <p class="card__code num">01.03.02</p>
+              <h3 class="card__name"><a class="card__link" href="#">Прикладная математика и информатика</a></h3>
+              <dl class="card__meta">
+                <div><dt>Факультет</dt><dd>Прикладной математики и кибернетики</dd></div>
+                <div><dt>Уровень</dt><dd>Бакалавриат, очная, 4 года</dd></div>
+              </dl>
+              <dl class="card__stats">
+                <div><dt>бюджетных мест</dt><dd class="num">[N]</dd></div>
+                <div><dt>проходной балл 2026</dt><dd class="num">[N]</dd></div>
+              </dl>
+            </li>
+          </ul>
+          <div class="cards-empty" data-cards-empty hidden>
+            <p class="cards-empty__t">Под эти фильтры программ нет</p>
+            <p class="cards-empty__h">Попробуй другую форму обучения или сбрось фильтры: в каталоге 129 программ.</p>
+            <button class="btn btn--outline" type="button" data-filters-reset>Сбросить фильтры</button>
+          </div>
+          <a class="btn btn--text programs__all" href="#">Все 129 программ в каталоге <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+        </div>
+      </section>
+
+      <!-- 5. Ответы -->
+      <section class="section faq" id="faq" data-block="faq" aria-labelledby="faq-title">
+        <div class="container band">
+          <div class="band-label faq__side">
+            <h2 class="faq__title" id="faq-title" data-m="words">Ответы на вопросы</h2>
+            <p class="faq__ask" data-m="up" data-m-delay="200">Не нашёл ответ? <button class="btn btn--text" type="button" data-chat-open>Спросить ассистента</button></p>
+          </div>
+          <div class="band__body accordion" data-m-stagger>
+            <details class="accordion__item" name="faq" data-m="up">
+              <summary class="accordion__summary">Какие ЕГЭ нужны на Прикладную информатику?</summary>
+              <div class="accordion__body"><p>Набор вступительных испытаний и минимальные баллы по каждому предмету — в правилах приёма на [2027] год. Калькулятор баллов подберёт программы по твоим предметам.</p></div>
+            </details>
+            <details class="accordion__item" name="faq" data-m="up">
+              <summary class="accordion__summary">Есть ли общежитие первокурснику?</summary>
+              <div class="accordion__body"><p>Иногородним студентам очной формы: [N мест] в [N] общежитиях, стоимость [N ₽ в месяц]. Заявление на заселение подаётся вместе с документами.</p></div>
+            </details>
+            <details class="accordion__item" name="faq" data-m="up">
+              <summary class="accordion__summary">Сколько стоит обучение?</summary>
+              <div class="accordion__body"><p>От [N ₽ в год] в зависимости от программы. Точные цены по направлениям — в карточках программ, условия скидок — [условия].</p></div>
+            </details>
+            <details class="accordion__item" name="faq" data-m="up">
+              <summary class="accordion__summary">Как поступить по целевому?</summary>
+              <div class="accordion__body"><p>Нужен договор о целевом обучении с организацией-заказчиком. Список предложений — на портале «Работа России», конкурс на целевые места идёт отдельно.</p></div>
+            </details>
+            <details class="accordion__item" name="faq" data-m="up">
+              <summary class="accordion__summary">Учитываются ли индивидуальные достижения?</summary>
+              <div class="accordion__body"><p>Да, до [N] дополнительных баллов: золотой знак ГТО, аттестат с отличием, олимпиады, волонтёрство. Полный перечень — в правилах приёма.</p></div>
+            </details>
+            <details class="accordion__item" name="faq" data-m="up">
+              <summary class="accordion__summary">Можно ли подать документы через Госуслуги?</summary>
+              <div class="accordion__body"><p>Да. Заявление подаётся через Госуслуги, лично в приёмной комиссии или почтой.</p></div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Сегодня -->
+      <section class="section today" id="today" data-block="today" aria-labelledby="today-title">
+        <div class="container">
+          <div class="today__head">
+            <h2 id="today-title" data-m="words">Сегодня в ТвГУ</h2>
+            <a class="btn btn--text" href="#">Все события и новости <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+          </div>
+          <div class="today__grid">
+            <div class="week">
+              <p class="band-label week__label">Неделя 14–20 сентября</p>
+              <ol class="week__list" data-m-stagger style="--m-step: 50ms">
+                <li class="ev" data-m="up"><time class="ev__d" datetime="2026-09-14"><b class="num">14</b> пн</time><a class="ev__t" href="#">Открытая лекция «[тема]»</a><span class="ev__m">[время], [аудитория]</span></li>
+                <li class="ev" data-m="up"><time class="ev__d" datetime="2026-09-15"><b class="num">15</b> вт</time><a class="ev__t" href="#">Консультация для иностранных абитуриентов</a><span class="ev__m">[время], онлайн</span></li>
+                <li class="ev" data-m="up"><time class="ev__d" datetime="2026-09-16"><b class="num">16</b> ср</time><a class="ev__t" href="#">Отбор в студенческие сборные</a><span class="ev__m">[время], [спортзал]</span></li>
+                <li class="ev" data-m="up"><time class="ev__d" datetime="2026-09-17"><b class="num">17</b> чт</time><a class="ev__t" href="#">Семинар о грантах для молодых учёных</a><span class="ev__m">[время], [аудитория]</span></li>
+                <li class="ev" data-m="up"><time class="ev__d" datetime="2026-09-18"><b class="num">18</b> пт</time><a class="ev__t" href="#">Карьерная встреча с [Партнёр]</a><span class="ev__m">[время], [аудитория]</span></li>
+                <li class="ev" data-m="up"><time class="ev__d" datetime="2026-09-19"><b class="num">19</b> сб</time><a class="ev__t" href="#">День открытых дверей [факультета]</a><span class="ev__m">[время], ул. Желябова, 33</span></li>
+                <li class="ev" data-m="up"><time class="ev__d" datetime="2026-09-20"><b class="num">20</b> вс</time><a class="ev__t" href="#">Прогулка по Твери для первокурсников</a><span class="ev__m">[время], сбор у главного корпуса</span></li>
+              </ol>
+            </div>
+            <div class="news">
+              <article class="news__item news__item--lead" data-tilt="3">
+                <div class="news__media" data-m="mask"><img src="../../../assets/stub/photos/800/students-tochka-kipeniya.jpg" srcset="../../../assets/stub/photos/800/students-tochka-kipeniya.jpg 800w, ../../../assets/stub/photos/students-tochka-kipeniya.jpg 2000w" sizes="(min-width: 1024px) 40vw, 100vw" alt="Студенты за столами в зале «Точки кипения»" loading="lazy" decoding="async"></div>
+                <p class="news__meta"><span>Студенту</span><time datetime="2026-09-11">11 сентября</time></p>
+                <h3 class="news__title"><a href="#">Студенты защитили [N] проектов в «Точке кипения»</a></h3>
+              </article>
+              <article class="news__item" data-tilt="3">
+                <div class="news__media" data-m="mask"><img src="../../../assets/stub/video/den-otkrytyh-dverey-2-mikroskop-mineraly.jpg" alt="Абитуриентка смотрит в микроскоп на Дне открытых дверей" loading="lazy" decoding="async"></div>
+                <p class="news__meta"><span>Абитуриенту</span><time datetime="2026-09-09">9 сентября</time></p>
+                <h3 class="news__title"><a href="#">Абитуриенты заглянули в микроскопы на Дне открытых дверей</a></h3>
+              </article>
+              <article class="news__item" data-tilt="3">
+                <div class="news__media" data-m="mask"><img src="../../../assets/stub/photos/800/sport-voleybol-zhenskaya-komanda.jpg" alt="Женская волейбольная команда с кубком в зале" loading="lazy" decoding="async"></div>
+                <p class="news__meta"><span>Спорт</span><time datetime="2026-09-07">7 сентября</time></p>
+                <h3 class="news__title"><a href="#">Женская сборная по волейболу взяла кубок [турнира]</a></h3>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ═══ Университет в цифрах ═══ -->
+    <section class="section section--dark numbers" aria-labelledby="numbers-title">
+      <div class="container">
+        <h2 class="numbers__title" id="numbers-title" data-m="words">Университет в цифрах</h2>
+        <dl class="numbers__grid" data-m-stagger style="--m-step: 70ms">
+          <div class="numbers__cell" data-m="up"><dt>год основания</dt><dd class="num" data-count data-count-from="1800">1870</dd></div>
+          <div class="numbers__cell" data-m="up"><dt>факультетов и институтов</dt><dd class="num" data-count>15</dd></div>
+          <div class="numbers__cell" data-m="up"><dt>образовательных программ</dt><dd class="num" data-count>129</dd></div>
+          <div class="numbers__cell" data-m="up"><dt>место в России, RUR 2026</dt><dd class="num" data-count>93</dd></div>
+          <div class="numbers__cell" data-m="up"><dt>НАР 2026, вторая лига</dt><dd class="num">топ-200</dd></div>
+          <div class="numbers__cell" data-m="up"><dt>студентов</dt><dd class="num numbers__ph">[N]</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ═══ Факультеты ═══ -->
+    <section class="section faculties" aria-labelledby="fac-title">
+      <div class="container">
+        <div class="faculties__head">
+          <h2 id="fac-title" data-m="words">15 факультетов и институтов</h2>
+          <p class="faculties__dek" data-m="up" data-m-delay="200">Число рядом — сколько программ набирает факультет.</p>
+        </div>
+        <ul class="fac" data-m-stagger style="--m-step: 40ms">
+          <li data-m="up"><a class="fac__tile" href="#"><span class="fac__i num">01</span><span class="fac__name">Биологический факультет</span><span class="fac__n"><b class="num">[N]</b> программ</span></a></li>
+          <li data-m="up"><a class="fac__tile" href="#"><span class="fac__i num">02</span><span class="fac__name">Исторический факультет</span><span class="fac__n"><b class="num">[N]</b> программ</span></a></li>
+          <li data-m="up"><a class="fac__tile" href="#"><span class="fac__i num">03</span><span class="fac__name">Факультет географии и геоэкологии</span><span class="fac__n"><b class="num">[N]</b> программ</span></a></li>
+          <li data-m="up"><a class="fac__tile" href="#"><span class="fac__i num">04</span><span class="fac__name">Факультет иностранных языков и международной коммуникации</span><span class="fac__n"><b class="num">[N]</b> программ</span></a></li>
+          <li data-m="up"><a class="fac__tile" href="#"><span class="fac__i num">05</span><span class="fac__name">Факультет прикладной математики и кибернетики</span><span class="fac__n"><b class="num">[N]</b> программ</span></a></li>
+          <li data-m="up"><a class="fac__tile" href="#"><span class="fac__i num">06</span><span class="fac__name">Факультет физической культуры</span><span class="fac__n"><b class="num">[N]</b> программ</span></a></li>
+          <li data-m="up"><a class="fac__tile" href="#"><span class="fac__i num">07</span><span class="fac__name">Филологический факультет</span><span class="fac__n"><b class="num">[N]</b> программ</span></a></li>
+          <li data-m="up"><a class="fac__tile" href="#"><span class="fac__i num">08</span><span class="fac__name">Химико-технологический факультет</span><span class="fac__n"><b class="num">[N]</b> программ</span></a></li>
+          <li data-m="up"><a class="fac__tile" href="#"><span class="fac__i num">09</span><span class="fac__name">Математический факультет</span><span class="fac__n"><b class="num">[N]</b> программ</span></a></li>
+          <li data-m="up"><a class="fac__tile" href="#"><span class="fac__i num">10</span><span class="fac__name">Институт экономики и управления</span><span class="fac__n"><b class="num">[N]</b> программ</span></a></li>
+          <li data-m="up"><a class="fac__tile" href="#"><span class="fac__i num">11</span><span class="fac__name">Юридический факультет</span><span class="fac__n"><b class="num">[N]</b> программ</span></a></li>
+          <li data-m="up"><a class="fac__tile" href="#"><span class="fac__i num">12</span><span class="fac__name">Институт педагогического образования и социальных технологий</span><span class="fac__n"><b class="num">[N]</b> программ</span></a></li>
+          <li data-m="up"><a class="fac__tile" href="#"><span class="fac__i num">13</span><span class="fac__name">Факультет психологии</span><span class="fac__n"><b class="num">[N]</b> программ</span></a></li>
+          <li data-m="up"><a class="fac__tile" href="#"><span class="fac__i num">14</span><span class="fac__name">Физико-технический факультет</span><span class="fac__n"><b class="num">[N]</b> программ</span></a></li>
+          <li data-m="up"><a class="fac__tile" href="#"><span class="fac__i num">15</span><span class="fac__name">Институт непрерывного образования</span><span class="fac__n"><b class="num">[N]</b> программ</span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ═══ Партнёры ═══ -->
+    <section class="section section--grey section--tight" aria-labelledby="partners-title">
+      <div class="container partners ribbon" data-ribbon>
+        <div class="ribbon__head" data-m="up">
+          <h2 class="band-label" id="partners-title">Партнёры и работодатели</h2>
+          <div class="ribbon__nav">
+            <button class="btn-circle" type="button" data-ribbon-prev><span class="icon icon--arrow-left" aria-hidden="true"></span><span class="visually-hidden">Назад</span></button>
+            <button class="btn-circle" type="button" data-ribbon-next><span class="icon icon--arrow-right" aria-hidden="true"></span><span class="visually-hidden">Вперёд</span></button>
+          </div>
+        </div>
+        <div class="ribbon__track" data-m="wipe" role="list" aria-label="Логотипы партнёров, листаются">
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 1]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 2]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 3]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 4]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 5]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 6]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 7]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 8]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 9]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 10]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 11]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 12]</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Мягкий лид ═══ -->
+    <section class="section lead-sec" aria-labelledby="lead-title">
+      <div class="container lead-sec__grid">
+        <div>
+          <h2 id="lead-title" data-m="words">Спроси приёмную комиссию</h2>
+          <p class="lead-sec__dek" data-m="up" data-m-delay="200">Один вопрос, один контакт. Ответим в течение [N] рабочих дней, без рассылок.</p>
+          <p class="lead-sec__alt" data-m="up" data-m-delay="280">Быстрее в мессенджере: <a href="#">Telegram-бот приёмной комиссии</a></p>
+        </div>
+        <form class="lead-form" data-lead novalidate action="#" data-m="up" data-m-delay="160">
+          <div class="field">
+            <label class="field__label" for="lead-q">Твой вопрос</label>
+            <textarea class="textarea lead-form__q" id="lead-q" name="q" rows="3" placeholder="Например: хватит ли 230 баллов на биологию?"></textarea>
+          </div>
+          <div class="field">
+            <label class="field__label" for="lead-c">E-mail или ник в Telegram</label>
+            <div class="input-group">
+              <input class="input" id="lead-c" name="contact" type="text" autocomplete="email" placeholder="you@mail.ru или @username" aria-describedby="lead-msg">
+              <button class="btn btn--primary" type="submit">Отправить</button>
+            </div>
+            <p class="field__hint" id="lead-msg" data-lead-msg>Нажимая «Отправить», соглашаешься на обработку персональных данных.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══ Ассистент ═══ -->
+  <button class="chat-fab" type="button" data-chat-open aria-controls="chat" aria-expanded="false">Задать вопрос</button>
+  <div class="chat" id="chat" role="dialog" aria-modal="false" aria-labelledby="chat-title" hidden data-chat>
+    <div class="chat__head">
+      <p class="chat__title" id="chat-title">Ассистент ТвГУ</p>
+      <button class="chat__close" type="button" data-chat-close><span class="icon icon--plus" aria-hidden="true"></span><span class="visually-hidden">Закрыть</span></button>
+    </div>
+    <div class="chat__body">
+      <p class="chat__msg">Здравствуйте! Здесь появится ассистент приёмной комиссии. Пока он учится, оставьте вопрос: ответит сотрудник.</p>
+      <div class="stub chat__stub" role="img" aria-label="Заглушка: окно чата с ассистентом"><span class="stub__caption">окно чата: история сообщений, подсказки вопросов</span></div>
+    </div>
+    <form class="chat__form" action="#" data-chat-form>
+      <label class="visually-hidden" for="chat-q">Ваш вопрос</label>
+      <input class="input" id="chat-q" type="text" placeholder="Ваш вопрос">
+      <button class="btn btn--primary" type="submit">Отправить</button>
+    </form>
+  </div>
+
+  <!-- ═══ Липкая панель действия (390) ═══ -->
+  <div class="actionbar" data-actionbar aria-hidden="true">
+    <a class="btn btn--accent btn--block" href="#programs" tabindex="-1" data-actionbar-cta>Подобрать программу</a>
+  </div>
+
+  <div data-include="footer"></div>
+</body>
+</html>

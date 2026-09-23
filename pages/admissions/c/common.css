@@ -1,0 +1,150 @@
+/* Приёмка (CC4) — общий слой вариантов a/b/c: подменю раздела, калькулятор, лид-форма,
+   липкая панель действия, чат. Одинаковый файл в a, b, c; вариант переопределяет в style.css.
+   Кандидаты в system: .subnav, .sticky-cta, .chat-fab, .calc-*, .lead-*.
+   Копия c — перекрашена ролями под тёмную тему (15.09): красный текстом --c-red-ink, синий линией --c-blue-ink,
+   белые подложки панели и чата → --c-surface с линией. */
+
+.num { font-variant-numeric: tabular-nums lining-nums; }
+
+/* ───── Подменю раздела: липкая лента под компактной шапкой ───── */
+.subnav {
+  position: sticky; top: var(--header-h-compact); z-index: calc(var(--z-sticky) - 1);
+  background: var(--subnav-bg, var(--c-bg)); color: var(--subnav-fg, var(--c-text));
+  border-bottom: 1px solid var(--subnav-line, var(--c-line));
+}
+.subnav__sentinel { height: 0; }
+.subnav__inner { display: flex; align-items: center; gap: 16px; }
+.subnav__track {
+  display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity; margin-inline: calc(-1 * var(--gutter)); padding-inline: var(--gutter);
+  flex: 1; min-width: 0; list-style: none;
+  -webkit-mask: linear-gradient(90deg, #000 calc(100% - 32px), transparent);
+  mask: linear-gradient(90deg, #000 calc(100% - 32px), transparent);
+}
+.subnav__track::-webkit-scrollbar { display: none; }
+.subnav__track li { flex: none; scroll-snap-align: start; }
+.subnav__link {
+  position: relative; display: inline-flex; align-items: center; min-height: 52px; padding: 0 12px;
+  font-size: 0.9375rem; font-weight: 500; white-space: nowrap; text-decoration: none; color: inherit;
+  transition: color var(--dur-fast) ease;
+}
+.subnav__link::after {
+  content: ""; position: absolute; left: 12px; right: 12px; bottom: -1px; height: 2px;
+  background: var(--subnav-accent, var(--c-blue)); transform: scaleX(0); transform-origin: left;
+  transition: transform var(--dur-ui) var(--ease-out);
+}
+.subnav__link[aria-current="true"] { color: var(--subnav-accent-fg, var(--c-blue)); }
+.subnav__link[aria-current="true"]::after { transform: none; }
+@media (hover: hover) and (pointer: fine) { .subnav__link:hover { color: var(--subnav-accent-fg, var(--c-blue)); } }
+.subnav__cta { display: none; }
+@media (min-width: 1024px) {
+  .subnav__track { margin-inline: 0; padding-inline: 0; -webkit-mask: none; mask: none; }
+  .subnav__link:first-child { padding-left: 0; }
+  .subnav.is-stuck .subnav__cta { display: inline-flex; }
+}
+
+/* ───── Калькулятор: строки предмет + балл ───── */
+.calc-row { display: grid; grid-template-columns: minmax(0, 1fr) 96px; gap: 8px 10px; align-items: end; }
+.calc-row .field__label { grid-column: 1 / -1; }
+.calc-row__error { grid-column: 1 / -1; min-height: 0; font-size: var(--fs-caption); color: var(--c-red-ink); font-weight: 500; }
+.calc-row__error:empty { display: none; }
+.calc-score { text-align: center; font-size: 1.125rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+.calc-achs { border: 0; padding: 0; margin: 0; min-width: 0; }
+.calc-achs legend { font-size: var(--fs-small); font-weight: 600; margin-bottom: 4px; padding: 0; }
+.calc-achs__list { display: flex; flex-wrap: wrap; gap: 0 20px; }
+.calc-error { font-size: var(--fs-caption); color: var(--c-red-ink); font-weight: 500; }
+.calc-error:empty { display: none; }
+
+.calc-out__title { font-size: var(--fs-h4); font-weight: 700; line-height: 1.25; letter-spacing: -0.01em; }
+.calc-out__meta { margin-top: 4px; color: var(--c-text-2); font-size: var(--fs-small); }
+.calc-out__list { list-style: none; padding: 0; margin-top: 20px; border-top: 1px solid var(--c-line); }
+.calc-prog { display: grid; gap: 12px; padding: 16px 0; border-bottom: 1px solid var(--c-line); }
+.calc-prog__main { display: grid; gap: 2px; min-width: 0; }
+.calc-prog__code { font-size: var(--fs-caption); color: var(--c-text-3); font-weight: 600; }
+.calc-prog__name { font-size: 1.0625rem; font-weight: 600; line-height: 1.3; color: var(--c-text); text-decoration: none; }
+.calc-prog__name:hover { color: var(--c-blue-ink); text-decoration: underline; text-underline-offset: 0.25em; text-decoration-thickness: 1px; }
+.calc-prog__fac, .calc-prog__subj { font-size: var(--fs-small); color: var(--c-text-2); line-height: 1.4; }
+.calc-prog__nums { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.calc-prog__nums dt { font-size: 0.75rem; color: var(--c-text-2); line-height: 1.3; }
+.calc-prog__nums dd { font-size: 1.125rem; font-weight: 650; line-height: 1.2; color: var(--c-ink); }
+.calc-prog__nums small { font-size: 0.75rem; font-weight: 500; color: var(--c-text-3); }
+@media (min-width: 768px) {
+  .calc-prog { grid-template-columns: minmax(0, 1fr) 320px; align-items: center; gap: 24px; }
+}
+.calc-out__more, .calc-out__near { margin-top: 14px; font-size: var(--fs-small); color: var(--c-text-2); }
+.calc-out__note { margin-top: 14px; font-size: var(--fs-caption); color: var(--c-text-3); }
+/* шкала «ваш балл»: доля суммы от максимума; линия 2 px, без заливки-градиента */
+.calc-prog__nums dd { position: relative; }
+.calc-prog__bar { display: block; height: 2px; margin-top: 6px; background: var(--c-line); overflow: hidden; border-radius: 1px; }
+.calc-prog__bar::after { content: ""; display: block; height: 100%; background: var(--c-blue-ink); transform: scaleX(var(--v, 0)); transform-origin: left; }
+@media (prefers-reduced-motion: no-preference) {
+  .calc-prog { animation: calc-in 420ms var(--ease-out) both; animation-delay: calc(var(--i, 0) * 50ms); }
+  .calc-prog__bar::after { animation: calc-bar 900ms var(--ease-in-out) both; animation-delay: calc(var(--i, 0) * 50ms + 160ms); }
+  .calc-out__head { animation: calc-in 320ms var(--ease-out) both; }
+}
+@keyframes calc-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@keyframes calc-bar { from { transform: scaleX(0); } }
+
+/* ───── Лид-форма ───── */
+.lead-done { outline: none; }
+.lead-done__title { font-size: var(--fs-h4); font-weight: 700; line-height: 1.25; display: flex; align-items: center; gap: 10px; }
+.lead-done__title svg { width: 28px; height: 28px; flex: none; }
+/* «отправлено» — резкий штамп: галочка прочерчивается за 260 мс, текст поднимается следом */
+@media (prefers-reduced-motion: no-preference) {
+  .lead-done:not([hidden]) .lead-done__title path { stroke-dasharray: 1; animation: lead-tick 260ms var(--ease-out) 80ms both; }
+  .lead-done:not([hidden]) > * { animation: lead-up 280ms var(--ease-out) both; }
+  .lead-done:not([hidden]) > :nth-child(2) { animation-delay: 60ms; }
+  .lead-done:not([hidden]) > :nth-child(3) { animation-delay: 120ms; }
+}
+@keyframes lead-tick { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes lead-up { from { opacity: 0; transform: translateY(6px); } }
+
+/* ───── Липкая панель «Подать документы» (только мобильный/планшет) ───── */
+.sticky-cta {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: calc(var(--z-sticky) + 5);
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px var(--gutter) calc(10px + env(safe-area-inset-bottom));
+  background: var(--c-surface); border-top: 1px solid var(--c-line-strong);
+  transition: transform var(--dur-panel) var(--ease-drawer), visibility 0s linear 0s;
+}
+.sticky-cta.is-hidden { transform: translateY(110%); visibility: hidden; transition: transform var(--dur-ui) var(--ease-out), visibility 0s linear var(--dur-ui); }
+.sticky-cta__meta { font-size: 0.8125rem; line-height: 1.3; color: var(--c-text-2); min-width: 0; }
+.sticky-cta__meta b { display: block; color: var(--c-text); font-size: 0.9375rem; }
+.sticky-cta .btn { flex: none; margin-left: auto; }
+@media (min-width: 1024px) { .sticky-cta { display: none; } }
+
+/* ───── Чат ───── */
+.chat-fab { position: fixed; right: var(--gutter); bottom: 84px; z-index: calc(var(--z-sticky) + 6); display: grid; justify-items: end; gap: 10px; }
+@media (min-width: 1024px) { .chat-fab { bottom: 28px; } }
+.chat-fab__btn {
+  display: inline-grid; place-items: center; width: 56px; height: 56px;
+  color: var(--c-text); background: var(--c-surface); border: 1px solid var(--c-line-strong); border-radius: var(--radius-3);
+  box-shadow: var(--shadow-pop);
+  transition: background-color var(--dur-fast) ease, transform var(--dur-press) var(--ease-out);
+}
+.chat-fab__btn:hover { background: var(--c-blue); border-color: var(--c-blue); color: #fff; }
+.chat-fab__btn:active { transform: scale(0.97); }
+.chat-fab__btn svg { width: 26px; height: 26px; }
+.chat-fab__panel {
+  width: min(340px, calc(100vw - 2 * var(--gutter)));
+  padding: 18px 18px 14px; background: var(--c-surface); color: var(--c-text);
+  border: 1px solid var(--c-line); border-radius: var(--radius-3); box-shadow: var(--shadow-pop);
+  transform-origin: bottom right;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .chat-fab__panel:not([hidden]) { animation: chat-in 200ms var(--ease-out); }
+}
+@keyframes chat-in { from { opacity: 0; transform: scale(0.96) translateY(6px); } }
+.chat-fab__head { display: flex; align-items: start; justify-content: space-between; gap: 8px; }
+.chat-fab__title { font-weight: 700; line-height: 1.3; }
+.chat-fab__sub { font-size: var(--fs-caption); color: var(--c-text-2); margin-top: 2px; }
+.chat-fab__close { width: 44px; height: 44px; display: inline-grid; place-items: center; margin: -10px -10px 0 0; border-radius: var(--radius-2); }
+.chat-fab__close { color: var(--c-text); }
+.chat-fab__close:hover { background: var(--c-bg-grey); color: var(--c-blue-ink); }
+.chat-fab__list { list-style: none; padding: 0; margin-top: 10px; border-top: 1px solid var(--c-line); }
+.chat-fab__list a { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 48px; padding: 8px 0; border-bottom: 1px solid var(--c-line); color: var(--c-text); text-decoration: none; font-size: 0.9375rem; }
+.chat-fab__list a:hover { color: var(--c-blue-ink); }
+.chat-fab__foot { margin-top: 12px; }
+
+/* ───── Иконки Tabler (MIT) инлайном ───── */
+svg.ti { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; flex: none; }

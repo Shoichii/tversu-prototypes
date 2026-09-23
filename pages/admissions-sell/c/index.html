@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0f2c">
+  <title>Тверь выгодно · Приёмная комиссия ТвГУ</title>
+  <meta name="description" content="Сравни год учёбы в Твери с Москвой и Петербургом: обучение, общежитие, жизнь, дорога. Программы, целевое обучение и сроки приёма 2027.">
+  <link rel="preload" href="../../../assets/fonts/golos-text-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../../system/tokens.css">
+  <link rel="stylesheet" href="../../../system/base.css">
+  <link rel="stylesheet" href="../../../system/stub.css">
+  <link rel="stylesheet" href="../../../system/theme-dark.css">
+  <link rel="stylesheet" href="../../../system/motion.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="../../../system/motion.js"></script>
+  <script type="importmap">{"imports":{"three":"../../../system/vendor/three/three.module.js","three/addons/":"../../../system/vendor/three/addons/"}}</script>
+  <script src="../../../system/partials.js" defer></script>
+  <script src="../../../system/ui.js" defer></script>
+  <script src="script.js" defer></script>
+  <script type="module" src="road3d.js"></script>
+</head>
+<body data-nav="applicants">
+  <div data-include="header"></div>
+
+  <nav class="subnav" aria-label="Раздел «Приёмная комиссия»">
+    <div class="container subnav__inner">
+      <a class="subnav__title" href="#top">Приёмная комиссия</a>
+      <ul class="subnav__list" role="list">
+        <li><a href="#programs">Программы</a></li>
+        <li><a href="#dates">Сроки и правила</a></li>
+        <li><a href="#year">Стоимость</a></li>
+        <li><a href="#target">Целевое обучение</a></li>
+        <li><a href="#dorm">Общежития</a></li>
+        <li><a href="#steps">Документы</a></li>
+        <li><a href="#faq">Вопросы</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <!-- Первый экран: расчёт вместо картинки -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="container hero__grid">
+        <div class="hero__offer">
+          <h1 id="hero-title" data-m="words">Учиться в&nbsp;Твери выгоднее. Проверь по&nbsp;статьям</h1>
+          <p class="hero__lead" data-m="up" data-m-delay="280">Тот&nbsp;же диплом государственного вуза, жизнь и&nbsp;жильё дешевле столичных. Москва и&nbsp;Петербург на&nbsp;одной железной дороге.</p>
+          <div class="hero__actions" data-hero-cta data-m="up" data-m-delay="380">
+            <a class="btn btn--primary btn--lg" href="#year" data-magnetic>Посчитать мой год</a>
+            <a class="btn btn--text" href="#programs">Подобрать программу <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+          </div>
+          <dl class="hero__facts" data-m-stagger style="--m-step:90ms">
+            <div data-m="up" data-m-delay="480"><dt>основан</dt><dd class="num" data-count data-count-from="1700">1870</dd></div>
+            <div data-m="up" data-m-delay="480"><dt>программ</dt><dd class="num" data-count>129</dd></div>
+            <div data-m="up" data-m-delay="480"><dt>бюджетных мест</dt><dd><span class="slot">[N]</span></dd></div>
+          </dl>
+        </div>
+
+        <div class="ledger" data-ledger data-m="up" data-m-delay="160">
+          <!-- Линия дороги = переключатель города -->
+          <fieldset class="line">
+            <legend class="line__legend">Сравнить Тверь с</legend>
+            <div class="line__track" data-line>
+              <div class="line__stage" data-stage data-road-stage aria-hidden="true">
+                <canvas></canvas>
+                <div class="stage__fallback">
+                  <span class="line__rail"></span>
+                  <span class="line__run" data-line-run></span>
+                  <span class="line__train" data-line-train></span>
+                </div>
+              </div>
+
+              <label class="station station--spb">
+                <input type="radio" name="city" value="spb">
+                <span class="station__dot" aria-hidden="true"></span>
+                <span class="station__name">Петербург</span>
+                <span class="station__time"><span class="visually-hidden">В пути из Твери: </span><span class="slot">[N ч]</span></span>
+              </label>
+              <div class="station station--home" aria-hidden="true">
+                <span class="station__dot"></span>
+                <span class="station__name">Тверь</span>
+                <span class="station__time">ТвГУ</span>
+              </div>
+              <label class="station station--msk">
+                <input type="radio" name="city" value="msk" checked>
+                <span class="station__dot" aria-hidden="true"></span>
+                <span class="station__name">Москва</span>
+                <span class="station__time"><span class="visually-hidden">В пути из Твери: </span><span class="slot">[N ч]</span></span>
+              </label>
+            </div>
+            <p class="line__note">Одна линия Октябрьской железной дороги. На&nbsp;выходные домой без пересадок.</p>
+          </fieldset>
+
+          <table class="sheet">
+            <caption class="visually-hidden">Год учёбы: Тверь и выбранный город</caption>
+            <thead>
+              <tr>
+                <th scope="col">Статья</th>
+                <th scope="col" class="sheet__home">Тверь</th>
+                <th scope="col" class="sheet__away" data-away-name aria-live="polite">Москва</th>
+              </tr>
+            </thead>
+            <tbody data-m-stagger style="--m-step:45ms">
+              <tr>
+                <th scope="row" data-m="wipe" data-m-delay="520">Обучение на&nbsp;бюджете</th>
+                <td class="sheet__home num" data-m="wipe" data-m-delay="520">0&nbsp;₽</td>
+                <td class="sheet__away num" data-m="wipe" data-m-delay="520">0&nbsp;₽</td>
+              </tr>
+              <tr>
+                <th scope="row" data-m="wipe" data-m-delay="520">Платное обучение, год</th>
+                <td class="sheet__home" data-m="wipe" data-m-delay="520"><span class="slot">[N&nbsp;₽]</span></td>
+                <td class="sheet__away" data-m="wipe" data-m-delay="520"><span class="slot" data-away>[N&nbsp;₽]</span></td>
+              </tr>
+              <tr>
+                <th scope="row" data-m="wipe" data-m-delay="520">Общежитие, месяц</th>
+                <td class="sheet__home" data-m="wipe" data-m-delay="520"><span class="slot">[N&nbsp;₽]</span></td>
+                <td class="sheet__away" data-m="wipe" data-m-delay="520"><span class="slot" data-away>[N&nbsp;₽]</span></td>
+              </tr>
+              <tr>
+                <th scope="row" data-m="wipe" data-m-delay="520">Комната в&nbsp;аренду, месяц</th>
+                <td class="sheet__home" data-m="wipe" data-m-delay="520"><span class="slot">[N&nbsp;₽]</span></td>
+                <td class="sheet__away" data-m="wipe" data-m-delay="520"><span class="slot" data-away>[N&nbsp;₽]</span></td>
+              </tr>
+              <tr>
+                <th scope="row" data-m="wipe" data-m-delay="520">Еда и&nbsp;проезд, месяц</th>
+                <td class="sheet__home" data-m="wipe" data-m-delay="520"><span class="slot">[N&nbsp;₽]</span></td>
+                <td class="sheet__away" data-m="wipe" data-m-delay="520"><span class="slot" data-away>[N&nbsp;₽]</span></td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th scope="row" data-m="scale" data-m-delay="1260">Итого за&nbsp;год</th>
+                <td class="sheet__home" data-m="scale" data-m-delay="1260"><span class="slot">[N&nbsp;₽]</span></td>
+                <td class="sheet__away" data-m="scale" data-m-delay="1260"><span class="slot" data-away>[N&nbsp;₽]</span></td>
+              </tr>
+            </tfoot>
+          </table>
+          <p class="ledger__note"><span class="collect">цифры собрать у&nbsp;вуза</span> Ячейки пустые, пока приёмная комиссия не&nbsp;подтвердит суммы.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Альбом цифр: что подтверждено и что соберём -->
+    <section class="album section section--grey section--tight" aria-labelledby="album-title">
+      <div class="container band">
+        <h2 class="band-label" id="album-title" data-m="up">Что уже подтверждено</h2>
+        <ul class="band__body album__grid" role="list" data-m-stagger>
+          <li class="cell" data-m="up" data-tilt="3"><span class="cell__num num" data-count data-count-from="1700">1870</span><span class="cell__what">год основания</span></li>
+          <li class="cell" data-m="up" data-tilt="3"><span class="cell__num num" data-count data-count-dur="900">15</span><span class="cell__what">факультетов и&nbsp;институтов</span></li>
+          <li class="cell" data-m="up" data-tilt="3"><span class="cell__num num" data-count>129</span><span class="cell__what">образовательных программ</span></li>
+          <li class="cell" data-m="up" data-tilt="3"><span class="cell__num num" data-count data-count-from="300">93</span><span class="cell__what">место в&nbsp;России, Round University Ranking 2026</span></li>
+          <li class="cell" data-m="up"><span class="cell__num num">топ-200</span><span class="cell__what">Национальный агрегированный рейтинг 2026, 2-я лига</span></li>
+          <li class="cell cell--empty" data-m="up"><span class="cell__num">[N]</span><span class="cell__what">бюджетных мест в&nbsp;2027</span><span class="cell__todo">собрать у&nbsp;вуза</span></li>
+          <li class="cell cell--empty" data-m="up"><span class="cell__num">[N]</span><span class="cell__what">мест в&nbsp;общежитиях</span><span class="cell__todo">собрать у&nbsp;вуза</span></li>
+          <li class="cell cell--empty" data-m="up"><span class="cell__num">[N&nbsp;%]</span><span class="cell__what">выпускников работают по&nbsp;специальности</span><span class="cell__todo">собрать у&nbsp;вуза</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Калькулятор «Сколько стоит год» + лид -->
+    <section class="year section" id="year" aria-labelledby="year-title">
+      <div class="container">
+        <div class="year__head">
+          <h2 id="year-title" data-m="words">Сколько стоит твой год в&nbsp;Твери</h2>
+          <p class="year__sub" data-m="up" data-m-delay="200">Три ответа. Строки, где сумма точно ноль, считаются сразу; остальное придёт с&nbsp;цифрами вуза.</p>
+        </div>
+        <div class="year__grid">
+          <form class="year__form" data-year novalidate data-m="up">
+            <fieldset class="seg">
+              <legend class="seg__legend">Как учишься</legend>
+              <div class="seg__opts">
+                <label><input type="radio" name="form" value="budget" checked><span>Бюджет</span></label>
+                <label><input type="radio" name="form" value="paid"><span>Платно</span></label>
+                <label><input type="radio" name="form" value="target"><span>Целевое</span></label>
+              </div>
+            </fieldset>
+            <fieldset class="seg">
+              <legend class="seg__legend">Где живёшь</legend>
+              <div class="seg__opts">
+                <label><input type="radio" name="home" value="dorm" checked><span>Общежитие</span></label>
+                <label><input type="radio" name="home" value="rent"><span>Снимаю</span></label>
+                <label><input type="radio" name="home" value="parents"><span>С&nbsp;родителями</span></label>
+              </div>
+            </fieldset>
+            <fieldset class="seg">
+              <legend class="seg__legend">Откуда приезжаешь</legend>
+              <div class="seg__opts seg__opts--wrap">
+                <label><input type="radio" name="from" value="tver"><span>Тверь и&nbsp;область</span></label>
+                <label><input type="radio" name="from" value="msk" checked><span>Москва</span></label>
+                <label><input type="radio" name="from" value="spb"><span>Петербург</span></label>
+                <label><input type="radio" name="from" value="other"><span>Другой город</span></label>
+              </div>
+            </fieldset>
+            <button class="btn btn--outline" type="submit">Пересчитать</button>
+          </form>
+
+          <div class="bill" data-bill aria-live="polite" data-m="up" data-m-delay="140">
+            <p class="bill__title">Твой год, 12 месяцев</p>
+            <ul class="bill__rows" role="list" data-bill-rows></ul>
+            <p class="bill__total"><span>Итого</span> <span data-bill-total><span class="slot">[N&nbsp;₽]</span></span></p>
+
+            <form class="send" data-send novalidate>
+              <p class="send__title">Получить расчёт с&nbsp;настоящими цифрами</p>
+              <fieldset class="send__via">
+                <legend class="visually-hidden">Куда прислать</legend>
+                <label><input type="radio" name="via" value="mail" checked><span>На&nbsp;почту</span></label>
+                <label><input type="radio" name="via" value="tg"><span>В&nbsp;Telegram</span></label>
+              </fieldset>
+              <label class="visually-hidden" for="send-to" data-send-label>Электронная почта</label>
+              <div class="input-group">
+                <input class="input" id="send-to" name="to" type="email" autocomplete="email" placeholder="name@mail.ru" aria-describedby="send-err">
+                <button class="btn btn--primary" type="submit">Получить расчёт</button>
+              </div>
+              <p class="field__error" id="send-err" hidden>Проверь адрес почты</p>
+              <p class="send__done" data-send-done role="status" hidden>Пришлём, как только вуз опубликует стоимость 2027.</p>
+              <p class="send__legal">Нажимая кнопку, соглашаешься на&nbsp;обработку персональных данных.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Программы -->
+    <section class="section section--grey programs" id="programs" aria-labelledby="programs-title">
+      <div class="container">
+        <div class="programs__head">
+          <h2 id="programs-title" data-m="words">129 программ. Сравни и&nbsp;выбери</h2>
+          <form class="programs__search" data-m="up" data-m-delay="160" role="search" action="#" onsubmit="return false">
+            <label class="visually-hidden" for="prog-q">Найти программу</label>
+            <div class="input-group">
+              <input class="input" id="prog-q" type="search" placeholder="Программа или предмет ЕГЭ" autocomplete="off">
+              <button class="btn btn--primary" type="submit">Найти</button>
+            </div>
+          </form>
+        </div>
+        <div class="table-scroll" data-m="up" data-m-delay="120" tabindex="0" role="region" aria-label="Программы, листается по горизонтали">
+          <table class="prog">
+            <thead>
+              <tr><th scope="col">Программа</th><th scope="col">Бюджет</th><th scope="col">Проходной 2026</th><th scope="col">Платно, год</th><th scope="col">Целевое</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row"><a href="#">Прикладная математика и&nbsp;информатика</a><span>ПМиК</span></th><td><span class="slot">[N]</span></td><td><span class="slot">[N]</span></td><td><span class="slot">[N&nbsp;₽]</span></td><td>есть</td></tr>
+              <tr><th scope="row"><a href="#">Юриспруденция</a><span>Юридический факультет</span></th><td><span class="slot">[N]</span></td><td><span class="slot">[N]</span></td><td><span class="slot">[N&nbsp;₽]</span></td><td><span class="slot">[да/нет]</span></td></tr>
+              <tr><th scope="row"><a href="#">Педагогическое образование</a><span>Институт педагогического образования</span></th><td><span class="slot">[N]</span></td><td><span class="slot">[N]</span></td><td><span class="slot">[N&nbsp;₽]</span></td><td>есть</td></tr>
+              <tr><th scope="row"><a href="#">Химическая технология</a><span>Химико-технологический факультет</span></th><td><span class="slot">[N]</span></td><td><span class="slot">[N]</span></td><td><span class="slot">[N&nbsp;₽]</span></td><td><span class="slot">[да/нет]</span></td></tr>
+              <tr><th scope="row"><a href="#">Экономика</a><span>Институт экономики и&nbsp;управления</span></th><td><span class="slot">[N]</span></td><td><span class="slot">[N]</span></td><td><span class="slot">[N&nbsp;₽]</span></td><td><span class="slot">[да/нет]</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="programs__more"><a class="btn btn--text" href="#">Все 129 программ на&nbsp;15 факультетах <span class="icon icon--arrow-right" aria-hidden="true"></span></a></p>
+      </div>
+    </section>
+
+    <!-- Целевое и работодатели -->
+    <section class="section target" id="target" aria-labelledby="target-title">
+      <div class="container">
+        <div class="target__grid">
+          <h2 id="target-title" data-m="words">Целевое: учёба оплачена, работа ждёт</h2>
+          <ol class="target__how" role="list" data-m-stagger style="--m-step:80ms">
+            <li data-m="up"><span class="target__n num">1</span><p>Выбираешь предложение работодателя на&nbsp;портале «Работа России»</p></li>
+            <li data-m="up"><span class="target__n num">2</span><p>Заключаешь договор. Поступаешь по&nbsp;отдельному конкурсу</p></li>
+            <li data-m="up"><span class="target__n num">3</span><p>Получаешь меры поддержки: <span class="slot">[выплаты, практика]</span></p></li>
+            <li data-m="up"><span class="target__n num">4</span><p>После выпуска работаешь у&nbsp;заказчика <span class="slot">[N]</span> года</p></li>
+          </ol>
+        </div>
+      </div>
+      <div class="container partners ribbon target__partners" data-ribbon data-m="up">
+        <div class="ribbon__head">
+          <h3 class="partners__title">Работодатели и&nbsp;заказчики целевого</h3>
+          <div class="ribbon__nav">
+            <button class="btn-circle" type="button" data-ribbon-prev><span class="icon icon--arrow-left" aria-hidden="true"></span><span class="visually-hidden">Назад</span></button>
+            <button class="btn-circle" type="button" data-ribbon-next><span class="icon icon--arrow-right" aria-hidden="true"></span><span class="visually-hidden">Вперёд</span></button>
+          </div>
+        </div>
+        <div class="ribbon__track" role="list" aria-label="Работодатели, листаются">
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Работодатель 1]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Работодатель 2]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Работодатель 3]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Работодатель 4]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Работодатель 5]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Работодатель 6]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Работодатель 7]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Работодатель 8]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Работодатель 9]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Работодатель 10]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Работодатель 11]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Работодатель 12]</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Общежитие -->
+    <section class="dorm" id="dorm" aria-labelledby="dorm-title">
+      <figure class="dorm__photo" data-m="mask">
+        <img src="../../../assets/stub/photos/building-obshchezhitiya-nebo.jpg"
+             srcset="../../../assets/stub/photos/800/building-obshchezhitiya-nebo.jpg 800w, ../../../assets/stub/photos/building-obshchezhitiya-nebo.jpg 2000w"
+             sizes="(min-width: 1024px) 58vw, 100vw"
+             width="2000" height="1333" alt="Корпуса общежитий ТвГУ под пасмурным небом, рядом ёлки" loading="lazy">
+      </figure>
+      <div class="dorm__page">
+        <h2 id="dorm-title" data-m="words">Общежитие дешевле съёма. Посчитай разницу</h2>
+        <dl class="dorm__rows" data-m-stagger>
+          <div data-m="up"><dt>Место в&nbsp;общежитии</dt><dd><span class="slot">[N&nbsp;₽]</span> в&nbsp;месяц</dd></div>
+          <div data-m="up"><dt>Комната в&nbsp;аренду в&nbsp;Твери</dt><dd><span class="slot">[N&nbsp;₽]</span> в&nbsp;месяц</dd></div>
+          <div class="dorm__diff" data-m="up"><dt>Разница за&nbsp;учебный год</dt><dd><span class="slot">[N&nbsp;₽]</span></dd></div>
+          <div data-m="up"><dt>Маткапитал</dt><dd>можно направить на&nbsp;оплату общежития, <span class="slot">[условия]</span></dd></div>
+          <div data-m="up"><dt>Корпусов и&nbsp;мест</dt><dd><span class="slot">[N]</span> корпусов, <span class="slot">[N]</span> мест</dd></div>
+        </dl>
+        <a class="btn btn--text" href="#faq">Кому дают место <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+      </div>
+    </section>
+
+    <!-- Город и природа -->
+    <section class="section section--dark city" aria-labelledby="city-title">
+      <div class="container city__grid">
+        <div class="city__copy">
+          <h2 id="city-title" data-m="words">Тише столицы, но&nbsp;не&nbsp;провинция</h2>
+          <p class="city__lead" data-m="up" data-m-delay="200">Тверь стоит на&nbsp;Волге. У&nbsp;университета свой ботанический сад, турслёт первокурсников и&nbsp;спортивные сборные.</p>
+        </div>
+        <figure class="city__loop" data-m="mask">
+          <video data-city-video muted loop playsinline preload="none" poster="../../../assets/stub/video/botsad-gashenie-marki-prud-park.jpg" aria-label="Видео: Ботанический сад ТвГУ весной, пруд и дорожки">
+            <source src="../../../assets/stub/video/480/botsad-gashenie-marki-prud-park.mp4" type="video/mp4" media="(max-width: 767px)">
+            <source src="../../../assets/stub/video/botsad-gashenie-marki-prud-park.mp4" type="video/mp4">
+          </video>
+          <button class="loop-toggle" type="button" data-video-toggle aria-pressed="false">
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true" data-icon-play><path d="M7 4v16l13-8z"/></svg>
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true" data-icon-pause hidden><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+            <span class="visually-hidden" data-video-label>Воспроизвести видео</span>
+          </button>
+          <figcaption>Ботанический сад ТвГУ</figcaption>
+        </figure>
+        <figure class="city__photo" data-m="mask" data-m-delay="160">
+          <img src="../../../assets/stub/photos/800/sport-turslet-zaryadka-pole.jpg" width="800" height="533" alt="Турслёт: студенты делают разминку на поле у леса" loading="lazy">
+          <figcaption>Турслёт «Студенческий порыв»</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Пять шагов и сроки -->
+    <section class="section path" aria-labelledby="steps-title">
+      <div class="container">
+        <div class="path__grid">
+          <div class="path__steps" id="steps">
+            <h2 id="steps-title" data-m="words">Пять шагов до&nbsp;зачисления</h2>
+            <ol class="steps" role="list" data-m-stagger style="--m-step:80ms">
+              <li data-m="up"><span class="steps__n num">01</span><div><h3>Выбрать программу</h3><p>Сверить предметы ЕГЭ, бюджетные места и&nbsp;стоимость</p></div></li>
+              <li data-m="up"><span class="steps__n num">02</span><div><h3>Посчитать год</h3><p>Обучение, жильё, дорога домой</p></div></li>
+              <li data-m="up"><span class="steps__n num">03</span><div><h3>Подать документы</h3><p>Через Госуслуги, личный кабинет или&nbsp;лично на&nbsp;Желябова, 33</p></div></li>
+              <li data-m="up"><span class="steps__n num">04</span><div><h3>Следить за&nbsp;списками</h3><p>Место в&nbsp;конкурсе обновляется каждый день</p></div></li>
+              <li data-m="up"><span class="steps__n num">05</span><div><h3>Согласие и&nbsp;заселение</h3><p>Приказ о&nbsp;зачислении, место в&nbsp;общежитии</p></div></li>
+            </ol>
+          </div>
+          <div class="path__dates" id="dates" data-m="up" data-m-delay="160">
+            <h2 class="path__dates-title">Сроки 2027</h2>
+            <p class="countdown"><span class="countdown__n"><span class="slot slot--red">[N]</span></span> <span class="countdown__txt">дней до&nbsp;конца приёма на&nbsp;бюджет</span></p>
+            <dl class="dates">
+              <div><dt class="num">[дата]</dt><dd>Начало приёма документов</dd></div>
+              <div class="is-deadline"><dt class="num">[дата]</dt><dd>Конец приёма на&nbsp;бюджет</dd></div>
+              <div><dt class="num">[дата]</dt><dd>Конец приёма на&nbsp;платное</dd></div>
+              <div><dt class="num">[дата]</dt><dd>Приказ о&nbsp;зачислении</dd></div>
+            </dl>
+            <a class="btn btn--accent btn--lg btn--block" href="#">Подать документы</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Вопросы про деньги -->
+    <section class="section section--grey" id="faq" aria-labelledby="faq-title">
+      <div class="container band">
+        <h2 class="band-label" id="faq-title" data-m="up">Вопросы про деньги</h2>
+        <div class="band__body accordion" data-m-stagger style="--m-step:45ms">
+          <details class="accordion__item" name="faq" data-m="up">
+            <summary class="accordion__summary">Сколько стоит платное обучение и&nbsp;можно ли платить частями?</summary>
+            <div class="accordion__body"><p>От [N ₽ в год] в зависимости от программы. Оплата по семестрам: [условия]. Стоимость по каждой программе в таблице выше.</p></div>
+          </details>
+          <details class="accordion__item" name="faq" data-m="up">
+            <summary class="accordion__summary">Есть ли скидки на&nbsp;платное?</summary>
+            <div class="accordion__body"><p>[Условия скидок: баллы ЕГЭ, олимпиады, семьям]. Перечень утверждает вуз, уточни в приёмной комиссии.</p></div>
+          </details>
+          <details class="accordion__item" name="faq" data-m="up">
+            <summary class="accordion__summary">Можно ли оплатить учёбу и&nbsp;общежитие маткапиталом?</summary>
+            <div class="accordion__body"><p>Да, материнский капитал можно направить на платное обучение и на оплату общежития. Документы и сроки: [условия ТвГУ].</p></div>
+          </details>
+          <details class="accordion__item" name="faq" data-m="up">
+            <summary class="accordion__summary">Вернут ли часть денег через налоговый вычет?</summary>
+            <div class="accordion__body"><p>Родитель или студент может получить социальный вычет за обучение. Лимиты и порядок: [N ₽, условия]. Справку об оплате выдаёт [отдел].</p></div>
+          </details>
+          <details class="accordion__item" name="faq" data-m="up">
+            <summary class="accordion__summary">Дадут ли общежитие и&nbsp;сколько оно стоит?</summary>
+            <div class="accordion__body"><p>Иногородним студентам очной формы: [N мест], [N ₽ в месяц]. Заселение: [сроки и порядок].</p></div>
+          </details>
+          <details class="accordion__item" name="faq" data-m="up">
+            <summary class="accordion__summary">Сколько бюджетных мест и&nbsp;какой проходной балл?</summary>
+            <div class="accordion__body"><p>[N бюджетных мест] в 2027. Проходные баллы 2026 по программам: [ссылка на таблицу].</p></div>
+          </details>
+          <details class="accordion__item" name="faq" data-m="up">
+            <summary class="accordion__summary">Можно ли подать документы через Госуслуги?</summary>
+            <div class="accordion__body"><p>Да. Через Госуслуги, личный кабинет абитуриента или лично: 170100, Тверь, ул. Желябова, 33.</p></div>
+          </details>
+          <details class="accordion__item" name="faq" data-m="up">
+            <summary class="accordion__summary">Сколько стоит съездить домой на&nbsp;выходные?</summary>
+            <div class="accordion__body"><p>До Москвы и Петербурга ходят поезда по одной линии. Билет: от [N ₽], в пути [N ч]. Цифры сверить перед публикацией.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Контакты -->
+    <section class="section section--tight contacts" id="contacts" aria-labelledby="contacts-title">
+      <div class="container contacts__row">
+        <h2 id="contacts-title" class="contacts__title" data-m="words">Спроси про&nbsp;деньги напрямую</h2>
+        <address class="contacts__list" data-m="up" data-m-delay="160">
+          <a href="tel:+74822321514">+7 (4822) 32-15-14</a>
+          <span>170100, Тверь, ул. Желябова, 33</span>
+          <span>Пн–пт, [часы работы]</span>
+        </address>
+      </div>
+    </section>
+  </main>
+
+  <div class="dock" data-dock>
+    <a class="btn btn--primary btn--block" href="#year">Посчитать мой год</a>
+  </div>
+
+  <div data-include="footer"></div>
+</body>
+</html>

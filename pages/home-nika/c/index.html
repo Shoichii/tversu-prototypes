@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Тверской государственный университет · главная, язык Ники, вариант c «Лист» · ТвГУ прототипы</title>
+  <meta name="description" content="Классический университет Твери с 1870 года: 15 факультетов и институтов, 129 программ, 93-е место в России по RUR 2026. Подберите программу и задайте вопрос приёмной комиссии.">
+  <link rel="preload" href="../../../assets/fonts/golos-text-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../../assets/fonts/source-serif-4-regular-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../../system/tokens.css">
+  <link rel="stylesheet" href="../../../system/base.css">
+  <link rel="stylesheet" href="../../../system/stub.css">
+  <link rel="stylesheet" href="../../../system/theme-nika.css">
+  <link rel="stylesheet" href="../../../system/motion.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="../../../system/motion.js"></script>
+  <script>
+    /* Интро «страница рождается из линий»: начальные состояния в CSS под html.nc-intro, чтобы не мигнуло до скриптов.
+       Если script.js не стартовал за 4 с, класс снимается и всё видно. */
+    (function (d) {
+      if (!d.classList.contains("m-on")) return;
+      d.classList.add("nc-intro");
+      setTimeout(function () { if (!window.__ncIntro) d.classList.remove("nc-intro"); }, 4000);
+    })(document.documentElement);
+  </script>
+  <script src="../../../system/partials.js" defer></script>
+  <script src="../../../system/ui.js" defer></script>
+  <script src="../../../system/vendor/gsap/gsap.min.js" defer></script>
+  <script src="../../../system/vendor/gsap/CustomEase.min.js" defer></script>
+  <script src="../../../system/vendor/gsap/ScrollTrigger.min.js" defer></script>
+  <script src="../../../system/vendor/gsap/SplitText.min.js" defer></script>
+  <script src="../../../system/vendor/gsap/MorphSVGPlugin.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body class="theme-nika" data-header="dark">
+  <div data-include="header"></div>
+
+  <main id="main">
+    <!-- ═══ 1. Первый экран: h1 и лист на столе ═══ -->
+    <section class="nc-hero" aria-labelledby="hero-title" data-hero>
+      <div class="container nc-hero__grid">
+        <div class="nc-hero__copy">
+          <h1 class="nc-h1" id="hero-title" data-hero-title>Университет,<br> который учит<br> <em>думать</em></h1>
+          <p class="lead nc-hero__lead" data-hero-fade>С&nbsp;1870&nbsp;года: 15&nbsp;факультетов и&nbsp;институтов, 129&nbsp;программ и&nbsp;93-е место в&nbsp;России по&nbsp;рейтингу RUR&nbsp;2026.</p>
+          <div class="nc-hero__act" data-hero-fade>
+            <a class="btn btn--primary btn--lg" href="#programs" data-magnetic>Подобрать программу <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+            <a class="btn btn--text btn--lg" href="#ask">Задать вопрос</a>
+          </div>
+        </div>
+
+        <div class="nc-desk">
+          <span class="nc-desk__fill" aria-hidden="true" data-desk-fill></span>
+          <span class="nc-g nc-g--v nc-g--desk" aria-hidden="true" data-g="v"></span>
+          <span class="nc-g nc-g--v nc-g--left" aria-hidden="true" data-g="v"></span>
+          <span class="nc-g nc-g--v nc-g--right" aria-hidden="true" data-g="v"></span>
+          <div class="nc-desk__row">
+            <span class="nc-g nc-g--h nc-g--top" aria-hidden="true" data-g="h"></span>
+            <span class="nc-g nc-g--h nc-g--bottom" aria-hidden="true" data-g="h"></span>
+            <div class="nc-stage" data-stage-sheet>
+              <span class="nc-shade" aria-hidden="true" data-shade></span>
+              <div class="nc-tilt" data-tilt-sheet>
+                <nav class="nc-sheet" aria-labelledby="sheet-title" data-sheet>
+                  <div class="nc-sheet__head">
+                    <p class="nc-sheet__title" id="sheet-title">Университет на&nbsp;одном листе</p>
+                    <p class="nc-sheet__sub">Тверской государственный университет</p>
+                  </div>
+                  <ol class="nc-toc" role="list">
+                    <li class="nc-toc__row"><span class="nc-toc__rule" aria-hidden="true"></span><a class="nc-toc__link" href="#programs"><span class="nc-toc__num">15</span><span class="nc-toc__txt">факультетов и&nbsp;институтов</span><span class="icon icon--arrow-right nc-toc__go" aria-hidden="true"></span></a></li>
+                    <li class="nc-toc__row"><span class="nc-toc__rule" aria-hidden="true"></span><a class="nc-toc__link" href="#programs"><span class="nc-toc__num">129</span><span class="nc-toc__txt">программ, от&nbsp;бакалавриата до&nbsp;аспирантуры</span><span class="icon icon--arrow-right nc-toc__go" aria-hidden="true"></span></a></li>
+                    <li class="nc-toc__row"><span class="nc-toc__rule" aria-hidden="true"></span><a class="nc-toc__link" href="#history"><span class="nc-toc__num">1870</span><span class="nc-toc__txt">год основания: учительская школа Максимовича</span><span class="icon icon--arrow-right nc-toc__go" aria-hidden="true"></span></a></li>
+                    <li class="nc-toc__row"><span class="nc-toc__rule" aria-hidden="true"></span><a class="nc-toc__link" href="#history"><span class="nc-toc__num">93-е</span><span class="nc-toc__txt">место в&nbsp;России, RUR&nbsp;2026</span><span class="icon icon--arrow-right nc-toc__go" aria-hidden="true"></span></a></li>
+                    <li class="nc-toc__row"><span class="nc-toc__rule" aria-hidden="true"></span><a class="nc-toc__link" href="#admission"><span class="nc-toc__num">2026</span><span class="nc-toc__txt">приём: документы на&nbsp;бюджет <strong class="nc-toc__due">до&nbsp;[25&nbsp;июля]</strong></span><span class="icon icon--arrow-right nc-toc__go" aria-hidden="true"></span></a></li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="nc-aud" aria-label="Кому что нужно">
+        <span class="nc-g nc-g--h nc-g--strip" aria-hidden="true" data-g="h"></span>
+        <ul class="container nc-aud__list" role="list">
+          <li class="nc-aud__cell"><span class="nc-g nc-g--v nc-g--cell" aria-hidden="true" data-g="v"></span><a class="nc-aud__link" href="#"><span class="nc-aud__name">Абитуриенту</span><span class="nc-aud__what">программы, баллы, общежитие</span><span class="icon icon--arrow-up-right nc-aud__go" aria-hidden="true"></span></a></li>
+          <li class="nc-aud__cell"><span class="nc-g nc-g--v nc-g--cell" aria-hidden="true" data-g="v"></span><a class="nc-aud__link" href="#"><span class="nc-aud__name">Студенту</span><span class="nc-aud__what">расписание, стипендии, кабинет</span><span class="icon icon--arrow-up-right nc-aud__go" aria-hidden="true"></span></a></li>
+          <li class="nc-aud__cell"><span class="nc-g nc-g--v nc-g--cell" aria-hidden="true" data-g="v"></span><a class="nc-aud__link" href="#"><span class="nc-aud__name">Партнёру</span><span class="nc-aud__what">целевое обучение, практика</span><span class="icon icon--arrow-up-right nc-aud__go" aria-hidden="true"></span></a></li>
+          <li class="nc-aud__cell"><span class="nc-g nc-g--v nc-g--cell" aria-hidden="true" data-g="v"></span><a class="nc-aud__link" href="#"><span class="nc-aud__name">Сотруднику</span><span class="nc-aud__what">документы, сервисы, наука</span><span class="icon icon--arrow-up-right nc-aud__go" aria-hidden="true"></span></a></li>
+        </ul>
+      </nav>
+    </section>
+
+    <!-- ═══ 2. Направления: веер листов ═══ -->
+    <section class="section section--grey nc-fan-band" id="programs" aria-labelledby="programs-title" data-fan-band>
+      <div class="container">
+        <div class="n-band-head">
+          <p class="band-label">Направления</p>
+          <a class="btn btn--outline btn--caps" href="#">Все 129 программ <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+        </div>
+        <div class="nc-fan-head">
+          <h2 id="programs-title">Шесть направлений, 129&nbsp;программ</h2>
+          <p class="nc-fan-head__text">От&nbsp;бакалавриата до&nbsp;аспирантуры. Нажмите «+» на&nbsp;листе, чтобы увидеть программы направления.</p>
+        </div>
+        <ul class="nc-fan" role="list" data-fan>
+          <li class="nc-slot"><article class="nc-leaf" aria-labelledby="leaf-1">
+            <button class="btn-circle nc-leaf__toggle" type="button" aria-expanded="false" aria-controls="leaf-1-back" data-leaf-toggle><span class="icon icon--plus" aria-hidden="true"></span><span class="visually-hidden">Программы направления «IT и математика»</span></button>
+            <div class="nc-leaf__turn">
+              <div class="nc-leaf__face nc-leaf__front">
+                <svg class="i nc-leaf__mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8l-4 4l4 4"/><path d="M17 8l4 4l-4 4"/><path d="M14 4l-4 16"/></svg>
+                <div class="nc-leaf__body">
+                  <p class="nc-leaf__meta">[N] программ · бакалавриат, магистратура</p>
+                  <h3 class="nc-leaf__title" id="leaf-1">IT и&nbsp;математика</h3>
+                </div>
+              </div>
+              <div class="nc-leaf__face nc-leaf__back" id="leaf-1-back" inert>
+                <p class="nc-leaf__backtitle">IT и&nbsp;математика</p>
+                <ul class="nc-leaf__progs" role="list">
+                  <li><a href="#">Прикладная математика и&nbsp;информатика</a></li>
+                  <li><a href="#">Фундаментальная информатика и&nbsp;информационные технологии</a></li>
+                  <li><a href="#">Прикладная информатика</a></li>
+                </ul>
+                <a class="btn btn--text nc-leaf__all" href="#">Все [N] программ <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+              </div>
+            </div>
+          </article></li>
+          <li class="nc-slot"><article class="nc-leaf" aria-labelledby="leaf-2">
+            <button class="btn-circle nc-leaf__toggle" type="button" aria-expanded="false" aria-controls="leaf-2-back" data-leaf-toggle><span class="icon icon--plus" aria-hidden="true"></span><span class="visually-hidden">Программы направления «Естественные науки»</span></button>
+            <div class="nc-leaf__turn">
+              <div class="nc-leaf__face nc-leaf__front">
+                <svg class="i nc-leaf__mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3l6 0"/><path d="M10 9l4 0"/><path d="M10 3v6l-4 11a.7 .7 0 0 0 .5 1h11a.7 .7 0 0 0 .5 -1l-4 -11v-6"/></svg>
+                <div class="nc-leaf__body">
+                  <p class="nc-leaf__meta">[N] программ · бакалавриат, специалитет</p>
+                  <h3 class="nc-leaf__title" id="leaf-2">Естественные науки</h3>
+                </div>
+              </div>
+              <div class="nc-leaf__face nc-leaf__back" id="leaf-2-back" inert>
+                <p class="nc-leaf__backtitle">Естественные науки</p>
+                <ul class="nc-leaf__progs" role="list">
+                  <li><a href="#">Биология</a></li>
+                  <li><a href="#">Химия</a></li>
+                  <li><a href="#">Физика</a></li>
+                </ul>
+                <a class="btn btn--text nc-leaf__all" href="#">Все [N] программ <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+              </div>
+            </div>
+          </article></li>
+          <li class="nc-slot"><article class="nc-leaf" aria-labelledby="leaf-3">
+            <button class="btn-circle nc-leaf__toggle" type="button" aria-expanded="false" aria-controls="leaf-3-back" data-leaf-toggle><span class="icon icon--plus" aria-hidden="true"></span><span class="visually-hidden">Программы направления «Гуманитарные науки»</span></button>
+            <div class="nc-leaf__turn">
+              <div class="nc-leaf__face nc-leaf__front">
+                <svg class="i nc-leaf__mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0"/><path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0"/><path d="M3 6l0 13"/><path d="M12 6l0 13"/><path d="M21 6l0 13"/></svg>
+                <div class="nc-leaf__body">
+                  <p class="nc-leaf__meta">[N] программ · бакалавриат, магистратура</p>
+                  <h3 class="nc-leaf__title" id="leaf-3">Гуманитарные науки</h3>
+                </div>
+              </div>
+              <div class="nc-leaf__face nc-leaf__back" id="leaf-3-back" inert>
+                <p class="nc-leaf__backtitle">Гуманитарные науки</p>
+                <ul class="nc-leaf__progs" role="list">
+                  <li><a href="#">Филология</a></li>
+                  <li><a href="#">История</a></li>
+                  <li><a href="#">Лингвистика</a></li>
+                </ul>
+                <a class="btn btn--text nc-leaf__all" href="#">Все [N] программ <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+              </div>
+            </div>
+          </article></li>
+          <li class="nc-slot"><article class="nc-leaf" aria-labelledby="leaf-4">
+            <button class="btn-circle nc-leaf__toggle" type="button" aria-expanded="false" aria-controls="leaf-4-back" data-leaf-toggle><span class="icon icon--plus" aria-hidden="true"></span><span class="visually-hidden">Программы направления «Педагогика и психология»</span></button>
+            <div class="nc-leaf__turn">
+              <div class="nc-leaf__face nc-leaf__front">
+                <svg class="i nc-leaf__mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 9l-10 -4l-10 4l10 4l10 -4v6"/><path d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4"/></svg>
+                <div class="nc-leaf__body">
+                  <p class="nc-leaf__meta">[N] программ · бакалавриат, магистратура</p>
+                  <h3 class="nc-leaf__title" id="leaf-4">Педагогика и&nbsp;психология</h3>
+                </div>
+              </div>
+              <div class="nc-leaf__face nc-leaf__back" id="leaf-4-back" inert>
+                <p class="nc-leaf__backtitle">Педагогика и&nbsp;психология</p>
+                <ul class="nc-leaf__progs" role="list">
+                  <li><a href="#">Педагогическое образование</a></li>
+                  <li><a href="#">Психолого-педагогическое образование</a></li>
+                  <li><a href="#">Психология</a></li>
+                </ul>
+                <a class="btn btn--text nc-leaf__all" href="#">Все [N] программ <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+              </div>
+            </div>
+          </article></li>
+          <li class="nc-slot"><article class="nc-leaf" aria-labelledby="leaf-5">
+            <button class="btn-circle nc-leaf__toggle" type="button" aria-expanded="false" aria-controls="leaf-5-back" data-leaf-toggle><span class="icon icon--plus" aria-hidden="true"></span><span class="visually-hidden">Программы направления «Экономика и право»</span></button>
+            <div class="nc-leaf__turn">
+              <div class="nc-leaf__face nc-leaf__front">
+                <svg class="i nc-leaf__mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 20l10 0"/><path d="M6 6l6 -1l6 1"/><path d="M12 3l0 17"/><path d="M9 12l-3 -6l-3 6a3 3 0 0 0 6 0"/><path d="M21 12l-3 -6l-3 6a3 3 0 0 0 6 0"/></svg>
+                <div class="nc-leaf__body">
+                  <p class="nc-leaf__meta">[N] программ · бакалавриат, магистратура</p>
+                  <h3 class="nc-leaf__title" id="leaf-5">Экономика и&nbsp;право</h3>
+                </div>
+              </div>
+              <div class="nc-leaf__face nc-leaf__back" id="leaf-5-back" inert>
+                <p class="nc-leaf__backtitle">Экономика и&nbsp;право</p>
+                <ul class="nc-leaf__progs" role="list">
+                  <li><a href="#">Экономика</a></li>
+                  <li><a href="#">Менеджмент</a></li>
+                  <li><a href="#">Юриспруденция</a></li>
+                </ul>
+                <a class="btn btn--text nc-leaf__all" href="#">Все [N] программ <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+              </div>
+            </div>
+          </article></li>
+          <li class="nc-slot"><article class="nc-leaf" aria-labelledby="leaf-6">
+            <button class="btn-circle nc-leaf__toggle" type="button" aria-expanded="false" aria-controls="leaf-6-back" data-leaf-toggle><span class="icon icon--plus" aria-hidden="true"></span><span class="visually-hidden">Программы направления «Физическая культура»</span></button>
+            <div class="nc-leaf__turn">
+              <div class="nc-leaf__face nc-leaf__front">
+                <svg class="i nc-leaf__mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"/><path d="M4 17l5 1l.75 -1.5"/><path d="M15 21l0 -4l-4 -3l1 -6"/><path d="M7 12l0 -3l5 -1l3 3l3 1"/></svg>
+                <div class="nc-leaf__body">
+                  <p class="nc-leaf__meta">[N] программ · бакалавриат, магистратура</p>
+                  <h3 class="nc-leaf__title" id="leaf-6">Физическая культура</h3>
+                </div>
+              </div>
+              <div class="nc-leaf__face nc-leaf__back" id="leaf-6-back" inert>
+                <p class="nc-leaf__backtitle">Физическая культура</p>
+                <ul class="nc-leaf__progs" role="list">
+                  <li><a href="#">Физическая культура</a></li>
+                  <li><a href="#">Адаптивная физическая культура</a></li>
+                  <li><a href="#">Спорт</a></li>
+                </ul>
+                <a class="btn btn--text nc-leaf__all" href="#">Все [N] программ <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+              </div>
+            </div>
+          </article></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ═══ 3. История в лицах: линия времени ═══ -->
+    <section class="section nc-time-band" id="history" aria-labelledby="history-title">
+      <div class="container">
+        <div class="n-band-head">
+          <p class="band-label">История в&nbsp;лицах</p>
+          <a class="btn btn--outline btn--caps" href="#">Об&nbsp;университете <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+        </div>
+        <h2 class="nc-time-title" id="history-title">156&nbsp;лет: от&nbsp;учительской школы до&nbsp;классического университета</h2>
+        <div class="nc-time" data-time>
+          <div class="nc-time__track" aria-hidden="true">
+            <span class="nc-time__base"></span>
+            <span class="nc-time__trail" data-time-trail></span>
+            <span class="nc-time__dot" data-time-dot></span>
+          </div>
+          <ol class="nc-time__list" role="list">
+            <li class="nc-t nc-t--year" data-t>
+              <p class="nc-t__year">1870</p>
+              <div class="nc-t__media"><img class="n-mono" src="../../../assets/stub/photos/800/archive-uchenicy-v-klasse.jpg" alt="Архивный снимок: ученицы за партами в классе" width="800" height="614" loading="lazy"></div>
+              <p class="nc-t__cap">Учительская школа Максимовича, с&nbsp;которой начался университет</p>
+            </li>
+            <li class="nc-t nc-t--person" data-t>
+              <div class="nc-t__media nc-t__media--face"><div class="stub stub--fill" role="img" aria-label="Заглушка: портрет Николая Куна, чёрно-белый"><span class="stub__caption">портрет, ч/б</span></div></div>
+              <p class="nc-t__name">Николай Кун</p>
+              <p class="nc-t__role">автор книги «Мифы Древней Греции»</p>
+            </li>
+            <li class="nc-t nc-t--person" data-t>
+              <div class="nc-t__media nc-t__media--face"><div class="stub stub--fill" role="img" aria-label="Заглушка: портрет Александра Александрова, чёрно-белый"><span class="stub__caption">портрет, ч/б</span></div></div>
+              <p class="nc-t__name">Александр Александров</p>
+              <p class="nc-t__role">композитор, автор музыки гимна России</p>
+            </li>
+            <li class="nc-t nc-t--person" data-t>
+              <div class="nc-t__media nc-t__media--face"><div class="stub stub--fill" role="img" aria-label="Заглушка: портрет Андрея Дементьева, чёрно-белый"><span class="stub__caption">портрет, ч/б</span></div></div>
+              <p class="nc-t__name">Андрей Дементьев</p>
+              <p class="nc-t__role">поэт</p>
+            </li>
+            <li class="nc-t nc-t--person" data-t>
+              <div class="nc-t__media nc-t__media--face"><div class="stub stub--fill" role="img" aria-label="Заглушка: портрет Натальи Непряевой, чёрно-белый"><span class="stub__caption">портрет, ч/б</span></div></div>
+              <p class="nc-t__name">Наталья Непряева</p>
+              <p class="nc-t__role">олимпийская чемпионка</p>
+            </li>
+            <li class="nc-t nc-t--year nc-t--now" data-t>
+              <p class="nc-t__year">2026</p>
+              <div class="nc-t__media"><img class="n-mono" src="../../../assets/stub/photos/800/lecture-studenty-v-auditorii.jpg" alt="Студенты за партами в поточной аудитории" width="800" height="533" loading="lazy"></div>
+              <p class="nc-t__cap">93-е место в&nbsp;России по&nbsp;RUR&nbsp;2026, топ-200 рейтинга НАР&nbsp;2026</p>
+            </li>
+          </ol>
+        </div>
+        <p class="caption nc-time__note">Выпускники и&nbsp;преподаватели университета</p>
+      </div>
+    </section>
+
+    <!-- ═══ 4. Работодатели и партнёры ═══ -->
+    <section class="section section--grey" aria-labelledby="partners-label">
+      <div class="container partners ribbon" data-ribbon>
+        <div class="n-band-head">
+          <h2 class="band-label" id="partners-label">Работодатели и&nbsp;партнёры</h2>
+          <div class="ribbon__nav">
+            <button class="btn-circle" type="button" data-ribbon-prev><span class="icon icon--arrow-left" aria-hidden="true"></span><span class="visually-hidden">Предыдущие партнёры</span></button>
+            <button class="btn-circle" type="button" data-ribbon-next><span class="icon icon--arrow-right" aria-hidden="true"></span><span class="visually-hidden">Следующие партнёры</span></button>
+          </div>
+        </div>
+        <div class="ribbon__track" role="list" aria-label="Работодатели и партнёры, лента листается" data-m="up">
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">Правительство Тверской области</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">Сбер</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">Тверской вагоностроительный завод</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">Ростелеком</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">Яндекс</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">1С</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">Тверская областная клиническая больница</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">Газпром</span></div>
+        </div>
+        <p class="nc-partners__fact"><b>[N]</b> договоров о&nbsp;целевом обучении: учёба с&nbsp;гарантированным местом работы</p>
+      </div>
+    </section>
+
+    <!-- ═══ 5. Жизнь университета: лидер и две строки ═══ -->
+    <section class="section" aria-labelledby="news-label">
+      <div class="container">
+        <div class="n-band-head">
+          <h2 class="band-label" id="news-label">Жизнь университета</h2>
+          <a class="btn btn--outline btn--caps" href="#">Все новости и&nbsp;события <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+        </div>
+        <div class="nc-news">
+          <a class="nc-news__lead" href="#" data-news-lead>
+            <div class="nc-news__media" data-m="mask"><img class="n-mono" src="../../../assets/stub/photos/800/lecture-zal-s-muralom.jpg" alt="Лекция в зале с муралом «Тверская область»" width="800" height="533" loading="lazy"></div>
+            <p class="n-news__date">[дата] · Университет</p>
+            <h3 class="nc-news__title">ТвГУ в&nbsp;авангарде формирования безопасной образовательной среды <span class="icon icon--arrow-right nc-news__arrow" aria-hidden="true"></span></h3>
+          </a>
+          <ul class="nc-news__rows" role="list" data-m-stagger style="--m-step:120ms">
+            <li data-m="up"><a class="nc-news__row" href="#">
+              <span class="nc-news__rule" aria-hidden="true"></span>
+              <p class="n-news__date">[12 сентября] · Студенты</p>
+              <h3 class="nc-news__rtitle">Семь первокурсниц ТвГУ стали лауреатами премии Губернатора Тверской области <span class="icon icon--arrow-right nc-news__arrow" aria-hidden="true"></span></h3>
+            </a></li>
+            <li data-m="up"><a class="nc-news__row" href="#">
+              <span class="nc-news__rule" aria-hidden="true"></span>
+              <p class="n-news__date">[1 сентября] · Гимназия</p>
+              <h3 class="nc-news__rtitle">В&nbsp;Академической гимназии ТвГУ прозвенел первый звонок <span class="icon icon--arrow-right nc-news__arrow" aria-hidden="true"></span></h3>
+            </a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 6. Приём 2026: циферблат и лид ═══ -->
+    <section class="section section--slate nc-adm" id="admission" aria-labelledby="adm-title">
+      <div class="container">
+        <div class="n-band-head">
+          <p class="band-label">Приём 2026</p>
+          <p class="n-deadline">Документы на&nbsp;бюджет <strong>до&nbsp;[25&nbsp;июля]</strong></p>
+        </div>
+        <div class="nc-adm__grid">
+          <figure class="nc-dial" data-dial>
+            <svg class="n-art nc-dial__art" viewBox="0 0 400 400" aria-hidden="true">
+              <circle class="l" cx="200" cy="200" r="184"/>
+              <circle class="l-soft" cx="200" cy="200" r="150"/>
+              <circle class="l-accent nc-dial__arc" cx="200" cy="200" r="184" pathLength="1" transform="rotate(-90 200 200)" data-dial-arc/>
+              <circle class="dot-accent nc-dial__stop is-past" cx="200" cy="16" r="5" data-stop="0"/>
+              <circle class="dot-open nc-dial__stop" cx="25" cy="256.86" r="5" data-stop="0.7"/>
+              <circle class="dot-open nc-dial__stop" cx="74.1" cy="65.9" r="5" data-stop="0.88"/>
+            </svg>
+            <div class="nc-dial__center">
+              <p class="nc-dial__num">[N]</p>
+              <p class="nc-dial__cap">дней до&nbsp;конца приёма на&nbsp;бюджет</p>
+            </div>
+            <figcaption class="nc-dial__note">Дуга показывает пройденную часть кампании. Это пример: доля и&nbsp;даты уточнятся по&nbsp;правилам приёма&nbsp;2026.</figcaption>
+          </figure>
+
+          <div class="nc-adm__side">
+            <h2 id="adm-title">Документы на&nbsp;бюджет принимаем до&nbsp;[25&nbsp;июля]</h2>
+            <dl class="nc-dates">
+              <div><dt><span class="nc-dates__mark is-past" aria-hidden="true"></span>[20 июня]</dt><dd>начало приёма документов</dd></div>
+              <div><dt><span class="nc-dates__mark" aria-hidden="true"></span>[25 июля]</dt><dd>последний день подачи на&nbsp;бюджет</dd></div>
+              <div><dt><span class="nc-dates__mark" aria-hidden="true"></span>[3 августа]</dt><dd>согласие на&nbsp;зачисление</dd></div>
+              <div><dt><span class="nc-dates__mark" aria-hidden="true"></span>[9 августа]</dt><dd>приказ о&nbsp;зачислении</dd></div>
+            </dl>
+            <div class="nc-adm__cta">
+              <a class="btn btn--accent btn--lg" href="#">Подать документы <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+              <p class="nc-adm__via">через Госуслуги, без&nbsp;поездки в&nbsp;Тверь</p>
+            </div>
+
+            <form class="nc-ask" id="ask" action="#" novalidate data-ask>
+              <h3 class="nc-ask__title">Остался вопрос? Спросите приёмную комиссию</h3>
+              <div class="nc-ask__row">
+                <div class="nc-field">
+                  <label class="nc-field__label" for="ask-contact">Телефон или Telegram</label>
+                  <div class="nc-field__box">
+                    <input class="nc-field__input" id="ask-contact" name="contact" type="text" autocomplete="tel" placeholder="+7 900 000-00-00 или @ник" aria-describedby="ask-contact-err ask-hint">
+                    <svg class="nc-field__line" viewBox="0 0 400 48" preserveAspectRatio="none" aria-hidden="true"><path d="M0 47.5 L400 47.5" data-ask-line/></svg>
+                    <p class="nc-ask__done" role="status" data-ask-done></p>
+                  </div>
+                  <p class="nc-field__error" id="ask-contact-err" hidden>Укажите телефон из&nbsp;11 цифр или ник в&nbsp;Telegram, например @tversu</p>
+                </div>
+                <button class="btn btn--outline nc-ask__send" type="submit">Задать вопрос</button>
+                <button class="btn btn--text nc-ask__again" type="button" hidden data-ask-again>Задать ещё вопрос</button>
+              </div>
+              <p class="nc-ask__hint" id="ask-hint">Ответим за&nbsp;[N] рабочих дня. Отправляя, вы соглашаетесь на&nbsp;<a href="#">обработку персональных данных</a>.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 7. Вопросы абитуриента ═══ -->
+    <section class="section section--grey" aria-labelledby="faq-label">
+      <div class="container band">
+        <div class="band__aside">
+          <h2 class="band-label" id="faq-label">Вопросы абитуриента</h2>
+          <a class="btn btn--outline btn--caps" href="#ask">Задать свой <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+        </div>
+        <div class="band__body accordion nc-faq">
+          <details class="accordion__item">
+            <summary class="accordion__summary">Какие ЕГЭ нужны на&nbsp;Прикладную информатику?<span class="nc-faq__line" aria-hidden="true"></span></summary>
+            <div class="accordion__body"><p>[Предмет 1], [предмет 2] и&nbsp;[предмет по&nbsp;выбору]. Минимальные баллы: [N], [N] и&nbsp;[N]; проходной на&nbsp;бюджет в&nbsp;2025&nbsp;году: [N]. Точный перечень публикуется в&nbsp;правилах приёма до&nbsp;[дата].</p><p><a href="#">Все вступительные испытания</a></p></div>
+          </details>
+          <details class="accordion__item">
+            <summary class="accordion__summary">Есть ли общежитие первокурснику?<span class="nc-faq__line" aria-hidden="true"></span></summary>
+            <div class="accordion__body"><p>Да, иногородним студентам очной формы: [N мест] в&nbsp;[N] общежитиях, от&nbsp;[N&nbsp;₽ в&nbsp;месяц]. Заявление на&nbsp;заселение подаётся вместе с&nbsp;согласием на&nbsp;зачисление.</p></div>
+          </details>
+          <details class="accordion__item">
+            <summary class="accordion__summary">Сколько стоит обучение?<span class="nc-faq__line" aria-hidden="true"></span></summary>
+            <div class="accordion__body"><p>От&nbsp;[N&nbsp;₽ в&nbsp;год] в&nbsp;зависимости от&nbsp;программы. Стоимость фиксируется в&nbsp;договоре, оплата по&nbsp;семестрам.</p><p><a href="#">Стоимость по&nbsp;программам</a></p></div>
+          </details>
+          <details class="accordion__item">
+            <summary class="accordion__summary">Как поступить по&nbsp;целевому?<span class="nc-faq__line" aria-hidden="true"></span></summary>
+            <div class="accordion__body"><p>Заключите договор о&nbsp;целевом обучении с&nbsp;организацией-заказчиком на&nbsp;портале «Работа России» и&nbsp;подайте заявление на&nbsp;целевую квоту. Заказчики, с&nbsp;которыми работает ТвГУ: [список], всего [N] договоров.</p></div>
+          </details>
+          <details class="accordion__item">
+            <summary class="accordion__summary">Можно ли подать документы через Госуслуги?<span class="nc-faq__line" aria-hidden="true"></span></summary>
+            <div class="accordion__body"><p>Да. Заявление, согласие на&nbsp;зачисление и&nbsp;отзыв документов доступны через Госуслуги, приезжать в&nbsp;Тверь для&nbsp;этого не&nbsp;нужно.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="dock" data-dock aria-hidden="true">
+    <p class="dock__when">129 программ, приём 2026</p>
+    <a class="btn btn--primary dock__btn" href="#programs" tabindex="-1">Подобрать программу</a>
+  </div>
+
+  <div data-include="footer"></div>
+</body>
+</html>

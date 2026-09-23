@@ -1,0 +1,97 @@
+/* Общий слой движения. Подключать после base.css (и theme-nika.css), до style.css страницы:
+     <link rel="stylesheet" href="…/system/motion.css">
+     <script src="…/system/motion.js"></script>   ← в <head>, БЕЗ defer: ставит html.m-on до первой отрисовки
+   Разметка (все атрибуты data-m*, не путать со старыми локальными data-reveal):
+     data-m="up"        появление снизу (opacity + translate)           — абзацы, карточки, блоки
+     data-m="fade"      только прозрачность                              — фоны, крупные медиа
+     data-m="mask"      шторка clip-path снизу вверх + лёгкий зум внутри — фото/видео-фигуры
+     data-m="wipe"      шторка слева направо                             — линии, таблицы, полосы
+                        (mask/wipe проявляются по входу в экран РОДИТЕЛЯ — не ставить прямым ребёнком <main>/<body>)
+     data-m="words"     заголовок поднимается по словам из-под маски     — h1/h2
+     data-m="scale"     из 0.96 + прозрачность                           — плитки, кнопки-действия
+     data-m="blur"      из размытия 10px + прозрачность, 1000 мс         — лиды, формы, цифры на тихих страницах
+     data-m="draw"      блок виден сразу; .m-in только запускает анимацию частей внутри (правила — в style.css варианта)
+     data-m-stagger     на контейнере: дети с data-m идут лесенкой (шаг --m-step, по умолчанию 60ms)
+     data-m-delay="120" задержка в мс
+     data-count         число считается до своего значения при появлении (текст в HTML = итоговое значение)
+     data-count-from="1700"  стартовое значение (для годов), data-count-dur="1400"
+     data-magnetic      кнопка тянется к курсору (только мышь)
+     data-tilt          карточка слегка поворачивается в 3D за курсором (только мышь), data-tilt="6" — градусы
+     data-parallax="0.12"  сдвиг относительно скролла (доля скорости; отрицательная — навстречу)
+     data-m-scroller    на горизонтальной ленте (кроме .ribbon__track — она учтена): дети проявляются, когда лента вошла в экран
+     data-m-line        SVG path/line/circle рисуется при появлении (pathLength ставится сам)
+   Reduced-motion: всё видно сразу, ничего не двигается; остаются только смены цвета и прозрачности состояний.
+   Скриншоты (shots.mjs) идут с reduced-motion — поэтому контент в них всегда виден. */
+
+:root {
+  --m-dur: 820ms;          /* появления при скролле — маркетинговые, длиннее UI */
+  --m-dur-long: 1200ms;    /* шторки медиа, прорисовка линий */
+  --m-step: 60ms;          /* шаг лесенки */
+  --m-shift: 28px;
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1); /* easeOutExpo (easings.net) — мягкая посадка крупных появлений */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Переходы слоя действуют только до и во время показа (.m-run снимается по окончании) —
+     потом у элемента снова его собственные transition (hover рамки и т.п.) */
+  .m-on [data-m]:not(.m-in), .m-on [data-m].m-run {
+    transition-property: opacity, transform, clip-path;
+    transition-duration: var(--m-dur);
+    transition-timing-function: var(--ease-expo);
+    transition-delay: calc(var(--m-i, 0) * var(--m-step) + var(--m-delay, 0ms));
+  }
+  .m-on [data-m]:not(.m-in):not([data-m="draw"]) { opacity: 0; }
+  .m-on [data-m="up"]:not(.m-in) { transform: translate3d(0, var(--m-shift), 0); }
+  .m-on [data-m="scale"]:not(.m-in) { transform: scale(0.96); }
+  .m-on [data-m="blur"]:is(:not(.m-in), .m-run) { transition-property: opacity, transform, filter; transition-duration: 1000ms; }
+  .m-on [data-m="blur"]:not(.m-in) { filter: blur(10px); transform: translate3d(0, 10px, 0); }
+  .m-on [data-m="fade"]:is(:not(.m-in), .m-run) { transition-duration: var(--m-dur-long); transition-timing-function: ease-out; }
+
+  /* Шторка: сам блок не прозрачный, открывается маской; вложенное медиа доезжает из 1.12 */
+  .m-on [data-m="mask"] { overflow: hidden; }
+  .m-on [data-m="mask"]:is(:not(.m-in), .m-run) { transition-duration: var(--m-dur-long); transition-timing-function: var(--ease-in-out); overflow: hidden; }
+  .m-on [data-m="mask"]:not(.m-in) { opacity: 1; clip-path: inset(100% 0 0 0); }
+  .m-on [data-m="mask"].m-in { clip-path: inset(0 0 0 0); }
+  .m-on [data-m="mask"]:is(:not(.m-in), .m-run) > :is(img, video, picture) {
+    transition: transform 1600ms var(--ease-expo);
+    transition-delay: inherit;
+  }
+  .m-on [data-m="mask"]:not(.m-in) > :is(img, video, picture) { transform: scale(1.12); }
+
+  .m-on [data-m="wipe"]:is(:not(.m-in), .m-run) { transition-duration: var(--m-dur-long); transition-timing-function: var(--ease-in-out); }
+  .m-on [data-m="wipe"]:not(.m-in) { opacity: 1; clip-path: inset(0 100% 0 0); }
+  .m-on [data-m="wipe"].m-in { clip-path: inset(0 0 0 0); }
+
+  /* Слова заголовка: контейнер виден, слова выезжают из-под маски строки */
+  .m-on [data-m="words"] { opacity: 1 !important; transform: none !important; }
+  .m-w { display: inline-block; overflow: clip; overflow-clip-margin: 0.12em; vertical-align: top; padding-block: 0.04em; margin-block: -0.04em; }
+  .m-wi {
+    display: inline-block;
+    transition: transform 900ms var(--ease-expo), opacity 900ms var(--ease-expo);
+    transition-delay: calc(var(--m-wi, 0) * 45ms + var(--m-delay, 0ms));
+  }
+  .m-on [data-m="words"]:not(.m-in) .m-wi { transform: translate3d(0, 105%, 0); opacity: 0; }
+
+  /* Линии SVG */
+  .m-on [data-m-line] { transition: stroke-dashoffset var(--m-dur-long) var(--ease-in-out); transition-delay: calc(var(--m-i, 0) * var(--m-step) + var(--m-delay, 0ms)); stroke-dasharray: 1; }
+  .m-on [data-m-line]:not(.m-in) { stroke-dashoffset: 1; }
+  .m-on [data-m-line].m-in { stroke-dashoffset: 0; }
+
+  /* Магнит пишет свойство translate, наклон — transform, нажатие — scale: три независимых свойства не спорят */
+  [data-magnetic] { will-change: translate; }
+  [data-tilt] { will-change: transform; transform-style: preserve-3d; }
+  /* Нажатие кнопок (резкое, 120ms) уже есть в base.css — здесь не дублируется */
+}
+
+/* Числа не прыгают по ширине во время счёта */
+[data-count] { font-variant-numeric: tabular-nums; }
+
+@media (prefers-reduced-motion: reduce) {
+  .m-w, .m-wi { display: inline; }
+}
+
+/* 3D-сцена (system/three-stage.js): холст поверх запасного слоя; запасной виден без WebGL и до запуска */
+[data-stage] { position: relative; }
+[data-stage] > canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; opacity: 0; transition: opacity 900ms ease-out; }
+[data-stage].is-live > canvas { opacity: 1; }
+[data-stage].is-live > .stage__fallback { visibility: hidden; }

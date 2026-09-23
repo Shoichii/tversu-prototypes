@@ -1,0 +1,664 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ТвГУ — 15 факультетов. Найди свой цвет</title>
+  <meta name="description" content="Тверской государственный университет: 15 факультетов и институтов, 129 программ. Найди свой факультет по цвету и подбери программу за минуту.">
+  <meta name="theme-color" content="#FEF3F1">
+  <link rel="preload" href="../../../assets/fonts/live-d-geologica.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../../assets/fonts/live-d-wixmadefor.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../../system/tokens.css">
+  <link rel="stylesheet" href="../../../system/base.css">
+  <link rel="stylesheet" href="../../../system/stub.css">
+  <link rel="stylesheet" href="../../../system/motion.css">
+  <link rel="stylesheet" href="../../../system/vendor/lenis/lenis.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="../../../system/motion.js"></script>
+  <script src="../../../system/partials.js" defer></script>
+  <script src="../../../system/ui.js" defer></script>
+  <script src="../../../system/vendor/gsap/gsap.min.js" defer></script>
+  <script src="../../../system/vendor/gsap/ScrollTrigger.min.js" defer></script>
+  <script src="../../../system/vendor/gsap/Flip.min.js" defer></script>
+  <script src="../../../system/vendor/gsap/MorphSVGPlugin.min.js" defer></script>
+  <script src="../../../system/vendor/gsap/CustomEase.min.js" defer></script>
+  <script src="../../../system/vendor/lenis/lenis.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div data-include="header"></div>
+
+  <main id="main">
+    <!-- Ближайшие события -->
+    <section class="events" aria-label="Ближайшие события">
+      <div class="container">
+        <ul class="events__list" role="list">
+          <li><a class="event" href="#" style="--fc:#A3BE34;--fc-fg:#0A1329;--fc-tint:#EDF2D6"><span class="event__dot" aria-hidden="true"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="ped"><path d="M24 8L18.5 4.5V11.5ZM24 8L29.5 4.5V11.5ZM12 34V24C12 17 17.5 12 24 12C30.5 12 36 17 36 24V34L40 38H8L12 34Z"/><circle cx="24" cy="42.5" r="3"/></svg></span><span class="event__t">День открытых дверей</span><span class="event__d">[дата], главный корпус и онлайн</span></a></li>
+<li><a class="event" href="#" style="--fc:#FE5C2B;--fc-fg:#0A1329;--fc-tint:#FFDED5"><span class="event__dot" aria-hidden="true"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="hist"><path d="M18 6H30M21 6V12M27 6V12M21 12C14 13 11 17 12 23C13 30 19 35 20.5 40H27.5C29 35 35 30 36 23C37 17 34 13 27 12M21 9C16 8.5 12.5 10.5 12.8 15.5M27 9C32 8.5 35.5 10.5 35.2 15.5M18.5 43H29.5M13.5 24H34.5"/><circle cx="24" cy="30.5" r="3"/></svg></span><span class="event__t">Старт приёма документов</span><span class="event__d">с [дата], лично и через Госуслуги</span></a></li>
+<li><a class="event" href="#" style="--fc:#F2708F;--fc-fg:#0A1329;--fc-tint:#FCE2E9"><span class="event__dot" aria-hidden="true"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="lang"><path d="M10 8H28C30.2 8 32 9.8 32 12V21C32 23.2 30.2 25 28 25H17L11 30V25H10C7.8 25 6 23.2 6 21V12C6 9.8 7.8 8 10 8ZM36 18H38C40.2 18 42 19.8 42 22V31C42 33.2 40.2 35 38 35H37V40L31 35H22C19.8 35 18 33.2 18 31V29M12 14.5H26M12 19H20"/><circle cx="37" cy="28" r="3"/></svg></span><span class="event__t">Консультация приёмной комиссии</span><span class="event__d">[дата], вопросы в прямом эфире</span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Первый экран -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <h1 id="hero-title" class="hero__title" data-m="words"><span class="hero__l">15 факультетов.</span> <span class="hero__l">Найди свой <span class="hero__accent">цвет</span></span></h1>
+          <p class="hero__lead" data-m="up" data-m-delay="160">Биология и право, код и спорт, языки и педагогика. У каждого факультета ТвГУ свой цвет и свой знак. Пройди подбор или нажми на плитку щита, чтобы увидеть, где тебе будет интересно.</p>
+          <div class="hero__actions" data-m="up" data-m-delay="240">
+            <a class="btn btn--primary btn--lg" href="#quiz" data-magnetic>Подобрать программу <svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg></a>
+            <a class="btn btn--text hero__all" href="#faculties">Все факультеты</a>
+          </div>
+          <dl class="proof" data-m-stagger>
+            <div class="proof__item" data-m="up"><dt class="proof__label"><span>год</span> <span>основания</span></dt><dd class="proof__num"><span data-count data-count-from="1800" data-count-dur="1300">1870</span></dd></div>
+            <div class="proof__item" data-m="up"><dt class="proof__label"><span>факультетов</span> <span>и институтов</span></dt><dd class="proof__num"><span data-count>15</span></dd></div>
+            <div class="proof__item" data-m="up"><dt class="proof__label"><span>образовательных</span> <span>программ</span></dt><dd class="proof__num"><span data-count>129</span></dd></div>
+            <div class="proof__item" data-m="up"><dt class="proof__label"><span>место в России,</span> <span>RUR 2026</span></dt><dd class="proof__num"><span data-count>93</span>-е</dd></div>
+            <div class="proof__item" data-m="up"><dt class="proof__label"><span>НАР 2026,</span> <span>2-я лига</span></dt><dd class="proof__num">топ-200</dd></div>
+          </dl>
+        </div>
+        <div class="hero__shield">
+          <div class="shield">
+<svg class="shield__plate" viewBox="0 0 472 624" aria-hidden="true" focusable="false"><path class="shield__roof" d="M152 27L180 7H292L320 27Z"/><path class="shield__body" d="M4 44H468V370C468 506 332 620 236 620C140 620 4 506 4 370Z"/></svg>
+<ul class="shield__tiles" role="list">
+<li class="shield__cell"><button class="tile tile--edge-l" type="button" data-fac="bio" data-open="bio" aria-haspopup="dialog" aria-controls="fac" aria-label="Биологический факультет" style="--fc:#46A94F;--fc-fg:#0A1329;--fc-tint:#DAEEDC;--x:18;--y:58;--i:0"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="bio"><path d="M24 42V25M24 27C24 17 30 11 40 11C40 21 34 27 24 27ZM24 32C24 25 19 20 10 20C10 27 15 32 24 32ZM16 42H32"/><circle cx="35" cy="37" r="3"/></svg><span class="tile__name" aria-hidden="true">Биологический</span></button></li>
+<li class="shield__cell"><button class="tile" type="button" data-fac="math" data-open="math" aria-haspopup="dialog" aria-controls="fac" aria-label="Математический факультет" style="--fc:#3570C0;--fc-fg:#FFFFFF;--fc-tint:#D7E2F2;--x:130;--y:58;--i:1"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="math"><path d="M14 8V20M8 14H20M9.5 28.5L18.5 37.5M18.5 28.5L9.5 37.5M28 30H40M28 36H40"/><circle cx="34" cy="14" r="3"/></svg><span class="tile__name" aria-hidden="true">Математический</span></button></li>
+<li class="shield__cell"><button class="tile" type="button" data-fac="phil" data-open="phil" aria-haspopup="dialog" aria-controls="fac" aria-label="Филологический факультет" style="--fc:#E6AA1F;--fc-fg:#0A1329;--fc-tint:#FAEED2;--x:242;--y:58;--i:2"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="phil"><path d="M24 13C20 9.5 13.5 9 6 10V37C13.5 36 20 36.5 24 40C28 36.5 34.5 36 42 37V10C34.5 9 28 9.5 24 13ZM24 13V40M11 17C14 16.5 17 17 19 18M11 23C14 22.5 17 23 19 24M11 29C14 28.5 17 29 19 30"/><circle cx="33" cy="24" r="3"/></svg><span class="tile__name" aria-hidden="true">Филологический</span></button></li>
+<li class="shield__cell"><button class="tile tile--edge-r" type="button" data-fac="lang" data-open="lang" aria-haspopup="dialog" aria-controls="fac" aria-label="Факультет иностранных языков и международной коммуникации" style="--fc:#F2708F;--fc-fg:#0A1329;--fc-tint:#FCE2E9;--x:354;--y:58;--i:3"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="lang"><path d="M10 8H28C30.2 8 32 9.8 32 12V21C32 23.2 30.2 25 28 25H17L11 30V25H10C7.8 25 6 23.2 6 21V12C6 9.8 7.8 8 10 8ZM36 18H38C40.2 18 42 19.8 42 22V31C42 33.2 40.2 35 38 35H37V40L31 35H22C19.8 35 18 33.2 18 31V29M12 14.5H26M12 19H20"/><circle cx="37" cy="28" r="3"/></svg><span class="tile__name" aria-hidden="true">Иностранные языки</span></button></li>
+<li class="shield__cell"><button class="tile tile--edge-l" type="button" data-fac="hist" data-open="hist" aria-haspopup="dialog" aria-controls="fac" aria-label="Исторический факультет" style="--fc:#FE5C2B;--fc-fg:#0A1329;--fc-tint:#FFDED5;--x:18;--y:170;--i:4"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="hist"><path d="M18 6H30M21 6V12M27 6V12M21 12C14 13 11 17 12 23C13 30 19 35 20.5 40H27.5C29 35 35 30 36 23C37 17 34 13 27 12M21 9C16 8.5 12.5 10.5 12.8 15.5M27 9C32 8.5 35.5 10.5 35.2 15.5M18.5 43H29.5M13.5 24H34.5"/><circle cx="24" cy="30.5" r="3"/></svg><span class="tile__name" aria-hidden="true">Исторический</span></button></li>
+<li class="shield__cell"><button class="tile" type="button" data-fac="phys" data-open="phys" aria-haspopup="dialog" aria-controls="fac" aria-label="Физико-технический факультет" style="--fc:#64B4EE;--fc-fg:#0A1329;--fc-tint:#E0F0FC;--x:130;--y:170;--i:5"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="phys"><path d="M7 24A17 6.5 0 1 1 41 24A17 6.5 0 1 1 7 24ZM15.5 9.28A17 6.5 60 1 1 32.5 38.72A17 6.5 60 1 1 15.5 9.28ZM32.5 9.28A17 6.5 -60 1 1 15.5 38.72A17 6.5 -60 1 1 32.5 9.28Z"/><circle cx="24" cy="24" r="3"/></svg><span class="tile__name" aria-hidden="true">Физико-технический</span></button></li>
+<li class="shield__cell"><button class="tile" type="button" data-fac="law" data-open="law" aria-haspopup="dialog" aria-controls="fac" aria-label="Юридический факультет" style="--fc:#8E1F4E;--fc-fg:#FFFFFF;--fc-tint:#E8D2DC;--x:242;--y:170;--i:6"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="law"><path d="M24 9V40M16 41H32M10 14H38M10 14L5.5 26M10 14L14.5 26M38 14L33.5 26M38 14L42.5 26M4.5 26C5.5 30 7.5 32 10 32C12.5 32 14.5 30 15.5 26ZM32.5 26C33.5 30 35.5 32 38 32C40.5 32 42.5 30 43.5 26Z"/><circle cx="24" cy="7" r="3"/></svg><span class="tile__name" aria-hidden="true">Юридический</span></button></li>
+<li class="shield__cell"><button class="tile tile--edge-r" type="button" data-fac="chem" data-open="chem" aria-haspopup="dialog" aria-controls="fac" aria-label="Химико-технологический факультет" style="--fc:#34C3A0;--fc-fg:#0A1329;--fc-tint:#D6F3EC;--x:354;--y:170;--i:7"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="chem"><path d="M18 6H30M20.5 6V18L9.5 37C8 40 9.5 42 12.5 42H35.5C38.5 42 40 40 38.5 37L27.5 18V6M14 31H34M22.5 24A2.5 2.5 0 1 0 27.5 24A2.5 2.5 0 1 0 22.5 24Z"/><circle cx="20" cy="36" r="3"/></svg><span class="tile__name" aria-hidden="true">Химико-технологический</span></button></li>
+<li class="shield__cell"><button class="tile tile--edge-l" type="button" data-fac="psy" data-open="psy" aria-haspopup="dialog" aria-controls="fac" aria-label="Факультет психологии" style="--fc:#9D7CF2;--fc-fg:#0A1329;--fc-tint:#EBE5FC;--x:18;--y:282;--i:8"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="psy"><path d="M17 42V34C12 31 9 26 9 20C9 12 15.5 6 23.5 6C31 6 36.5 11 37.5 18L41 25C41.4 25.8 41 26.5 40 26.5H37.5V32C37.5 34 36 35.5 34 35.5H29V42M19.5 17C19.5 14 21.5 12 24 12C26.5 12 28.5 14 28.5 16.5C28.5 19 26.5 20 24.5 21C24 21.3 24 22 24 23"/><circle cx="24" cy="28.5" r="3"/></svg><span class="tile__name" aria-hidden="true">Психология</span></button></li>
+<li class="shield__cell"><button class="tile" type="button" data-fac="sport" data-open="sport" aria-haspopup="dialog" aria-controls="fac" aria-label="Факультет физической культуры" style="--fc:#E10447;--fc-fg:#FFFFFF;--fc-tint:#F9CDDA;--x:130;--y:282;--i:9"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="sport"><path d="M24 8A14 14 0 1 1 24 36A14 14 0 1 1 24 8ZM10 22H38M24 8V36M14 12C18 15.5 18 28.5 14 32M34 12C30 15.5 30 28.5 34 32M17 42H31"/><circle cx="24" cy="24" r="3" opacity="0"/></svg><span class="tile__name" aria-hidden="true">Физическая культура</span></button></li>
+<li class="shield__cell"><button class="tile" type="button" data-fac="geo" data-open="geo" aria-haspopup="dialog" aria-controls="fac" aria-label="Факультет географии и геоэкологии" style="--fc:#1B9DB5;--fc-fg:#0A1329;--fc-tint:#D1EBF0;--x:242;--y:282;--i:10"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="geo"><path d="M5 40L17 21L24 31L30 22L43 40ZM30 22V8M30 8.5L37.5 11.5L30 14.5"/><circle cx="13" cy="11" r="3"/></svg><span class="tile__name" aria-hidden="true">География и геоэкология</span></button></li>
+<li class="shield__cell"><button class="tile tile--edge-r" type="button" data-fac="econ" data-open="econ" aria-haspopup="dialog" aria-controls="fac" aria-label="Институт экономики и управления" style="--fc:#6545C8;--fc-fg:#FFFFFF;--fc-tint:#E0DAF4;--x:354;--y:282;--i:11"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="econ"><path d="M6 41H42M11 41V32M19 41V26M27 41V29M35 41V20M8 23L17 15L25 19L39 7M32 7H39V14"/><circle cx="24" cy="24" r="3" opacity="0"/></svg><span class="tile__name" aria-hidden="true">Экономика и управление</span></button></li>
+<li class="shield__cell"><button class="tile tile--bl" type="button" data-fac="ped" data-open="ped" aria-haspopup="dialog" aria-controls="fac" aria-label="Институт педагогического образования и социальных технологий" style="--fc:#A3BE34;--fc-fg:#0A1329;--fc-tint:#EDF2D6;--x:130;--y:394;--i:12"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="ped"><path d="M24 8L18.5 4.5V11.5ZM24 8L29.5 4.5V11.5ZM12 34V24C12 17 17.5 12 24 12C30.5 12 36 17 36 24V34L40 38H8L12 34Z"/><circle cx="24" cy="42.5" r="3"/></svg><span class="tile__name" aria-hidden="true">Педагогика и социальные технологии</span></button></li>
+<li class="shield__cell"><button class="tile tile--br" type="button" data-fac="ino" data-open="ino" aria-haspopup="dialog" aria-controls="fac" aria-label="Институт непрерывного образования" style="--fc:#FF9A57;--fc-fg:#0A1329;--fc-tint:#FFEBDD;--x:242;--y:394;--i:13"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="ino"><path d="M24 24C21 19.5 17.5 16 13 16C8.6 16 5 19.6 5 24C5 28.4 8.6 32 13 32C17.5 32 21 28.5 24 24C27 19.5 30.5 16 35 16C39.4 16 43 19.6 43 24C43 28.4 39.4 32 35 32C30.5 32 27 28.5 24 24Z"/><circle cx="24" cy="24" r="3" opacity="0"/></svg><span class="tile__name" aria-hidden="true">Непрерывное образование</span></button></li>
+<li class="shield__cell"><button class="tile tile--tip" type="button" data-fac="cyb" data-open="cyb" aria-haspopup="dialog" aria-controls="fac" aria-label="Факультет прикладной математики и кибернетики" style="--fc:#2A3DAD;--fc-fg:#FFFFFF;--fc-tint:#D4D8EF;--x:186;--y:506;--i:14"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="cyb"><path d="M12 17H36C38.2 17 40 18.8 40 21V37C40 39.2 38.2 41 36 41H12C9.8 41 8 39.2 8 37V21C8 18.8 9.8 17 12 17ZM24 17V11M18 27V30M30 27V30M19 35H29M4.5 25V32M43.5 25V32"/><circle cx="24" cy="8" r="3"/></svg><span class="tile__name" aria-hidden="true">Прикладная математика и кибернетика</span></button></li>
+</ul>
+</div>
+          <p class="hero__hint"><span class="hint-fine">Наведи на плитку, чтобы узнать факультет, нажми, чтобы открыть</span><span class="hint-touch">Нажми на плитку, чтобы открыть факультет</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Мини-подбор -->
+    <section class="quiz section" id="quiz" aria-labelledby="quiz-title">
+      <div class="container quiz__grid">
+        <div class="quiz__copy">
+          <h2 id="quiz-title" data-m="words">Что тебе нравится?</h2>
+          <p class="quiz__lead" data-m="up">Отметь одно или несколько, и щит подсветит факультеты, где это изучают. Полный подбор учитывает предметы ЕГЭ и баллы.</p>
+          <ul class="quiz__chips" role="list" aria-label="Интересы">
+            <li><button class="qchip" type="button" aria-pressed="false" data-chip="nature" data-match="bio,geo,chem" style="--fc:#46A94F;--fc-fg:#0A1329;--fc-tint:#DAEEDC"><span class="qchip__icon"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="bio"><path d="M24 42V25M24 27C24 17 30 11 40 11C40 21 34 27 24 27ZM24 32C24 25 19 20 10 20C10 27 15 32 24 32ZM16 42H32"/><circle cx="35" cy="37" r="3"/></svg></span><span>Природа и живое</span></button></li>
+<li><button class="qchip" type="button" aria-pressed="false" data-chip="lab" data-match="chem,phys,bio" style="--fc:#34C3A0;--fc-fg:#0A1329;--fc-tint:#D6F3EC"><span class="qchip__icon"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="chem"><path d="M18 6H30M20.5 6V18L9.5 37C8 40 9.5 42 12.5 42H35.5C38.5 42 40 40 38.5 37L27.5 18V6M14 31H34M22.5 24A2.5 2.5 0 1 0 27.5 24A2.5 2.5 0 1 0 22.5 24Z"/><circle cx="20" cy="36" r="3"/></svg></span><span>Опыты и лаборатории</span></button></li>
+<li><button class="qchip" type="button" aria-pressed="false" data-chip="numbers" data-match="math,cyb,econ" style="--fc:#3570C0;--fc-fg:#FFFFFF;--fc-tint:#D7E2F2"><span class="qchip__icon"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="math"><path d="M14 8V20M8 14H20M9.5 28.5L18.5 37.5M18.5 28.5L9.5 37.5M28 30H40M28 36H40"/><circle cx="34" cy="14" r="3"/></svg></span><span>Числа и логика</span></button></li>
+<li><button class="qchip" type="button" aria-pressed="false" data-chip="code" data-match="cyb,math,phys" style="--fc:#2A3DAD;--fc-fg:#FFFFFF;--fc-tint:#D4D8EF"><span class="qchip__icon"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="cyb"><path d="M12 17H36C38.2 17 40 18.8 40 21V37C40 39.2 38.2 41 36 41H12C9.8 41 8 39.2 8 37V21C8 18.8 9.8 17 12 17ZM24 17V11M18 27V30M30 27V30M19 35H29M4.5 25V32M43.5 25V32"/><circle cx="24" cy="8" r="3"/></svg></span><span>Код и роботы</span></button></li>
+<li><button class="qchip" type="button" aria-pressed="false" data-chip="books" data-match="phil,hist" style="--fc:#E6AA1F;--fc-fg:#0A1329;--fc-tint:#FAEED2"><span class="qchip__icon"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="phil"><path d="M24 13C20 9.5 13.5 9 6 10V37C13.5 36 20 36.5 24 40C28 36.5 34.5 36 42 37V10C34.5 9 28 9.5 24 13ZM24 13V40M11 17C14 16.5 17 17 19 18M11 23C14 22.5 17 23 19 24M11 29C14 28.5 17 29 19 30"/><circle cx="33" cy="24" r="3"/></svg></span><span>Книги и прошлое</span></button></li>
+<li><button class="qchip" type="button" aria-pressed="false" data-chip="languages" data-match="lang,geo" style="--fc:#F2708F;--fc-fg:#0A1329;--fc-tint:#FCE2E9"><span class="qchip__icon"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="lang"><path d="M10 8H28C30.2 8 32 9.8 32 12V21C32 23.2 30.2 25 28 25H17L11 30V25H10C7.8 25 6 23.2 6 21V12C6 9.8 7.8 8 10 8ZM36 18H38C40.2 18 42 19.8 42 22V31C42 33.2 40.2 35 38 35H37V40L31 35H22C19.8 35 18 33.2 18 31V29M12 14.5H26M12 19H20"/><circle cx="37" cy="28" r="3"/></svg></span><span>Языки и страны</span></button></li>
+<li><button class="qchip" type="button" aria-pressed="false" data-chip="people" data-match="psy,ped,law" style="--fc:#9D7CF2;--fc-fg:#0A1329;--fc-tint:#EBE5FC"><span class="qchip__icon"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="psy"><path d="M17 42V34C12 31 9 26 9 20C9 12 15.5 6 23.5 6C31 6 36.5 11 37.5 18L41 25C41.4 25.8 41 26.5 40 26.5H37.5V32C37.5 34 36 35.5 34 35.5H29V42M19.5 17C19.5 14 21.5 12 24 12C26.5 12 28.5 14 28.5 16.5C28.5 19 26.5 20 24.5 21C24 21.3 24 22 24 23"/><circle cx="24" cy="28.5" r="3"/></svg></span><span>Люди и общество</span></button></li>
+<li><button class="qchip" type="button" aria-pressed="false" data-chip="sport" data-match="sport,ped" style="--fc:#E10447;--fc-fg:#FFFFFF;--fc-tint:#F9CDDA"><span class="qchip__icon"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="sport"><path d="M24 8A14 14 0 1 1 24 36A14 14 0 1 1 24 8ZM10 22H38M24 8V36M14 12C18 15.5 18 28.5 14 32M34 12C30 15.5 30 28.5 34 32M17 42H31"/><circle cx="24" cy="24" r="3" opacity="0"/></svg></span><span>Спорт и движение</span></button></li>
+          </ul>
+          <div class="quiz__result" aria-live="polite">
+            <p class="quiz__empty" data-quiz-empty>Пока ничего не выбрано. Нажми на то, что отзывается.</p>
+            <div class="quiz__found" data-quiz-found hidden>
+              <p class="quiz__count"><b data-quiz-count>0</b> <span data-quiz-word>факультетов</span> подходят</p>
+              <ul class="quiz__list" role="list" data-quiz-list></ul>
+            </div>
+            <a class="btn btn--primary" href="#">Полный подбор по баллам ЕГЭ <svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg></a>
+          </div>
+        </div>
+        <div class="quiz__board">
+          <span class="quiz__tag">пример подбора</span>
+          <div class="shield shield--mini" aria-hidden="true">
+<svg class="shield__plate" viewBox="0 0 472 624" aria-hidden="true" focusable="false"><path class="shield__roof" d="M152 27L180 7H292L320 27Z"/><path class="shield__body" d="M4 44H468V370C468 506 332 620 236 620C140 620 4 506 4 370Z"/></svg>
+<span class="tile tile--edge-l" data-fac="bio" style="--fc:#46A94F;--fc-fg:#0A1329;--fc-tint:#DAEEDC;--x:18;--y:58;--i:0"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="bio"><path d="M24 42V25M24 27C24 17 30 11 40 11C40 21 34 27 24 27ZM24 32C24 25 19 20 10 20C10 27 15 32 24 32ZM16 42H32"/><circle cx="35" cy="37" r="3"/></svg></span>
+<span class="tile" data-fac="math" style="--fc:#3570C0;--fc-fg:#FFFFFF;--fc-tint:#D7E2F2;--x:130;--y:58;--i:1"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="math"><path d="M14 8V20M8 14H20M9.5 28.5L18.5 37.5M18.5 28.5L9.5 37.5M28 30H40M28 36H40"/><circle cx="34" cy="14" r="3"/></svg></span>
+<span class="tile" data-fac="phil" style="--fc:#E6AA1F;--fc-fg:#0A1329;--fc-tint:#FAEED2;--x:242;--y:58;--i:2"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="phil"><path d="M24 13C20 9.5 13.5 9 6 10V37C13.5 36 20 36.5 24 40C28 36.5 34.5 36 42 37V10C34.5 9 28 9.5 24 13ZM24 13V40M11 17C14 16.5 17 17 19 18M11 23C14 22.5 17 23 19 24M11 29C14 28.5 17 29 19 30"/><circle cx="33" cy="24" r="3"/></svg></span>
+<span class="tile tile--edge-r" data-fac="lang" style="--fc:#F2708F;--fc-fg:#0A1329;--fc-tint:#FCE2E9;--x:354;--y:58;--i:3"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="lang"><path d="M10 8H28C30.2 8 32 9.8 32 12V21C32 23.2 30.2 25 28 25H17L11 30V25H10C7.8 25 6 23.2 6 21V12C6 9.8 7.8 8 10 8ZM36 18H38C40.2 18 42 19.8 42 22V31C42 33.2 40.2 35 38 35H37V40L31 35H22C19.8 35 18 33.2 18 31V29M12 14.5H26M12 19H20"/><circle cx="37" cy="28" r="3"/></svg></span>
+<span class="tile tile--edge-l" data-fac="hist" style="--fc:#FE5C2B;--fc-fg:#0A1329;--fc-tint:#FFDED5;--x:18;--y:170;--i:4"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="hist"><path d="M18 6H30M21 6V12M27 6V12M21 12C14 13 11 17 12 23C13 30 19 35 20.5 40H27.5C29 35 35 30 36 23C37 17 34 13 27 12M21 9C16 8.5 12.5 10.5 12.8 15.5M27 9C32 8.5 35.5 10.5 35.2 15.5M18.5 43H29.5M13.5 24H34.5"/><circle cx="24" cy="30.5" r="3"/></svg></span>
+<span class="tile" data-fac="phys" style="--fc:#64B4EE;--fc-fg:#0A1329;--fc-tint:#E0F0FC;--x:130;--y:170;--i:5"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="phys"><path d="M7 24A17 6.5 0 1 1 41 24A17 6.5 0 1 1 7 24ZM15.5 9.28A17 6.5 60 1 1 32.5 38.72A17 6.5 60 1 1 15.5 9.28ZM32.5 9.28A17 6.5 -60 1 1 15.5 38.72A17 6.5 -60 1 1 32.5 9.28Z"/><circle cx="24" cy="24" r="3"/></svg></span>
+<span class="tile" data-fac="law" style="--fc:#8E1F4E;--fc-fg:#FFFFFF;--fc-tint:#E8D2DC;--x:242;--y:170;--i:6"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="law"><path d="M24 9V40M16 41H32M10 14H38M10 14L5.5 26M10 14L14.5 26M38 14L33.5 26M38 14L42.5 26M4.5 26C5.5 30 7.5 32 10 32C12.5 32 14.5 30 15.5 26ZM32.5 26C33.5 30 35.5 32 38 32C40.5 32 42.5 30 43.5 26Z"/><circle cx="24" cy="7" r="3"/></svg></span>
+<span class="tile tile--edge-r" data-fac="chem" style="--fc:#34C3A0;--fc-fg:#0A1329;--fc-tint:#D6F3EC;--x:354;--y:170;--i:7"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="chem"><path d="M18 6H30M20.5 6V18L9.5 37C8 40 9.5 42 12.5 42H35.5C38.5 42 40 40 38.5 37L27.5 18V6M14 31H34M22.5 24A2.5 2.5 0 1 0 27.5 24A2.5 2.5 0 1 0 22.5 24Z"/><circle cx="20" cy="36" r="3"/></svg></span>
+<span class="tile tile--edge-l" data-fac="psy" style="--fc:#9D7CF2;--fc-fg:#0A1329;--fc-tint:#EBE5FC;--x:18;--y:282;--i:8"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="psy"><path d="M17 42V34C12 31 9 26 9 20C9 12 15.5 6 23.5 6C31 6 36.5 11 37.5 18L41 25C41.4 25.8 41 26.5 40 26.5H37.5V32C37.5 34 36 35.5 34 35.5H29V42M19.5 17C19.5 14 21.5 12 24 12C26.5 12 28.5 14 28.5 16.5C28.5 19 26.5 20 24.5 21C24 21.3 24 22 24 23"/><circle cx="24" cy="28.5" r="3"/></svg></span>
+<span class="tile" data-fac="sport" style="--fc:#E10447;--fc-fg:#FFFFFF;--fc-tint:#F9CDDA;--x:130;--y:282;--i:9"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="sport"><path d="M24 8A14 14 0 1 1 24 36A14 14 0 1 1 24 8ZM10 22H38M24 8V36M14 12C18 15.5 18 28.5 14 32M34 12C30 15.5 30 28.5 34 32M17 42H31"/><circle cx="24" cy="24" r="3" opacity="0"/></svg></span>
+<span class="tile" data-fac="geo" style="--fc:#1B9DB5;--fc-fg:#0A1329;--fc-tint:#D1EBF0;--x:242;--y:282;--i:10"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="geo"><path d="M5 40L17 21L24 31L30 22L43 40ZM30 22V8M30 8.5L37.5 11.5L30 14.5"/><circle cx="13" cy="11" r="3"/></svg></span>
+<span class="tile tile--edge-r" data-fac="econ" style="--fc:#6545C8;--fc-fg:#FFFFFF;--fc-tint:#E0DAF4;--x:354;--y:282;--i:11"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="econ"><path d="M6 41H42M11 41V32M19 41V26M27 41V29M35 41V20M8 23L17 15L25 19L39 7M32 7H39V14"/><circle cx="24" cy="24" r="3" opacity="0"/></svg></span>
+<span class="tile tile--bl" data-fac="ped" style="--fc:#A3BE34;--fc-fg:#0A1329;--fc-tint:#EDF2D6;--x:130;--y:394;--i:12"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="ped"><path d="M24 8L18.5 4.5V11.5ZM24 8L29.5 4.5V11.5ZM12 34V24C12 17 17.5 12 24 12C30.5 12 36 17 36 24V34L40 38H8L12 34Z"/><circle cx="24" cy="42.5" r="3"/></svg></span>
+<span class="tile tile--br" data-fac="ino" style="--fc:#FF9A57;--fc-fg:#0A1329;--fc-tint:#FFEBDD;--x:242;--y:394;--i:13"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="ino"><path d="M24 24C21 19.5 17.5 16 13 16C8.6 16 5 19.6 5 24C5 28.4 8.6 32 13 32C17.5 32 21 28.5 24 24C27 19.5 30.5 16 35 16C39.4 16 43 19.6 43 24C43 28.4 39.4 32 35 32C30.5 32 27 28.5 24 24Z"/><circle cx="24" cy="24" r="3" opacity="0"/></svg></span>
+<span class="tile tile--tip" data-fac="cyb" style="--fc:#2A3DAD;--fc-fg:#FFFFFF;--fc-tint:#D4D8EF;--x:186;--y:506;--i:14"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="cyb"><path d="M12 17H36C38.2 17 40 18.8 40 21V37C40 39.2 38.2 41 36 41H12C9.8 41 8 39.2 8 37V21C8 18.8 9.8 17 12 17ZM24 17V11M18 27V30M30 27V30M19 35H29M4.5 25V32M43.5 25V32"/><circle cx="24" cy="8" r="3"/></svg></span>
+</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Факультеты: цвет страницы по прокрутке -->
+    <section class="faculties section" id="faculties" aria-labelledby="fac-title-list">
+      <div class="container">
+        <div class="faculties__head">
+          <h2 id="fac-title-list" data-m="words">Все 15 факультетов и&nbsp;институтов</h2>
+          <p class="faculties__lead" data-m="up">Листай: страница перекрашивается в цвет того факультета, который перед тобой. Открой любой, чтобы увидеть программы.</p>
+        </div>
+        <div class="faculties__grid">
+          <div class="lens" aria-hidden="true">
+            <div class="lens__tile" data-lens>
+              <svg class="pg lens__pg" viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="bio"><path d="M24 42V25M24 27C24 17 30 11 40 11C40 21 34 27 24 27ZM24 32C24 25 19 20 10 20C10 27 15 32 24 32ZM16 42H32"/><circle cx="35" cy="37" r="3"/></svg>
+            </div>
+            <p class="lens__num"><span data-lens-num>01</span> / 15</p>
+            <p class="lens__name" data-lens-name>Биологический факультет</p>
+          </div>
+          <ol class="faclist" role="list" data-faclist>
+            <li class="fcard" data-fac="bio" style="--fc:#46A94F;--fc-fg:#0A1329;--fc-tint:#DAEEDC" data-media="photo" data-src="../../../assets/stub/video/480/botsad-gashenie-marki-prud-park.jpg" data-alt="Пруд в парке Ботанического сада">
+  <span class="fcard__badge" aria-hidden="true"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="bio"><path d="M24 42V25M24 27C24 17 30 11 40 11C40 21 34 27 24 27ZM24 32C24 25 19 20 10 20C10 27 15 32 24 32ZM16 42H32"/><circle cx="35" cy="37" r="3"/></svg></span>
+  <div class="fcard__body">
+    <p class="fcard__num" aria-hidden="true">01</p>
+    <h3 class="fcard__title" data-name>Биологический факультет</h3>
+    <p class="fcard__about" data-about>Для тех, кому интересно, как устроена жизнь: от клетки до леса и пруда в Ботаническом саду.</p>
+    <p class="fcard__meta"><span>Программ: <b>[N]</b></span><span>Бюджетных мест: <b>[N]</b></span></p>
+  </div>
+  <button class="fcard__open" type="button" data-open="bio" aria-haspopup="dialog" aria-controls="fac"><span class="visually-hidden">Открыть: Биологический</span><svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg></button>
+</li>
+<li class="fcard" data-fac="hist" style="--fc:#FE5C2B;--fc-fg:#0A1329;--fc-tint:#FFDED5" data-media="video" data-src="../../../assets/stub/video/480/den-otkrytyh-dverey-2-arheologiya-ruki" data-alt="День открытых дверей: руки археолога и находка">
+  <span class="fcard__badge" aria-hidden="true"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="hist"><path d="M18 6H30M21 6V12M27 6V12M21 12C14 13 11 17 12 23C13 30 19 35 20.5 40H27.5C29 35 35 30 36 23C37 17 34 13 27 12M21 9C16 8.5 12.5 10.5 12.8 15.5M27 9C32 8.5 35.5 10.5 35.2 15.5M18.5 43H29.5M13.5 24H34.5"/><circle cx="24" cy="30.5" r="3"/></svg></span>
+  <div class="fcard__body">
+    <p class="fcard__num" aria-hidden="true">02</p>
+    <h3 class="fcard__title" data-name>Исторический факультет</h3>
+    <p class="fcard__about" data-about>Для тех, кто любит источники, находки археологов и спор о том, как всё было на самом деле.</p>
+    <p class="fcard__meta"><span>Программ: <b>[N]</b></span><span>Бюджетных мест: <b>[N]</b></span></p>
+  </div>
+  <button class="fcard__open" type="button" data-open="hist" aria-haspopup="dialog" aria-controls="fac"><span class="visually-hidden">Открыть: Исторический</span><svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg></button>
+</li>
+<li class="fcard" data-fac="geo" style="--fc:#1B9DB5;--fc-fg:#0A1329;--fc-tint:#D1EBF0" data-media="photo" data-src="../../../assets/stub/photos/800/nature-turisty-na-utese.jpg" data-alt="Студенты на вершине утёса над долиной">
+  <span class="fcard__badge" aria-hidden="true"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="geo"><path d="M5 40L17 21L24 31L30 22L43 40ZM30 22V8M30 8.5L37.5 11.5L30 14.5"/><circle cx="13" cy="11" r="3"/></svg></span>
+  <div class="fcard__body">
+    <p class="fcard__num" aria-hidden="true">03</p>
+    <h3 class="fcard__title" data-name>Факультет географии и геоэкологии</h3>
+    <p class="fcard__about" data-about>Для тех, кого тянет в экспедиции, к картам и к вопросу, как сберечь природу вокруг.</p>
+    <p class="fcard__meta"><span>Программ: <b>[N]</b></span><span>Бюджетных мест: <b>[N]</b></span></p>
+  </div>
+  <button class="fcard__open" type="button" data-open="geo" aria-haspopup="dialog" aria-controls="fac"><span class="visually-hidden">Открыть: География и геоэкология</span><svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg></button>
+</li>
+<li class="fcard" data-fac="lang" style="--fc:#F2708F;--fc-fg:#0A1329;--fc-tint:#FCE2E9" data-media="photo" data-src="../../../assets/stub/photos/800/students-inostrannye-slushayut.jpg" data-alt="Иностранные студенты слушают выступление">
+  <span class="fcard__badge" aria-hidden="true"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="lang"><path d="M10 8H28C30.2 8 32 9.8 32 12V21C32 23.2 30.2 25 28 25H17L11 30V25H10C7.8 25 6 23.2 6 21V12C6 9.8 7.8 8 10 8ZM36 18H38C40.2 18 42 19.8 42 22V31C42 33.2 40.2 35 38 35H37V40L31 35H22C19.8 35 18 33.2 18 31V29M12 14.5H26M12 19H20"/><circle cx="37" cy="28" r="3"/></svg></span>
+  <div class="fcard__body">
+    <p class="fcard__num" aria-hidden="true">04</p>
+    <h3 class="fcard__title" data-name>Факультет иностранных языков и международной коммуникации</h3>
+    <p class="fcard__about" data-about>Для тех, кто хочет говорить с миром на его языке и понимать людей из других стран.</p>
+    <p class="fcard__meta"><span>Программ: <b>[N]</b></span><span>Бюджетных мест: <b>[N]</b></span></p>
+  </div>
+  <button class="fcard__open" type="button" data-open="lang" aria-haspopup="dialog" aria-controls="fac"><span class="visually-hidden">Открыть: Иностранные языки</span><svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg></button>
+</li>
+<li class="fcard" data-fac="cyb" style="--fc:#2A3DAD;--fc-fg:#FFFFFF;--fc-tint:#D4D8EF" data-media="stub" data-alt="фото: студенты ПМиК за работой над проектом, крупно экран с кодом">
+  <span class="fcard__badge" aria-hidden="true"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="cyb"><path d="M12 17H36C38.2 17 40 18.8 40 21V37C40 39.2 38.2 41 36 41H12C9.8 41 8 39.2 8 37V21C8 18.8 9.8 17 12 17ZM24 17V11M18 27V30M30 27V30M19 35H29M4.5 25V32M43.5 25V32"/><circle cx="24" cy="8" r="3"/></svg></span>
+  <div class="fcard__body">
+    <p class="fcard__num" aria-hidden="true">05</p>
+    <h3 class="fcard__title" data-name>Факультет прикладной математики и кибернетики</h3>
+    <p class="fcard__about" data-about>Для тех, кто пишет код, строит модели и хочет понимать, как думают машины.</p>
+    <p class="fcard__meta"><span>Программ: <b>[N]</b></span><span>Бюджетных мест: <b>[N]</b></span></p>
+  </div>
+  <button class="fcard__open" type="button" data-open="cyb" aria-haspopup="dialog" aria-controls="fac"><span class="visually-hidden">Открыть: Прикладная математика и кибернетика</span><svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg></button>
+</li>
+<li class="fcard" data-fac="sport" style="--fc:#E10447;--fc-fg:#FFFFFF;--fc-tint:#F9CDDA" data-media="photo" data-src="../../../assets/stub/photos/800/sport-voleybol-zhenskaya-komanda.jpg" data-alt="Женская волейбольная команда">
+  <span class="fcard__badge" aria-hidden="true"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="sport"><path d="M24 8A14 14 0 1 1 24 36A14 14 0 1 1 24 8ZM10 22H38M24 8V36M14 12C18 15.5 18 28.5 14 32M34 12C30 15.5 30 28.5 34 32M17 42H31"/><circle cx="24" cy="24" r="3" opacity="0"/></svg></span>
+  <div class="fcard__body">
+    <p class="fcard__num" aria-hidden="true">06</p>
+    <h3 class="fcard__title" data-name>Факультет физической культуры</h3>
+    <p class="fcard__about" data-about>Для тех, кто живёт в движении и хочет тренировать других.</p>
+    <p class="fcard__meta"><span>Программ: <b>[N]</b></span><span>Бюджетных мест: <b>[N]</b></span></p>
+  </div>
+  <button class="fcard__open" type="button" data-open="sport" aria-haspopup="dialog" aria-controls="fac"><span class="visually-hidden">Открыть: Физическая культура</span><svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg></button>
+</li>
+<li class="fcard" data-fac="phil" style="--fc:#E6AA1F;--fc-fg:#0A1329;--fc-tint:#FAEED2" data-media="photo" data-src="../../../assets/stub/photos/800/students-biblioteka-tablichki.jpg" data-alt="Студентки в библиотеке с табличками">
+  <span class="fcard__badge" aria-hidden="true"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="phil"><path d="M24 13C20 9.5 13.5 9 6 10V37C13.5 36 20 36.5 24 40C28 36.5 34.5 36 42 37V10C34.5 9 28 9.5 24 13ZM24 13V40M11 17C14 16.5 17 17 19 18M11 23C14 22.5 17 23 19 24M11 29C14 28.5 17 29 19 30"/><circle cx="33" cy="24" r="3"/></svg></span>
+  <div class="fcard__body">
+    <p class="fcard__num" aria-hidden="true">07</p>
+    <h3 class="fcard__title" data-name>Филологический факультет</h3>
+    <p class="fcard__about" data-about>Для тех, кто читает внимательно и любит, когда каждое слово стоит на своём месте.</p>
+    <p class="fcard__meta"><span>Программ: <b>[N]</b></span><span>Бюджетных мест: <b>[N]</b></span></p>
+  </div>
+  <button class="fcard__open" type="button" data-open="phil" aria-haspopup="dialog" aria-controls="fac"><span class="visually-hidden">Открыть: Филологический</span><svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg></button>
+</li>
+<li class="fcard" data-fac="chem" style="--fc:#34C3A0;--fc-fg:#0A1329;--fc-tint:#D6F3EC" data-media="photo" data-src="../../../assets/stub/photos/800/lab-opyt-nauka-shou.jpg" data-alt="Химический опыт на научном шоу">
+  <span class="fcard__badge" aria-hidden="true"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="chem"><path d="M18 6H30M20.5 6V18L9.5 37C8 40 9.5 42 12.5 42H35.5C38.5 42 40 40 38.5 37L27.5 18V6M14 31H34M22.5 24A2.5 2.5 0 1 0 27.5 24A2.5 2.5 0 1 0 22.5 24Z"/><circle cx="20" cy="36" r="3"/></svg></span>
+  <div class="fcard__body">
+    <p class="fcard__num" aria-hidden="true">08</p>
+    <h3 class="fcard__title" data-name>Химико-технологический факультет</h3>
+    <p class="fcard__about" data-about>Для тех, кому мало формул на бумаге: опыты, лаборатории, новые вещества и материалы.</p>
+    <p class="fcard__meta"><span>Программ: <b>[N]</b></span><span>Бюджетных мест: <b>[N]</b></span></p>
+  </div>
+  <button class="fcard__open" type="button" data-open="chem" aria-haspopup="dialog" aria-controls="fac"><span class="visually-hidden">Открыть: Химико-технологический</span><svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg></button>
+</li>
+<li class="fcard" data-fac="math" style="--fc:#3570C0;--fc-fg:#FFFFFF;--fc-tint:#D7E2F2" data-media="photo" data-src="../../../assets/stub/photos/800/portrait-professor-u-doski.jpg" data-alt="Преподаватель у доски">
+  <span class="fcard__badge" aria-hidden="true"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="math"><path d="M14 8V20M8 14H20M9.5 28.5L18.5 37.5M18.5 28.5L9.5 37.5M28 30H40M28 36H40"/><circle cx="34" cy="14" r="3"/></svg></span>
+  <div class="fcard__body">
+    <p class="fcard__num" aria-hidden="true">09</p>
+    <h3 class="fcard__title" data-name>Математический факультет</h3>
+    <p class="fcard__about" data-about>Для тех, кто получает удовольствие от красивого доказательства и точной мысли.</p>
+    <p class="fcard__meta"><span>Программ: <b>[N]</b></span><span>Бюджетных мест: <b>[N]</b></span></p>
+  </div>
+  <button class="fcard__open" type="button" data-open="math" aria-haspopup="dialog" aria-controls="fac"><span class="visually-hidden">Открыть: Математический</span><svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg></button>
+</li>
+<li class="fcard" data-fac="econ" style="--fc:#6545C8;--fc-fg:#FFFFFF;--fc-tint:#E0DAF4" data-media="stub" data-alt="фото: семинар по экономике, работа в группах">
+  <span class="fcard__badge" aria-hidden="true"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="econ"><path d="M6 41H42M11 41V32M19 41V26M27 41V29M35 41V20M8 23L17 15L25 19L39 7M32 7H39V14"/><circle cx="24" cy="24" r="3" opacity="0"/></svg></span>
+  <div class="fcard__body">
+    <p class="fcard__num" aria-hidden="true">10</p>
+    <h3 class="fcard__title" data-name>Институт экономики и управления</h3>
+    <p class="fcard__about" data-about>Для тех, кто хочет понимать деньги, рынки и то, как устроена работа команды.</p>
+    <p class="fcard__meta"><span>Программ: <b>[N]</b></span><span>Бюджетных мест: <b>[N]</b></span></p>
+  </div>
+  <button class="fcard__open" type="button" data-open="econ" aria-haspopup="dialog" aria-controls="fac"><span class="visually-hidden">Открыть: Экономика и управление</span><svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg></button>
+</li>
+<li class="fcard" data-fac="law" style="--fc:#8E1F4E;--fc-fg:#FFFFFF;--fc-tint:#E8D2DC" data-media="stub" data-alt="фото: учебный судебный процесс в аудитории">
+  <span class="fcard__badge" aria-hidden="true"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="law"><path d="M24 9V40M16 41H32M10 14H38M10 14L5.5 26M10 14L14.5 26M38 14L33.5 26M38 14L42.5 26M4.5 26C5.5 30 7.5 32 10 32C12.5 32 14.5 30 15.5 26ZM32.5 26C33.5 30 35.5 32 38 32C40.5 32 42.5 30 43.5 26Z"/><circle cx="24" cy="7" r="3"/></svg></span>
+  <div class="fcard__body">
+    <p class="fcard__num" aria-hidden="true">11</p>
+    <h3 class="fcard__title" data-name>Юридический факультет</h3>
+    <p class="fcard__about" data-about>Для тех, кому важно, чтобы было по правилам и по справедливости.</p>
+    <p class="fcard__meta"><span>Программ: <b>[N]</b></span><span>Бюджетных мест: <b>[N]</b></span></p>
+  </div>
+  <button class="fcard__open" type="button" data-open="law" aria-haspopup="dialog" aria-controls="fac"><span class="visually-hidden">Открыть: Юридический</span><svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg></button>
+</li>
+<li class="fcard" data-fac="ped" style="--fc:#A3BE34;--fc-fg:#0A1329;--fc-tint:#EDF2D6" data-media="stub" data-alt="фото: студенты-практиканты ведут урок в школе">
+  <span class="fcard__badge" aria-hidden="true"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="ped"><path d="M24 8L18.5 4.5V11.5ZM24 8L29.5 4.5V11.5ZM12 34V24C12 17 17.5 12 24 12C30.5 12 36 17 36 24V34L40 38H8L12 34Z"/><circle cx="24" cy="42.5" r="3"/></svg></span>
+  <div class="fcard__body">
+    <p class="fcard__num" aria-hidden="true">12</p>
+    <h3 class="fcard__title" data-name>Институт педагогического образования и социальных технологий</h3>
+    <p class="fcard__about" data-about>Для тех, кто хочет учить, поддерживать и помогать людям расти.</p>
+    <p class="fcard__meta"><span>Программ: <b>[N]</b></span><span>Бюджетных мест: <b>[N]</b></span></p>
+  </div>
+  <button class="fcard__open" type="button" data-open="ped" aria-haspopup="dialog" aria-controls="fac"><span class="visually-hidden">Открыть: Педагогика и социальные технологии</span><svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg></button>
+</li>
+<li class="fcard" data-fac="psy" style="--fc:#9D7CF2;--fc-fg:#0A1329;--fc-tint:#EBE5FC" data-media="stub" data-alt="фото: практическое занятие по психологии, работа в парах">
+  <span class="fcard__badge" aria-hidden="true"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="psy"><path d="M17 42V34C12 31 9 26 9 20C9 12 15.5 6 23.5 6C31 6 36.5 11 37.5 18L41 25C41.4 25.8 41 26.5 40 26.5H37.5V32C37.5 34 36 35.5 34 35.5H29V42M19.5 17C19.5 14 21.5 12 24 12C26.5 12 28.5 14 28.5 16.5C28.5 19 26.5 20 24.5 21C24 21.3 24 22 24 23"/><circle cx="24" cy="28.5" r="3"/></svg></span>
+  <div class="fcard__body">
+    <p class="fcard__num" aria-hidden="true">13</p>
+    <h3 class="fcard__title" data-name>Факультет психологии</h3>
+    <p class="fcard__about" data-about>Для тех, кто хочет понимать себя и других и умеет по-настоящему слушать.</p>
+    <p class="fcard__meta"><span>Программ: <b>[N]</b></span><span>Бюджетных мест: <b>[N]</b></span></p>
+  </div>
+  <button class="fcard__open" type="button" data-open="psy" aria-haspopup="dialog" aria-controls="fac"><span class="visually-hidden">Открыть: Психология</span><svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg></button>
+</li>
+<li class="fcard" data-fac="phys" style="--fc:#64B4EE;--fc-fg:#0A1329;--fc-tint:#E0F0FC" data-media="stub" data-alt="фото: лабораторная установка физтеха крупным планом">
+  <span class="fcard__badge" aria-hidden="true"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="phys"><path d="M7 24A17 6.5 0 1 1 41 24A17 6.5 0 1 1 7 24ZM15.5 9.28A17 6.5 60 1 1 32.5 38.72A17 6.5 60 1 1 15.5 9.28ZM32.5 9.28A17 6.5 -60 1 1 15.5 38.72A17 6.5 -60 1 1 32.5 9.28Z"/><circle cx="24" cy="24" r="3"/></svg></span>
+  <div class="fcard__body">
+    <p class="fcard__num" aria-hidden="true">14</p>
+    <h3 class="fcard__title" data-name>Физико-технический факультет</h3>
+    <p class="fcard__about" data-about>Для тех, кто хочет знать, как устроен мир, и проверить это на приборах.</p>
+    <p class="fcard__meta"><span>Программ: <b>[N]</b></span><span>Бюджетных мест: <b>[N]</b></span></p>
+  </div>
+  <button class="fcard__open" type="button" data-open="phys" aria-haspopup="dialog" aria-controls="fac"><span class="visually-hidden">Открыть: Физико-технический</span><svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg></button>
+</li>
+<li class="fcard" data-fac="ino" style="--fc:#FF9A57;--fc-fg:#0A1329;--fc-tint:#FFEBDD" data-media="stub" data-alt="фото: слушатели курсов повышения квалификации">
+  <span class="fcard__badge" aria-hidden="true"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="ino"><path d="M24 24C21 19.5 17.5 16 13 16C8.6 16 5 19.6 5 24C5 28.4 8.6 32 13 32C17.5 32 21 28.5 24 24C27 19.5 30.5 16 35 16C39.4 16 43 19.6 43 24C43 28.4 39.4 32 35 32C30.5 32 27 28.5 24 24Z"/><circle cx="24" cy="24" r="3" opacity="0"/></svg></span>
+  <div class="fcard__body">
+    <p class="fcard__num" aria-hidden="true">15</p>
+    <h3 class="fcard__title" data-name>Институт непрерывного образования</h3>
+    <p class="fcard__about" data-about>Для тех, кто уже учится или работает и хочет новую профессию или квалификацию.</p>
+    <p class="fcard__meta"><span>Программ: <b>[N]</b></span><span>Бюджетных мест: <b>[N]</b></span></p>
+  </div>
+  <button class="fcard__open" type="button" data-open="ino" aria-haspopup="dialog" aria-controls="fac"><span class="visually-hidden">Открыть: Непрерывное образование</span><svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg></button>
+</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Кому что нужно -->
+    <section class="audience section" aria-labelledby="aud-title">
+      <div class="container">
+        <h2 id="aud-title" class="section-title" data-m="words">Кому что нужно</h2>
+        <ul class="aud__grid" role="list" data-m-stagger>
+          <li class="aud" style="--fc:#FE5C2B;--fc-fg:#0A1329" data-m="up">
+  <div class="aud__head"><h3 class="aud__title">Абитуриенту</h3><svg class="pg aud__icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="a-abit"><path d="M13 18C13 13 16 10 20 10H28C32 10 35 13 35 18V38C35 40.2 33.2 42 31 42H17C14.8 42 13 40.2 13 38ZM19 10V8C19 6.9 19.9 6 21 6H27C28.1 6 29 6.9 29 8V10M18 28H30V36H18ZM13 24H9V36C9 38 10 39 12 39M35 24H39V36C39 38 38 39 36 39"/><circle cx="24" cy="20" r="3"/></svg></div>
+  <ul class="aud__links" role="list"><li><a href="#">Программы и направления<svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg></a></li><li><a href="#">Сроки и правила приёма<svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg></a></li><li><a href="#">Общежитие и переезд в Тверь<svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg></a></li></ul>
+</li>
+<li class="aud" style="--fc:#2A3DAD;--fc-fg:#FFFFFF" data-m="up">
+  <div class="aud__head"><h3 class="aud__title">Студенту</h3><svg class="pg aud__icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="a-stud"><path d="M4 18L24 9L44 18L24 27ZM12 22V32C12 35 17.5 38 24 38C30.5 38 36 35 36 32V22M40 20V31"/><circle cx="40" cy="35" r="3"/></svg></div>
+  <ul class="aud__links" role="list"><li><a href="#">Расписание занятий<svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg></a></li><li><a href="#">Электронная библиотека<svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg></a></li><li><a href="#">Стипендии и поддержка<svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg></a></li></ul>
+</li>
+<li class="aud" style="--fc:#E6AA1F;--fc-fg:#0A1329" data-m="up">
+  <div class="aud__head"><h3 class="aud__title">Сотруднику</h3><svg class="pg aud__icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="a-staff"><path d="M9 18H33V34C33 38.4 29.4 42 25 42H17C12.6 42 9 38.4 9 34ZM33 22H36C39.3 22 42 24.7 42 28C42 31.3 39.3 34 36 34H33M17 6C15 8.5 19 10.5 17 13M25 6C23 8.5 27 10.5 25 13"/><circle cx="21" cy="30" r="3"/></svg></div>
+  <ul class="aud__links" role="list"><li><a href="#">Личный кабинет сотрудника<svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg></a></li><li><a href="#">Документы и приказы<svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg></a></li><li><a href="#">Повышение квалификации<svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg></a></li></ul>
+</li>
+<li class="aud" style="--fc:#34C3A0;--fc-fg:#0A1329" data-m="up">
+  <div class="aud__head"><h3 class="aud__title">Партнёру</h3><svg class="pg aud__icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="a-part"><path d="M6 24A12 12 0 1 1 30 24A12 12 0 1 1 6 24ZM18 24A12 12 0 1 1 42 24A12 12 0 1 1 18 24Z"/><circle cx="24" cy="24" r="3"/></svg></div>
+  <ul class="aud__links" role="list"><li><a href="#">Заказать исследование<svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg></a></li><li><a href="#">Практика и стажировки студентов<svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg></a></li><li><a href="#">Совместные программы<svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg></a></li></ul>
+</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Направления программ -->
+    <section class="dirs section" aria-labelledby="dirs-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="dirs-title" class="section-title" data-m="words">129 программ в шести направлениях</h2>
+          <a class="btn btn--text" href="#">Каталог программ <svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg></a>
+        </div>
+        <ul class="dirs__grid" role="list" data-m-stagger>
+          <li class="dir" style="--fc:#2A3DAD;--fc-fg:#FFFFFF;--fc-tint:#D4D8EF" data-m="up">
+  <a class="dir__link" href="#">
+    <span class="dir__stack" aria-hidden="true"><span class="dir__mini" style="--fc:#2A3DAD;--fc-fg:#FFFFFF;--fc-tint:#D4D8EF"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="cyb"><path d="M12 17H36C38.2 17 40 18.8 40 21V37C40 39.2 38.2 41 36 41H12C9.8 41 8 39.2 8 37V21C8 18.8 9.8 17 12 17ZM24 17V11M18 27V30M30 27V30M19 35H29M4.5 25V32M43.5 25V32"/></svg></span><span class="dir__mini" style="--fc:#3570C0;--fc-fg:#FFFFFF;--fc-tint:#D7E2F2"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="math"><path d="M14 8V20M8 14H20M9.5 28.5L18.5 37.5M18.5 28.5L9.5 37.5M28 30H40M28 36H40"/></svg></span><span class="dir__mini" style="--fc:#64B4EE;--fc-fg:#0A1329;--fc-tint:#E0F0FC"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="phys"><path d="M7 24A17 6.5 0 1 1 41 24A17 6.5 0 1 1 7 24ZM15.5 9.28A17 6.5 60 1 1 32.5 38.72A17 6.5 60 1 1 15.5 9.28ZM32.5 9.28A17 6.5 -60 1 1 15.5 38.72A17 6.5 -60 1 1 32.5 9.28Z"/></svg></span></span>
+    <span class="dir__title">IT и математика</span>
+    <span class="dir__text">Программирование, анализ данных, математическое моделирование.</span>
+    <span class="dir__count"><b>[N]</b> программ <svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg></span>
+  </a>
+</li>
+<li class="dir" style="--fc:#46A94F;--fc-fg:#0A1329;--fc-tint:#DAEEDC" data-m="up">
+  <a class="dir__link" href="#">
+    <span class="dir__stack" aria-hidden="true"><span class="dir__mini" style="--fc:#46A94F;--fc-fg:#0A1329;--fc-tint:#DAEEDC"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="bio"><path d="M24 42V25M24 27C24 17 30 11 40 11C40 21 34 27 24 27ZM24 32C24 25 19 20 10 20C10 27 15 32 24 32ZM16 42H32"/></svg></span><span class="dir__mini" style="--fc:#34C3A0;--fc-fg:#0A1329;--fc-tint:#D6F3EC"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="chem"><path d="M18 6H30M20.5 6V18L9.5 37C8 40 9.5 42 12.5 42H35.5C38.5 42 40 40 38.5 37L27.5 18V6M14 31H34M22.5 24A2.5 2.5 0 1 0 27.5 24A2.5 2.5 0 1 0 22.5 24Z"/></svg></span><span class="dir__mini" style="--fc:#1B9DB5;--fc-fg:#0A1329;--fc-tint:#D1EBF0"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="geo"><path d="M5 40L17 21L24 31L30 22L43 40ZM30 22V8M30 8.5L37.5 11.5L30 14.5"/></svg></span><span class="dir__mini" style="--fc:#64B4EE;--fc-fg:#0A1329;--fc-tint:#E0F0FC"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="phys"><path d="M7 24A17 6.5 0 1 1 41 24A17 6.5 0 1 1 7 24ZM15.5 9.28A17 6.5 60 1 1 32.5 38.72A17 6.5 60 1 1 15.5 9.28ZM32.5 9.28A17 6.5 -60 1 1 15.5 38.72A17 6.5 -60 1 1 32.5 9.28Z"/></svg></span></span>
+    <span class="dir__title">Естественные науки</span>
+    <span class="dir__text">Биология, химия, география, экология и физика.</span>
+    <span class="dir__count"><b>[N]</b> программ <svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg></span>
+  </a>
+</li>
+<li class="dir" style="--fc:#E6AA1F;--fc-fg:#0A1329;--fc-tint:#FAEED2" data-m="up">
+  <a class="dir__link" href="#">
+    <span class="dir__stack" aria-hidden="true"><span class="dir__mini" style="--fc:#E6AA1F;--fc-fg:#0A1329;--fc-tint:#FAEED2"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="phil"><path d="M24 13C20 9.5 13.5 9 6 10V37C13.5 36 20 36.5 24 40C28 36.5 34.5 36 42 37V10C34.5 9 28 9.5 24 13ZM24 13V40M11 17C14 16.5 17 17 19 18M11 23C14 22.5 17 23 19 24M11 29C14 28.5 17 29 19 30"/></svg></span><span class="dir__mini" style="--fc:#FE5C2B;--fc-fg:#0A1329;--fc-tint:#FFDED5"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="hist"><path d="M18 6H30M21 6V12M27 6V12M21 12C14 13 11 17 12 23C13 30 19 35 20.5 40H27.5C29 35 35 30 36 23C37 17 34 13 27 12M21 9C16 8.5 12.5 10.5 12.8 15.5M27 9C32 8.5 35.5 10.5 35.2 15.5M18.5 43H29.5M13.5 24H34.5"/></svg></span><span class="dir__mini" style="--fc:#F2708F;--fc-fg:#0A1329;--fc-tint:#FCE2E9"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="lang"><path d="M10 8H28C30.2 8 32 9.8 32 12V21C32 23.2 30.2 25 28 25H17L11 30V25H10C7.8 25 6 23.2 6 21V12C6 9.8 7.8 8 10 8ZM36 18H38C40.2 18 42 19.8 42 22V31C42 33.2 40.2 35 38 35H37V40L31 35H22C19.8 35 18 33.2 18 31V29M12 14.5H26M12 19H20"/></svg></span><span class="dir__mini" style="--fc:#9D7CF2;--fc-fg:#0A1329;--fc-tint:#EBE5FC"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="psy"><path d="M17 42V34C12 31 9 26 9 20C9 12 15.5 6 23.5 6C31 6 36.5 11 37.5 18L41 25C41.4 25.8 41 26.5 40 26.5H37.5V32C37.5 34 36 35.5 34 35.5H29V42M19.5 17C19.5 14 21.5 12 24 12C26.5 12 28.5 14 28.5 16.5C28.5 19 26.5 20 24.5 21C24 21.3 24 22 24 23"/></svg></span></span>
+    <span class="dir__title">Гуманитарные науки</span>
+    <span class="dir__text">Язык и литература, история, перевод, психология.</span>
+    <span class="dir__count"><b>[N]</b> программ <svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg></span>
+  </a>
+</li>
+<li class="dir" style="--fc:#A3BE34;--fc-fg:#0A1329;--fc-tint:#EDF2D6" data-m="up">
+  <a class="dir__link" href="#">
+    <span class="dir__stack" aria-hidden="true"><span class="dir__mini" style="--fc:#A3BE34;--fc-fg:#0A1329;--fc-tint:#EDF2D6"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="ped"><path d="M24 8L18.5 4.5V11.5ZM24 8L29.5 4.5V11.5ZM12 34V24C12 17 17.5 12 24 12C30.5 12 36 17 36 24V34L40 38H8L12 34Z"/></svg></span><span class="dir__mini" style="--fc:#9D7CF2;--fc-fg:#0A1329;--fc-tint:#EBE5FC"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="psy"><path d="M17 42V34C12 31 9 26 9 20C9 12 15.5 6 23.5 6C31 6 36.5 11 37.5 18L41 25C41.4 25.8 41 26.5 40 26.5H37.5V32C37.5 34 36 35.5 34 35.5H29V42M19.5 17C19.5 14 21.5 12 24 12C26.5 12 28.5 14 28.5 16.5C28.5 19 26.5 20 24.5 21C24 21.3 24 22 24 23"/></svg></span><span class="dir__mini" style="--fc:#FF9A57;--fc-fg:#0A1329;--fc-tint:#FFEBDD"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="ino"><path d="M24 24C21 19.5 17.5 16 13 16C8.6 16 5 19.6 5 24C5 28.4 8.6 32 13 32C17.5 32 21 28.5 24 24C27 19.5 30.5 16 35 16C39.4 16 43 19.6 43 24C43 28.4 39.4 32 35 32C30.5 32 27 28.5 24 24Z"/></svg></span></span>
+    <span class="dir__title">Педагогика</span>
+    <span class="dir__text">Будущие учителя, социальные педагоги, переподготовка.</span>
+    <span class="dir__count"><b>[N]</b> программ <svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg></span>
+  </a>
+</li>
+<li class="dir" style="--fc:#6545C8;--fc-fg:#FFFFFF;--fc-tint:#E0DAF4" data-m="up">
+  <a class="dir__link" href="#">
+    <span class="dir__stack" aria-hidden="true"><span class="dir__mini" style="--fc:#6545C8;--fc-fg:#FFFFFF;--fc-tint:#E0DAF4"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="econ"><path d="M6 41H42M11 41V32M19 41V26M27 41V29M35 41V20M8 23L17 15L25 19L39 7M32 7H39V14"/></svg></span><span class="dir__mini" style="--fc:#8E1F4E;--fc-fg:#FFFFFF;--fc-tint:#E8D2DC"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="law"><path d="M24 9V40M16 41H32M10 14H38M10 14L5.5 26M10 14L14.5 26M38 14L33.5 26M38 14L42.5 26M4.5 26C5.5 30 7.5 32 10 32C12.5 32 14.5 30 15.5 26ZM32.5 26C33.5 30 35.5 32 38 32C40.5 32 42.5 30 43.5 26Z"/></svg></span></span>
+    <span class="dir__title">Экономика и право</span>
+    <span class="dir__text">Экономика, управление, юриспруденция.</span>
+    <span class="dir__count"><b>[N]</b> программ <svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg></span>
+  </a>
+</li>
+<li class="dir" style="--fc:#E10447;--fc-fg:#FFFFFF;--fc-tint:#F9CDDA" data-m="up">
+  <a class="dir__link" href="#">
+    <span class="dir__stack" aria-hidden="true"><span class="dir__mini" style="--fc:#E10447;--fc-fg:#FFFFFF;--fc-tint:#F9CDDA"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="sport"><path d="M24 8A14 14 0 1 1 24 36A14 14 0 1 1 24 8ZM10 22H38M24 8V36M14 12C18 15.5 18 28.5 14 32M34 12C30 15.5 30 28.5 34 32M17 42H31"/></svg></span><span class="dir__mini" style="--fc:#A3BE34;--fc-fg:#0A1329;--fc-tint:#EDF2D6"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="ped"><path d="M24 8L18.5 4.5V11.5ZM24 8L29.5 4.5V11.5ZM12 34V24C12 17 17.5 12 24 12C30.5 12 36 17 36 24V34L40 38H8L12 34Z"/></svg></span></span>
+    <span class="dir__title">Спорт</span>
+    <span class="dir__text">Физическая культура, тренерская работа, адаптивный спорт.</span>
+    <span class="dir__count"><b>[N]</b> программ <svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg></span>
+  </a>
+</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Сегодня в ТвГУ -->
+    <section class="today section" aria-labelledby="today-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="today-title" class="section-title" data-m="words">Сегодня в ТвГУ</h2>
+          <a class="btn btn--text" href="#">Все новости <svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg></a>
+        </div>
+        <ul class="news__grid" role="list" data-m-stagger data-m-scroller>
+          <li class="news" style="--fc:#1B9DB5;--fc-fg:#0A1329;--fc-tint:#D1EBF0" data-m="up">
+  <span class="news__ear">География и геоэкология</span>
+  <article class="news__card">
+    <div class="news__media"><img src="../../../assets/stub/video/480/den-otkrytyh-dverey-2-mikroskop-mineraly.jpg" alt="Посетительница смотрит в микроскоп на минералы" width="800" height="533" decoding="async"></div>
+    <div class="news__body">
+      <p class="news__date">[дата] · пример</p>
+      <h3 class="news__title"><a href="#">День открытых дверей: минералы под микроскопом</a></h3>
+    </div>
+  </article>
+</li>
+<li class="news" style="--fc:#F2708F;--fc-fg:#0A1329;--fc-tint:#FCE2E9" data-m="up">
+  <span class="news__ear">Иностранные языки</span>
+  <article class="news__card">
+    <div class="news__media"><img src="../../../assets/stub/photos/800/students-inostrannye-u-pamyatnika.jpg" alt="Иностранные студенты у памятника в Твери" width="800" height="533" decoding="async"></div>
+    <div class="news__body">
+      <p class="news__date">[дата] · пример</p>
+      <h3 class="news__title"><a href="#">Иностранные студенты знакомятся с Тверью</a></h3>
+    </div>
+  </article>
+</li>
+<li class="news" style="--fc:#E10447;--fc-fg:#FFFFFF;--fc-tint:#F9CDDA" data-m="up">
+  <span class="news__ear">Физическая культура</span>
+  <article class="news__card">
+    <div class="news__media"><img src="../../../assets/stub/photos/800/sport-turslet-estafeta.jpg" alt="Эстафета на турслёте в лесу" width="800" height="533" decoding="async"></div>
+    <div class="news__body">
+      <p class="news__date">[дата] · пример</p>
+      <h3 class="news__title"><a href="#">Турслёт: эстафета факультетов в лесу</a></h3>
+    </div>
+  </article>
+</li>
+<li class="news" style="--fc:#2A3DAD;--fc-fg:#FFFFFF;--fc-tint:#D4D8EF" data-m="up">
+  <span class="news__ear">Прикладная математика и кибернетика</span>
+  <article class="news__card">
+    <div class="news__media"><img src="../../../assets/stub/photos/800/students-za-noutbukom.jpg" alt="Школьники за ноутбуком и карточками на интенсиве" width="800" height="533" decoding="async"></div>
+    <div class="news__body">
+      <p class="news__date">[дата] · пример</p>
+      <h3 class="news__title"><a href="#">Интенсив для школьников: первые шаги в анализе данных</a></h3>
+    </div>
+  </article>
+</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Наука и люди -->
+    <section class="science section" aria-labelledby="sci-title">
+      <div class="container science__grid">
+        <div class="science__copy">
+          <h2 id="sci-title" class="section-title" data-m="words">Наука и люди</h2>
+          <p class="science__lead" data-m="up">На 15 факультетах работают [N] научных школ и [N] лабораторий. Студенты приходят в них с первого курса.</p>
+          <ul class="ranks" role="list" data-m-stagger>
+            <li class="rank" data-m="up" style="--fc:#2A3DAD;--fc-fg:#FFFFFF"><span class="rank__num">93-е</span><span class="rank__text">место в России, Round University Ranking 2026</span></li>
+            <li class="rank" data-m="up" style="--fc:#E6AA1F;--fc-fg:#0A1329"><span class="rank__num">топ-200</span><span class="rank__text">Национальный агрегированный рейтинг 2026, 2-я лига</span></li>
+            <li class="rank" data-m="up" style="--fc:#9D7CF2;--fc-fg:#0A1329"><span class="rank__num">[N]</span><span class="rank__text">докторов и кандидатов наук среди преподавателей</span></li>
+          </ul>
+        </div>
+        <figure class="science__media" data-m="mask">
+          <img src="../../../assets/stub/photos/800/lecture-klass-seminar.jpg" alt="Семинар в учебной аудитории" width="800" height="603" loading="lazy" decoding="async">
+          <figcaption>Семинар в аудитории. Здесь будет фото научной лаборатории.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- История в лицах -->
+    <section class="history section" aria-labelledby="hist-title">
+      <div class="container">
+        <div class="ribbon ribbon--bleed" data-ribbon>
+          <div class="ribbon__head">
+            <h2 id="hist-title" class="section-title" data-m="words">История в лицах: 1870&nbsp;→ сегодня</h2>
+            <div class="ribbon__nav">
+              <button class="round-btn" type="button" data-ribbon-prev><svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M40 24H8M20 12L8 24L20 36"/></svg><span class="visually-hidden">Назад</span></button>
+              <button class="round-btn" type="button" data-ribbon-next><svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg><span class="visually-hidden">Вперёд</span></button>
+            </div>
+          </div>
+          <ol class="ribbon__track hist__track" role="list" aria-label="История университета">
+            <li class="hcard">
+  <div class="hcard__media"><img src="../../../assets/stub/photos/800/archive-uchenicy-v-klasse.jpg" alt="Архивный снимок: ученицы в классе" width="800" height="614" loading="lazy" decoding="async"></div>
+  <p class="hcard__year"><span data-count data-count-from="1700" data-count-dur="1400">1870</span></p>
+  <h3 class="hcard__title">Основание</h3><p class="hcard__text">С этого года ведёт свою историю Тверской университет.</p>
+</li>
+<li class="hcard">
+  <div class="stamp" style="--fc:#FE5C2B;--fc-fg:#0A1329;--fc-tint:#FFDED5" role="img" aria-label="Иллюстрация-марка: Николай Кун"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="hist"><path d="M18 6H30M21 6V12M27 6V12M21 12C14 13 11 17 12 23C13 30 19 35 20.5 40H27.5C29 35 35 30 36 23C37 17 34 13 27 12M21 9C16 8.5 12.5 10.5 12.8 15.5M27 9C32 8.5 35.5 10.5 35.2 15.5M18.5 43H29.5M13.5 24H34.5"/><circle cx="24" cy="30.5" r="3"/></svg><span class="stamp__tag" aria-hidden="true">портрета нет · марка</span></div>
+  <p class="hcard__year">[годы]</p>
+  <h3 class="hcard__title">Николай Кун</h3><p class="hcard__text">Автор книги «Мифы Древней Греции», которую читают поколения школьников.</p>
+</li>
+<li class="hcard">
+  <div class="stamp" style="--fc:#9D7CF2;--fc-fg:#0A1329;--fc-tint:#EBE5FC" role="img" aria-label="Иллюстрация-марка: Александр Александров"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="note"><path d="M18 35V11L38 7V31M18 17L38 13M6 35A6 5 0 1 0 18 35A6 5 0 1 0 6 35ZM26 31A6 5 0 1 0 38 31A6 5 0 1 0 26 31Z"/><circle cx="24" cy="24" r="3" opacity="0"/></svg><span class="stamp__tag" aria-hidden="true">портрета нет · марка</span></div>
+  <p class="hcard__year">[годы]</p>
+  <h3 class="hcard__title">Александр Александров</h3><p class="hcard__text">Автор гимна России.</p>
+</li>
+<li class="hcard">
+  <div class="hcard__media"><img src="../../../assets/stub/photos/800/archive-studenty-frontoviki.jpg" alt="Архивный снимок: студенты-фронтовики" width="672" height="544" loading="lazy" decoding="async"></div>
+  <p class="hcard__year">[годы]</p>
+  <h3 class="hcard__title">Студенты-фронтовики</h3><p class="hcard__text">Вернулись с войны и сели за парты.</p>
+</li>
+<li class="hcard">
+  <div class="stamp" style="--fc:#E6AA1F;--fc-fg:#0A1329;--fc-tint:#FAEED2" role="img" aria-label="Иллюстрация-марка: Андрей Дементьев"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="quill"><path d="M40 6C26 8 16 18 12 34L10 42M12 34C22 32 32 26 36 18C30 18 26 19 22 21C28 16 34 12 40 6ZM6 42H26"/><circle cx="24" cy="24" r="3" opacity="0"/></svg><span class="stamp__tag" aria-hidden="true">портрета нет · марка</span></div>
+  <p class="hcard__year">[годы]</p>
+  <h3 class="hcard__title">Андрей Дементьев</h3><p class="hcard__text">Поэт, чьи стихи стали песнями.</p>
+</li>
+<li class="hcard">
+  <div class="stamp" style="--fc:#E10447;--fc-fg:#FFFFFF;--fc-tint:#F9CDDA" role="img" aria-label="Иллюстрация-марка: Наталья Непряева"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="medal"><path d="M16 6L21 20M32 6L27 20M24 20A11 11 0 1 1 24 42A11 11 0 1 1 24 20Z"/><circle cx="24" cy="31" r="3"/></svg><span class="stamp__tag" aria-hidden="true">портрета нет · марка</span></div>
+  <p class="hcard__year">[годы]</p>
+  <h3 class="hcard__title">Наталья Непряева</h3><p class="hcard__text">Олимпийская чемпионка.</p>
+</li>
+<li class="hcard hcard--now">
+  <div class="hcard__now" aria-hidden="true"><div class="shield shield--mini" aria-hidden="true">
+<svg class="shield__plate" viewBox="0 0 472 624" aria-hidden="true" focusable="false"><path class="shield__roof" d="M152 27L180 7H292L320 27Z"/><path class="shield__body" d="M4 44H468V370C468 506 332 620 236 620C140 620 4 506 4 370Z"/></svg>
+<span class="tile tile--edge-l" data-fac="bio" style="--fc:#46A94F;--fc-fg:#0A1329;--fc-tint:#DAEEDC;--x:18;--y:58;--i:0"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="bio"><path d="M24 42V25M24 27C24 17 30 11 40 11C40 21 34 27 24 27ZM24 32C24 25 19 20 10 20C10 27 15 32 24 32ZM16 42H32"/><circle cx="35" cy="37" r="3"/></svg></span>
+<span class="tile" data-fac="math" style="--fc:#3570C0;--fc-fg:#FFFFFF;--fc-tint:#D7E2F2;--x:130;--y:58;--i:1"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="math"><path d="M14 8V20M8 14H20M9.5 28.5L18.5 37.5M18.5 28.5L9.5 37.5M28 30H40M28 36H40"/><circle cx="34" cy="14" r="3"/></svg></span>
+<span class="tile" data-fac="phil" style="--fc:#E6AA1F;--fc-fg:#0A1329;--fc-tint:#FAEED2;--x:242;--y:58;--i:2"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="phil"><path d="M24 13C20 9.5 13.5 9 6 10V37C13.5 36 20 36.5 24 40C28 36.5 34.5 36 42 37V10C34.5 9 28 9.5 24 13ZM24 13V40M11 17C14 16.5 17 17 19 18M11 23C14 22.5 17 23 19 24M11 29C14 28.5 17 29 19 30"/><circle cx="33" cy="24" r="3"/></svg></span>
+<span class="tile tile--edge-r" data-fac="lang" style="--fc:#F2708F;--fc-fg:#0A1329;--fc-tint:#FCE2E9;--x:354;--y:58;--i:3"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="lang"><path d="M10 8H28C30.2 8 32 9.8 32 12V21C32 23.2 30.2 25 28 25H17L11 30V25H10C7.8 25 6 23.2 6 21V12C6 9.8 7.8 8 10 8ZM36 18H38C40.2 18 42 19.8 42 22V31C42 33.2 40.2 35 38 35H37V40L31 35H22C19.8 35 18 33.2 18 31V29M12 14.5H26M12 19H20"/><circle cx="37" cy="28" r="3"/></svg></span>
+<span class="tile tile--edge-l" data-fac="hist" style="--fc:#FE5C2B;--fc-fg:#0A1329;--fc-tint:#FFDED5;--x:18;--y:170;--i:4"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="hist"><path d="M18 6H30M21 6V12M27 6V12M21 12C14 13 11 17 12 23C13 30 19 35 20.5 40H27.5C29 35 35 30 36 23C37 17 34 13 27 12M21 9C16 8.5 12.5 10.5 12.8 15.5M27 9C32 8.5 35.5 10.5 35.2 15.5M18.5 43H29.5M13.5 24H34.5"/><circle cx="24" cy="30.5" r="3"/></svg></span>
+<span class="tile" data-fac="phys" style="--fc:#64B4EE;--fc-fg:#0A1329;--fc-tint:#E0F0FC;--x:130;--y:170;--i:5"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="phys"><path d="M7 24A17 6.5 0 1 1 41 24A17 6.5 0 1 1 7 24ZM15.5 9.28A17 6.5 60 1 1 32.5 38.72A17 6.5 60 1 1 15.5 9.28ZM32.5 9.28A17 6.5 -60 1 1 15.5 38.72A17 6.5 -60 1 1 32.5 9.28Z"/><circle cx="24" cy="24" r="3"/></svg></span>
+<span class="tile" data-fac="law" style="--fc:#8E1F4E;--fc-fg:#FFFFFF;--fc-tint:#E8D2DC;--x:242;--y:170;--i:6"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="law"><path d="M24 9V40M16 41H32M10 14H38M10 14L5.5 26M10 14L14.5 26M38 14L33.5 26M38 14L42.5 26M4.5 26C5.5 30 7.5 32 10 32C12.5 32 14.5 30 15.5 26ZM32.5 26C33.5 30 35.5 32 38 32C40.5 32 42.5 30 43.5 26Z"/><circle cx="24" cy="7" r="3"/></svg></span>
+<span class="tile tile--edge-r" data-fac="chem" style="--fc:#34C3A0;--fc-fg:#0A1329;--fc-tint:#D6F3EC;--x:354;--y:170;--i:7"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="chem"><path d="M18 6H30M20.5 6V18L9.5 37C8 40 9.5 42 12.5 42H35.5C38.5 42 40 40 38.5 37L27.5 18V6M14 31H34M22.5 24A2.5 2.5 0 1 0 27.5 24A2.5 2.5 0 1 0 22.5 24Z"/><circle cx="20" cy="36" r="3"/></svg></span>
+<span class="tile tile--edge-l" data-fac="psy" style="--fc:#9D7CF2;--fc-fg:#0A1329;--fc-tint:#EBE5FC;--x:18;--y:282;--i:8"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="psy"><path d="M17 42V34C12 31 9 26 9 20C9 12 15.5 6 23.5 6C31 6 36.5 11 37.5 18L41 25C41.4 25.8 41 26.5 40 26.5H37.5V32C37.5 34 36 35.5 34 35.5H29V42M19.5 17C19.5 14 21.5 12 24 12C26.5 12 28.5 14 28.5 16.5C28.5 19 26.5 20 24.5 21C24 21.3 24 22 24 23"/><circle cx="24" cy="28.5" r="3"/></svg></span>
+<span class="tile" data-fac="sport" style="--fc:#E10447;--fc-fg:#FFFFFF;--fc-tint:#F9CDDA;--x:130;--y:282;--i:9"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="sport"><path d="M24 8A14 14 0 1 1 24 36A14 14 0 1 1 24 8ZM10 22H38M24 8V36M14 12C18 15.5 18 28.5 14 32M34 12C30 15.5 30 28.5 34 32M17 42H31"/><circle cx="24" cy="24" r="3" opacity="0"/></svg></span>
+<span class="tile" data-fac="geo" style="--fc:#1B9DB5;--fc-fg:#0A1329;--fc-tint:#D1EBF0;--x:242;--y:282;--i:10"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="geo"><path d="M5 40L17 21L24 31L30 22L43 40ZM30 22V8M30 8.5L37.5 11.5L30 14.5"/><circle cx="13" cy="11" r="3"/></svg></span>
+<span class="tile tile--edge-r" data-fac="econ" style="--fc:#6545C8;--fc-fg:#FFFFFF;--fc-tint:#E0DAF4;--x:354;--y:282;--i:11"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="econ"><path d="M6 41H42M11 41V32M19 41V26M27 41V29M35 41V20M8 23L17 15L25 19L39 7M32 7H39V14"/><circle cx="24" cy="24" r="3" opacity="0"/></svg></span>
+<span class="tile tile--bl" data-fac="ped" style="--fc:#A3BE34;--fc-fg:#0A1329;--fc-tint:#EDF2D6;--x:130;--y:394;--i:12"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="ped"><path d="M24 8L18.5 4.5V11.5ZM24 8L29.5 4.5V11.5ZM12 34V24C12 17 17.5 12 24 12C30.5 12 36 17 36 24V34L40 38H8L12 34Z"/><circle cx="24" cy="42.5" r="3"/></svg></span>
+<span class="tile tile--br" data-fac="ino" style="--fc:#FF9A57;--fc-fg:#0A1329;--fc-tint:#FFEBDD;--x:242;--y:394;--i:13"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="ino"><path d="M24 24C21 19.5 17.5 16 13 16C8.6 16 5 19.6 5 24C5 28.4 8.6 32 13 32C17.5 32 21 28.5 24 24C27 19.5 30.5 16 35 16C39.4 16 43 19.6 43 24C43 28.4 39.4 32 35 32C30.5 32 27 28.5 24 24Z"/><circle cx="24" cy="24" r="3" opacity="0"/></svg></span>
+<span class="tile tile--tip" data-fac="cyb" style="--fc:#2A3DAD;--fc-fg:#FFFFFF;--fc-tint:#D4D8EF;--x:186;--y:506;--i:14"><svg class="pg " viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="cyb"><path d="M12 17H36C38.2 17 40 18.8 40 21V37C40 39.2 38.2 41 36 41H12C9.8 41 8 39.2 8 37V21C8 18.8 9.8 17 12 17ZM24 17V11M18 27V30M30 27V30M19 35H29M4.5 25V32M43.5 25V32"/><circle cx="24" cy="8" r="3"/></svg></span>
+</div></div>
+  <p class="hcard__year"><span data-count data-count-from="2000" data-count-dur="1200">2026</span></p>
+  <h3 class="hcard__title">Сегодня</h3><p class="hcard__text">93-е место в России в Round University Ranking и топ-200 Национального агрегированного рейтинга.</p>
+</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Партнёры -->
+    <section class="partners-sec section" aria-labelledby="partners-title">
+      <div class="container">
+        <div class="partners ribbon" data-ribbon>
+          <div class="ribbon__head">
+            <h2 id="partners-title" class="section-title section-title--sm">С кем работаем</h2>
+            <div class="ribbon__nav">
+              <button class="round-btn" type="button" data-ribbon-prev><svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M40 24H8M20 12L8 24L20 36"/></svg><span class="visually-hidden">Назад</span></button>
+              <button class="round-btn" type="button" data-ribbon-next><svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg><span class="visually-hidden">Вперёд</span></button>
+            </div>
+          </div>
+          <div class="ribbon__track" role="region" aria-label="Партнёры, листается">
+            <a class="partner" href="#"><span class="partner__logo">лого</span><span class="partner__name">Промышленное предприятие · [название]</span></a>
+<a class="partner" href="#"><span class="partner__logo">лого</span><span class="partner__name">Школа-партнёр · [название]</span></a>
+<a class="partner" href="#"><span class="partner__logo">лого</span><span class="partner__name">Зарубежный университет · [название]</span></a>
+<a class="partner" href="#"><span class="partner__logo">лого</span><span class="partner__name">Научный институт · [название]</span></a>
+<a class="partner" href="#"><span class="partner__logo">лого</span><span class="partner__name">IT-компания · [название]</span></a>
+<a class="partner" href="#"><span class="partner__logo">лого</span><span class="partner__name">Банк · [название]</span></a>
+<a class="partner" href="#"><span class="partner__logo">лого</span><span class="partner__name">Музей · [название]</span></a>
+<a class="partner" href="#"><span class="partner__logo">лого</span><span class="partner__name">Областная больница · [название]</span></a>
+<a class="partner" href="#"><span class="partner__logo">лого</span><span class="partner__name">Издательство · [название]</span></a>
+<a class="partner" href="#"><span class="partner__logo">лого</span><span class="partner__name">Технопарк · [название]</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq section" id="faq" aria-labelledby="faq-title">
+      <div class="container faq__grid">
+        <div class="faq__head">
+          <h2 id="faq-title" class="section-title" data-m="words">Частые вопросы</h2>
+          <p class="faq__lead" data-m="up">Про бюджет, общежитие, деньги и баллы. Не нашёл ответ — спроси приёмную комиссию ниже.</p>
+        </div>
+        <div class="accordion">
+          <details class="accordion__item" name="faq" style="--fc:#6545C8;--fc-fg:#FFFFFF;--fc-tint:#E0DAF4">
+  <summary class="accordion__summary">Сколько бюджетных мест в этом году?</summary>
+  <div class="accordion__body"><p>Бюджетных мест в 2026 году: [N] на [N] программах. Число мест по каждой программе будет на её странице и в разделе «Абитуриенту» после публикации контрольных цифр приёма.</p></div>
+</details>
+<details class="accordion__item" name="faq" style="--fc:#FE5C2B;--fc-fg:#0A1329;--fc-tint:#FFDED5">
+  <summary class="accordion__summary">Есть ли общежитие для иногородних?</summary>
+  <div class="accordion__body"><p>Места в общежитиях для иногородних студентов: [N]. Как заселиться, сколько стоит проживание ([N] ₽ в месяц) и какие документы нужны, расскажем в разделе «Общежитие и переезд в Тверь».</p></div>
+</details>
+<details class="accordion__item" name="faq" style="--fc:#E6AA1F;--fc-fg:#0A1329;--fc-tint:#FAEED2">
+  <summary class="accordion__summary">Сколько стоит платное обучение?</summary>
+  <div class="accordion__body"><p>Стоимость зависит от программы и формы обучения: от [N] ₽ в год. Есть скидки и рассрочка на [условия]. Точная цена указана на странице программы.</p></div>
+</details>
+<details class="accordion__item" name="faq" style="--fc:#34C3A0;--fc-fg:#0A1329;--fc-tint:#D6F3EC">
+  <summary class="accordion__summary">Какие баллы ЕГЭ нужны для поступления?</summary>
+  <div class="accordion__body"><p>Минимальные баллы по предметам: [N]. Проходные баллы прошлых лет по каждой программе: [N]. Их можно сравнить со своими в подборе программ.</p></div>
+</details>
+<details class="accordion__item" name="faq" style="--fc:#2A3DAD;--fc-fg:#FFFFFF;--fc-tint:#D4D8EF">
+  <summary class="accordion__summary">Можно подать документы через Госуслуги?</summary>
+  <div class="accordion__body"><p>Да, заявление подаётся через суперсервис «Поступление в вуз онлайн» на Госуслугах, если программа участвует в нём ([список программ]). Лично и почтой тоже можно, адрес: 170100, Тверь, ул. Желябова, 33.</p></div>
+</details>
+<details class="accordion__item" name="faq" style="--fc:#A3BE34;--fc-fg:#0A1329;--fc-tint:#EDF2D6">
+  <summary class="accordion__summary">Когда день открытых дверей?</summary>
+  <div class="accordion__body"><p>Ближайший день открытых дверей: [дата]. Можно прийти в главный корпус или смотреть трансляцию. Регистрация откроется за [N] дней.</p></div>
+</details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Лид + сроки -->
+    <section class="lead-sec" id="ask" aria-labelledby="ask-title">
+      <div class="container">
+        <div class="lead-box">
+          <div class="lead-box__dates">
+            <h2 id="ask-title" class="lead-box__title">Спроси приёмную комиссию</h2>
+            <p class="lead-box__text">Ответ придёт в Telegram или звонком. Сроки кампании рядом, чтобы ничего не пропустить.</p>
+            <ul class="dates" role="list">
+              <li class="date" style="--fc:#FE5C2B"><span class="date__d">[дата]</span><span class="date__t">старт приёма документов</span></li>
+              <li class="date" style="--fc:#A3BE34"><span class="date__d">[дата]</span><span class="date__t">день открытых дверей</span></li>
+              <li class="date" style="--fc:#64B4EE"><span class="date__d">[дата]</span><span class="date__t">последний день подачи на бюджет</span></li>
+            </ul>
+          </div>
+          <form class="lead-form" action="#" method="post" novalidate data-lead>
+            <div class="field">
+              <label class="field__label" for="lead-contact">Телефон или ник в Telegram</label>
+              <input class="input" id="lead-contact" name="contact" type="text" autocomplete="tel" placeholder="+7 900 000-00-00 или @nickname" required aria-describedby="lead-contact-err">
+              <p class="field__error" id="lead-contact-err" hidden>Оставь телефон или ник, иначе не сможем ответить.</p>
+            </div>
+            <div class="field">
+              <label class="field__label" for="lead-q">Вопрос</label>
+              <textarea class="textarea" id="lead-q" name="question" rows="3" placeholder="Например: какие экзамены нужны на психологию?"></textarea>
+            </div>
+            <label class="check"><input type="checkbox" name="agree" required> <span>Согласен на обработку персональных данных</span></label>
+            <div class="lead-form__actions">
+              <button class="btn btn--light btn--lg" type="submit">Отправить вопрос <svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M42 6L20 28M42 6L28 42L20 28L6 20Z"/></svg></button>
+              <a class="btn btn--text lead-form__tg" href="#">или написать в Telegram</a>
+            </div>
+            <p class="lead-form__ok" data-lead-ok hidden role="status">Вопрос отправлен. Это пример формы, в макете ничего не уходит.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="footer"></div>
+
+  <!-- Карточка факультета (разворот плитки) -->
+  <div class="fac" id="fac" role="dialog" aria-modal="true" aria-labelledby="fac-title" hidden>
+    <div class="fac__surface" data-fac-surface>
+      <div class="fac__bar container">
+        <p class="fac__count"><span data-fac-num>01</span> / 15</p>
+        <div class="fac__nav">
+          <button class="round-btn round-btn--on" type="button" data-fac-prev><svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M40 24H8M20 12L8 24L20 36"/></svg><span class="visually-hidden">Предыдущий факультет</span></button>
+          <button class="round-btn round-btn--on" type="button" data-fac-next><svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg><span class="visually-hidden">Следующий факультет</span></button>
+          <button class="round-btn round-btn--on" type="button" data-fac-close><svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M13 13L35 35M35 13L13 35"/></svg><span class="visually-hidden">Закрыть карточку</span></button>
+        </div>
+      </div>
+      <div class="fac__body container">
+        <div class="fac__main">
+          <div class="fac__iconbox"><svg class="pg fac__icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false" data-pg="bio"><path d="M24 42V25M24 27C24 17 30 11 40 11C40 21 34 27 24 27ZM24 32C24 25 19 20 10 20C10 27 15 32 24 32ZM16 42H32"/><circle cx="35" cy="37" r="3"/></svg></div>
+          <h2 class="fac__title" id="fac-title" data-fac-title>Биологический факультет</h2>
+          <p class="fac__about" data-fac-about></p>
+          <dl class="fac__facts">
+            <div><dt>Программ бакалавриата и специалитета</dt><dd>[N]</dd></div>
+            <div><dt>Программ магистратуры</dt><dd>[N]</dd></div>
+            <div><dt>Бюджетных мест в 2026</dt><dd>[N]</dd></div>
+          </dl>
+          <div class="fac__actions">
+            <a class="btn btn--on btn--lg" href="#">Программы факультета <svg class="pg pg--ui " viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 24H40M28 12L40 24L28 36"/></svg></a>
+            <a class="btn btn--text fac__link" href="#">Страница факультета</a>
+          </div>
+        </div>
+        <figure class="fac__media" data-fac-media></figure>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

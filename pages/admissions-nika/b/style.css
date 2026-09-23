@@ -1,0 +1,223 @@
+/* admissions-nika / b — «Тёмная полоса с видео». */
+
+/* ───── Hero: тёмная полоса, обесцвеченный луп за текстом ───── */
+.b-hero { position: relative; overflow: hidden; isolation: isolate; padding-block: clamp(56px, 2rem + 6vw, 128px) clamp(40px, 1.5rem + 3vw, 64px); }
+.b-hero__media { position: absolute; inset: 0; z-index: -1; }
+.b-hero__media video {
+  width: 100%; height: 100%; object-fit: cover; object-position: 70% 40%;
+  filter: grayscale(1) contrast(1.05) brightness(0.9);
+}
+.b-hero__media::after {                    /* затемнение: слева плотнее, под текстом контраст AA */
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    linear-gradient(90deg, rgb(31 42 68 / 0.94) 0%, rgb(31 42 68 / 0.86) 45%, rgb(31 42 68 / 0.55) 100%);
+}
+@media (max-width: 767.98px) {
+  .b-hero__media::after { background: rgb(31 42 68 / 0.86); }
+}
+.b-hero__toggle {
+  position: absolute; right: var(--gutter); top: 24px; z-index: 2;
+  color: #fff; border-color: rgb(255 255 255 / 0.55); background: rgb(31 42 68 / 0.5);
+}
+.b-hero__toggle:hover { border-color: #fff; }
+.b-hero__toggle svg.i { width: 18px; height: 18px; }
+.b-hero__icon-pause { display: none; }
+.b-hero__media.is-playing .b-hero__icon-pause { display: block; }
+.b-hero__media.is-playing .b-hero__icon-play { display: none; }
+
+.b-hero__inner { display: grid; gap: 40px; }
+.b-hero__copy { display: grid; gap: 24px; max-width: 46rem; }
+.b-hero__copy h1 em { display: block; color: var(--c-on-dark-2); }
+.theme-nika .b-hero__lead { color: var(--c-on-dark-2); max-width: 36rem; }
+.b-hero__copy .adm-actions { margin-top: 8px; }
+.b-hero__credit { font-size: var(--fs-small); color: var(--c-on-dark-2); padding-right: 64px; }
+
+/* ───── Ключевые даты: 4 ячейки, линия прорисовывается через все ───── */
+.b-dates { position: relative; }
+.b-dates__list { list-style: none; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr); }
+.b-dates__cell { position: relative; display: grid; gap: 4px; padding: 0 0 28px 36px; }
+.b-dates__cell:last-child { padding-bottom: 0; }
+.b-dates__dot {
+  position: absolute; left: 1px; top: 5px; width: 13px; height: 13px; border-radius: 50%;
+  background: #fff; border: 1px solid var(--c-text);
+}
+.b-dates__cell.is-deadline .b-dates__dot { background: var(--c-blue); border-color: var(--c-blue); box-shadow: 0 0 0 5px var(--c-blue-tint); }
+.b-dates__line {                          /* мобильный: вертикальная линия слева */
+  position: absolute; left: 7px; top: 8px; bottom: 8px; width: 1px; background: var(--c-line-strong);
+  transform-origin: top;
+}
+.b-dates__when { font-size: 0.8125rem; font-weight: 500; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--c-text-2); }
+.b-dates__when strong { color: var(--c-red-text); font-weight: 600; }
+.b-dates__what { font-family: var(--font-serif); font-size: clamp(1.375rem, 1.2rem + 0.6vw, 1.75rem); line-height: 1.2; }
+.b-dates__note { font-size: var(--fs-small); color: var(--c-text-2); }
+.b-dates__foot { margin-top: 32px; }
+@media (min-width: 768px) {
+  .b-dates__list { grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 0; }
+  .b-dates__cell { padding: 40px 24px 0 0; }
+  .b-dates__cell + .b-dates__cell { padding-left: 24px; border-left: 1px solid var(--c-line); }
+  .b-dates__dot { left: 0; top: 0; }
+  .b-dates__cell + .b-dates__cell .b-dates__dot { left: 24px; }
+  .b-dates__line { left: 0; right: 0; top: 6px; bottom: auto; width: auto; height: 1px; transform-origin: left; }
+}
+
+/* движение (слой data-m="draw"): линия прочерчивается через 4 ячейки, точка каждой даты встаёт резко, когда линия до неё дошла,
+   текст ячейки поднимается следом; точка ближайшего дедлайна — с кольцом. Reduced-motion — финальный рисунок. */
+@media (prefers-reduced-motion: no-preference) {
+  .m-on .b-dates[data-m="draw"] .b-dates__line { transition: transform 1300ms var(--ease-in-out); }
+  .m-on .b-dates[data-m="draw"]:not(.m-in) .b-dates__line { transform: scaleY(0); }
+  .m-on .b-dates[data-m="draw"] .b-dates__dot {
+    transition: opacity 0ms linear, transform 200ms var(--ease-out);
+    transition-delay: calc(var(--i) * 300ms + 140ms);
+  }
+  .m-on .b-dates[data-m="draw"]:not(.m-in) .b-dates__dot { opacity: 0; transform: scale(2); }
+  .m-on .b-dates[data-m="draw"] .b-dates__cell > p {
+    transition: opacity 700ms var(--ease-expo), transform 900ms var(--ease-expo);
+    transition-delay: calc(var(--i) * 300ms + 220ms);
+  }
+  .m-on .b-dates[data-m="draw"]:not(.m-in) .b-dates__cell > p { opacity: 0; transform: translate3d(0, 12px, 0); }
+  @media (min-width: 768px) { .m-on .b-dates[data-m="draw"]:not(.m-in) .b-dates__line { transform: scaleX(0); } }
+}
+
+/* ───── Авторский момент b: «окуляр». Видео открывается из круглой апертуры с тонкими кольцами-окуляром,
+   внутри медленно дрейфует (data-parallax на video), при уходе полосы из экрана апертура снова сходится в круг. ───── */
+.b-hero { --ap-x: 72%; --ap-y: 46%; --ap: clamp(110px, 13vw, 210px); }
+.b-hero__media video { position: absolute; left: 0; top: -16%; height: 132%; }
+.b-hero__inner { position: relative; z-index: 1; }
+.b-eyepiece {
+  position: absolute; z-index: 0; pointer-events: none; overflow: visible;
+  width: calc(var(--ap) * 4); height: calc(var(--ap) * 4);
+  left: calc(var(--ap-x) - var(--ap) * 2); top: calc(var(--ap-y) - var(--ap) * 2);
+  color: #fff; opacity: 0.22;
+}
+.b-eyepiece :is(circle, path) { fill: none; stroke: currentColor; stroke-width: 1; vector-effect: non-scaling-stroke; }
+.b-eyepiece__ring { transform-box: view-box; transform-origin: 0 0; transform: scale(calc(1.9 + var(--r) * 0.25)); }
+.b-eyepiece__ticks { transform-box: view-box; transform-origin: 0 0; transform: scale(2.3) rotate(22.5deg); }
+@media (max-width: 767.98px) {
+  .b-hero { --ap-x: 82%; --ap-y: 16%; --ap: 72px; }
+  .b-eyepiece { display: none; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .m-on .b-hero[data-m="draw"] .b-hero__media {
+    clip-path: circle(150% at var(--ap-x) var(--ap-y));
+    transition: clip-path 1500ms var(--ease-in-out) 700ms;
+  }
+  .m-on .b-hero[data-m="draw"]:not(.m-in) .b-hero__media { clip-path: circle(var(--ap) at var(--ap-x) var(--ap-y)); }
+  /* кольца: прочерчиваются вокруг апертуры, затем расходятся вместе с ней и остаются едва заметной сеткой */
+  .m-on .b-eyepiece { transition: opacity 1500ms var(--ease-in-out) 700ms; }
+  .m-on .b-hero:not(.m-in) .b-eyepiece { opacity: 0.7; }
+  .m-on .b-eyepiece__ring {
+    stroke-dasharray: 1; stroke-dashoffset: 0;
+    transition: stroke-dashoffset 900ms var(--ease-in-out), transform 1500ms var(--ease-in-out) 700ms;
+    transition-delay: calc(var(--r) * 90ms), 700ms;
+  }
+  .m-on .b-hero:not(.m-in) .b-eyepiece .b-eyepiece__ring { transform: none; stroke-dashoffset: 1; }
+  .m-on .b-eyepiece__ticks { transition: transform 1500ms var(--ease-in-out) 700ms; }
+  .m-on .b-hero:not(.m-in) .b-eyepiece .b-eyepiece__ticks { transform: none; }
+
+  /* уход полосы: апертура сходится обратно в круг, кольца возвращаются (прокрутка ведёт анимацию сама) */
+  @supports (animation-timeline: view()) {
+    .m-on .b-hero { view-timeline: --hero block; }
+    .m-on .b-hero.m-in .b-hero__media { animation: b-ap-close linear forwards; animation-timeline: --hero; animation-range: exit 0% exit 85%; }
+    .m-on .b-hero.m-in .b-eyepiece { animation: b-eye-back linear forwards; animation-timeline: --hero; animation-range: exit 0% exit 85%; }
+    @keyframes b-ap-close {
+      from { clip-path: circle(150% at var(--ap-x) var(--ap-y)); }
+      to { clip-path: circle(var(--ap) at var(--ap-x) var(--ap-y)); }
+    }
+    @keyframes b-eye-back { from { opacity: 0.22; scale: 1; } to { opacity: 0.8; scale: 0.5; } }
+  }
+}
+/* ───── Доказательства: тёмная полоса, цифры крупной антиквой ───── */
+.b-proof__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 var(--grid-gap); border-top: 1px solid var(--c-line-dark); }
+.b-proof__grid > div { display: grid; align-content: start; gap: 8px; padding: 24px 0; border-bottom: 1px solid var(--c-line-dark); }
+.b-proof__grid dd { order: -1; font-family: var(--font-serif); font-size: clamp(2.5rem, 1.8rem + 2.6vw, 4rem); line-height: 1; font-variant-numeric: lining-nums; }
+.b-proof__grid dt { color: var(--c-on-dark-2); font-size: var(--fs-small); line-height: 1.45; }
+.b-proof__grid dt b { display: block; color: #fff; font-weight: 500; font-size: 1rem; }
+.b-proof__grid > div:last-child { grid-column: 1 / -1; }
+.b-proof__alumni { margin-top: 28px; max-width: 48rem; color: var(--c-on-dark-2); font-size: var(--fs-lead); line-height: 1.55; }
+@media (min-width: 1024px) {
+  .b-proof__grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .b-proof__grid > div:last-child { grid-column: auto; }
+  .b-proof__grid > div { padding: 28px 16px 28px 0; }
+}
+
+/* ───── Как поступить: пять строк с крупными номерами и действием ───── */
+.b-steps { list-style: none; padding: 0; border-top: 1px solid var(--c-text); }
+.b-steps__item { display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: 4px 16px; align-items: start; padding: 20px 0; border-bottom: 1px solid var(--c-line); }
+.b-steps__num { font-family: var(--font-serif); font-size: 2rem; line-height: 1; color: var(--c-text-2); font-variant-numeric: lining-nums tabular-nums; }
+.b-steps__text { display: grid; gap: 4px; }
+.b-steps__when { font-size: 0.8125rem; font-weight: 500; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--c-text-2); }
+.theme-nika main .b-steps__what { font-size: 1.1875rem; font-weight: 500; }
+.b-steps__note { color: var(--c-text-2); font-size: var(--fs-small); }
+.b-steps__go { grid-column: 2; justify-self: start; min-height: 44px; }
+@media (min-width: 768px) {
+  .b-steps__item { grid-template-columns: 4.5rem minmax(0, 1fr) 13rem; align-items: center; padding: 24px 0; }
+  .b-steps__num { font-size: 2.75rem; }
+  .b-steps__go { grid-column: 3; justify-self: end; }
+}
+
+/* ───── Уровни: одна строка из 4 ячеек в общей рамке ───── */
+.b-levels { list-style: none; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr); background: #fff; border: 1px solid var(--c-line); border-radius: 8px; overflow: hidden; }
+.b-levels > li + li { border-top: 1px solid var(--c-line); }
+.b-levels__cell { display: grid; gap: 8px; align-content: start; height: 100%; padding: 24px; color: var(--c-text); text-decoration: none; transition: background-color var(--dur-fast) ease; }
+.b-levels__title { font-weight: 500; font-size: 1.125rem; line-height: 1.35; margin-top: 12px; }
+.b-levels__sub { font-size: var(--fs-small); color: var(--c-text-2); }
+.b-levels .adm-more { margin-top: 12px; }
+.b-levels__cell:focus-visible { outline-offset: -3px; }
+@media (hover: hover) and (pointer: fine) {
+  .b-levels__cell:hover { background: var(--c-blue-tint); }
+  .b-levels__cell:hover .adm-count { color: var(--c-blue); }
+}
+@media (min-width: 640px) {
+  .b-levels { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .b-levels > li + li { border-top: 0; }
+  .b-levels > li:nth-child(n+3) { border-top: 1px solid var(--c-line); }
+  .b-levels > li:nth-child(even) { border-left: 1px solid var(--c-line); }
+}
+@media (min-width: 1280px) {
+  .b-levels { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .b-levels > li:nth-child(n+3) { border-top: 0; }
+  .b-levels > li + li { border-left: 1px solid var(--c-line); }
+  .b-levels__cell { padding: 28px; min-height: 260px; }
+}
+
+/* ───── Калькулятор: одна колонка ───── */
+.b-calc { display: grid; gap: 28px; max-width: 760px; }
+.theme-nika main .b-calc__title { font-size: var(--fs-h3); }
+.b-calc .calc-out { padding-top: 28px; border-top: 1px solid var(--c-text); }
+@media (min-width: 640px) {
+  .b-calc .calc__checks { grid-template-columns: repeat(3, auto); justify-content: start; column-gap: 28px; }
+  .b-calc .calc__checks legend { grid-column: 1 / -1; }
+}
+
+/* ───── Стоимость: фото общежития + три строки ───── */
+.b-cost { display: grid; gap: 32px var(--grid-gap); align-items: start; }
+.b-cost__media { display: grid; gap: 12px; }
+.b-cost__photo { aspect-ratio: 800 / 406; }
+.b-cost__list { border-top: 1px solid var(--c-text); }
+.b-cost__list > div { display: grid; gap: 8px; padding: 20px 0; border-bottom: 1px solid var(--c-line); }
+.b-cost__list dt { font-weight: 500; font-size: 1.0625rem; }
+.b-cost__list dd { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; }
+.b-cost__unit { color: var(--c-text-2); font-size: var(--fs-small); max-width: 32ch; }
+@media (min-width: 1024px) {
+  .b-cost { grid-template-columns: minmax(0, 5fr) minmax(0, 4fr); gap: 48px; }
+  .b-cost__list > div { grid-template-columns: 11rem minmax(0, 1fr); align-items: baseline; }
+}
+
+/* ───── Обращение и вопросы рядом ───── */
+.b-talk__grid { display: grid; gap: 48px; }
+.b-talk__address { display: grid; gap: 28px; align-content: start; }
+.b-talk__address .n-person { max-width: 200px; }
+.b-talk__form { display: grid; gap: 20px; align-content: start; background: #fff; border: 1px solid var(--c-line); border-radius: 8px; padding: 24px 20px; }
+.b-talk__form .ask-form { grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 768px) {
+  .b-talk__address { grid-template-columns: 180px minmax(0, 1fr); gap: 32px; }
+  .b-talk__form { padding: 32px; }
+}
+@media (min-width: 1024px) {
+  .b-talk__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; }
+  .b-talk__address { grid-template-columns: minmax(0, 1fr); }
+}
+.b-talk { background: var(--c-bg-grey); }
+.b-talk .adm-quote { font-size: clamp(1.375rem, 1.1rem + 1vw, 2rem); }
+
+@media (max-width: 767.98px) { .b-dates__when, .b-steps__when { font-size: 0.875rem; } }

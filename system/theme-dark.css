@@ -1,0 +1,154 @@
+/* ТвГУ — тёмная тема (15.09.2026). Не инверсия светлой: сцена — абитуриент и родитель вечером с телефона,
+   поэтому фон — глубокие чернила бренда (не чёрный), глубина — светлотой поверхностей и линиями 1 px, без теней и свечений.
+
+   Подключение: <html lang="ru" data-theme="dark"> и
+     tokens.css → base.css → stub.css → theme-dark.css → motion.css → style.css варианта.
+   Шапка под темой тёмная сама, data-header="dark" не нужен (но не мешает).
+
+   Роли (в style.css писать их, а не hex):
+     --c-bg       фон страницы            --c-bg-grey  полоса (чуть светлее фона)
+     --c-surface  карточка/лента/слой     --c-field    поле ввода
+     --c-deep     самая тёмная полоса     --c-navy     фирменная тёмно-синяя полоса (светлее фона — «поднятая»)
+     --c-text / -2 / -3  текст            --c-ink      крупные цифры и заголовки
+     --c-blue     ЗАЛИВКА (кнопка, выбранное) с белым текстом, 5.1:1
+     --c-blue-ink СИНИЙ КАК ТЕКСТ, иконка, линия, ссылка — 9.7:1 на фоне
+     --c-red      заливка с белым текстом  --c-red-ink  красный как текст (дедлайн) — 7.1:1
+     --c-line / --c-line-strong           --c-blue-tint подложка выбранного
+     --c-control-line рамка поля/чекбокса --c-ok-ink «успех» как текст
+     --img-dim / --img-dim-strong         приглушение фото (класс .is-dim)
+   Контраст пересчитан для фона, полосы и карточки: text ≥ 14.5, text-2 ≥ 8.6, text-3 ≥ 5.8, blue-ink ≥ 8.4. */
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --c-bg: #0a0f2c;
+  --c-bg-grey: #0f1638;
+  --c-bg-stub: #131a42;
+  --c-surface: #141c45;
+  --c-field: #0c1233;
+  --c-deep: #060a1f;
+  /* --c-navy и --c-slate остаются брендовыми значениями: на тёмном это «поднятые» полосы */
+
+  --c-text: #eef1fa;
+  --c-text-2: #b4bcd8;
+  --c-text-3: #9099bb;
+  --c-ink: #f4f6fc;
+  --c-line: #2a3466;
+  --c-line-strong: #46518a;     /* декоративные линии; для рамок контролов — --c-control-line */
+  --c-control-line: #6a75ad;    /* рамка поля/чекбокса: ≥ 3.7:1 на фоне, полосе, карточке и --c-navy (WCAG 1.4.11) */
+
+  --c-blue: #4a5eeb;
+  --c-blue-hover: #5b6ef2;
+  --c-blue-press: #3d50d6;
+  --c-blue-ink: #a9b6ff;
+  --c-blue-tint: #1c2766;
+  --c-red-ink: #ff6f93;
+
+  --c-ok-ink: #8ad8a8;          /* «успех» как текст — 11:1 на фоне */
+  --c-on-dark: var(--c-text);   /* текст .section--dark/--slate и подвала: не чистый #fff */
+  --c-on-dark-2: #b4bcd8;
+  --c-line-dark: #2a3466;
+  --img-dim: 0.92;              /* приглушение фото по умолчанию */
+  --img-dim-strong: 0.8;        /* .is-dim: белые фасады/небо, кадры на --c-deep */
+
+  --shadow-pop: 0 16px 40px -12px rgb(0 0 0 / 0.65), 0 0 0 1px var(--c-line);
+  --focus-ring: 2px solid var(--c-blue-ink);
+}
+
+/* ───── Поверхности браузера ───── */
+[data-theme="dark"] ::selection { background: var(--c-blue-ink); color: var(--c-bg); }
+[data-theme="dark"] :where(input, textarea) { caret-color: var(--c-blue-ink); }
+:where([data-theme="dark"]) :focus-visible { outline-color: var(--c-blue-ink); }
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover { background: #5d689f; }
+
+/* ───── Текст и ссылки ───── */
+/* :where — специфичность как у base `a`, чтобы не перебить .btn и классы страниц */
+:where([data-theme="dark"]) a { color: var(--c-blue-ink); }
+[data-theme="dark"] .section--dark a:not([class]) { color: var(--c-text); }
+[data-theme="dark"] .section--dark { background: var(--c-deep); }
+
+/* ───── Кнопки ───── */
+[data-theme="dark"] .btn--outline,
+[data-theme="dark"] .btn--text { --btn-fg: var(--c-blue-ink); }
+[data-theme="dark"] .btn--outline:hover { --btn-bg: var(--c-blue-tint); }
+/* в тёмных полосах главная кнопка остаётся синей заливкой, а не белой плашкой из base */
+[data-theme="dark"] .section--dark .btn--primary,
+[data-theme="dark"] .section--slate .btn--primary { --btn-bg: var(--c-blue); --btn-fg: #fff; }
+[data-theme="dark"] .section--dark .btn--primary:hover,
+[data-theme="dark"] .section--slate .btn--primary:hover { --btn-bg: var(--c-blue-hover); }
+[data-theme="dark"] .section--dark .btn--outline,
+[data-theme="dark"] .section--dark .btn--text { --btn-fg: var(--c-text); }
+[data-theme="dark"] .btn:disabled,
+[data-theme="dark"] .btn[aria-disabled="true"] { --btn-bg: var(--c-bg-grey); --btn-fg: #7c85a8; --btn-bd: var(--c-line); }
+[data-theme="dark"] .btn-circle { color: var(--c-text); border-color: var(--c-line-strong); }
+[data-theme="dark"] .btn-circle:hover { color: var(--c-blue-ink); border-color: var(--c-blue-ink); }
+[data-theme="dark"] .btn-circle:disabled { color: var(--c-text); border-color: var(--c-line-strong); }
+
+/* ───── Поля ───── */
+[data-theme="dark"] .field__error { color: var(--c-red-ink); }
+[data-theme="dark"] :is(.input, .select, .textarea) { background-color: var(--c-field); color: var(--c-text); border-color: var(--c-control-line); }
+[data-theme="dark"] :is(.input, .select, .textarea):hover { border-color: #909bd2; }
+[data-theme="dark"] :is(.input, .select, .textarea):focus-visible { border-color: var(--c-blue-ink); box-shadow: 0 0 0 3px rgb(169 182 255 / 0.22); }
+[data-theme="dark"] :is(.input, .select, .textarea)[aria-invalid="true"] { border-color: var(--c-red-ink); }
+[data-theme="dark"] :is(.input, .select, .textarea):disabled { background-color: var(--c-bg-grey); color: #7c85a8; }
+[data-theme="dark"] .select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23b4bcd8' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+}
+[data-theme="dark"] .select option { background: var(--c-surface); color: var(--c-text); }
+[data-theme="dark"] .check input { background: var(--c-field); border-color: var(--c-control-line); }
+[data-theme="dark"] .check input:hover { border-color: var(--c-blue-ink); }
+
+/* ───── Аккордеон, табы, чипы ───── */
+[data-theme="dark"] .accordion__summary::after { background: var(--c-text); }
+[data-theme="dark"] .accordion__summary:hover { color: var(--c-blue-ink); }
+[data-theme="dark"] .accordion__summary:hover::before { border-color: var(--c-blue-ink); }
+[data-theme="dark"] .accordion__summary:hover::after { background: var(--c-blue-ink); }
+[data-theme="dark"] .tab { color: var(--c-text); }
+[data-theme="dark"] .tab:hover { border-color: var(--c-text-2); }
+[data-theme="dark"] .tab[aria-selected="true"] { background: var(--c-text); border-color: var(--c-text); color: var(--c-bg); }
+[data-theme="dark"] .chip { background: transparent; color: var(--c-text); border-color: var(--c-line-strong); }
+[data-theme="dark"] .chip:hover { background: var(--c-bg-grey); border-color: var(--c-text-3); }
+[data-theme="dark"] .chip[aria-pressed="true"],
+[data-theme="dark"] .chip.is-active { background: var(--c-blue-tint); border-color: var(--c-blue-ink); color: var(--c-ink); }
+
+/* ───── Лента партнёров ───── */
+[data-theme="dark"] .partners .ribbon__track,
+[data-theme="dark"] .section--grey .partners .ribbon__track { background: var(--c-surface); }
+[data-theme="dark"] .partner__logo { background: #1f2858; color: #a3acd0; filter: none; } /* grayscale из base делал подложку серой */
+[data-theme="dark"] a.partner:hover { background: var(--c-bg-grey); }
+
+/* ───── Логотип-плейсхолдер ───── */
+[data-theme="dark"] .logo-ph { background: transparent; border-color: var(--c-text); color: var(--c-text); }
+
+/* ───── Шапка: под темой всегда тёмная, фон = фон страницы, чтобы hero начинался без шва ───── */
+[data-theme="dark"] .site-header {
+  --hdr-bg: var(--c-bg); --hdr-fg: var(--c-text); --hdr-fg-2: var(--c-text-2); --hdr-line: var(--c-line);
+  --hdr-accent: var(--c-blue-ink);
+}
+[data-theme="dark"] .site-header.is-compact .hdr-bar { background: rgb(10 15 44 / 0.94); }
+[data-theme="dark"] .hdr-search { background: var(--c-surface); color: var(--c-text); border-color: var(--c-line); }
+[data-theme="dark"] .menu,
+[data-theme="dark"] .menu__top { background: var(--c-bg); color: var(--c-text); }
+[data-theme="dark"] .menu__top .brand,
+[data-theme="dark"] .menu__close,
+[data-theme="dark"] .menu__link { color: var(--c-text); }
+[data-theme="dark"] .menu__link:hover,
+[data-theme="dark"] .menu__link:hover .icon { color: var(--c-blue-ink); }
+
+/* ───── Подвал: глубже страницы, отделён линией ───── */
+[data-theme="dark"] .site-footer { background: var(--c-deep); border-top: 1px solid var(--c-line); }
+/* виджет Госуслуг — контурная кнопка: белая плашка в подвале спорила с главным действием страницы */
+[data-theme="dark"] .pos-widget .btn { --btn-bg: transparent; --btn-fg: var(--c-text); --btn-bd: var(--c-control-line); }
+[data-theme="dark"] .site-footer .pos-widget .btn:hover { --btn-bg: var(--c-surface); --btn-bd: var(--c-blue-ink); }
+
+/* ───── Заглушки ───── */
+[data-theme="dark"] .stub { background: var(--c-bg-stub); border-color: var(--c-line); color: var(--c-text-2); }
+[data-theme="dark"] .stub::before { color: rgb(169 182 255 / 0.07); }
+[data-theme="dark"] .stub::after { color: var(--c-text-2); background: rgb(10 15 44 / 0.85); border-color: var(--c-line); }
+[data-theme="dark"] .stub__caption::before { color: var(--c-blue-ink); }
+
+/* Фото на тёмном: чуть приглушить яркие кадры, чтобы белые поля не «выбивали» глаз. Отключается классом .is-bright.
+   .is-dim (на img/video) — сильнее: кадры с белым небом и фасадами, фото на полосах --c-deep.
+   Приглушать неактивное (главы, карточки) — ролями --c-text-2/-3, не opacity: axe в check.mjs считает контраст с прозрачностью. */
+[data-theme="dark"] :where(main img:not(.is-bright)) { filter: brightness(var(--img-dim)); }
+[data-theme="dark"] :where(main :is(img, video).is-dim) { filter: brightness(var(--img-dim-strong)) saturate(0.9); }

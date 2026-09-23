@@ -1,0 +1,871 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Стол первокурсника · ТвГУ · главная (живая, вариант g)</title>
+  <meta name="description" content="Тверской государственный университет: 15 факультетов, 129 программ, с 1870 года. Подбери программу и задай вопрос приёмной комиссии.">
+  <link rel="preload" href="../../../assets/fonts/golos-text-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../../assets/fonts/live-g-caveat.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../../system/tokens.css">
+  <link rel="stylesheet" href="../../../system/base.css">
+  <link rel="stylesheet" href="../../../system/stub.css">
+  <link rel="stylesheet" href="../../../system/motion.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="../../../system/motion.js"></script>
+  <script>
+    /* Раскладка предметов при загрузке (десктоп) и подписи ленты предметов (мобильный) ждут GSAP, если движение разрешено.
+       Страховка: через 2,5 с класс снимается в любом случае. */
+    (function (d) {
+      var mm = function (q) { return window.matchMedia(q).matches; };
+      if (!mm("(prefers-reduced-motion: no-preference)")) return;
+      var cls = mm("(min-width: 1024px)") ? "g-intro" : "g-deck";
+      d.classList.add(cls);
+      setTimeout(function () { d.classList.remove(cls); }, 2500);
+    })(document.documentElement);
+  </script>
+  <script src="../../../system/partials.js" defer></script>
+  <script src="../../../system/ui.js" defer></script>
+  <script src="../../../system/vendor/gsap/gsap.min.js" defer></script>
+  <script src="../../../system/vendor/gsap/ScrollTrigger.min.js" defer></script>
+  <script src="../../../system/vendor/gsap/Draggable.min.js" defer></script>
+  <script src="../../../system/vendor/gsap/InertiaPlugin.min.js" defer></script>
+  <script src="../../../system/vendor/gsap/DrawSVGPlugin.min.js" defer></script>
+  <script src="../../../system/vendor/gsap/ScrollToPlugin.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <svg class="svg-defs" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="g-steel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f2f4f8"/><stop offset=".5" stop-color="#aab2bf"/><stop offset="1" stop-color="#dfe3ea"/></linearGradient>
+    </defs>
+  </svg>
+  <div data-include="header"></div>
+
+  <main id="main">
+
+    <!-- ═════════ Полоса ближайших событий: малярный скотч ═════════ -->
+    <section class="events" aria-label="Ближайшие события">
+      <div class="events__tape">
+        <ul class="events__list" role="list">
+          <li><a class="events__item" href="#lead"><time class="mono">[дата]</time> День открытых дверей</a></li>
+          <li><a class="events__item" href="#lead"><time class="mono">[дата]</time> Старт приёма документов</a></li>
+          <li><a class="events__item" href="#today"><time class="mono">[дата]</time> Олимпиада ТвГУ для школьников <span class="events__ex">пример</span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ═════════ HERO: стол ═════════ -->
+    <section class="desk" aria-labelledby="hero-title" data-desk>
+      <div class="desk__board" data-board>
+
+        <p class="desk__hint hand" aria-hidden="true">
+          <span class="desk__hint-fine">всё на столе можно взять и бросить, а клик откроет раздел</span>
+          <span class="desk__hint-touch">листай предметы, каждый открывает раздел</span>
+        </p>
+        <button class="desk__reset" type="button" data-desk-reset hidden>сложить как было</button>
+
+        <!-- Тетрадь в клетку: оффер и доказательства -->
+        <div class="notebook">
+          <div class="nb__page nb__page--l">
+            <p class="nb__date hand" aria-hidden="true">1 сентября</p>
+            <h1 class="nb__title" id="hero-title">Первый курс<br> начинается <span class="hl"><span class="hl__ink" aria-hidden="true"></span><span class="hl__txt">здесь</span></span></h1>
+            <p class="nb__sub">15 факультетов и 129 программ в Твери, между Москвой и Петербургом.</p>
+            <div class="nb__actions">
+              <span class="cta">
+                <a class="sticker" href="#programs">Подобрать программу</a>
+                <span class="deadline"><span>приём до</span> <b class="mono">[дата]</b></span>
+              </span>
+              <a class="scribble-link" href="#lead">Задать вопрос</a>
+            </div>
+            <p class="nb__you" aria-hidden="true">
+              <svg class="nb__you-arrow" viewBox="0 0 110 40"><path class="ink-path" d="M104 24 C 80 36, 48 34, 12 14 M25 8 L11 14 L20 26"/></svg>
+              <span class="hand">это ты через год</span>
+            </p>
+          </div>
+
+          <div class="nb__page nb__page--r">
+            <p class="nb__why hand" aria-hidden="true">почему сюда:</p>
+            <h2 class="visually-hidden">ТвГУ в цифрах</h2>
+            <ul class="facts" role="list">
+              <li><b class="facts__n">1870</b><span>год основания</span></li>
+              <li><b class="facts__n">15</b><span>факультетов и институтов</span></li>
+              <li><b class="facts__n">129</b><span>программ от бакалавриата до аспирантуры</span></li>
+              <li class="facts__rank">
+                <b class="facts__n facts__n--circled">93-е<svg class="facts__circle" viewBox="0 0 150 70" aria-hidden="true"><path class="ink-path ink-path--red" d="M92 8 C 40 2, 6 18, 8 38 C 10 60, 70 68, 118 58 C 150 50, 150 18, 104 10 C 90 8, 76 9, 66 12"/></svg></b>
+                <span>место в России, рейтинг RUR 2026</span>
+              </li>
+              <li class="facts__rank">
+                <b class="facts__n"><span class="hl"><span class="hl__ink" aria-hidden="true"></span><span class="hl__txt">топ-200</span></span></b>
+                <span>Национальный агрегированный рейтинг 2026, 2-я лига</span>
+              </li>
+            </ul>
+          </div>
+
+          <span class="nb__staple nb__staple--1" aria-hidden="true"></span>
+          <span class="nb__staple nb__staple--2" aria-hidden="true"></span>
+        </div>
+
+        <!-- Предметы на столе -->
+        <ul class="things" role="list" aria-label="Предметы на столе: разделы главной" data-things>
+
+          <!-- Декор: пятно от кружки, линейка, ручка, скрепки -->
+          <li class="thing thing--decor thing--ring" style="--x:998;--y:636;--w:124;--r:0" aria-hidden="true">
+            <span class="obj obj--static"><span class="obj__art"><svg viewBox="0 0 130 130"><circle cx="65" cy="65" r="52" fill="none" stroke="#7a5a40" stroke-opacity=".16" stroke-width="3.2"/><path d="M20 80 A 50 50 0 0 1 60 14" fill="none" stroke="#7a5a40" stroke-opacity=".12" stroke-width="5" stroke-linecap="round"/><circle cx="65" cy="65" r="47" fill="none" stroke="#7a5a40" stroke-opacity=".06" stroke-width="1.5"/></svg></span></span>
+          </li>
+
+          <li class="thing thing--decor thing--ruler" style="--x:436;--y:652;--w:364;--r:-3" aria-hidden="true">
+            <span class="obj obj--decor"><span class="obj__art">
+              <svg viewBox="0 0 400 50">
+                <defs>
+                  <pattern id="g-mm" width="2.5" height="50" patternUnits="userSpaceOnUse" x="12"><path d="M0.2 0v7" stroke="#2A3DAD" stroke-opacity=".55" stroke-width=".4"/></pattern>
+                  <pattern id="g-5mm" width="12.5" height="50" patternUnits="userSpaceOnUse" x="12"><path d="M0.2 0v11" stroke="#2A3DAD" stroke-opacity=".7" stroke-width=".5"/></pattern>
+                  <pattern id="g-cm" width="25" height="50" patternUnits="userSpaceOnUse" x="12"><path d="M0.25 0v15" stroke="#2A3DAD" stroke-width=".6"/></pattern>
+                  <linearGradient id="g-ruler" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4f8ff" stop-opacity=".92"/><stop offset="1" stop-color="#d6e3f7" stop-opacity=".78"/></linearGradient>
+                </defs>
+                <rect x=".5" y=".5" width="399" height="49" rx="3" fill="url(#g-ruler)" stroke="#8aa0c8" stroke-opacity=".7"/>
+                <rect x="12" y="1" width="375.5" height="8" fill="url(#g-mm)"/>
+                <rect x="12" y="1" width="375.5" height="12" fill="url(#g-5mm)"/>
+                <rect x="12" y="1" width="375.5" height="16" fill="url(#g-cm)"/>
+                <g font-family="PT Mono, monospace" font-size="7.5" fill="#2A3DAD" text-anchor="middle">
+                  <text x="12" y="27">0</text><text x="37" y="27">1</text><text x="62" y="27">2</text><text x="87" y="27">3</text><text x="112" y="27">4</text><text x="137" y="27">5</text><text x="162" y="27">6</text><text x="187" y="27">7</text><text x="212" y="27">8</text><text x="237" y="27">9</text><text x="262" y="27">10</text><text x="287" y="27">11</text><text x="312" y="27">12</text><text x="337" y="27">13</text><text x="362" y="27">14</text><text x="387" y="27">15</text>
+                </g>
+                <text x="200" y="42" font-family="PT Mono, monospace" font-size="6.5" fill="#2A3DAD" fill-opacity=".6" text-anchor="middle" letter-spacing="1.5">ЛИНЕЙКА 15 СМ</text>
+                <path d="M3 47h394" stroke="#fff" stroke-opacity=".8"/>
+              </svg>
+            </span></span>
+          </li>
+
+          <li class="thing thing--decor thing--pen" style="--x:852;--y:640;--w:230;--r:-16" aria-hidden="true">
+            <span class="obj obj--decor"><span class="obj__art">
+              <svg viewBox="0 0 260 26">
+                <defs>
+                  <linearGradient id="g-pen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5a6fe0"/><stop offset=".45" stop-color="#2A3DAD"/><stop offset="1" stop-color="#18247a"/></linearGradient>
+                </defs>
+                <path d="M4 13 L30 7.5 V18.5 Z" fill="url(#g-steel)"/>
+                <circle cx="4" cy="13" r="1.6" fill="#1B2433"/>
+                <rect x="30" y="6.5" width="34" height="13" rx="2" fill="#1B2433"/>
+                <path d="M36 7v12M41 7v12M46 7v12M51 7v12M56 7v12" stroke="#3a4458" stroke-width="1.4"/>
+                <rect x="62" y="6" width="176" height="14" rx="3" fill="url(#g-pen)"/>
+                <rect x="66" y="8" width="160" height="2.2" rx="1.1" fill="#fff" fill-opacity=".35"/>
+                <rect x="236" y="7" width="20" height="12" rx="5" fill="#1B2433"/>
+                <path d="M196 3.5 H246 a3 3 0 0 1 0 6 H196 z" fill="url(#g-steel)"/>
+              </svg>
+            </span></span>
+          </li>
+
+          <!-- Зачётка → направления -->
+          <li class="thing thing--zk" style="--x:22;--y:40;--w:178;--r:7">
+            <a class="obj" href="#programs" aria-label="Зачётка: 129 программ, перейти к направлениям">
+              <span class="obj__art" aria-hidden="true">
+                <svg viewBox="0 0 212 292">
+                  <defs>
+                    <linearGradient id="g-zk-cover" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#34449c"/><stop offset=".55" stop-color="#24317d"/><stop offset="1" stop-color="#1a2462"/></linearGradient>
+                    <linearGradient id="g-zk-gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6e3a6"/><stop offset=".45" stop-color="#c9a456"/><stop offset=".7" stop-color="#ecd28e"/><stop offset="1" stop-color="#b48d42"/></linearGradient>
+                    <pattern id="g-zk-grain" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="1.5" cy="2" r=".8" fill="#fff" fill-opacity=".06"/><circle cx="5" cy="5.2" r=".9" fill="#000" fill-opacity=".1"/><circle cx="5.5" cy="1" r=".5" fill="#fff" fill-opacity=".04"/></pattern>
+                  </defs>
+                  <rect x="7" y="6" width="202" height="284" rx="8" fill="#e8ebf1"/>
+                  <path d="M203 16v264M206 20v256" stroke="#c3c9d5" stroke-width=".8"/>
+                  <rect width="202" height="284" rx="8" fill="url(#g-zk-cover)"/>
+                  <rect width="202" height="284" rx="8" fill="url(#g-zk-grain)"/>
+                  <path d="M15 1v282" stroke="#0d1447" stroke-opacity=".45" stroke-width="1.4"/>
+                  <path d="M17 1v282" stroke="#fff" stroke-opacity=".1"/>
+                  <rect x="31" y="17" width="159" height="250" rx="5" fill="none" stroke="#0d1447" stroke-opacity=".8" stroke-width="1.6" transform="translate(.9 .9)"/>
+                  <rect x="31" y="17" width="159" height="250" rx="5" fill="none" stroke="#fff" stroke-opacity=".18" stroke-width="1.1"/>
+                  <rect x="37" y="23" width="147" height="238" rx="3" fill="none" stroke="#fff" stroke-opacity=".08" stroke-width=".8"/>
+                  <g transform="translate(110 78)">
+                    <rect x="-9" y="-35" width="18" height="3.6" rx="1" fill="#E10447"/>
+                    <path d="M-20 -27h40v22c0 17-10 26-20 32c-10-6-20-15-20-32z" fill="none" stroke="#0d1447" stroke-width="2.6" transform="translate(.9 .9)"/>
+                    <path d="M-20 -27h40v22c0 17-10 26-20 32c-10-6-20-15-20-32z" fill="none" stroke="url(#g-zk-gold)" stroke-width="2.4"/>
+                    <path d="M-11 -16h22M0 -16v30" stroke="url(#g-zk-gold)" stroke-width="2.6" stroke-linecap="round"/>
+                  </g>
+                  <g font-family="Golos Text, sans-serif" font-weight="700" text-anchor="middle" letter-spacing="2.6">
+                    <text x="111.9" y="152.9" font-size="17" fill="#0d1447">ЗАЧЁТНАЯ</text>
+                    <text x="111" y="152" font-size="17" fill="url(#g-zk-gold)">ЗАЧЁТНАЯ</text>
+                    <text x="111.9" y="175.9" font-size="17" fill="#0d1447">КНИЖКА</text>
+                    <text x="111" y="175" font-size="17" fill="url(#g-zk-gold)">КНИЖКА</text>
+                  </g>
+                  <g font-family="Golos Text, sans-serif" font-weight="600" text-anchor="middle" font-size="7.4" letter-spacing=".9" fill="#d8bd78" fill-opacity=".9">
+                    <text x="111" y="236">ТВЕРСКОЙ ГОСУДАРСТВЕННЫЙ</text>
+                    <text x="111" y="247">УНИВЕРСИТЕТ</text>
+                  </g>
+                  <path d="M150 276v16l5.5-4.5 5.5 4.5v-16z" fill="#c4033e"/>
+                </svg>
+              </span>
+              <span aria-hidden="true" class="obj__cap cap--start" style="--cx:92;--cy:-7;--ca:160"><svg class="cap__arrow" viewBox="0 0 64 36" aria-hidden="true"><path pathLength="1" class="ink-path" d="M4 26 C 18 8, 38 6, 56 14 M46 6 L57 14 L45 20"/></svg><span class="cap__txt hand">129 программ</span></span>
+            </a>
+          </li>
+
+          <!-- Полароид: студенты -->
+          <li class="thing thing--pol thing--pol-you" style="--x:24;--y:352;--w:202;--r:-6">
+            <a class="obj" href="#today" aria-label="Фото с турслёта: перейти к разделу «Сегодня в ТвГУ»">
+              <span class="obj__art">
+                <span class="polaroid">
+                  <img src="../../../assets/stub/photos/800/sport-turslet-zaryadka-pole.jpg" alt="Турслёт: студенты делают разминку на поле у леса" width="800" height="533">
+                  <span class="polaroid__cap hand" aria-hidden="true">турслёт, зарядка</span>
+                </span>
+              </span>
+            </a>
+          </li>
+
+          <!-- Полароид: ярмарка объединений -->
+          <li class="thing thing--pol" style="--x:-14;--y:600;--w:188;--r:8">
+            <a class="obj" href="#today" aria-label="Фото с Дня знаний: перейти к разделу «Сегодня в ТвГУ»">
+              <span class="obj__art">
+                <span class="polaroid">
+                  <img src="../../../assets/stub/photos/800/campus-den-znaniy-yarmarka.jpg" alt="День знаний: ярмарка студенческих объединений во дворе" width="800" height="533">
+                  <span class="polaroid__cap hand" aria-hidden="true">ярмарка клубов</span>
+                </span>
+              </span>
+              <span aria-hidden="true" class="obj__cap cap--start" style="--cx:108;--cy:-4;--ca:150"><svg class="cap__arrow" viewBox="0 0 64 36" aria-hidden="true"><path pathLength="1" class="ink-path" d="M4 26 C 18 8, 38 6, 56 14 M46 6 L57 14 L45 20"/></svg><span class="cap__txt hand">сегодня в ТвГУ</span></span>
+            </a>
+          </li>
+
+          <!-- Конверт → вопрос в приёмку -->
+          <li class="thing thing--env" style="--x:236;--y:630;--w:252;--r:4">
+            <a class="obj" href="#lead" aria-label="Конверт: задать вопрос приёмной комиссии">
+              <span class="obj__art" aria-hidden="true">
+                <svg viewBox="0 0 300 190">
+                  <defs>
+                    <linearGradient id="g-kraft" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d3ae8a"/><stop offset="1" stop-color="#c29a74"/></linearGradient>
+                    <pattern id="g-fiber" width="18" height="12" patternUnits="userSpaceOnUse"><path d="M1 3h6M10 8h5M4 10h3" stroke="#8d6a4a" stroke-opacity=".14" stroke-width=".7"/></pattern>
+                  </defs>
+                  <rect width="300" height="190" rx="4" fill="url(#g-kraft)"/>
+                  <rect width="300" height="190" rx="4" fill="url(#g-fiber)"/>
+                  <g font-family="Caveat, cursive" fill="#1B2433" font-size="19">
+                    <text x="24" y="38">Кому: приёмная комиссия ТвГУ</text>
+                    <text x="24" y="66">Куда: Тверь, ул. Желябова, 33</text>
+                  </g>
+                  <path d="M24 44h180M24 72h180" stroke="#1B2433" stroke-opacity=".28" stroke-width=".8"/>
+                  <g fill="none" stroke="#1B2433" stroke-opacity=".55" stroke-width="1">
+                    <rect x="24" y="140" width="20" height="30"/><rect x="48" y="140" width="20" height="30"/><rect x="72" y="140" width="20" height="30"/><rect x="96" y="140" width="20" height="30"/><rect x="120" y="140" width="20" height="30"/><rect x="144" y="140" width="20" height="30"/>
+                  </g>
+                  <g fill="none" stroke="#2A3DAD" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M31 147l7-3v22"/>
+                    <path d="M51 145h13l-9 22"/>
+                    <path d="M77 145h10v20h-10z"/>
+                    <path d="M101 147l7-3v22"/>
+                    <path d="M125 145h10v20h-10z"/>
+                    <path d="M149 145h10v20h-10z"/>
+                  </g>
+                  <g transform="translate(216 16)">
+                    <rect x="0" y="0" width="64" height="78" fill="#fff"/>
+                    <g fill="url(#g-kraft)"><circle cx="0" cy="6" r="2.4"/><circle cx="0" cy="18" r="2.4"/><circle cx="0" cy="30" r="2.4"/><circle cx="0" cy="42" r="2.4"/><circle cx="0" cy="54" r="2.4"/><circle cx="0" cy="66" r="2.4"/><circle cx="64" cy="6" r="2.4"/><circle cx="64" cy="18" r="2.4"/><circle cx="64" cy="30" r="2.4"/><circle cx="64" cy="42" r="2.4"/><circle cx="64" cy="54" r="2.4"/><circle cx="64" cy="66" r="2.4"/><circle cx="8" cy="0" r="2.4"/><circle cx="20" cy="0" r="2.4"/><circle cx="32" cy="0" r="2.4"/><circle cx="44" cy="0" r="2.4"/><circle cx="56" cy="0" r="2.4"/><circle cx="8" cy="78" r="2.4"/><circle cx="20" cy="78" r="2.4"/><circle cx="32" cy="78" r="2.4"/><circle cx="44" cy="78" r="2.4"/><circle cx="56" cy="78" r="2.4"/></g>
+                    <rect x="6" y="6" width="52" height="66" fill="#2A3DAD"/>
+                    <rect x="26" y="15" width="12" height="2.6" fill="#E10447"/>
+                    <path d="M22 20h20v12c0 9-5 13-10 16c-5-3-10-7-10-16z" fill="none" stroke="#fff" stroke-width="1.8"/>
+                    <path d="M27 25h10M32 25v15" stroke="#fff" stroke-width="1.8"/>
+                    <text x="32" y="64" text-anchor="middle" font-family="PT Mono, monospace" font-size="8" fill="#fff">1870</text>
+                  </g>
+                  <g fill="none" stroke="#1B2433" stroke-opacity=".5" stroke-width="1.2">
+                    <circle cx="214" cy="84" r="24"/>
+                    <circle cx="214" cy="84" r="18" stroke-opacity=".3"/>
+                    <path d="M238 78c8-5 14 5 22 0s14 5 22 0M238 88c8-5 14 5 22 0s14 5 22 0M238 98c8-5 14 5 22 0s14 5 22 0"/>
+                  </g>
+                  <text x="214" y="87.5" text-anchor="middle" font-family="PT Mono, monospace" font-size="8" fill="#1B2433" fill-opacity=".6">ТВЕРЬ</text>
+                </svg>
+              </span>
+              <span aria-hidden="true" class="obj__cap cap--start" style="--cx:98;--cy:-10;--ca:150"><svg class="cap__arrow" viewBox="0 0 64 36" aria-hidden="true"><path pathLength="1" class="ink-path" d="M4 26 C 18 8, 38 6, 56 14 M46 6 L57 14 L45 20"/></svg><span class="cap__txt hand">спросить приёмку</span></span>
+            </a>
+          </li>
+
+          <!-- Телефон → сегодня в ТвГУ -->
+          <li class="thing thing--phone" style="--x:630;--y:626;--w:272;--r:-5">
+            <a class="obj" href="#today" aria-label="Телефон с видео «Лекция на газоне»: перейти к разделу «Сегодня в ТвГУ»">
+              <span class="obj__art">
+                <span class="phone">
+                  <span class="phone__screen">
+                    <img src="../../../assets/stub/video/480/den-znaniy-obzor-2-gazon-lekciya.jpg" alt="Кадр видео: лекция на газоне в День знаний" width="854" height="480">
+                    <span class="phone__play" aria-hidden="true"></span>
+                  </span>
+                </span>
+              </span>
+              <span aria-hidden="true" class="obj__cap cap--end" style="--cx:34;--cy:-18;--ca:60"><svg class="cap__arrow" viewBox="0 0 64 36" aria-hidden="true"><path pathLength="1" class="ink-path" d="M4 26 C 18 8, 38 6, 56 14 M46 6 L57 14 L45 20"/></svg><span class="cap__txt hand">лекция на газоне</span></span>
+            </a>
+          </li>
+
+          <!-- Кружка → сегодня -->
+          <li class="thing thing--mug" style="--x:1118;--y:630;--w:146;--r:0">
+            <a class="obj" href="#science" aria-label="Кружка: перейти к разделу «Наука и люди»">
+              <span class="obj__art" aria-hidden="true">
+                <svg viewBox="0 0 184 160">
+                  <defs>
+                    <radialGradient id="g-mug" cx=".42" cy=".38" r=".7"><stop offset="0" stop-color="#ffffff"/><stop offset=".75" stop-color="#eef1f6"/><stop offset="1" stop-color="#d5dbe5"/></radialGradient>
+                    <radialGradient id="g-coffee" cx=".45" cy=".42" r=".62"><stop offset="0" stop-color="#7a5236"/><stop offset=".7" stop-color="#52341f"/><stop offset="1" stop-color="#3a2415"/></radialGradient>
+                  </defs>
+                  <path d="M140 62h18a15 15 0 0 1 15 15v8a15 15 0 0 1-15 15h-18v-11h16a5 5 0 0 0 5-5v-6a5 5 0 0 0-5-5h-16z" fill="#f3f5f9" stroke="#c5ccd8" stroke-width="1.4"/>
+                  <circle cx="80" cy="80" r="72" fill="url(#g-mug)" stroke="#c5ccd8" stroke-width="1.4"/>
+                  <circle cx="80" cy="80" r="65" fill="none" stroke="#2A3DAD" stroke-width="5"/>
+                  <circle cx="80" cy="80" r="60" fill="#f7f8fb" stroke="#dfe4ec" stroke-width="1"/>
+                  <circle cx="80" cy="80" r="55" fill="url(#g-coffee)"/>
+                  <ellipse cx="80" cy="80" rx="52" ry="52" fill="none" stroke="#c9a27e" stroke-opacity=".35" stroke-width="3"/>
+                  <ellipse cx="62" cy="60" rx="16" ry="7" transform="rotate(-35 62 60)" fill="#fff" fill-opacity=".22"/>
+                  <circle cx="98" cy="96" r="3" fill="#fff" fill-opacity=".12"/>
+                </svg>
+              </span>
+              <span aria-hidden="true" class="obj__cap cap--end" style="--cx:-6;--cy:-6;--ca:35"><svg class="cap__arrow" viewBox="0 0 64 36" aria-hidden="true"><path pathLength="1" class="ink-path" d="M4 26 C 18 8, 38 6, 56 14 M46 6 L57 14 L45 20"/></svg><span class="cap__txt hand">наука и люди</span></span>
+            </a>
+          </li>
+
+          <!-- Билет → дорога -->
+          <li class="thing thing--ticket" style="--x:1066;--y:22;--w:236;--r:9">
+            <a class="obj" href="#life" aria-label="Билет Москва - Тверь: как добраться и где жить">
+              <span class="obj__art" aria-hidden="true">
+                <svg viewBox="0 0 280 124">
+                  <defs>
+                    <mask id="g-tk-mask"><rect width="280" height="124" rx="6" fill="#fff"/><circle cx="208" cy="0" r="9" fill="#000"/><circle cx="208" cy="124" r="9" fill="#000"/></mask>
+                  </defs>
+                  <g mask="url(#g-tk-mask)">
+                    <rect width="280" height="124" fill="#fbfcfe"/>
+                    <path d="M0 40c20-6 40 6 60 0s40 6 60 0 40 6 60 0M0 78c20-6 40 6 60 0s40 6 60 0 40 6 60 0M0 112c20-6 40 6 60 0s40 6 60 0 40 6 60 0" fill="none" stroke="#BFD0EA" stroke-opacity=".6"/>
+                    <rect width="280" height="26" fill="#2A3DAD"/>
+                    <rect width="7" height="124" y="26" fill="#E10447"/>
+                    <g font-family="PT Mono, monospace">
+                      <text x="16" y="17.5" font-size="9.5" fill="#fff" letter-spacing="1.2">БИЛЕТ · ПРИГОРОДНЫЙ ПОЕЗД</text>
+                      <text x="18" y="46" font-size="7.5" fill="#4A5368" letter-spacing="1">ОТКУДА</text>
+                      <text x="18" y="64" font-size="15" font-weight="700" fill="#1B2433">МОСКВА</text>
+                      <text x="116" y="46" font-size="7.5" fill="#4A5368" letter-spacing="1">КУДА</text>
+                      <text x="116" y="64" font-size="15" font-weight="700" fill="#1B2433">ТВЕРЬ</text>
+                      <text x="18" y="90" font-size="7.5" fill="#4A5368" letter-spacing="1">ОТПР.</text>
+                      <text x="18" y="106" font-size="11" fill="#1B2433">[время]</text>
+                      <text x="86" y="90" font-size="7.5" fill="#4A5368" letter-spacing="1">В ПУТИ</text>
+                      <text x="86" y="106" font-size="11" fill="#1B2433">[N] ч</text>
+                      <text x="146" y="90" font-size="7.5" fill="#4A5368" letter-spacing="1">МЕСТО</text>
+                      <text x="146" y="106" font-size="11" fill="#1B2433">[N]</text>
+                      <text x="244" y="75" font-size="7.5" fill="#4A5368" letter-spacing="1.4" transform="rotate(-90 244 75)" text-anchor="middle">КОНТРОЛЬ</text>
+                    </g>
+                    <path d="M82 59h24m-6-5 6 5-6 5" fill="none" stroke="#2A3DAD" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M208 12v100" stroke="#b7bfcc" stroke-width="1.4" stroke-dasharray="2 4"/>
+                    <g fill="#1B2433"><rect x="258" y="36" width="2" height="52"/><rect x="262" y="36" width="1" height="52"/><rect x="265" y="36" width="3" height="52"/><rect x="270" y="36" width="1" height="52"/><rect x="273" y="36" width="2" height="52"/></g>
+                  </g>
+                </svg>
+              </span>
+              <span aria-hidden="true" class="obj__cap cap--end" style="--cx:-2;--cy:112;--ca:-35"><svg class="cap__arrow" viewBox="0 0 64 36" aria-hidden="true"><path pathLength="1" class="ink-path" d="M4 26 C 18 8, 38 6, 56 14 M46 6 L57 14 L45 20"/></svg><span class="cap__txt hand">дорога до Твери</span></span>
+            </a>
+          </li>
+
+          <!-- Ключ с биркой → общежитие -->
+          <li class="thing thing--key" style="--x:1112;--y:170;--w:152;--r:-12">
+            <a class="obj" href="#life" aria-label="Ключ с биркой: общежитие">
+              <span class="obj__art" aria-hidden="true">
+                <svg viewBox="0 0 200 250">
+                  <defs>
+                    <linearGradient id="g-key" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eef1f5"/><stop offset=".45" stop-color="#b9c0cb"/><stop offset=".6" stop-color="#8e97a5"/><stop offset="1" stop-color="#d3d8e0"/></linearGradient>
+                    <linearGradient id="g-tag" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d6b391"/><stop offset="1" stop-color="#c29a74"/></linearGradient>
+                  </defs>
+                  <path d="M40 60 C 30 90, 70 104, 72 132" fill="none" stroke="#9c7a58" stroke-width="2" stroke-dasharray="3 1.5"/>
+                  <g transform="rotate(-8 88 180)">
+                    <path d="M52 132 L68 116 H112 L128 132 V240 H52 Z" fill="url(#g-tag)" stroke="#a88460" stroke-width="1"/>
+                    <circle cx="90" cy="134" r="9" fill="#f1e9dc" stroke="#b8946f"/>
+                    <circle cx="90" cy="134" r="4" fill="#DCE2E9"/>
+                    <text x="90" y="170" text-anchor="middle" font-family="Caveat, cursive" font-size="21" font-weight="600" fill="#1B2433">общежитие</text>
+                    <path d="M62 178h56" stroke="#1B2433" stroke-opacity=".3"/>
+                    <text x="90" y="200" text-anchor="middle" font-family="PT Mono, monospace" font-size="10.5" fill="#1B2433">КОРП. [N]</text>
+                    <text x="90" y="220" text-anchor="middle" font-family="PT Mono, monospace" font-size="10.5" fill="#1B2433">КОМН. [N]</text>
+                  </g>
+                  <circle cx="50" cy="44" r="21" fill="none" stroke="url(#g-key)" stroke-width="3.6"/>
+                  <g transform="rotate(32 72 60)">
+                    <path fill-rule="evenodd" d="M72 34a26 26 0 1 1 0 52a26 26 0 0 1 0-52zm-14 26a8 8 0 1 0 0.01 0z" fill="url(#g-key)" stroke="#6f7887" stroke-width="1"/>
+                    <path d="M97 53h14l3-3h66a3 3 0 0 1 3 3v9l-6 5-5-5-5 6-5-6-6 7-5-7-6 5-4-4v7h-40l-3-3h-14z" fill="url(#g-key)" stroke="#6f7887" stroke-width="1"/>
+                    <path d="M118 58h60" stroke="#6f7887" stroke-width=".9"/>
+                    <circle cx="72" cy="60" r="18" fill="none" stroke="#fff" stroke-opacity=".35"/>
+                  </g>
+                  <path d="M36 60 a21 21 0 0 0 22 4" fill="none" stroke="url(#g-key)" stroke-width="3.6"/>
+                </svg>
+              </span>
+              <span aria-hidden="true" class="obj__cap cap--end" style="--cx:-10;--cy:30;--ca:10"><svg class="cap__arrow" viewBox="0 0 64 36" aria-hidden="true"><path pathLength="1" class="ink-path" d="M4 26 C 18 8, 38 6, 56 14 M46 6 L57 14 L45 20"/></svg><span class="cap__txt hand">общага</span></span>
+            </a>
+          </li>
+
+          <!-- Лист расписания → студенту -->
+          <li class="thing thing--sched" style="--x:1104;--y:382;--w:178;--r:5">
+            <a class="obj" href="#who" aria-label="Лист расписания: кому что нужно на сайте">
+              <span class="obj__art" aria-hidden="true">
+                <svg viewBox="0 0 250 330">
+                  <rect width="250" height="330" rx="2" fill="#fff"/>
+                  <path d="M0 170 L250 162" stroke="#1B2433" stroke-opacity=".05" stroke-width="6"/>
+                  <text x="20" y="34" font-family="Golos Text, sans-serif" font-size="13" font-weight="700" fill="#1B2433" letter-spacing=".6">РАСПИСАНИЕ</text>
+                  <text x="20" y="50" font-family="Golos Text, sans-serif" font-size="9" fill="#4A5368">1 курс · осенний семестр · пример</text>
+                  <path d="M20 60h210" stroke="#1B2433" stroke-width="1.2"/>
+                  <g font-family="PT Mono, monospace" font-size="9" fill="#1B2433">
+                    <text x="20" y="84" font-weight="700">ПН</text><text x="20" y="160" font-weight="700">ВТ</text><text x="20" y="236" font-weight="700">СР</text><text x="20" y="306" font-weight="700">ЧТ</text>
+                    <text x="50" y="84">08:30</text><text x="50" y="106">10:15</text><text x="50" y="128">12:00</text>
+                    <text x="50" y="160">10:15</text><text x="50" y="182">12:00</text><text x="50" y="204">13:45</text>
+                    <text x="50" y="236">08:30</text><text x="50" y="258">10:15</text>
+                    <text x="50" y="306">12:00</text>
+                  </g>
+                  <g fill="#DCE2E9">
+                    <rect x="92" y="77" width="118" height="8" rx="2"/><rect x="92" y="99" width="96" height="8" rx="2"/><rect x="92" y="121" width="126" height="8" rx="2"/>
+                    <rect x="92" y="153" width="104" height="8" rx="2"/><rect x="92" y="175" width="130" height="8" rx="2"/><rect x="92" y="197" width="84" height="8" rx="2"/>
+                    <rect x="92" y="229" width="122" height="8" rx="2"/><rect x="92" y="251" width="100" height="8" rx="2"/>
+                    <rect x="92" y="299" width="112" height="8" rx="2"/>
+                  </g>
+                  <rect x="92" y="175" width="130" height="8" rx="2" fill="#FFE45C"/>
+                  <path d="M20 140h210M20 216h210M20 286h210" stroke="#DCE2E9"/>
+                  <path class="ink-path ink-path--red" d="M84 70 C 60 64, 42 70, 44 82 C 46 94, 84 94, 90 84 C 94 76, 80 70, 66 72" fill="none"/>
+                  <text x="136" y="276" font-family="Caveat, cursive" font-size="22" font-weight="600" fill="#c4033e" transform="rotate(-8 136 276)">не проспать!</text>
+                </svg>
+              </span>
+              <span aria-hidden="true" class="obj__cap cap--end" style="--cx:-14;--cy:56;--ca:0"><svg class="cap__arrow" viewBox="0 0 64 36" aria-hidden="true"><path pathLength="1" class="ink-path" d="M4 26 C 18 8, 38 6, 56 14 M46 6 L57 14 L45 20"/></svg><span class="cap__txt hand">кому что нужно</span></span>
+            </a>
+          </li>
+
+          <!-- Скрепка на расписании -->
+          <li class="thing thing--decor thing--clip" style="--x:1132;--y:366;--w:24;--r:-6" aria-hidden="true">
+            <span class="obj obj--decor"><span class="obj__art">
+              <svg viewBox="0 0 30 84"><path d="M9 24 V64 a6.5 6.5 0 0 0 13 0 V14 a9.5 9.5 0 0 0 -19 0 V68 a12 12 0 0 0 24 0 V26" fill="none" stroke="url(#g-steel)" stroke-width="2.6" stroke-linecap="round"/><path d="M9 24 V64 a6.5 6.5 0 0 0 13 0 V14 a9.5 9.5 0 0 0 -19 0 V68 a12 12 0 0 0 24 0 V26" fill="none" stroke="#6f7887" stroke-opacity=".35" stroke-width=".6" stroke-linecap="round"/></svg>
+            </span></span>
+          </li>
+          <li class="thing thing--decor thing--clip" style="--x:548;--y:612;--w:22;--r:74" aria-hidden="true">
+            <span class="obj obj--decor"><span class="obj__art">
+              <svg viewBox="0 0 30 84"><path d="M9 24 V64 a6.5 6.5 0 0 0 13 0 V14 a9.5 9.5 0 0 0 -19 0 V68 a12 12 0 0 0 24 0 V26" fill="none" stroke="#E10447" stroke-width="2.6" stroke-linecap="round"/></svg>
+            </span></span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ═════════ Кому что нужно: тетрадь перелистывается ═════════ -->
+    <section class="section who" id="who" aria-labelledby="who-title">
+      <div class="container">
+        <div class="sec-head">
+          <h2 id="who-title">Кому что нужно</h2>
+          <p class="sec-note hand" data-m="wipe">оглавление, чтобы не искать по всему сайту</p>
+        </div>
+
+        <div class="book" data-book>
+          <div class="book__page book__page--l" aria-hidden="true">
+            <p class="book__doodle hand">черновик</p>
+            <svg class="book__scribble" viewBox="0 0 300 200"><path d="M20 40 C 80 10, 140 70, 200 40 S 280 60, 260 100 M30 120 h160 M30 150 h120 M200 150 c10-20 40-20 50 0 s-40 30-50 0z" fill="none" stroke="#2A3DAD" stroke-opacity=".35" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+
+          <div class="book__sheet" data-sheet>
+            <div class="sheet__face sheet__face--front" aria-hidden="true">
+              <p class="sheet__title hand">Кому что<br>нужно?</p>
+              <p class="sheet__turn hand">переверни страницу</p>
+              <svg class="sheet__star" viewBox="0 0 80 80"><path d="M40 6 L49 30 L74 31 L54 46 L61 71 L40 56 L19 71 L26 46 L6 31 L31 30 Z" fill="none" stroke="#E10447" stroke-width="2.4" stroke-linejoin="round"/></svg>
+              <i class="sheet__shade" aria-hidden="true"></i>
+            </div>
+            <div class="sheet__face sheet__face--back">
+              <div class="toc">
+                <h3 class="toc__h">Абитуриенту</h3>
+                <ul class="toc__list" role="list">
+                  <li><a class="toc__a" href="#programs"><svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="2"/><path class="tick__v" d="M6 12.5 L10.5 17 L20 4"/></svg>Подобрать программу</a></li>
+                  <li><a class="toc__a" href="#faq"><svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="2"/><path class="tick__v" d="M6 12.5 L10.5 17 L20 4"/></svg>Проходные баллы и бюджетные места</a></li>
+                  <li><a class="toc__a" href="#faq"><svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="2"/><path class="tick__v" d="M6 12.5 L10.5 17 L20 4"/></svg>Подать документы через Госуслуги</a></li>
+                </ul>
+              </div>
+              <div class="toc">
+                <h3 class="toc__h">Студенту</h3>
+                <ul class="toc__list" role="list">
+                  <li><a class="toc__a" href="#"><svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="2"/><path class="tick__v" d="M6 12.5 L10.5 17 L20 4"/></svg>Расписание занятий</a></li>
+                  <li><a class="toc__a" href="#"><svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="2"/><path class="tick__v" d="M6 12.5 L10.5 17 L20 4"/></svg>Личный кабинет и СДО</a></li>
+                  <li><a class="toc__a" href="#life"><svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="2"/><path class="tick__v" d="M6 12.5 L10.5 17 L20 4"/></svg>Общежитие и стипендии</a></li>
+                </ul>
+              </div>
+              <i class="sheet__shade" aria-hidden="true"></i>
+            </div>
+          </div>
+
+          <div class="book__page book__page--r">
+            <div class="toc">
+              <h3 class="toc__h">Сотруднику</h3>
+              <ul class="toc__list" role="list">
+                <li><a class="toc__a" href="#"><svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="2"/><path class="tick__v" d="M6 12.5 L10.5 17 L20 4"/></svg>Кадровые документы</a></li>
+                <li><a class="toc__a" href="#"><svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="2"/><path class="tick__v" d="M6 12.5 L10.5 17 L20 4"/></svg>Повышение квалификации</a></li>
+                <li><a class="toc__a" href="#"><svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="2"/><path class="tick__v" d="M6 12.5 L10.5 17 L20 4"/></svg>Внутренний портал</a></li>
+              </ul>
+            </div>
+            <div class="toc">
+              <h3 class="toc__h">Партнёру</h3>
+              <ul class="toc__list" role="list">
+                <li><a class="toc__a" href="#"><svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="2"/><path class="tick__v" d="M6 12.5 L10.5 17 L20 4"/></svg>Целевое обучение</a></li>
+                <li><a class="toc__a" href="#"><svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="2"/><path class="tick__v" d="M6 12.5 L10.5 17 L20 4"/></svg>Практика и стажировки</a></li>
+                <li><a class="toc__a" href="#partners"><svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="2"/><path class="tick__v" d="M6 12.5 L10.5 17 L20 4"/></svg>Совместные проекты и наука</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ Направления: зачётная ведомость ═════════ -->
+    <section class="section programs" id="programs" aria-labelledby="programs-title">
+      <div class="container">
+        <div class="sec-head">
+          <h2 id="programs-title">Направления и программы</h2>
+          <p class="sec-note hand" data-m="wipe">выбери строку, остальное приложится</p>
+        </div>
+
+        <div class="ved" data-m="up">
+          <div class="ved__top">
+            <p class="ved__label mono">Зачётная ведомость · 2026/27</p>
+            <p class="ved__total"><b>129</b> программ в 15 факультетах и институтах</p>
+          </div>
+          <div class="ved__head" aria-hidden="true">
+            <span>Направление</span><span>Факультеты и институты</span><span>Программ</span><span>Отметка</span>
+          </div>
+          <ol class="ved__rows" role="list">
+            <li class="ved__row">
+              <h3 class="ved__name"><a href="#"><span class="ved__mark">IT и математика</span></a></h3>
+              <p class="ved__fac">Прикладной математики и кибернетики · Математический · Физико-технический</p>
+              <p class="ved__n mono">[N]</p>
+              <p class="ved__ok" aria-hidden="true"><span class="hand">зачёт</span><svg class="sig" viewBox="0 0 90 30"><path data-m-line d="M4 22 C 12 4, 20 4, 22 18 C 24 28, 32 10, 40 14 C 46 18, 48 24, 58 12 C 64 6, 70 20, 86 10"/></svg></p>
+            </li>
+            <li class="ved__row">
+              <h3 class="ved__name"><a href="#"><span class="ved__mark">Естественные науки</span></a></h3>
+              <p class="ved__fac">Биологический · Химико-технологический · Географии и геоэкологии</p>
+              <p class="ved__n mono">[N]</p>
+              <p class="ved__ok" aria-hidden="true"><span class="hand">зачёт</span><svg class="sig" viewBox="0 0 90 30"><path data-m-line d="M4 20 C 10 6, 18 6, 20 16 C 22 26, 30 8, 38 12 C 46 16, 50 24, 60 10 C 66 4, 74 18, 86 12"/></svg></p>
+            </li>
+            <li class="ved__row">
+              <h3 class="ved__name"><a href="#"><span class="ved__mark">Гуманитарные науки</span></a></h3>
+              <p class="ved__fac">Исторический · Филологический · Иностранных языков и международной коммуникации · Психологии</p>
+              <p class="ved__n mono">[N]</p>
+              <p class="ved__ok" aria-hidden="true"><span class="hand">зачёт</span><svg class="sig" viewBox="0 0 90 30"><path data-m-line d="M4 22 C 12 4, 20 4, 22 18 C 24 28, 32 10, 40 14 C 46 18, 48 24, 58 12 C 64 6, 70 20, 86 10"/></svg></p>
+            </li>
+            <li class="ved__row">
+              <h3 class="ved__name"><a href="#"><span class="ved__mark">Педагогика</span></a></h3>
+              <p class="ved__fac">Институт педагогического образования и социальных технологий · Институт непрерывного образования</p>
+              <p class="ved__n mono">[N]</p>
+              <p class="ved__ok" aria-hidden="true"><span class="hand">зачёт</span><svg class="sig" viewBox="0 0 90 30"><path data-m-line d="M4 20 C 10 6, 18 6, 20 16 C 22 26, 30 8, 38 12 C 46 16, 50 24, 60 10 C 66 4, 74 18, 86 12"/></svg></p>
+            </li>
+            <li class="ved__row">
+              <h3 class="ved__name"><a href="#"><span class="ved__mark">Экономика и право</span></a></h3>
+              <p class="ved__fac">Институт экономики и управления · Юридический</p>
+              <p class="ved__n mono">[N]</p>
+              <p class="ved__ok" aria-hidden="true"><span class="hand">зачёт</span><svg class="sig" viewBox="0 0 90 30"><path data-m-line d="M4 22 C 12 4, 20 4, 22 18 C 24 28, 32 10, 40 14 C 46 18, 48 24, 58 12 C 64 6, 70 20, 86 10"/></svg></p>
+            </li>
+            <li class="ved__row">
+              <h3 class="ved__name"><a href="#"><span class="ved__mark">Спорт</span></a></h3>
+              <p class="ved__fac">Физической культуры</p>
+              <p class="ved__n mono">[N]</p>
+              <p class="ved__ok" aria-hidden="true"><span class="hand">зачёт</span><svg class="sig" viewBox="0 0 90 30"><path data-m-line d="M4 20 C 10 6, 18 6, 20 16 C 22 26, 30 8, 38 12 C 46 16, 50 24, 60 10 C 66 4, 74 18, 86 12"/></svg></p>
+            </li>
+          </ol>
+          <div class="ved__foot">
+            <a class="sticker sticker--sm" href="#">Все 129 программ</a>
+            <p class="ved__stamp" aria-hidden="true"><span>ТвГУ</span><span class="mono">с 1870</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ Жить и доехать ═════════ -->
+    <section class="section life" id="life" aria-labelledby="life-title">
+      <div class="container">
+        <div class="sec-head">
+          <h2 id="life-title">Где жить и как доехать</h2>
+          <p class="sec-note hand" data-m="wipe">Тверь между двумя столицами</p>
+        </div>
+
+        <div class="life__grid" data-m-stagger>
+          <article class="life__card life__card--dorm" data-m="up">
+            <figure class="polaroid polaroid--big" style="--r:-3">
+              <img src="../../../assets/stub/photos/800/building-obshchezhitiya-nebo.jpg" alt="Корпуса студенческих общежитий под пасмурным небом" width="800" height="533" loading="lazy">
+              <figcaption class="polaroid__cap hand">наши общежития</figcaption>
+            </figure>
+            <div class="tag-card" style="--r:4">
+              <h3>Общежитие</h3>
+              <ul class="tag-card__list" role="list">
+                <li><span class="mono">[N]</span> корпусов общежитий</li>
+                <li>от <span class="mono">[N] ₽</span> в месяц</li>
+                <li>заселение с <span class="mono">[дата]</span></li>
+              </ul>
+              <a class="scribble-link" href="#">Условия заселения</a>
+            </div>
+          </article>
+
+          <article class="life__card life__card--road" data-m="up">
+            <div class="ticket-card" style="--r:-2">
+              <p class="ticket-card__band mono" aria-hidden="true">БИЛЕТ · ТУДА И ОБРАТНО</p>
+              <h3>Дорога</h3>
+              <dl class="route">
+                <div><dt>Москва <svg class="route__arrow" viewBox="0 0 22 10" aria-hidden="true"><path d="M1 5h19M15.5 1 20 5l-4.5 4"/></svg><span class="visually-hidden">до</span> Тверь</dt><dd class="mono">[N] ч</dd></div>
+                <div><dt>Санкт-Петербург <svg class="route__arrow" viewBox="0 0 22 10" aria-hidden="true"><path d="M1 5h19M15.5 1 20 5l-4.5 4"/></svg><span class="visually-hidden">до</span> Тверь</dt><dd class="mono">[N] ч</dd></div>
+                <div><dt>Вокзал <svg class="route__arrow" viewBox="0 0 22 10" aria-hidden="true"><path d="M1 5h19M15.5 1 20 5l-4.5 4"/></svg><span class="visually-hidden">до</span> главный корпус</dt><dd class="mono">[N] мин</dd></div>
+              </dl>
+              <a class="scribble-link" href="#">Как добраться</a>
+            </div>
+          </article>
+
+          <article class="life__card life__card--city" data-m="up">
+            <figure class="polaroid polaroid--big" style="--r:3">
+              <img src="../../../assets/stub/photos/800/city-pamyatnik-pushkinu-volga.jpg" alt="Памятник Пушкину на набережной Волги в Твери" width="800" height="533" loading="lazy">
+              <figcaption class="polaroid__cap hand">набережная Волги</figcaption>
+            </figure>
+            <div class="note-card" style="--r:-3">
+              <h3>Город</h3>
+              <p>Тверь стоит на Волге: набережные, старый центр и студенческие кварталы. Про стипендии, спорт и клубы читай в разделе «Студенту».</p>
+              <a class="scribble-link" href="#">Тверь для студентов</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ Сегодня в ТвГУ ═════════ -->
+    <section class="section today" id="today" aria-labelledby="today-title">
+      <div class="container">
+        <div class="sec-head">
+          <h2 id="today-title">Сегодня в ТвГУ</h2>
+          <p class="sec-note hand" data-m="wipe">что происходит прямо сейчас</p>
+        </div>
+
+        <div class="today__grid">
+          <figure class="today__phone" data-m="up">
+            <div class="phone phone--big" data-video>
+              <div class="phone__screen">
+                <img src="../../../assets/stub/video/480/den-znaniy-obzor-2-gazon-lekciya.jpg" alt="Кадр видео: студенты слушают лекцию на газоне" width="854" height="480" loading="lazy">
+                <button class="phone__btn" type="button" data-video-play data-src="../../../assets/stub/video/480/den-znaniy-obzor-2-gazon-lekciya.mp4">
+                  <span class="phone__play" aria-hidden="true"></span>
+                  <span class="visually-hidden">Смотреть видео «Лекция на газоне»</span>
+                </button>
+              </div>
+            </div>
+            <figcaption><span class="hand">лекция на газоне, День знаний</span> <span class="mono">видео · 0:08</span></figcaption>
+          </figure>
+
+          <ul class="today__cards" role="list" data-m-stagger>
+            <li class="news" data-m="up" style="--r:-1.5">
+              <img src="../../../assets/stub/photos/800/students-igra-za-stolom.jpg" alt="Студентки играют в образовательную игру за столом" width="800" height="533" loading="lazy">
+              <div class="news__body">
+                <p class="news__meta mono"><time>[дата]</time> · пример</p>
+                <h3 class="news__title"><a href="#">Финал интенсива «От идеи к прототипу»: команды показали игры</a></h3>
+              </div>
+            </li>
+            <li class="news" data-m="up" style="--r:1.2">
+              <img src="../../../assets/stub/photos/800/students-kovorking-bloknoty.jpg" alt="Участники книжного клуба с блокнотами в коворкинге" width="800" height="533" loading="lazy">
+              <div class="news__body">
+                <p class="news__meta mono"><time>[дата]</time> · пример</p>
+                <h3 class="news__title"><a href="#">Книжный клуб собирается в коворкинге: приходи со своей книгой</a></h3>
+              </div>
+            </li>
+            <li class="news" data-m="up" style="--r:-0.8">
+              <img src="../../../assets/stub/photos/800/lab-opyt-nauka-shou.jpg" alt="Научное шоу: опыт на столе перед зрителями" width="800" height="533" loading="lazy">
+              <div class="news__body">
+                <p class="news__meta mono"><time>[дата]</time> · пример</p>
+                <h3 class="news__title"><a href="#">«Свет науки»: студенты показали опыты школьникам</a></h3>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <p class="today__more"><a class="scribble-link" href="#">Все новости и события</a></p>
+      </div>
+    </section>
+
+    <!-- ═════════ Наука и люди ═════════ -->
+    <section class="section science" id="science" aria-labelledby="science-title">
+      <div class="container">
+        <div class="graph" data-m="up">
+          <div class="graph__text">
+            <h2 id="science-title">Наука и люди</h2>
+            <p class="graph__lead">Лаборатории, научные школы и студенческие проекты: наукой здесь занимаются с первого курса.</p>
+            <dl class="graph__stats">
+              <div><dt>научных школ</dt><dd class="mono">[N]</dd></div>
+              <div><dt>лабораторий и центров</dt><dd class="mono">[N]</dd></div>
+              <div><dt>грантов за год</dt><dd class="mono">[N]</dd></div>
+            </dl>
+            <a class="scribble-link" href="#">Наука в ТвГУ</a>
+            <svg class="graph__plot" viewBox="0 0 260 120" aria-hidden="true"><path d="M6 110 H254 M10 114 V6" stroke="#1B2433" stroke-width="1.4" fill="none"/><path data-m-line d="M12 100 C 50 96, 70 80, 100 70 S 150 64, 180 38 S 230 20, 250 12" fill="none" stroke="#E10447" stroke-width="2.6" stroke-linecap="round"/></svg>
+          </div>
+          <figure class="clipped" style="--r:2.5">
+            <svg class="binder" viewBox="0 0 120 70" aria-hidden="true">
+              <defs><linearGradient id="g-binder" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a4252"/><stop offset="1" stop-color="#11151d"/></linearGradient></defs>
+              <path d="M30 6 C 26 -6, 94 -6, 90 6" fill="none" stroke="url(#g-steel)" stroke-width="3.4"/>
+              <path d="M36 8 C 30 -14, 90 -14, 84 8" fill="none" stroke="url(#g-steel)" stroke-width="3.4" transform="translate(0 4)"/>
+              <path d="M14 22 H106 L98 58 H22 Z" fill="url(#g-binder)"/>
+              <path d="M18 26 H102" stroke="#fff" stroke-opacity=".18"/>
+            </svg>
+            <img src="../../../assets/stub/photos/800/portrait-professor-zhestikuliruet.jpg" alt="Преподаватель объясняет материал, показывая жестом" width="800" height="533" loading="lazy">
+            <figcaption class="hand">на паре: [ФИО преподавателя], [кафедра]</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ История в лицах ═════════ -->
+    <section class="section history" id="history" aria-labelledby="history-title">
+      <div class="container">
+        <div class="sec-head">
+          <h2 id="history-title">История в лицах</h2>
+          <p class="sec-note hand" data-m="wipe">с 1870 года и до тебя</p>
+        </div>
+      </div>
+      <div class="timeline">
+        <svg class="timeline__line" viewBox="0 0 1600 60" preserveAspectRatio="none" aria-hidden="true"><path data-m-line d="M0 34 C 120 14, 220 50, 360 30 S 600 18, 760 34 S 1040 50, 1200 28 S 1480 20, 1600 36" fill="none" stroke="#2A3DAD" stroke-width="2.4" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg>
+        <ol class="timeline__track" role="list" data-m-scroller data-m-stagger>
+          <li class="paste" data-m="up" style="--r:-3">
+            <span class="paste__tape" aria-hidden="true"></span>
+            <img src="../../../assets/stub/photos/800/archive-klass-nachalo-veka.jpg" alt="Архивное фото: воспитанницы учительской школы на занятиях" width="800" height="446" loading="lazy">
+            <p class="paste__year mono">1870</p>
+            <h3 class="paste__name">Учительская школа Максимовича</h3>
+            <p class="paste__what">С неё начинается история университета.</p>
+          </li>
+          <li class="paste" data-m="up" style="--r:2.5">
+            <span class="paste__tape" aria-hidden="true"></span>
+            <div class="stub stub--4x3" role="img" aria-label="Заглушка: портрет Николая Куна, архив"><span class="stub__caption">фото: Н. А. Кун, архивный портрет</span></div>
+            <p class="paste__year mono">[годы]</p>
+            <h3 class="paste__name">Николай Кун</h3>
+            <p class="paste__what">Автор «Мифов Древней Греции».</p>
+          </li>
+          <li class="paste" data-m="up" style="--r:-2">
+            <span class="paste__tape" aria-hidden="true"></span>
+            <div class="stub stub--4x3" role="img" aria-label="Заглушка: портрет Александра Александрова"><span class="stub__caption">фото: А. В. Александров, архивный портрет</span></div>
+            <p class="paste__year mono">[годы]</p>
+            <h3 class="paste__name">Александр Александров</h3>
+            <p class="paste__what">Композитор, автор музыки гимна России.</p>
+          </li>
+          <li class="paste" data-m="up" style="--r:3">
+            <span class="paste__tape" aria-hidden="true"></span>
+            <div class="stub stub--4x3" role="img" aria-label="Заглушка: портрет Андрея Дементьева"><span class="stub__caption">фото: А. Д. Дементьев, портрет</span></div>
+            <p class="paste__year mono">[годы]</p>
+            <h3 class="paste__name">Андрей Дементьев</h3>
+            <p class="paste__what">Поэт.</p>
+          </li>
+          <li class="paste" data-m="up" style="--r:-2.5">
+            <span class="paste__tape" aria-hidden="true"></span>
+            <div class="stub stub--4x3" role="img" aria-label="Заглушка: портрет Натальи Непряевой"><span class="stub__caption">фото: Н. С. Непряева, портрет</span></div>
+            <p class="paste__year mono">[годы]</p>
+            <h3 class="paste__name">Наталья Непряева</h3>
+            <p class="paste__what">Олимпийская чемпионка.</p>
+          </li>
+          <li class="paste paste--you" data-m="up" style="--r:2">
+            <span class="paste__tape" aria-hidden="true"></span>
+            <div class="paste__empty"><span class="hand">здесь будет<br>твоё фото</span></div>
+            <p class="paste__year mono">с 2026</p>
+            <h3 class="paste__name">Ты</h3>
+            <p class="paste__what"><a class="scribble-link" href="#programs">Подобрать программу</a></p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ═════════ Партнёры: визитки ═════════ -->
+    <section class="section partners-sec" id="partners" aria-labelledby="partners-title">
+      <div class="container">
+        <div class="ribbon" data-ribbon>
+          <div class="ribbon__head">
+            <div class="sec-head sec-head--tight">
+              <h2 id="partners-title">Партнёры</h2>
+              <p class="sec-note hand" data-m="wipe">визитки, которые нам оставили</p>
+            </div>
+            <div class="ribbon__nav">
+              <button class="btn-circle" type="button" data-ribbon-prev><span class="icon icon--arrow-left" aria-hidden="true"></span><span class="visually-hidden">Назад</span></button>
+              <button class="btn-circle" type="button" data-ribbon-next><span class="icon icon--arrow-right" aria-hidden="true"></span><span class="visually-hidden">Вперёд</span></button>
+            </div>
+          </div>
+          <ul class="ribbon__track cards" role="list" aria-label="Партнёры университета">
+            <li class="card" style="--r:-1.5"><span class="card__logo">лого</span><span class="card__name">[Название партнёра]</span><span class="card__kind mono">работодатель</span></li>
+            <li class="card" style="--r:1"><span class="card__logo">лого</span><span class="card__name">[Название партнёра]</span><span class="card__kind mono">IT-компания</span></li>
+            <li class="card" style="--r:-0.5"><span class="card__logo">лого</span><span class="card__name">[Название партнёра]</span><span class="card__kind mono">вуз-партнёр</span></li>
+            <li class="card" style="--r:1.8"><span class="card__logo">лого</span><span class="card__name">[Название партнёра]</span><span class="card__kind mono">банк</span></li>
+            <li class="card" style="--r:-1.2"><span class="card__logo">лого</span><span class="card__name">[Название партнёра]</span><span class="card__kind mono">предприятие</span></li>
+            <li class="card" style="--r:0.8"><span class="card__logo">лого</span><span class="card__name">[Название партнёра]</span><span class="card__kind mono">школа</span></li>
+            <li class="card" style="--r:-1.8"><span class="card__logo">лого</span><span class="card__name">[Название партнёра]</span><span class="card__kind mono">музей</span></li>
+            <li class="card" style="--r:1.3"><span class="card__logo">лого</span><span class="card__name">[Название партнёра]</span><span class="card__kind mono">медиа</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ FAQ: стикеры-закладки ═════════ -->
+    <section class="section faq" id="faq" aria-labelledby="faq-title">
+      <div class="container faq__wrap">
+        <div class="sec-head faq__head">
+          <h2 id="faq-title">Частые вопросы</h2>
+          <p class="sec-note hand" data-m="wipe">то, что спрашивают каждый год</p>
+        </div>
+        <div class="accordion stickies">
+          <details class="accordion__item sticky" name="faq" style="--tab:var(--marker)">
+            <summary class="accordion__summary">Есть ли бюджетные места?</summary>
+            <div class="accordion__body">
+              <p>Да, бюджетные места выделяются каждый год. На каждой программе их <span class="mono">[N]</span>: число публикуется в карточке программы и в правилах приёма.</p>
+            </div>
+          </details>
+          <details class="accordion__item sticky" name="faq" style="--tab:var(--grid)">
+            <summary class="accordion__summary">Дадут ли место в общежитии?</summary>
+            <div class="accordion__body">
+              <p>Для иногородних студентов есть общежития: корпусов <span class="mono">[N]</span>, проживание от <span class="mono">[N] ₽</span> в месяц, заселение с <span class="mono">[дата]</span>.</p>
+            </div>
+          </details>
+          <details class="accordion__item sticky" name="faq" style="--tab:var(--margin)">
+            <summary class="accordion__summary">Сколько стоит платное обучение?</summary>
+            <div class="accordion__body">
+              <p>Стоимость зависит от программы и формы обучения: <span class="mono">[N] ₽</span> в год. Точная сумма указана в карточке каждой программы.</p>
+            </div>
+          </details>
+          <details class="accordion__item sticky" name="faq" style="--tab:var(--kraft)">
+            <summary class="accordion__summary">Какие баллы ЕГЭ нужны?</summary>
+            <div class="accordion__body">
+              <p>Минимальные и проходные баллы прошлых лет свои у каждой программы: <span class="mono">[N]</span>. Подбор программ покажет, куда проходишь со своими баллами.</p>
+            </div>
+          </details>
+          <details class="accordion__item sticky" name="faq" style="--tab:var(--pen)">
+            <summary class="accordion__summary">Можно подать документы через Госуслуги?</summary>
+            <div class="accordion__body">
+              <p>Заявление можно подать онлайн через Госуслуги или лично в приёмной комиссии: Тверь, ул. Желябова, 33. Сроки приёма: <span class="mono">[даты]</span>.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ Срочность и лид: отрывной календарь + конверт ═════════ -->
+    <section class="section ask" id="lead" aria-labelledby="lead-title">
+      <div class="container lead__grid">
+        <div class="lead__side">
+          <div class="sec-head sec-head--tight">
+            <h2 id="lead-title">Спроси приёмную комиссию</h2>
+            <p class="sec-note hand" data-m="wipe">ответим живым человеком</p>
+          </div>
+          <ol class="calendar" role="list" aria-label="Даты приёмной кампании">
+            <li class="calendar__sheet" data-m="up"><p class="calendar__date mono">[дата]</p><p class="calendar__what">Старт приёма документов</p></li>
+            <li class="calendar__sheet" data-m="up"><p class="calendar__date mono">[дата]</p><p class="calendar__what">День открытых дверей</p></li>
+            <li class="calendar__sheet calendar__sheet--last" data-m="up"><p class="calendar__date mono">[дата]</p><p class="calendar__what">Последний день подачи</p></li>
+          </ol>
+          <p class="lead__contacts">Или позвони: <a href="tel:+74822321514">+7 (4822) 32-15-14</a></p>
+        </div>
+
+        <div class="env-wrap">
+          <div class="env" data-env>
+            <div class="env__back" aria-hidden="true"></div>
+            <div class="env__flap" aria-hidden="true"></div>
+
+            <div class="env__letter" data-env-letter>
+              <form class="letter" action="#" data-env-form>
+                <p class="letter__hi hand" aria-hidden="true">Здравствуйте!</p>
+                <div class="field">
+                  <label class="field__label" for="lead-q">Ваш вопрос</label>
+                  <textarea class="textarea" id="lead-q" name="question" rows="3" required placeholder="Например: какие экзамены сдавать на психологию?"></textarea>
+                </div>
+                <div class="field">
+                  <label class="field__label" for="lead-contact">Telegram или e-mail для ответа</label>
+                  <input class="input" id="lead-contact" name="contact" type="text" required autocomplete="email" placeholder="@username или почта">
+                </div>
+                <label class="check"><input type="checkbox" name="consent" required> <span>Согласен на обработку персональных данных</span></label>
+                <button class="sticker sticker--btn" type="submit">Отправить письмо</button>
+              </form>
+            </div>
+
+            <div class="env__pocket" aria-hidden="true">
+              <span class="env__to hand">Приёмная комиссия ТвГУ<br>Тверь, ул. Желябова, 33</span>
+            </div>
+            <div class="env__stamp" aria-hidden="true"><span>отправлено</span></div>
+
+            <div class="env__done" data-env-done hidden>
+              <p class="env__done-title hand">Письмо ушло!</p>
+              <p>Ответ придёт в Telegram или на почту в течение <span class="mono">[N]</span> рабочих дней. Это демо: письмо никуда не отправлено.</p>
+              <button class="scribble-link scribble-link--btn" type="button" data-env-again>Написать ещё</button>
+            </div>
+          </div>
+          <p class="visually-hidden" role="status" data-env-status></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="footer"></div>
+</body>
+</html>

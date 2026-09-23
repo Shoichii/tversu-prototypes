@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Каркас: шапка, подвал, компоненты · ТвГУ прототипы</title>
+  <link rel="preload" href="../../../assets/fonts/golos-text-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../../system/tokens.css">
+  <link rel="stylesheet" href="../../../system/base.css">
+  <link rel="stylesheet" href="../../../system/stub.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="../../../system/partials.js" defer></script>
+  <script src="../../../system/ui.js" defer></script>
+</head>
+<body data-nav="applicants">
+  <div data-include="header"></div>
+
+  <main id="main">
+    <section class="shell-hero">
+      <div class="container grid shell-hero__grid">
+        <div class="span-6 shell-hero__copy">
+          <h1>Поступай в ТвГУ: 129 программ в одном городе</h1>
+          <p class="lead measure">Здесь будет первый экран варианта. Каркас проверяет шапку, подвал и общие компоненты на всех ширинах.</p>
+          <div class="shell-hero__actions">
+            <a class="btn btn--accent btn--lg" href="#">Подобрать программу</a>
+            <a class="btn btn--outline btn--lg" href="#">Задать вопрос</a>
+          </div>
+        </div>
+        <div class="span-6">
+          <div class="stub stub--4x3" role="img" aria-label="Заглушка: первый экран варианта">
+            <span class="stub__caption">hero: фото или видео первого экрана варианта</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--grey" aria-labelledby="facts-title">
+      <div class="container band">
+        <p class="band-label" id="facts-title">Университет в цифрах</p>
+        <div class="band__body">
+          <dl class="shell-facts">
+            <div><dt>основан</dt><dd class="num">1870</dd></div>
+            <div><dt>факультетов и институтов</dt><dd class="num">15</dd></div>
+            <div><dt>образовательных программ</dt><dd class="num">129</dd></div>
+            <div><dt>место в России, RUR 2026</dt><dd class="num">93</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="kit-title">
+      <div class="container stack-lg">
+        <h2 id="kit-title">Кнопки, поля, табы</h2>
+
+        <div class="shell-row">
+          <a class="btn btn--primary" href="#">Подать документы</a>
+          <a class="btn btn--outline" href="#">Все программы</a>
+          <a class="btn btn--text" href="#">Открыть расписание <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+          <button class="btn btn--primary" type="button" disabled>Недоступно</button>
+        </div>
+
+        <div class="grid">
+          <form class="span-5 md-span-3 stack-md shell-form" action="#" onsubmit="return false">
+            <div class="field">
+              <label class="field__label" for="f-name">Как к вам обращаться</label>
+              <input class="input" id="f-name" type="text" placeholder="Имя" autocomplete="given-name">
+            </div>
+            <div class="field">
+              <label class="field__label" for="f-phone">Телефон или Telegram</label>
+              <input class="input" id="f-phone" type="text" placeholder="+7 или @username" aria-invalid="true" aria-describedby="f-phone-err">
+              <p class="field__error" id="f-phone-err">Укажите номер из 11 цифр или ник в Telegram</p>
+            </div>
+            <div class="field">
+              <label class="field__label" for="f-level">Уровень</label>
+              <select class="select" id="f-level">
+                <option>Бакалавриат</option><option>Магистратура</option><option>Специалитет</option><option>Аспирантура</option>
+              </select>
+            </div>
+            <label class="check"><input type="checkbox" checked> <span>Согласен на обработку персональных данных</span></label>
+            <button class="btn btn--primary btn--block" type="submit">Получить ответ приёмной комиссии</button>
+          </form>
+
+          <div class="span-6 md-span-3 shell-tabs" data-tabs>
+            <div class="tabs__list" role="tablist" aria-label="Новости и события">
+              <button class="tab" role="tab" id="tab-news" aria-controls="panel-news" aria-selected="true">Новости</button>
+              <button class="tab" role="tab" id="tab-events" aria-controls="panel-events" aria-selected="false">События</button>
+            </div>
+            <div class="tabs__panel" role="tabpanel" id="panel-news" aria-labelledby="tab-news" tabindex="0">
+              <div class="chips" aria-label="Фильтр по аудитории">
+                <button class="chip" type="button" aria-pressed="true">Абитуриентам</button>
+                <button class="chip" type="button" aria-pressed="false">Студентам</button>
+                <button class="chip" type="button" aria-pressed="false">Партнёрам</button>
+              </div>
+              <p class="muted" style="margin-top:16px">Здесь лента новостей варианта: [N] материалов за месяц.</p>
+            </div>
+            <div class="tabs__panel" role="tabpanel" id="panel-events" aria-labelledby="tab-events" tabindex="0" hidden>
+              <p class="muted">День открытых дверей: [дата], главный корпус, ул. Желябова, 33.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--grey" aria-labelledby="partners-title">
+      <div class="container partners ribbon" data-ribbon>
+        <div class="ribbon__head">
+          <h2 class="band-label" id="partners-title">Партнёры и работодатели</h2>
+          <div class="ribbon__nav">
+            <button class="btn-circle" type="button" data-ribbon-prev><span class="icon icon--arrow-left" aria-hidden="true"></span><span class="visually-hidden">Назад</span></button>
+            <button class="btn-circle" type="button" data-ribbon-next><span class="icon icon--arrow-right" aria-hidden="true"></span><span class="visually-hidden">Вперёд</span></button>
+          </div>
+        </div>
+        <div class="ribbon__track" role="list" aria-label="Логотипы партнёров, листаются">
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 1]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 2]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 3]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 4]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 5]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 6]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 7]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 8]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 9]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 10]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 11]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 12]</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="faq-title">
+      <div class="container band">
+        <h2 class="band-label" id="faq-title">Вопросы абитуриента</h2>
+        <div class="band__body accordion">
+          <details class="accordion__item" name="faq">
+            <summary class="accordion__summary">Сколько бюджетных мест в 2026 году?</summary>
+            <div class="accordion__body"><p>[N бюджетных мест] по всем программам. Точные цифры по направлениям появятся в правилах приёма.</p></div>
+          </details>
+          <details class="accordion__item" name="faq">
+            <summary class="accordion__summary">Дают ли общежитие первокурсникам?</summary>
+            <div class="accordion__body"><p>Иногородним студентам очной формы: [N мест], стоимость [N ₽ в месяц].</p></div>
+          </details>
+          <details class="accordion__item" name="faq">
+            <summary class="accordion__summary">Можно ли подать документы через Госуслуги?</summary>
+            <div class="accordion__body"><p>Да, заявление подаётся через Госуслуги или лично в приёмной комиссии.</p></div>
+          </details>
+          <details class="accordion__item" name="faq">
+            <summary class="accordion__summary">Сколько стоит платное обучение?</summary>
+            <div class="accordion__body"><p>От [N ₽ в год] в зависимости от программы. Есть скидки [условия].</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="footer"></div>
+</body>
+</html>

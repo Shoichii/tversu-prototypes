@@ -1,0 +1,73 @@
+/* nika-kit — витрина языка Ники. Здесь только раскладка витрины; сами компоненты — system/theme-nika.css.
+   Варианты a/b/c различаются только классами на body (антиква и плотность). */
+
+/* hero */
+.kit-hero { padding-block: 48px var(--section-y); overflow: hidden; }
+.kit-hero__grid { align-items: center; row-gap: 40px; }
+.kit-hero__copy > * + * { margin-top: 24px; }
+.kit-hero__copy h1 { max-width: 13em; text-wrap: balance; }
+.kit-hero__copy .lead { color: var(--c-on-dark-2); max-width: 34em; }
+.kit-hero__kit { padding-bottom: 16px; border-bottom: 1px solid var(--c-line-dark); }
+.kit-actions { display: flex; flex-wrap: wrap; gap: 12px; padding-top: 8px; }
+@media (max-width: 479px) { .kit-actions .btn { width: 100%; } }
+.kit-hero__art { width: 100%; max-width: 420px; margin-inline: auto; }
+.kit-hero__art > svg { width: 100%; height: auto; }
+@media (min-width: 1024px) {
+  .kit-hero { padding-top: 72px; }
+  .kit-hero__art { max-width: 520px; margin-right: 0; }
+}
+
+/* подписи-классы под компонентами: для верстальщиков */
+.kit-classes { font-size: var(--fs-caption); line-height: 1.6; color: var(--c-text-2); max-width: 40ch; }
+.kit-classes code {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; font-size: 0.92em;
+  padding: 1px 5px; border: 1px solid var(--c-line); border-radius: 4px; background: #fff; color: var(--c-text);
+  white-space: nowrap;
+}
+.section--slate .kit-classes { color: var(--c-on-dark-2); }
+.section--slate .kit-classes code { background: transparent; border-color: var(--c-line-dark); color: #fff; }
+.kit-classes--below { max-width: none; margin-top: 24px; }
+.kit-after { margin-top: 32px; }
+
+/* типографическая шкала */
+.kit-scale { border-top: 1px solid var(--c-line); }
+.kit-scale > div { display: grid; gap: 8px; padding: 24px 0; border-bottom: 1px solid var(--c-line); }
+.kit-scale dt { font-size: var(--fs-caption); color: var(--c-text-2); }
+.kit-scale dd .h1 { max-width: 14em; }
+
+/* обращение */
+.kit-address { display: grid; gap: 32px; }
+.kit-address__person { max-width: 240px; }
+.kit-address__text { display: grid; gap: 32px; align-content: start; }
+@media (min-width: 768px) {
+  .kit-address { grid-template-columns: 220px minmax(0, 1fr); gap: 40px; align-items: start; }
+}
+
+/* люди */
+.kit-people { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px var(--grid-gap); list-style: none; padding: 0; }
+@media (min-width: 768px) { .kit-people { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 479px) { .kit-people .n-person__more { right: 8px; bottom: 8px; } }
+
+/* новости */
+.kit-news-head { flex-wrap: wrap; }
+.kit-news { display: grid; gap: 40px var(--grid-gap); list-style: none; padding: 0; }
+@media (min-width: 768px) { .kit-news { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* кнопки */
+.kit-buttons { display: grid; gap: 28px; }
+.kit-row { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 20px; }
+.kit-legend { display: grid; gap: 8px; padding-top: 20px; border-top: 1px solid var(--c-line); font-size: var(--fs-small); }
+.kit-legend > div { display: flex; flex-wrap: wrap; gap: 4px 12px; }
+.kit-legend dd { color: var(--c-text-2); }
+
+/* форма */
+.kit-form { display: grid; gap: 20px var(--grid-gap); max-width: var(--measure); }
+@media (min-width: 768px) {
+  .kit-form { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .kit-form__wide { grid-column: 1 / -1; }
+}
+.kit-form .check { align-items: flex-start; }
+
+/* схема */
+.kit-map { display: grid; gap: 16px; }
+.kit-map .n-only-narrow { max-width: 360px; }

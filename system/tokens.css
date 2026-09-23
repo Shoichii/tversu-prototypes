@@ -1,0 +1,131 @@
+/* ТвГУ — токены дизайн-системы прототипов.
+   Бренд: CLAUDE.md «Бренд»; рамки: «Язык Ники» (радиусы ≤ 8, линии #D9DEE6, серые полосы #F3F5F8).
+   Правка значений здесь меняет все варианты — общий слой правит одна сессия. */
+
+@font-face {
+  font-family: "Golos Text";
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url("../assets/fonts/golos-text-cyrillic.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Golos Text";
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url("../assets/fonts/golos-text-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  /* Бренд */
+  --c-blue: #2a3dad;
+  --c-blue-hover: #22329a;
+  --c-blue-press: #1c2a85;
+  --c-blue-tint: #e8ebf8;       /* подложка выбранного, выделение на светлом */
+  --c-red: #e10447;             /* акцент: 2–3 пятна на страницу */
+  --c-red-hover: #c4033e;
+  --c-navy: #101a4d;            /* тёмные полосы, подвал */
+  --c-slate: #1f2a44;           /* тёмные полосы языка Ники */
+
+  /* Нейтральные (сине-серые, одна семья) */
+  --c-text: #111;
+  --c-text-2: #4a5368;          /* вторичный текст: 7.4:1 на белом, 6.9:1 на сером */
+  --c-text-3: #5f687c;          /* подписи, плейсхолдеры: 5.6:1 на белом */
+  --c-line: #d9dee6;            /* единственный способ глубины на светлом */
+  --c-line-strong: #b7bfcc;
+  --c-bg: #fff;
+  --c-bg-grey: #f3f5f8;         /* серые полосы */
+  --c-bg-stub: #f3f5fa;         /* фон заглушек (CLAUDE.md) */
+
+  /* Роли, которые тёмная тема (theme-dark.css) переназначает. На светлом равны привычным значениям —
+     пишите роль, а не hex, и страница перекрасится одной строкой <html data-theme="dark">. */
+  --c-surface: #fff;            /* карточки, ленты, выпадающие слои */
+  --c-field: #fff;              /* фон полей ввода */
+  --c-ink: #101a4d;             /* «тёмно-синий как текст»: цифры, крупные заголовки */
+  --c-blue-ink: #2a3dad;        /* синий как текст/иконка/линия (не заливка) */
+  --c-red-ink: #e10447;         /* красный как текст (дедлайн) */
+  --c-deep: #101a4d;            /* самые тёмные полосы */
+  --c-ok-ink: #1b7a45;          /* «успех» как текст: заявка принята, проходишь — 5.4:1 на белом */
+
+  /* На тёмном */
+  --c-on-dark: #fff;
+  --c-on-dark-2: #c5cbe0;       /* 9:1 на #101A4D */
+  --c-line-dark: rgb(255 255 255 / 0.18);
+
+  /* Типографика */
+  --font-sans: "Golos Text", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --fs-h1: clamp(2.5rem, 1.55rem + 3.9vw, 4.5rem);      /* 40 → 72 */
+  --fs-h2: clamp(2rem, 1.5rem + 2vw, 3rem);             /* 32 → 48 */
+  --fs-h3: clamp(1.375rem, 1.2rem + 0.7vw, 1.75rem);    /* 22 → 28 */
+  --fs-h4: 1.25rem;
+  --fs-lead: clamp(1.125rem, 1.05rem + 0.35vw, 1.375rem);
+  --fs-body: 1rem;                                       /* 16, на десктопе 17 — см. base */
+  --fs-small: 0.875rem;
+  --fs-caption: 0.8125rem;
+  --lh-tight: 1.05;
+  --lh-heading: 1.15;
+  --lh-body: 1.6;
+  --tracking-display: -0.03em;
+  --tracking-heading: -0.015em;
+  --tracking-caps: 0.06em;
+
+  /* Сетка и отступы */
+  --container: 1320px;
+  --gutter: clamp(16px, 4vw, 40px);       /* поля контейнера */
+  --grid-gap: clamp(16px, 2vw, 24px);
+  --section-y: clamp(56px, 4rem + 4vw, 128px);  /* 56–72 на мобильном, 96–128 на десктопе */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  /* Формы */
+  --radius-0: 0;
+  --radius-1: 4px;
+  --radius-2: 6px;             /* кнопки, поля, чипы */
+  --radius-3: 8px;             /* карточки, медиа — максимум */
+  --radius-round: 50%;         /* только кнопки-стрелки в тонком кружке */
+  --hit: 44px;                 /* минимальная кликабельная зона */
+  --control-h: 48px;
+  --header-h: 80px;
+  --header-h-compact: 60px;
+  --util-h: 40px;
+
+  /* Тени — только всплывающие слои */
+  --shadow-pop: 0 12px 32px -8px rgb(16 26 77 / 0.22), 0 2px 6px rgb(16 26 77 / 0.08);
+
+  /* Фокус */
+  --focus-ring: 2px solid var(--c-blue);
+  --focus-offset: 2px;
+
+  /* Движение (animate: сильные кривые, UI < 300 мс) */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+  --dur-press: 120ms;
+  --dur-fast: 160ms;
+  --dur-ui: 220ms;
+  --dur-panel: 280ms;
+
+  /* Слои */
+  --z-sticky: 100;
+  --z-search: 110;
+  --z-menu: 200;
+  --z-modal: 300;
+  --z-skip: 400;
+
+  /* Иконки масками: цвет = currentColor. Tabler Icons (MIT), stroke 1.75 */
+  --icon-arrow-right: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 18l6-6M13 6l6 6'/%3E%3C/svg%3E");
+  --icon-arrow-left: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M5 12l6 6M5 12l6-6'/%3E%3C/svg%3E");
+  --icon-plus: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 5v14M5 12h14'/%3E%3C/svg%3E");
+  --icon-check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E");
+  --icon-chevron-down: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+}

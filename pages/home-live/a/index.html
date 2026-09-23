@@ -1,0 +1,690 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Стикерпак · Главная ТвГУ · живые варианты</title>
+  <meta name="description" content="Тверской государственный университет: 1870 год, 15 факультетов и 129 программ между Москвой и Петербургом.">
+  <meta name="theme-color" content="#2A3DAD">
+  <link rel="preload" href="../../../assets/fonts/live-a-dela-gothic-one.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../../assets/fonts/live-a-onest.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../../system/tokens.css">
+  <link rel="stylesheet" href="../../../system/base.css">
+  <link rel="stylesheet" href="../../../system/stub.css">
+  <link rel="stylesheet" href="../../../system/motion.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="../../../system/motion.js"></script>
+  <script src="../../../system/partials.js" defer></script>
+  <script src="../../../system/ui.js" defer></script>
+  <script src="../../../system/vendor/gsap/gsap.min.js" defer></script>
+  <script src="../../../system/vendor/gsap/ScrollTrigger.min.js" defer></script>
+  <script src="../../../system/vendor/matter/matter.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body data-header="dark" class="pg-sticker">
+  <!-- Спрайт рисованных пиктограмм. Цвета приходят через --c1/--c2/--ink, толщина контура через --sw:
+       один и тот же символ рисуется дважды — белым толстым контуром (вырубка стикера) и в цвете. -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="ic-flask" viewBox="0 0 100 100">
+      <path style="fill:var(--c1);stroke:var(--ink);stroke-width:var(--sw)" stroke-linejoin="round" d="M37 10h26v8h-4v22l23 38a8 8 0 0 1-7 12H25a8 8 0 0 1-7-12l23-38V18h-4z"/>
+      <path style="fill:var(--c2);stroke:var(--ink);stroke-width:var(--sw)" stroke-linejoin="round" d="M31 58h38l11 19a5 5 0 0 1-4.3 7.6H24.3A5 5 0 0 1 20 77z"/>
+      <circle style="fill:var(--hi)" cx="42" cy="72" r="4"/><circle style="fill:var(--hi)" cx="56" cy="66" r="2.6"/><circle style="fill:var(--hi)" cx="60" cy="77" r="3.2"/>
+    </symbol>
+    <symbol id="ic-ball" viewBox="0 0 100 100">
+      <circle style="fill:var(--c1);stroke:var(--ink);stroke-width:var(--sw)" cx="50" cy="50" r="38"/>
+      <path style="fill:none;stroke:var(--ink);stroke-width:var(--sw)" stroke-linecap="round" d="M50 50c-2-16-9-28-20-35M50 50c15-5 28-4 37 3M50 50c-11 11-15 24-13 37M58 13c-7 13-8 25-4 37M88 60c-14 1-26-3-34-10M17 70c10-9 22-15 33-20"/>
+    </symbol>
+    <symbol id="ic-book" viewBox="0 0 100 100">
+      <path style="fill:var(--c1);stroke:var(--ink);stroke-width:var(--sw)" stroke-linejoin="round" d="M6 26v58c16-5 31-3 44 5 13-8 28-10 44-5V26"/>
+      <path style="fill:var(--c2);stroke:var(--ink);stroke-width:var(--sw)" stroke-linejoin="round" d="M50 24c-11-8-26-10-38-6v58c12-4 27-2 38 6 11-8 26-10 38-6V18c-12-4-27-2-38 6z"/>
+      <path style="fill:none;stroke:var(--ink);stroke-width:var(--sw)" stroke-linecap="round" d="M50 24v58M22 36c7-1 14 0 20 3M22 48c7-1 14 0 20 3M58 39c6-3 13-4 20-3M58 51c6-3 13-4 20-3"/>
+    </symbol>
+    <symbol id="ic-cap" viewBox="0 0 100 100">
+      <path style="fill:var(--c2);stroke:var(--ink);stroke-width:var(--sw)" stroke-linejoin="round" d="M26 50v18c0 7 11 13 24 13s24-6 24-13V50L50 61z"/>
+      <path style="fill:var(--c1);stroke:var(--ink);stroke-width:var(--sw)" stroke-linejoin="round" d="M50 20 6 40l44 20 44-20z"/>
+      <path style="fill:none;stroke:var(--ink);stroke-width:var(--sw)" stroke-linecap="round" d="M84 45v22"/>
+      <circle style="fill:var(--hi);stroke:var(--ink);stroke-width:var(--sw)" cx="84" cy="72" r="6"/>
+    </symbol>
+    <symbol id="ic-notebook" viewBox="0 0 100 100">
+      <rect style="fill:var(--c1);stroke:var(--ink);stroke-width:var(--sw)" x="24" y="12" width="56" height="76" rx="7"/>
+      <path style="fill:none;stroke:var(--ink);stroke-width:var(--sw)" stroke-linecap="round" d="M40 32h28M40 46h28M40 60h18M16 24h14M16 40h14M16 56h14M16 72h14"/>
+    </symbol>
+    <symbol id="ic-badge" viewBox="0 0 100 100">
+      <path style="fill:none;stroke:var(--ink);stroke-width:var(--sw)" stroke-linecap="round" stroke-linejoin="round" d="M36 6l14 22 14-22"/>
+      <rect style="fill:var(--c1);stroke:var(--ink);stroke-width:var(--sw)" x="24" y="26" width="52" height="66" rx="8"/>
+      <circle style="fill:var(--c2);stroke:var(--ink);stroke-width:var(--sw)" cx="50" cy="50" r="11"/>
+      <path style="fill:none;stroke:var(--ink);stroke-width:var(--sw)" stroke-linecap="round" d="M36 72h28M40 82h20"/>
+    </symbol>
+    <symbol id="ic-puzzle" viewBox="0 0 100 100">
+      <path style="fill:var(--c1);stroke:var(--ink);stroke-width:var(--sw)" stroke-linejoin="round" d="M16 30h20a9 9 0 1 1 18 0h20v20a9 9 0 1 0 0 18v20H54a9 9 0 1 0-18 0H16V68a9 9 0 1 1 0-18z"/>
+    </symbol>
+    <symbol id="ic-code" viewBox="0 0 100 100">
+      <rect style="fill:var(--c1);stroke:var(--ink);stroke-width:var(--sw)" x="10" y="18" width="80" height="56" rx="8"/>
+      <path style="fill:var(--c2);stroke:var(--ink);stroke-width:var(--sw)" stroke-linejoin="round" d="M4 82h92l-6 8H10z"/>
+      <path style="fill:none;stroke:var(--hi);stroke-width:var(--sw)" stroke-linecap="round" stroke-linejoin="round" d="M38 36 28 46l10 10M62 36l10 10-10 10M54 32l-8 28"/>
+    </symbol>
+    <symbol id="ic-leaf" viewBox="0 0 100 100">
+      <path style="fill:var(--c1);stroke:var(--ink);stroke-width:var(--sw)" stroke-linejoin="round" d="M20 84C14 44 40 14 88 12c2 46-24 74-68 72z"/>
+      <path style="fill:none;stroke:var(--ink);stroke-width:var(--sw)" stroke-linecap="round" d="M20 84C36 62 54 44 76 26M44 60l-2-18M58 46l14-2"/>
+    </symbol>
+    <symbol id="ic-quote" viewBox="0 0 100 100">
+      <path style="fill:var(--c1);stroke:var(--ink);stroke-width:var(--sw)" stroke-linejoin="round" d="M14 16h72a8 8 0 0 1 8 8v42a8 8 0 0 1-8 8H46L26 90V74H14a8 8 0 0 1-8-8V24a8 8 0 0 1 8-8z"/>
+      <path style="fill:var(--ink)" d="M28 34h14v14c0 7-4 11-11 12l-1-5c4-1 5-3 5-7h-7zM56 34h14v14c0 7-4 11-11 12l-1-5c4-1 5-3 5-7h-7z"/>
+    </symbol>
+    <symbol id="ic-board" viewBox="0 0 100 100">
+      <rect style="fill:var(--c1);stroke:var(--ink);stroke-width:var(--sw)" x="8" y="14" width="84" height="58" rx="6"/>
+      <path style="fill:none;stroke:var(--hi);stroke-width:var(--sw)" stroke-linecap="round" d="M22 32c6-6 10 6 16 0s10 6 16 0M22 50h30M64 30v26M60 40h8"/>
+      <path style="fill:none;stroke:var(--ink);stroke-width:var(--sw)" stroke-linecap="round" d="M30 72l-8 18M70 72l8 18"/>
+    </symbol>
+    <symbol id="ic-scales" viewBox="0 0 100 100">
+      <path style="fill:none;stroke:var(--ink);stroke-width:var(--sw)" stroke-linecap="round" stroke-linejoin="round" d="M50 14v70M18 26h64M26 26 12 56M26 26l14 30M74 26 60 56M74 26l14 30"/>
+      <path style="fill:var(--c1);stroke:var(--ink);stroke-width:var(--sw)" stroke-linejoin="round" d="M10 56h32c0 9-7 15-16 15S10 65 10 56zM58 56h32c0 9-7 15-16 15s-16-6-16-15z"/>
+      <path style="fill:var(--c2);stroke:var(--ink);stroke-width:var(--sw)" stroke-linejoin="round" d="M32 84h36v8H32z"/>
+    </symbol>
+    <symbol id="ic-stopwatch" viewBox="0 0 100 100">
+      <circle style="fill:var(--c1);stroke:var(--ink);stroke-width:var(--sw)" cx="50" cy="56" r="34"/>
+      <path style="fill:var(--c2);stroke:var(--ink);stroke-width:var(--sw)" stroke-linejoin="round" d="M42 8h16v12H42z"/>
+      <path style="fill:none;stroke:var(--ink);stroke-width:var(--sw)" stroke-linecap="round" d="M50 56V36M78 24l6-6"/>
+    </symbol>
+    <symbol id="ic-school" viewBox="0 0 100 100">
+      <path style="fill:var(--c2);stroke:var(--ink);stroke-width:var(--sw)" stroke-linejoin="round" d="M12 44 50 18l38 26z"/>
+      <path style="fill:var(--c1);stroke:var(--ink);stroke-width:var(--sw)" stroke-linejoin="round" d="M18 44h64v42H18z"/>
+      <path style="fill:var(--hi);stroke:var(--ink);stroke-width:var(--sw)" stroke-linejoin="round" d="M42 86V64h16v22M26 54h10v10H26zM64 54h10v10H64z"/>
+    </symbol>
+    <symbol id="ic-amphora" viewBox="0 0 100 100">
+      <path style="fill:var(--c1);stroke:var(--ink);stroke-width:var(--sw)" stroke-linejoin="round" d="M38 10h24v8c0 5 18 12 18 34 0 20-12 32-30 38-18-6-30-18-30-38 0-22 18-29 18-34z"/>
+      <path style="fill:none;stroke:var(--ink);stroke-width:var(--sw)" stroke-linecap="round" d="M26 44h48M24 60h52M38 22c-10 0-16 6-16 14M62 22c10 0 16 6 16 14"/>
+    </symbol>
+    <symbol id="ic-notes" viewBox="0 0 100 100">
+      <path style="fill:var(--c2);stroke:var(--ink);stroke-width:var(--sw)" stroke-linejoin="round" d="M34 22 80 12v14L34 36z"/>
+      <path style="fill:none;stroke:var(--ink);stroke-width:var(--sw)" stroke-linecap="round" d="M34 22v52M80 12v52"/>
+      <ellipse style="fill:var(--c1);stroke:var(--ink);stroke-width:var(--sw)" cx="24" cy="76" rx="12" ry="9"/>
+      <ellipse style="fill:var(--c1);stroke:var(--ink);stroke-width:var(--sw)" cx="70" cy="66" rx="12" ry="9"/>
+    </symbol>
+    <symbol id="ic-feather" viewBox="0 0 100 100">
+      <path style="fill:var(--c1);stroke:var(--ink);stroke-width:var(--sw)" stroke-linejoin="round" d="M86 10C52 12 30 34 26 70l10 2c30-6 48-30 50-62z"/>
+      <path style="fill:none;stroke:var(--ink);stroke-width:var(--sw)" stroke-linecap="round" d="M76 22 18 90M60 30l-2 16M48 44l-4 12"/>
+    </symbol>
+    <symbol id="ic-medal" viewBox="0 0 100 100">
+      <path style="fill:var(--c2);stroke:var(--ink);stroke-width:var(--sw)" stroke-linejoin="round" d="M28 6h16l14 30H44zM72 6H56L42 36h14z"/>
+      <circle style="fill:var(--c1);stroke:var(--ink);stroke-width:var(--sw)" cx="50" cy="62" r="28"/>
+      <path style="fill:var(--hi);stroke:var(--ink);stroke-width:var(--sw)" stroke-linejoin="round" d="m50 46 5 10 11 1-8 7 3 11-11-6-11 6 3-11-8-7 11-1z"/>
+    </symbol>
+    <symbol id="ic-shield" viewBox="0 0 100 100">
+      <path style="fill:#e10447" d="M34 6h32v8H34z"/>
+      <path style="fill:var(--c1);stroke:var(--ink);stroke-width:var(--sw)" stroke-linejoin="round" d="M22 20h56v38c0 18-12 30-28 36-16-6-28-18-28-36z"/>
+      <path style="fill:var(--hi)" d="M34 32h32v9H54v38h-8V41H34z"/>
+    </symbol>
+    <symbol id="px-heart" viewBox="0 0 7 6">
+      <path fill="#e10447" d="M1 0h2v1h1V0h2v1h1v2H6v1H5v1H4v1H3V5H2V4H1V3H0V1h1z"/>
+      <path fill="#fff" d="M1 1h1v1H1z"/>
+    </symbol>
+  </svg>
+
+  <div data-include="header"></div>
+
+  <main id="main">
+
+    <!-- ═════ Полоса ближайших событий: жёлтый скотч над альбомом ═════ -->
+    <section class="strip" aria-label="Ближайшие события">
+      <div class="container strip__inner">
+        <ul class="strip__list">
+          <li><a class="strip__item" href="#"><span class="strip__date">[дата]</span> День открытых дверей</a></li>
+          <li><a class="strip__item" href="#"><span class="strip__date">[дата]</span> Старт приёма документов</a></li>
+          <li><a class="strip__item" href="#"><span class="strip__date">[дата]</span> Школа молодого учёного</a></li>
+          <li><a class="strip__item" href="#"><span class="strip__date">[дата]</span> Интенсив «От идеи к прототипу»</a></li>
+        </ul>
+        <a class="strip__all" href="#">Все события</a>
+      </div>
+    </section>
+
+    <!-- ═════ HERO: оффер на плашках + куча стикеров (Matter.js) ═════ -->
+    <section class="hero" data-hero aria-labelledby="hero-title">
+      <ul class="pile" data-pile aria-label="ТвГУ в стикерах">
+        <!-- порядок = порядок падения: нижний слой первым -->
+        <li class="stk stk--photo stk--p3" data-mob>
+          <figure class="stk__in">
+            <img src="../../../assets/stub/photos/800/portrait-inostrannye-studenty-ulica.jpg" width="800" height="533" alt="Трое студентов улыбаются на флешмобе «Читаем Пушкина на волжском берегу»" draggable="false" decoding="async">
+            <figcaption class="stk__tag">Пушкин на Волге</figcaption>
+          </figure>
+        </li>
+        <li class="stk stk--ticket stk--route">
+          <div class="stk__in">
+            <span class="route" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="route__names"><span>Москва</span><b>Тверь</b><span>Петербург</span></span>
+            <span class="stk__cap">между Москвой и Петербургом</span>
+          </div>
+        </li>
+        <li class="stk stk--fact stk--coral stk--15" data-mob>
+          <div class="stk__in"><b class="stk__num">15</b><span class="stk__cap">факультетов и&nbsp;институтов</span></div>
+        </li>
+        <li class="stk stk--icon stk--ball" data-shape="circle" data-bouncy data-mob aria-hidden="true">
+          <svg class="stk__svg" viewBox="0 0 100 100"><use class="halo" href="#ic-ball"/><use class="art" href="#ic-ball"/></svg>
+        </li>
+        <li class="stk stk--icon stk--book" aria-hidden="true">
+          <svg class="stk__svg" viewBox="0 0 100 100"><use class="halo" href="#ic-book"/><use class="art" href="#ic-book"/></svg>
+        </li>
+        <li class="stk stk--photo stk--p1" data-mob>
+          <figure class="stk__in">
+            <img src="../../../assets/stub/photos/800/students-intensiv-smeyutsya.jpg" width="800" height="533" alt="Студенты смеются на финале интенсива «От идеи к прототипу»" draggable="false" decoding="async">
+            <figcaption class="stk__tag">От идеи к прототипу</figcaption>
+          </figure>
+        </li>
+        <li class="stk stk--fact stk--sun stk--1870" data-mob>
+          <div class="stk__in"><b class="stk__num">1870</b><span class="stk__cap">год основания</span></div>
+        </li>
+        <li class="stk stk--fact stk--mint stk--129" data-mob>
+          <div class="stk__in"><b class="stk__num">129</b><span class="stk__cap">программ</span></div>
+        </li>
+        <li class="stk stk--round stk--rur" data-shape="circle" data-mob>
+          <div class="stk__in"><span class="stk__cap">RUR 2026</span><b class="stk__num">93-е</b><span class="stk__cap">место в России</span></div>
+        </li>
+        <li class="stk stk--fact stk--paper stk--nar" data-mob>
+          <div class="stk__in"><b class="stk__num">топ-200</b><span class="stk__cap">НАР 2026, 2-я лига</span></div>
+        </li>
+        <li class="stk stk--photo stk--p2">
+          <figure class="stk__in">
+            <img src="../../../assets/stub/photos/800/sport-voleybol-zhenskaya-komanda.jpg" width="800" height="551" alt="Женская волейбольная команда ССК «Атлант» с медалями" draggable="false" decoding="async">
+            <figcaption class="stk__tag">ССК «Атлант»</figcaption>
+          </figure>
+        </li>
+        <li class="stk stk--icon stk--flask" aria-hidden="true">
+          <svg class="stk__svg" viewBox="0 0 100 100"><use class="halo" href="#ic-flask"/><use class="art" href="#ic-flask"/></svg>
+        </li>
+      </ul>
+
+      <div class="container hero__copy">
+        <h1 class="hero__title" id="hero-title">
+          <span class="tape tape--ink">Учись там,</span>
+          <span class="tape tape--paper">где тебе</span>
+          <span class="tape tape--ink tape--heart"><svg class="px-heart" viewBox="0 0 7 6" aria-hidden="true" shape-rendering="crispEdges"><use href="#px-heart"/></svg>рады</span>
+        </h1>
+        <p class="hero__lead" data-m="up" data-m-delay="380">Тверской государственный университет с&nbsp;1870&nbsp;года: 15&nbsp;факультетов и&nbsp;129&nbsp;программ между Москвой и&nbsp;Петербургом.</p>
+        <div class="hero__actions" data-m="up" data-m-delay="480">
+          <a class="btn-stk btn-stk--sun" href="#programs">Подобрать программу</a>
+          <a class="btn-stk btn-stk--line" href="#lead">Задать вопрос</a>
+        </div>
+        <div class="hero__play motion-only" data-m="fade" data-m-delay="900">
+          <button class="shake" type="button" data-shake>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0 1 13.7-5.6L20 8.7M20 4v4.7h-4.7M20 12a8 8 0 0 1-13.7 5.6L4 15.3M4 20v-4.7h4.7"/></svg>
+            Встряхнуть
+          </button>
+          <span class="hero__hint">Стикеры можно хватать и&nbsp;бросать</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════ Кому что нужно: кармашки альбома ═════ -->
+    <section class="who" id="who" aria-labelledby="who-title">
+      <div class="container">
+        <div class="sec-head">
+          <h2 class="h2" id="who-title" data-m="up">Кому что нужно</h2>
+          <p class="sec-head__text" data-m="up" data-m-delay="80">Четыре кармашка альбома. Под наклейкой три самые частые ссылки.</p>
+        </div>
+        <div class="pockets" data-m-stagger>
+          <article class="pocket pocket--sun" data-m="up">
+            <h3 class="pocket__title">Абитуриенту</h3>
+            <div class="pocket__sleeve">
+              <ul class="pocket__links">
+                <li><a class="pocket__link" href="#">Правила приёма 2026<span class="icon icon--arrow-right" aria-hidden="true"></span></a></li>
+                <li><a class="pocket__link" href="#">Проходные баллы прошлых лет<span class="icon icon--arrow-right" aria-hidden="true"></span></a></li>
+                <li><a class="pocket__link" href="#">Общежитие<span class="icon icon--arrow-right" aria-hidden="true"></span></a></li>
+              </ul>
+              <div class="pocket__cover" aria-hidden="true">
+                <div class="pocket__sheet"><svg class="pocket__art" viewBox="0 0 100 100"><use class="halo" href="#ic-cap"/><use class="art" href="#ic-cap"/></svg></div>
+                <span class="pocket__flap"></span>
+              </div>
+            </div>
+          </article>
+          <article class="pocket pocket--mint" data-m="up">
+            <h3 class="pocket__title">Студенту</h3>
+            <div class="pocket__sleeve">
+              <ul class="pocket__links">
+                <li><a class="pocket__link" href="#">Расписание занятий<span class="icon icon--arrow-right" aria-hidden="true"></span></a></li>
+                <li><a class="pocket__link" href="#">Личный кабинет и&nbsp;СДО<span class="icon icon--arrow-right" aria-hidden="true"></span></a></li>
+                <li><a class="pocket__link" href="#">Стипендии и&nbsp;поддержка<span class="icon icon--arrow-right" aria-hidden="true"></span></a></li>
+              </ul>
+              <div class="pocket__cover" aria-hidden="true">
+                <div class="pocket__sheet"><svg class="pocket__art" viewBox="0 0 100 100"><use class="halo" href="#ic-notebook"/><use class="art" href="#ic-notebook"/></svg></div>
+                <span class="pocket__flap"></span>
+              </div>
+            </div>
+          </article>
+          <article class="pocket pocket--coral" data-m="up">
+            <h3 class="pocket__title">Сотруднику</h3>
+            <div class="pocket__sleeve">
+              <ul class="pocket__links">
+                <li><a class="pocket__link" href="#">Почта и&nbsp;сервисы<span class="icon icon--arrow-right" aria-hidden="true"></span></a></li>
+                <li><a class="pocket__link" href="#">Документы и&nbsp;приказы<span class="icon icon--arrow-right" aria-hidden="true"></span></a></li>
+                <li><a class="pocket__link" href="#">Повышение квалификации<span class="icon icon--arrow-right" aria-hidden="true"></span></a></li>
+              </ul>
+              <div class="pocket__cover" aria-hidden="true">
+                <div class="pocket__sheet"><svg class="pocket__art" viewBox="0 0 100 100"><use class="halo" href="#ic-badge"/><use class="art" href="#ic-badge"/></svg></div>
+                <span class="pocket__flap"></span>
+              </div>
+            </div>
+          </article>
+          <article class="pocket pocket--sky" data-m="up">
+            <h3 class="pocket__title">Партнёру</h3>
+            <div class="pocket__sleeve">
+              <ul class="pocket__links">
+                <li><a class="pocket__link" href="#">Целевое обучение<span class="icon icon--arrow-right" aria-hidden="true"></span></a></li>
+                <li><a class="pocket__link" href="#">Практика и&nbsp;стажировки<span class="icon icon--arrow-right" aria-hidden="true"></span></a></li>
+                <li><a class="pocket__link" href="#">Совместные научные проекты<span class="icon icon--arrow-right" aria-hidden="true"></span></a></li>
+              </ul>
+              <div class="pocket__cover" aria-hidden="true">
+                <div class="pocket__sheet"><svg class="pocket__art" viewBox="0 0 100 100"><use class="halo" href="#ic-puzzle"/><use class="art" href="#ic-puzzle"/></svg></div>
+                <span class="pocket__flap"></span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════ Направления: коллекционные карточки ═════ -->
+    <section class="programs" id="programs" aria-labelledby="programs-title">
+      <div class="container">
+        <div class="programs__head">
+          <div>
+            <h2 class="h2" id="programs-title" data-m="up">Собери свою коллекцию направлений</h2>
+            <p class="sec-head__text" data-m="up" data-m-delay="80">Переверни карточку и&nbsp;посмотри, какие факультеты за&nbsp;ней стоят. Всего в&nbsp;университете 129&nbsp;программ.</p>
+          </div>
+          <div class="collect" data-m="up" data-m-delay="160">
+            <p class="collect__text" aria-live="polite">Собрано <b data-collect-n>0</b> из&nbsp;6</p>
+            <ol class="collect__slots" aria-hidden="true">
+              <li data-slot="it"></li><li data-slot="nat"></li><li data-slot="hum"></li><li data-slot="ped"></li><li data-slot="law"></li><li data-slot="sport"></li>
+            </ol>
+          </div>
+        </div>
+
+        <ul class="cards" data-m-stagger>
+          <li class="card card--ink" data-card="it" data-m="up">
+            <div class="card__inner">
+              <div class="card__face card__front">
+                <svg class="card__art" viewBox="0 0 100 100" aria-hidden="true"><use class="halo" href="#ic-code"/><use class="art" href="#ic-code"/></svg>
+                <h3 class="card__title">IT и&nbsp;математика</h3>
+                <p class="card__meta">[N] программ</p>
+                <button class="card__flip" type="button" aria-expanded="false" aria-controls="card-it"><span class="card__flip-label">Перевернуть</span><span class="visually-hidden"> карточку «IT и математика»</span></button>
+              </div>
+              <div class="card__face card__back" id="card-it" tabindex="-1" inert>
+                <p class="card__back-title">IT и&nbsp;математика</p>
+                <ul class="card__list">
+                  <li>Факультет прикладной математики и&nbsp;кибернетики</li>
+                  <li>Математический факультет</li>
+                  <li>Физико-технический факультет</li>
+                </ul>
+                <div class="card__back-actions">
+                  <a class="card__go" href="#">Программы<span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+                  <button class="card__unflip" type="button">Назад<span class="visually-hidden"> к лицевой стороне</span></button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="card card--mint" data-card="nat" data-m="up">
+            <div class="card__inner">
+              <div class="card__face card__front">
+                <svg class="card__art" viewBox="0 0 100 100" aria-hidden="true"><use class="halo" href="#ic-leaf"/><use class="art" href="#ic-leaf"/></svg>
+                <h3 class="card__title">Естественные науки</h3>
+                <p class="card__meta">[N] программ</p>
+                <button class="card__flip" type="button" aria-expanded="false" aria-controls="card-nat"><span class="card__flip-label">Перевернуть</span><span class="visually-hidden"> карточку «Естественные науки»</span></button>
+              </div>
+              <div class="card__face card__back" id="card-nat" tabindex="-1" inert>
+                <p class="card__back-title">Естественные науки</p>
+                <ul class="card__list">
+                  <li>Биологический факультет</li>
+                  <li>Химико-технологический факультет</li>
+                  <li>Факультет географии и&nbsp;геоэкологии</li>
+                </ul>
+                <div class="card__back-actions">
+                  <a class="card__go" href="#">Программы<span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+                  <button class="card__unflip" type="button">Назад<span class="visually-hidden"> к лицевой стороне</span></button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="card card--coral" data-card="hum" data-m="up">
+            <div class="card__inner">
+              <div class="card__face card__front">
+                <svg class="card__art" viewBox="0 0 100 100" aria-hidden="true"><use class="halo" href="#ic-quote"/><use class="art" href="#ic-quote"/></svg>
+                <h3 class="card__title">Гуманитарные науки</h3>
+                <p class="card__meta">[N] программ</p>
+                <button class="card__flip" type="button" aria-expanded="false" aria-controls="card-hum"><span class="card__flip-label">Перевернуть</span><span class="visually-hidden"> карточку «Гуманитарные науки»</span></button>
+              </div>
+              <div class="card__face card__back" id="card-hum" tabindex="-1" inert>
+                <p class="card__back-title">Гуманитарные науки</p>
+                <ul class="card__list">
+                  <li>Исторический факультет</li>
+                  <li>Филологический факультет</li>
+                  <li>Факультет иностранных языков и&nbsp;международной коммуникации</li>
+                  <li>Факультет психологии</li>
+                </ul>
+                <div class="card__back-actions">
+                  <a class="card__go" href="#">Программы<span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+                  <button class="card__unflip" type="button">Назад<span class="visually-hidden"> к лицевой стороне</span></button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="card card--sun" data-card="ped" data-m="up">
+            <div class="card__inner">
+              <div class="card__face card__front">
+                <svg class="card__art" viewBox="0 0 100 100" aria-hidden="true"><use class="halo" href="#ic-board"/><use class="art" href="#ic-board"/></svg>
+                <h3 class="card__title">Педагогика</h3>
+                <p class="card__meta">[N] программ</p>
+                <button class="card__flip" type="button" aria-expanded="false" aria-controls="card-ped"><span class="card__flip-label">Перевернуть</span><span class="visually-hidden"> карточку «Педагогика»</span></button>
+              </div>
+              <div class="card__face card__back" id="card-ped" tabindex="-1" inert>
+                <p class="card__back-title">Педагогика</p>
+                <ul class="card__list">
+                  <li>Институт педагогического образования и&nbsp;социальных технологий</li>
+                  <li>Институт непрерывного образования</li>
+                </ul>
+                <div class="card__back-actions">
+                  <a class="card__go" href="#">Программы<span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+                  <button class="card__unflip" type="button">Назад<span class="visually-hidden"> к лицевой стороне</span></button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="card card--paper" data-card="law" data-m="up">
+            <div class="card__inner">
+              <div class="card__face card__front">
+                <svg class="card__art" viewBox="0 0 100 100" aria-hidden="true"><use class="halo" href="#ic-scales"/><use class="art" href="#ic-scales"/></svg>
+                <h3 class="card__title">Экономика и&nbsp;право</h3>
+                <p class="card__meta">[N] программ</p>
+                <button class="card__flip" type="button" aria-expanded="false" aria-controls="card-law"><span class="card__flip-label">Перевернуть</span><span class="visually-hidden"> карточку «Экономика и право»</span></button>
+              </div>
+              <div class="card__face card__back" id="card-law" tabindex="-1" inert>
+                <p class="card__back-title">Экономика и&nbsp;право</p>
+                <ul class="card__list">
+                  <li>Институт экономики и&nbsp;управления</li>
+                  <li>Юридический факультет</li>
+                </ul>
+                <div class="card__back-actions">
+                  <a class="card__go" href="#">Программы<span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+                  <button class="card__unflip" type="button">Назад<span class="visually-hidden"> к лицевой стороне</span></button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="card card--sky" data-card="sport" data-m="up">
+            <div class="card__inner">
+              <div class="card__face card__front">
+                <svg class="card__art" viewBox="0 0 100 100" aria-hidden="true"><use class="halo" href="#ic-stopwatch"/><use class="art" href="#ic-stopwatch"/></svg>
+                <h3 class="card__title">Спорт</h3>
+                <p class="card__meta">[N] программ</p>
+                <button class="card__flip" type="button" aria-expanded="false" aria-controls="card-sport"><span class="card__flip-label">Перевернуть</span><span class="visually-hidden"> карточку «Спорт»</span></button>
+              </div>
+              <div class="card__face card__back" id="card-sport" tabindex="-1" inert>
+                <p class="card__back-title">Спорт</p>
+                <ul class="card__list">
+                  <li>Факультет физической культуры</li>
+                </ul>
+                <div class="card__back-actions">
+                  <a class="card__go" href="#">Программы<span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+                  <button class="card__unflip" type="button">Назад<span class="visually-hidden"> к лицевой стороне</span></button>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <div class="reward" data-reward hidden>
+          <svg class="reward__art" viewBox="0 0 100 100" aria-hidden="true"><use class="halo" href="#ic-medal"/><use class="art" href="#ic-medal"/></svg>
+          <p class="reward__text"><b>Полный набор!</b> Все шесть направлений собраны. Осталось выбрать свою программу.</p>
+          <a class="btn-stk btn-stk--sun" href="#">Подобрать программу</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════ Сегодня в ТвГУ: скрапбук ═════ -->
+    <section class="today" id="today" aria-labelledby="today-title">
+      <div class="container">
+        <div class="sec-head sec-head--row">
+          <h2 class="h2" id="today-title" data-m="up">Сегодня в&nbsp;ТвГУ</h2>
+          <a class="link-stk" href="#" data-m="up" data-m-delay="80">Все новости<span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+        </div>
+        <div class="today__grid" data-m-stagger>
+          <article class="news news--big" data-m="up">
+            <a class="news__link" href="#">
+              <span class="news__photo"><img src="../../../assets/stub/photos/800/portrait-studentka-tehnoprom.jpg" width="800" height="534" alt="Студентка ТвГУ с бейджем форума «Технопром» в зале" loading="lazy" decoding="async"></span>
+              <span class="news__date">[дата]</span>
+              <h3 class="news__title">Проект ТвГУ «Свет науки в&nbsp;детский дом» представили на&nbsp;форуме «Технопром‑2026»</h3>
+            </a>
+          </article>
+          <article class="news news--tall" data-m="up">
+            <a class="news__link" href="#">
+              <span class="news__photo"><img src="../../../assets/stub/photos/800/sport-drakony-lodka.jpg" width="600" height="800" alt="Команда гребцов в лодке-драконе на воде" loading="lazy" decoding="async"></span>
+              <span class="news__date">[дата]</span>
+              <h3 class="news__title">Студент ТвГУ завоевал золото и&nbsp;два серебра на&nbsp;международных соревнованиях по&nbsp;гребле</h3>
+            </a>
+          </article>
+          <article class="news news--wide" data-m="up">
+            <a class="news__link" href="#">
+              <span class="news__photo"><img src="../../../assets/stub/photos/800/event-forum-znanie-zal.jpg" width="800" height="533" alt="Зал форума общества «Знание»: слушатели и эксперты на сцене" loading="lazy" decoding="async"></span>
+              <span class="news__date">[дата]</span>
+              <h3 class="news__title">Финансовый терроризм: наука, практика и&nbsp;профилактика. ТвГУ объединяет экспертов</h3>
+            </a>
+          </article>
+          <article class="news news--label" data-m="up">
+            <a class="news__link" href="#">
+              <span class="news__date">[дата]</span>
+              <h3 class="news__title">Семь первокурсниц ТвГУ стали лауреатами премии Губернатора Тверской области</h3>
+              <span class="news__more">Читать<span class="icon icon--arrow-right" aria-hidden="true"></span></span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════ Наука и люди: лист наклеек на тёмной подложке ═════ -->
+    <section class="science" id="science" aria-labelledby="science-title">
+      <div class="container">
+        <div class="sec-head">
+          <h2 class="h2" id="science-title" data-m="up">Наука и&nbsp;люди</h2>
+          <p class="sec-head__text" data-m="up" data-m-delay="80">Интенсивы, школы молодого учёного и&nbsp;встречи с&nbsp;преподавателями. На&nbsp;листе ещё есть место для твоего проекта.</p>
+        </div>
+        <div class="sheet" data-m="up">
+          <figure class="sheet__stk sheet__stk--big">
+            <img src="../../../assets/stub/photos/800/portrait-professor-u-doski.jpg" width="800" height="533" alt="Преподаватель у доски с формулами рассказывает студентам" loading="lazy" decoding="async">
+            <figcaption class="sheet__cap">Встречи с&nbsp;преподавателями</figcaption>
+          </figure>
+          <figure class="sheet__stk sheet__stk--a">
+            <img src="../../../assets/stub/photos/800/students-za-noutbukom.jpg" width="800" height="533" alt="Студентка за ноутбуком на финале интенсива «От идеи к прототипу»" loading="lazy" decoding="async">
+            <figcaption class="sheet__cap">Интенсив «От идеи к&nbsp;прототипу»</figcaption>
+          </figure>
+          <figure class="sheet__stk sheet__stk--b">
+            <img src="../../../assets/stub/photos/800/students-tochka-kipeniya.jpg" width="800" height="533" alt="Студенты в зале «Точка кипения» на открытии Школы молодого учёного" loading="lazy" decoding="async">
+            <figcaption class="sheet__cap">Школа молодого учёного</figcaption>
+          </figure>
+          <p class="sheet__label sheet__label--sun"><b>[N]</b> научных школ</p>
+          <p class="sheet__label sheet__label--mint"><b>[N]</b> лабораторий</p>
+          <a class="sheet__slot" href="#">
+            <span class="sheet__slot-title">Место для твоего проекта</span>
+            <span class="sheet__slot-text">Как попасть в&nbsp;научный кружок<span class="icon icon--arrow-right" aria-hidden="true"></span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════ История в лицах: марки на пунктирной линии ═════ -->
+    <section class="history" id="history" aria-labelledby="history-title">
+      <div class="container">
+        <div class="ribbon stamps" data-ribbon>
+          <div class="ribbon__head">
+            <div>
+              <h2 class="h2" id="history-title" data-m="up">История в&nbsp;лицах</h2>
+              <p class="sec-head__text" data-m="up" data-m-delay="80">От учительской школы 1870 года до&nbsp;сегодняшнего университета. Среди выпускников и&nbsp;сотрудников:</p>
+            </div>
+            <div class="ribbon__nav">
+              <button class="round-btn" type="button" data-ribbon-prev><span class="icon icon--arrow-left" aria-hidden="true"></span><span class="visually-hidden">Предыдущие марки</span></button>
+              <button class="round-btn" type="button" data-ribbon-next><span class="icon icon--arrow-right" aria-hidden="true"></span><span class="visually-hidden">Следующие марки</span></button>
+            </div>
+          </div>
+          <ol class="ribbon__track stamps__track" data-stamps>
+            <li class="stamp stamp--sun">
+              <div class="stamp__paper">
+                <svg class="stamp__art" viewBox="0 0 100 100" aria-hidden="true"><use class="art" href="#ic-school"/></svg>
+                <span class="stamp__year">1870</span>
+                <h3 class="stamp__name">Учительская школа Максимовича</h3>
+                <p class="stamp__text">С&nbsp;неё начинается университет</p>
+              </div>
+            </li>
+            <li class="stamp stamp--coral">
+              <div class="stamp__paper">
+                <svg class="stamp__art" viewBox="0 0 100 100" aria-hidden="true"><use class="art" href="#ic-amphora"/></svg>
+                <span class="stamp__year">[годы]</span>
+                <h3 class="stamp__name">Николай Кун</h3>
+                <p class="stamp__text">Автор книги «Мифы Древней Греции»</p>
+              </div>
+            </li>
+            <li class="stamp stamp--sky">
+              <div class="stamp__paper">
+                <svg class="stamp__art" viewBox="0 0 100 100" aria-hidden="true"><use class="art" href="#ic-notes"/></svg>
+                <span class="stamp__year">[годы]</span>
+                <h3 class="stamp__name">Александр Александров</h3>
+                <p class="stamp__text">Автор гимна России</p>
+              </div>
+            </li>
+            <li class="stamp stamp--paper">
+              <div class="stamp__paper">
+                <svg class="stamp__art" viewBox="0 0 100 100" aria-hidden="true"><use class="art" href="#ic-feather"/></svg>
+                <span class="stamp__year">[годы]</span>
+                <h3 class="stamp__name">Андрей Дементьев</h3>
+                <p class="stamp__text">Поэт</p>
+              </div>
+            </li>
+            <li class="stamp stamp--sun">
+              <div class="stamp__paper">
+                <svg class="stamp__art" viewBox="0 0 100 100" aria-hidden="true"><use class="art" href="#ic-medal"/></svg>
+                <span class="stamp__year">[годы]</span>
+                <h3 class="stamp__name">Наталья Непряева</h3>
+                <p class="stamp__text">Олимпийская чемпионка</p>
+              </div>
+            </li>
+            <li class="stamp stamp--blue">
+              <div class="stamp__paper">
+                <svg class="stamp__art" viewBox="0 0 100 100" aria-hidden="true"><use class="art" href="#ic-shield"/></svg>
+                <span class="stamp__year">2026</span>
+                <h3 class="stamp__name">Университет сегодня</h3>
+                <p class="stamp__text">15 факультетов и&nbsp;институтов, 129 программ</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════ Партнёры ═════ -->
+    <section class="partners-sec" aria-labelledby="partners-title">
+      <div class="container">
+        <div class="ribbon partners" data-ribbon>
+          <div class="ribbon__head">
+            <h2 class="h2 h2--sm" id="partners-title" data-m="up">Партнёры и&nbsp;работодатели</h2>
+            <div class="ribbon__nav">
+              <button class="round-btn" type="button" data-ribbon-prev><span class="icon icon--arrow-left" aria-hidden="true"></span><span class="visually-hidden">Предыдущие партнёры</span></button>
+              <button class="round-btn" type="button" data-ribbon-next><span class="icon icon--arrow-right" aria-hidden="true"></span><span class="visually-hidden">Следующие партнёры</span></button>
+            </div>
+          </div>
+          <ul class="ribbon__track">
+            <li><a class="partner" href="#"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 1]</span></a></li>
+            <li><a class="partner" href="#"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 2]</span></a></li>
+            <li><a class="partner" href="#"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 3]</span></a></li>
+            <li><a class="partner" href="#"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 4]</span></a></li>
+            <li><a class="partner" href="#"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 5]</span></a></li>
+            <li><a class="partner" href="#"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 6]</span></a></li>
+            <li><a class="partner" href="#"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 7]</span></a></li>
+            <li><a class="partner" href="#"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 8]</span></a></li>
+            <li><a class="partner" href="#"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 9]</span></a></li>
+            <li><a class="partner" href="#"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 10]</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════ FAQ: вопросы-наклейки ═════ -->
+    <section class="faq" id="faq" aria-labelledby="faq-title">
+      <div class="container faq__grid">
+        <div class="faq__head">
+          <h2 class="h2" id="faq-title" data-m="up">Частые вопросы</h2>
+          <p class="sec-head__text" data-m="up" data-m-delay="80">Что спрашивают про поступление чаще всего. Не&nbsp;нашёл свой вопрос? <a href="#lead">Наклей его на&nbsp;доску</a>.</p>
+          <svg class="faq__art" viewBox="0 0 160 160" aria-hidden="true">
+            <g class="faq__q">
+              <circle cx="80" cy="80" r="70" fill="#fff"/>
+              <circle cx="80" cy="80" r="60" fill="#ffd23f" stroke="#10163a" stroke-width="5"/>
+              <path d="M58 64c0-14 10-22 23-22s22 8 22 19c0 10-6 14-13 18-6 3-8 6-8 12v4" fill="none" stroke="#10163a" stroke-width="12" stroke-linecap="round"/>
+              <circle cx="82" cy="116" r="7" fill="#10163a"/>
+            </g>
+          </svg>
+        </div>
+        <div class="accordion faq__list" data-m-stagger>
+          <details class="accordion__item" name="faq" data-m="up">
+            <summary class="accordion__summary">Есть ли бюджетные места?</summary>
+            <div class="accordion__body"><p>Да, на&nbsp;большинство направлений. Число бюджетных мест по&nbsp;каждой программе: [N]. Полный список в&nbsp;правилах приёма 2026.</p></div>
+          </details>
+          <details class="accordion__item" name="faq" data-m="up">
+            <summary class="accordion__summary">Дадут ли общежитие?</summary>
+            <div class="accordion__body"><p>Условия заселения и&nbsp;число мест: [N]. Порядок подачи заявления описан в&nbsp;разделе «Общежитие», вопросы можно задать приёмной комиссии.</p></div>
+          </details>
+          <details class="accordion__item" name="faq" data-m="up">
+            <summary class="accordion__summary">Сколько стоит обучение?</summary>
+            <div class="accordion__body"><p>Стоимость платного обучения зависит от&nbsp;программы: [N]&nbsp;₽ в&nbsp;год. Скидки и&nbsp;рассрочка: [уточнить в&nbsp;приёмной комиссии].</p></div>
+          </details>
+          <details class="accordion__item" name="faq" data-m="up">
+            <summary class="accordion__summary">Какие баллы нужны для поступления?</summary>
+            <div class="accordion__body"><p>Минимальные баллы ЕГЭ и&nbsp;проходные баллы прошлых лет: [N]. Таблица есть на&nbsp;странице каждой программы.</p></div>
+          </details>
+          <details class="accordion__item" name="faq" data-m="up">
+            <summary class="accordion__summary">Можно подать документы через Госуслуги?</summary>
+            <div class="accordion__body"><p>Способы подачи (через Госуслуги, лично или почтой) и&nbsp;сроки перечислены в&nbsp;правилах приёма 2026. Приёмная комиссия: Тверь, ул.&nbsp;Желябова,&nbsp;33, +7&nbsp;(4822)&nbsp;32-15-14.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════ Лид: доска приёмной комиссии ═════ -->
+    <section class="asksec" id="lead" aria-labelledby="lead-title">
+      <div class="container asksec__grid">
+        <div class="asksec__copy">
+          <h2 class="h2" id="lead-title" data-m="up">Наклей вопрос на&nbsp;доску приёмной комиссии</h2>
+          <p class="sec-head__text" data-m="up" data-m-delay="80">Ответим в&nbsp;Telegram или на&nbsp;почту. Нужно всего два поля.</p>
+          <ul class="deadlines" data-m-stagger aria-label="Сроки приёмной кампании">
+            <li class="dl dl--red" data-m="up"><b>Приём документов</b><span>до&nbsp;[дата]</span></li>
+            <li class="dl dl--sun" data-m="up"><b>День открытых дверей</b><span>[дата]</span></li>
+            <li class="dl dl--paper" data-m="up"><b>[N] дней</b><span>до конца приёма</span></li>
+          </ul>
+          <a class="link-stk link-stk--light" href="#" data-m="up">Написать в&nbsp;Telegram приёмной комиссии<span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+        </div>
+
+        <div class="board" data-board data-m="up">
+          <p class="board__title">Доска приёмной комиссии</p>
+          <ul class="board__notes" data-board-notes aria-label="Вопросы на доске">
+            <li class="note note--mint"><span class="note__tag">пример</span><p>Можно ли перевестись из&nbsp;другого вуза?</p></li>
+            <li class="note note--coral"><span class="note__tag">пример</span><p>Где жить первокурснику из&nbsp;другого города?</p></li>
+            <li class="note note--paper"><span class="note__tag">пример</span><p>Какие олимпиады дают льготы при поступлении?</p></li>
+          </ul>
+          <form class="ask" data-ask novalidate aria-label="Вопрос приёмной комиссии">
+            <div class="ask__field">
+              <label class="ask__label" for="ask-q">Твой вопрос</label>
+              <textarea class="ask__input ask__input--area" id="ask-q" name="q" rows="3" required aria-describedby="ask-q-err"></textarea>
+              <p class="ask__err" id="ask-q-err" hidden>Напиши вопрос, хотя бы пару слов</p>
+            </div>
+            <div class="ask__field">
+              <label class="ask__label" for="ask-c">Telegram или e-mail</label>
+              <input class="ask__input" id="ask-c" name="c" type="text" required autocomplete="email" inputmode="email" aria-describedby="ask-c-err">
+              <p class="ask__err" id="ask-c-err" hidden>Укажи @ник в&nbsp;Telegram или почту с&nbsp;символом @</p>
+            </div>
+            <button class="btn-stk btn-stk--ink" type="submit">Наклеить вопрос</button>
+            <p class="ask__legal">Нажимая кнопку, соглашаешься с&nbsp;<a href="#">политикой обработки персональных данных</a>.</p>
+            <p class="ask__ok" data-ask-ok role="status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="footer"></div>
+</body>
+</html>

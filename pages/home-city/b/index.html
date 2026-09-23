@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0f2c">
+  <title>Город-университет: Карта · ТвГУ прототипы</title>
+  <meta name="description" content="Тверской государственный университет: 129 программ в историческом центре Твери. Главный корпус — ул. Желябова, 33.">
+  <link rel="preload" href="../../../assets/fonts/golos-text-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../../system/tokens.css">
+  <link rel="stylesheet" href="../../../system/base.css">
+  <link rel="stylesheet" href="../../../system/stub.css">
+  <link rel="stylesheet" href="../../../system/theme-dark.css">
+  <link rel="stylesheet" href="../../../system/motion.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="../../../system/motion.js"></script>
+  <script type="importmap">{"imports":{"three":"../../../system/vendor/three/three.module.js","three/addons/":"../../../system/vendor/three/addons/"}}</script>
+  <script src="../../../system/partials.js" defer></script>
+  <script src="../../../system/ui.js" defer></script>
+  <script src="script.js" defer></script>
+  <script type="module" src="map3d.js"></script>
+</head>
+<body>
+  <div data-include="header"></div>
+
+  <main id="main">
+    <!-- 1. Полоса ближайших событий -->
+    <section class="events" aria-label="Ближайшие события">
+      <div class="container events__inner">
+        <ul class="events__list" role="list" data-events>
+          <li class="events__item is-current">
+            <a href="#campaign"><strong>День открытых дверей — 27 сентября</strong><span class="events__count" data-countdown="09-27"></span></a>
+          </li>
+          <li class="events__item">
+            <a href="#campaign"><strong>Приём в магистратуру — до 20 октября</strong></a>
+          </li>
+          <li class="events__item">
+            <a href="#campaign"><strong>Приёмная кампания 2027 — старт [дата]</strong></a>
+          </li>
+        </ul>
+        <button class="events__next" type="button" data-events-next aria-label="Следующее событие">
+          <span class="icon icon--arrow-right" aria-hidden="true"></span>
+        </button>
+      </div>
+    </section>
+
+    <!-- 2. Hero: карта центра Твери (авторский момент) + 4. Где учиться -->
+    <section class="hero" aria-labelledby="hero-title" data-hero>
+      <div class="hero__stage">
+        <div class="container hero__copywrap">
+          <div class="hero__copy">
+            <h1 class="hero__title" id="hero-title" data-m="words" data-m-delay="120">Университет, в&nbsp;котором живёт город</h1>
+            <p class="hero__lead" data-m="up" data-m-delay="380">129 программ в историческом центре Твери, между Москвой и Петербургом. Посмотрите, где будете учиться и жить.</p>
+            <div class="hero__actions" data-m="up" data-m-delay="500">
+              <a class="btn btn--accent btn--lg" href="#programs" data-magnetic>Поступить</a>
+              <a class="btn btn--outline btn--lg" href="#buildings">Где учиться</a>
+            </div>
+          </div>
+          <dl class="hero__facts" data-m-stagger style="--m-step: 80ms">
+            <div data-m="up" data-m-delay="700"><dt>основан</dt><dd class="num" data-count data-count-from="1700">1870</dd></div>
+            <div data-m="up" data-m-delay="700"><dt>факультетов и институтов</dt><dd class="num" data-count>15</dd></div>
+            <div data-m="up" data-m-delay="700"><dt>программ</dt><dd class="num" data-count>129</dd></div>
+            <div data-m="up" data-m-delay="700"><dt>место в России, RUR 2026</dt><dd class="num" data-count>93-е</dd></div>
+          </dl>
+        </div>
+
+        <div class="map-wrap">
+          <div class="map-frame" data-map-frame tabindex="0" role="region" aria-label="Схема центра Твери, листается пальцем">
+            <canvas class="map-canvas" aria-hidden="true"></canvas>
+            <svg class="map stage__fallback" data-map viewBox="0 0 1440 820" preserveAspectRatio="xMaxYMid slice" role="img" aria-labelledby="map-t map-d">
+              <title id="map-t">Схема центра Твери с корпусами ТвГУ</title>
+              <desc id="map-d">Волга, Тьмака и Тверца, Староволжский мост, главные улицы. Главный корпус на улице Желябова, 33. Остальные корпуса и общежитие отмечены условно.</desc>
+              <defs>
+                <pattern id="hatch" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(-35)">
+                  <rect width="9" height="9" class="map-hatch-bg"/><line x1="0" y1="0" x2="0" y2="9" class="map-hatch"/>
+                </pattern>
+              </defs>
+
+              <!-- тихий запад: только второстепенные улицы -->
+              <g class="map-minor" style="--delay:.9s">
+                <path class="d" pathLength="1" d="M0 250 C200 246 420 258 600 264"/>
+                <path class="d" pathLength="1" d="M0 430 L640 446"/>
+                <path class="d" pathLength="1" d="M0 650 L680 668"/>
+                <path class="d" pathLength="1" d="M150 128 L128 820"/>
+                <path class="d" pathLength="1" d="M390 156 L368 820"/>
+                <path class="d" pathLength="1" d="M786 300 L770 820"/>
+                <path class="d" pathLength="1" d="M1244 318 L1262 820"/>
+                <path class="d" pathLength="1" d="M1376 316 L1392 820"/>
+                <path class="d" pathLength="1" d="M700 404 L1440 394"/>
+                <path class="d" pathLength="1" d="M760 596 L1440 580"/>
+                <path class="d" pathLength="1" d="M1090 200 L1440 250"/>
+              </g>
+
+              <!-- Волга -->
+              <path class="map-water" d="M0 30 C320 26 560 64 820 92 C1060 118 1220 80 1440 104 L1440 196 C1220 176 1060 212 820 184 C560 150 320 108 0 112 Z"/>
+              <g class="map-bank" style="--delay:.1s;--t:1.5s">
+                <path class="d" pathLength="1" d="M0 30 C320 26 560 64 820 92 C1060 118 1220 80 1440 104"/>
+                <path class="d" pathLength="1" d="M0 112 C320 108 560 150 820 184 C1060 212 1220 176 1440 196"/>
+              </g>
+              <!-- устья: разрыв береговой линии -->
+              <rect class="map-mouth" x="643" y="151" width="22" height="18"/>
+              <rect class="map-mouth" x="1251" y="87" width="24" height="14"/>
+              <!-- Тьмака и Тверца -->
+              <g class="map-bank map-bank--small" style="--delay:.55s;--t:1.2s">
+                <path class="d" pathLength="1" d="M642 160 C646 230 620 300 658 380 S730 510 694 610 S720 750 750 820"/>
+                <path class="d" pathLength="1" d="M666 163 C670 232 644 300 682 380 S754 510 718 610 S744 750 774 820"/>
+                <path class="d" pathLength="1" d="M1250 96 C1262 60 1300 34 1322 0"/>
+                <path class="d" pathLength="1" d="M1276 96 C1288 62 1326 36 1350 0"/>
+              </g>
+
+              <!-- Горсад -->
+              <path class="map-park" d="M722 198 L852 208 L852 270 L726 264 Z"/>
+
+              <!-- главные улицы -->
+              <g class="map-street" style="--delay:.75s;--t:1.2s">
+                <path class="d" pathLength="1" d="M880 204 L880 302"/>
+                <path class="d" pathLength="1" d="M700 300 L1440 318"/>
+                <path class="d" pathLength="1" d="M1090 200 L1072 820"/>
+                <path class="d" pathLength="1" d="M720 490 L1440 474"/>
+                <path class="d" pathLength="1" d="M740 760 C900 742 1180 700 1440 676"/>
+              </g>
+              <path class="map-walk" d="M976 318 L962 820"/>
+
+              <!-- Староволжский мост -->
+              <g class="map-bridge" style="--delay:1.35s;--t:.6s">
+                <path class="d" pathLength="1" d="M872 82 L872 206"/>
+                <path class="d" pathLength="1" d="M888 82 L888 206"/>
+                <rect x="866" y="114" width="28" height="6"/>
+                <rect x="866" y="138" width="28" height="6"/>
+                <rect x="866" y="162" width="28" height="6"/>
+              </g>
+
+              <!-- подписи -->
+              <g class="map-labels">
+                <text x="330" y="86" class="map-label map-label--water">Волга</text>
+                <text x="1120" y="152" class="map-label map-label--water">Волга</text>
+                <text x="1362" y="58" class="map-label map-label--water">Тверца</text>
+                <text x="670" y="470" text-anchor="end" class="map-label map-label--water">Тьмака</text>
+                <text x="1000" y="56" text-anchor="middle" class="map-label map-label--area">Заволжье</text>
+                <text x="900" y="132" class="map-label">Староволжский мост</text>
+                <text x="788" y="242" text-anchor="middle" class="map-label map-label--park">Горсад</text>
+                <text x="1180" y="304" class="map-label" transform="rotate(1.4 1180 304)">ул. Советская</text>
+                <text x="1200" y="468" class="map-label" transform="rotate(-1.3 1200 468)">ул. Желябова</text>
+                <text x="1060" y="760" class="map-label" transform="rotate(-88 1060 760)">Тверской проспект</text>
+                <text x="954" y="700" class="map-label" transform="rotate(-88 954 700)">Трёхсвятская</text>
+                <text x="770" y="738" class="map-label" transform="rotate(-6 770 738)">пр-т Чайковского</text>
+              </g>
+
+              <!-- стрелка севера -->
+              <g class="map-north" transform="translate(1404 732)">
+                <path d="M0 40 L0 0 M-6 12 L0 0 L6 12"/>
+                <text x="0" y="-8" text-anchor="middle" class="map-label">С</text>
+              </g>
+
+              <!-- точки: корпуса -->
+              <g class="map-dots">
+                <g transform="translate(1020 483)">
+                  <g class="map-dot map-dot--main" data-dot="main" style="--i:0">
+                    <circle class="map-dot__pulse" r="14"/>
+                    <circle class="map-dot__ring" r="24"/>
+                    <circle class="map-dot__ring map-dot__ring--inner" r="14"/>
+                    <circle class="map-dot__core" r="6"/>
+                    <circle class="map-dot__hit" r="28"/>
+                    <text x="34" y="30" class="map-label map-label--main">Главный корпус</text>
+                    <text x="34" y="50" class="map-label">ул. Желябова, 33</text>
+                  </g>
+                </g>
+                <g transform="translate(1180 400)">
+                  <g class="map-dot" data-dot="k2" style="--i:1">
+                    <circle class="map-dot__ring" r="13"/><circle class="map-dot__core" r="4.5"/><circle class="map-dot__hit" r="24"/>
+                    <text x="20" y="5" class="map-label">[Корпус 2, адрес]</text>
+                  </g>
+                </g>
+                <g transform="translate(860 600)">
+                  <g class="map-dot" data-dot="k3" style="--i:2">
+                    <circle class="map-dot__ring" r="13"/><circle class="map-dot__core" r="4.5"/><circle class="map-dot__hit" r="24"/>
+                    <text x="20" y="5" class="map-label">[Корпус 3, адрес]</text>
+                  </g>
+                </g>
+                <g transform="translate(1330 600)">
+                  <g class="map-dot" data-dot="k4" style="--i:3">
+                    <circle class="map-dot__ring" r="13"/><circle class="map-dot__core" r="4.5"/><circle class="map-dot__hit" r="24"/>
+                    <text x="-20" y="5" text-anchor="end" class="map-label">[Корпус 4, адрес]</text>
+                  </g>
+                </g>
+                <g transform="translate(1200 676)">
+                  <g class="map-dot" data-dot="k5" style="--i:4">
+                    <circle class="map-dot__ring" r="13"/><circle class="map-dot__core" r="4.5"/><circle class="map-dot__hit" r="24"/>
+                    <text x="20" y="-10" class="map-label">[Корпус 5, адрес]</text>
+                  </g>
+                </g>
+                <g transform="translate(1340 244)">
+                  <g class="map-dot map-dot--dorm" data-dot="dorm" style="--i:5">
+                    <rect class="map-dot__ring" x="-12" y="-12" width="24" height="24"/><rect class="map-dot__core" x="-4" y="-4" width="8" height="8"/><circle class="map-dot__hit" r="24"/>
+                    <text x="-20" y="5" text-anchor="end" class="map-label">[Общежитие, адрес]</text>
+                  </g>
+                </g>
+              </g>
+            </svg>
+            <div class="map-tags" data-map-tags aria-hidden="true"></div>
+          </div>
+          <div class="map-zoom" aria-label="Масштаб схемы" role="group">
+            <button class="map-zoom__btn" type="button" data-zoom="-1" aria-label="Уменьшить схему"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg></button>
+            <button class="map-zoom__btn" type="button" data-zoom="1" aria-label="Увеличить схему"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+          </div>
+          <p class="map-note">Схема, не в масштабе. Положение корпусов, кроме главного, — [уточнить].</p>
+        </div>
+      </div>
+
+      <div class="container bld" id="buildings">
+        <h2 class="visually-hidden">Корпуса и общежитие на схеме</h2>
+        <ul class="bld__list" role="list" data-bld-list data-m-stagger>
+          <li data-m="up" data-m-delay="600"><button class="bld__btn is-main" type="button" data-bld="main" aria-controls="map-card" aria-expanded="false"><span class="bld__name">Главный корпус</span><span class="bld__addr">ул. Желябова, 33</span></button></li>
+          <li data-m="up" data-m-delay="600"><button class="bld__btn" type="button" data-bld="k2" aria-controls="map-card" aria-expanded="false"><span class="bld__name">[Корпус 2]</span><span class="bld__addr">[адрес]</span></button></li>
+          <li data-m="up" data-m-delay="600"><button class="bld__btn" type="button" data-bld="k3" aria-controls="map-card" aria-expanded="false"><span class="bld__name">[Корпус 3]</span><span class="bld__addr">[адрес]</span></button></li>
+          <li data-m="up" data-m-delay="600"><button class="bld__btn" type="button" data-bld="k4" aria-controls="map-card" aria-expanded="false"><span class="bld__name">[Корпус 4]</span><span class="bld__addr">[адрес]</span></button></li>
+          <li data-m="up" data-m-delay="600"><button class="bld__btn" type="button" data-bld="k5" aria-controls="map-card" aria-expanded="false"><span class="bld__name">[Корпус 5]</span><span class="bld__addr">[адрес]</span></button></li>
+          <li data-m="up" data-m-delay="600"><button class="bld__btn" type="button" data-bld="dorm" aria-controls="map-card" aria-expanded="false"><span class="bld__name">Общежития</span><span class="bld__addr">[адрес студгородка]</span></button></li>
+        </ul>
+      </div>
+
+      <article class="map-card" id="map-card" data-map-card aria-live="polite">
+        <div class="map-card__media" data-card-media></div>
+        <div class="map-card__body">
+          <h3 class="map-card__title" data-card-title>Главный корпус</h3>
+          <p class="map-card__meta" data-card-meta></p>
+          <p class="map-card__addr" data-card-addr></p>
+          <a class="btn btn--text map-card__link" href="#campaign">Прислать маршрут <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+        </div>
+        <button class="map-card__close btn-circle" type="button" data-card-close aria-label="Закрыть карточку"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      </article>
+
+      <template data-bld-data>{
+        "main": { "title": "Главный корпус", "meta": "Ректорат, приёмная комиссия, [факультеты в корпусе]", "addr": "170100, Тверь, ул. Желябова, 33", "stub": "фото: главный корпус на Желябова, 33, фасад с улицы" },
+        "k2":   { "title": "[Корпус 2]", "meta": "[факультеты и институты]", "addr": "[адрес корпуса]", "img": "campus-stela-dvor", "alt": "Памятная стела во дворе корпуса, деревья и старый дом" },
+        "k3":   { "title": "[Корпус 3]", "meta": "[факультеты и институты]", "addr": "[адрес корпуса]", "img": "campus-den-znaniy-yarmarka", "alt": "Ярмарка студенческих объединений во дворе корпуса" },
+        "k4":   { "title": "[Корпус 4]", "meta": "[факультеты] · до набережной Волги [N минут] пешком", "addr": "[адрес корпуса]", "img": "city-ekskursiya-u-pamyatnika", "alt": "Экскурсия у памятника на набережной Волги" },
+        "k5":   { "title": "[Корпус 5]", "meta": "[факультеты и институты]", "addr": "[адрес корпуса]", "stub": "фото: корпус 5, вход и двор" },
+        "dorm": { "title": "Общежития", "meta": "[N мест] для иностранных и иногородних студентов, столовая, спортзал", "addr": "[адрес студенческого городка]", "img": "building-obshchezhitie-derevo", "alt": "Корпус общежития за деревом" }
+      }</template>
+    </section>
+
+    <!-- 3. Доказательства -->
+    <section class="section section--grey proof" aria-labelledby="proof-title">
+      <div class="container">
+        <h2 class="proof__title" id="proof-title" data-m="words">Рейтинги и полтора века истории, а не обещания</h2>
+        <ul class="rank" role="list" data-m-stagger style="--m-step: 90ms">
+          <li class="rank__item" data-tilt="3">
+            <svg class="rank__mark" viewBox="0 0 56 56" aria-hidden="true" data-m="up"><circle cx="28" cy="28" r="27"/><circle cx="28" cy="28" r="15"/><circle cx="28" cy="28" r="4" class="fill"/></svg>
+            <span class="rank__big num" data-m="up" data-count>93-е</span>
+            <span class="rank__text" data-m="up">место в России в Round University Ranking 2026</span>
+          </li>
+          <li class="rank__item" data-tilt="3">
+            <svg class="rank__mark" viewBox="0 0 56 56" aria-hidden="true" data-m="up"><circle cx="28" cy="28" r="27"/><circle cx="28" cy="28" r="15"/><circle cx="28" cy="28" r="4" class="fill"/></svg>
+            <span class="rank__big" data-m="up">Топ-200</span>
+            <span class="rank__text" data-m="up">Национального агрегированного рейтинга 2026, 2-я лига</span>
+          </li>
+          <li class="rank__item" data-tilt="3">
+            <svg class="rank__mark" viewBox="0 0 56 56" aria-hidden="true" data-m="up"><circle cx="28" cy="28" r="27"/><circle cx="28" cy="28" r="15"/><circle cx="28" cy="28" r="4" class="fill"/></svg>
+            <span class="rank__big num" data-m="up" data-count data-count-from="1700">1870</span>
+            <span class="rank__text" data-m="up">год основания: правопреемник учительской школы Максимовича</span>
+          </li>
+        </ul>
+        <p class="proof__alumni" data-m="up">Среди выпускников и сотрудников — Николай Кун, Александр Александров, Андрей Дементьев, Наталья Непряева.</p>
+
+        <div class="partners ribbon proof__partners" data-ribbon data-m="up">
+          <div class="ribbon__head">
+            <h2 class="band-label" id="partners-title">Партнёры и работодатели</h2>
+            <div class="ribbon__nav">
+              <button class="btn-circle" type="button" data-ribbon-prev><span class="icon icon--arrow-left" aria-hidden="true"></span><span class="visually-hidden">Назад</span></button>
+              <button class="btn-circle" type="button" data-ribbon-next><span class="icon icon--arrow-right" aria-hidden="true"></span><span class="visually-hidden">Вперёд</span></button>
+            </div>
+          </div>
+          <div class="ribbon__track" role="list" aria-labelledby="partners-title">
+            <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 1]</span></div>
+            <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 2]</span></div>
+            <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 3]</span></div>
+            <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 4]</span></div>
+            <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 5]</span></div>
+            <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 6]</span></div>
+            <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 7]</span></div>
+            <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 8]</span></div>
+            <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 9]</span></div>
+            <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 10]</span></div>
+            <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 11]</span></div>
+            <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 12]</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3б. Кому что нужно: строки -->
+    <section class="section aud" aria-labelledby="aud-title">
+      <div class="container">
+        <h2 id="aud-title" class="aud__title" data-m="words">Кому что нужно</h2>
+        <div class="aud__list" data-m-stagger style="--m-step: 80ms">
+          <details class="aud__row" open data-aud data-m="up">
+            <summary class="aud__summary"><span class="aud__name">Абитуриенту</span><span class="aud__promise">Выбрать программу, посчитать шансы, подать документы</span></summary>
+            <div class="aud__body">
+              <ul class="aud__links" role="list">
+                <li><a href="#programs">Программы и направления</a></li>
+                <li><a href="#campaign">Сроки приёмной кампании</a></li>
+                <li><a href="#">Калькулятор баллов ЕГЭ</a></li>
+              </ul>
+              <a class="btn-circle aud__go" href="#programs" aria-label="Абитуриенту: все разделы"><span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+            </div>
+          </details>
+          <details class="aud__row" open data-aud data-m="up">
+            <summary class="aud__summary"><span class="aud__name">Студенту</span><span class="aud__promise">Расписание, личный кабинет, общежитие и стипендии</span></summary>
+            <div class="aud__body">
+              <ul class="aud__links" role="list">
+                <li><a href="#">Расписание занятий</a></li>
+                <li><a href="#">Личный кабинет</a></li>
+                <li><a href="#">Стипендии и поддержка</a></li>
+              </ul>
+              <a class="btn-circle aud__go" href="#" aria-label="Студенту: все разделы"><span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+            </div>
+          </details>
+          <details class="aud__row" open data-aud data-m="up">
+            <summary class="aud__summary"><span class="aud__name">Сотруднику</span><span class="aud__promise">Документы, почта, повышение квалификации</span></summary>
+            <div class="aud__body">
+              <ul class="aud__links" role="list">
+                <li><a href="#">Корпоративная почта</a></li>
+                <li><a href="#">Документы и приказы</a></li>
+                <li><a href="#">Повышение квалификации</a></li>
+              </ul>
+              <a class="btn-circle aud__go" href="#" aria-label="Сотруднику: все разделы"><span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+            </div>
+          </details>
+          <details class="aud__row" open data-aud data-m="up">
+            <summary class="aud__summary"><span class="aud__name">Партнёру</span><span class="aud__promise">Наука на заказ, практика и целевое обучение</span></summary>
+            <div class="aud__body">
+              <ul class="aud__links" role="list">
+                <li><a href="#">Лаборатории и центры</a></li>
+                <li><a href="#">НИОКР на заказ</a></li>
+                <li><a href="#">Целевое обучение</a></li>
+              </ul>
+              <a class="btn-circle aud__go" href="#" aria-label="Партнёру: все разделы"><span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Программы: типографская сетка -->
+    <section class="section section--rule programs" id="programs" aria-labelledby="programs-title">
+      <div class="container">
+        <div class="programs__head">
+          <h2 id="programs-title" data-m="words">129 программ. Найди свою</h2>
+          <a class="btn btn--primary" href="#">Подобрать программу <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+        </div>
+        <ul class="dirs" role="list" data-m-stagger>
+          <li data-m="up"><a class="dir" href="#"><span class="dir__count num">[N]</span><span class="dir__name">IT и математика</span><span class="dir__who">Прикладной математики и кибернетики, Математический факультет</span><span class="dir__arrow icon icon--arrow-right" aria-hidden="true"></span></a></li>
+          <li data-m="up"><a class="dir" href="#"><span class="dir__count num">[N]</span><span class="dir__name">Естественные науки</span><span class="dir__who">Биологический, Химико-технологический, Физико-технический, Географии и геоэкологии</span><span class="dir__arrow icon icon--arrow-right" aria-hidden="true"></span></a></li>
+          <li data-m="up"><a class="dir" href="#"><span class="dir__count num">[N]</span><span class="dir__name">Языки и гуманитарные науки</span><span class="dir__who">Филологический, Исторический, Иностранных языков и международной коммуникации</span><span class="dir__arrow icon icon--arrow-right" aria-hidden="true"></span></a></li>
+          <li data-m="up"><a class="dir" href="#"><span class="dir__count num">[N]</span><span class="dir__name">Экономика и право</span><span class="dir__who">Институт экономики и управления, Юридический факультет</span><span class="dir__arrow icon icon--arrow-right" aria-hidden="true"></span></a></li>
+          <li data-m="up"><a class="dir" href="#"><span class="dir__count num">[N]</span><span class="dir__name">Педагогика и психология</span><span class="dir__who">Институт педагогического образования и социальных технологий, Факультет психологии</span><span class="dir__arrow icon icon--arrow-right" aria-hidden="true"></span></a></li>
+          <li data-m="up"><a class="dir" href="#"><span class="dir__count num">[N]</span><span class="dir__name">Спорт и непрерывное образование</span><span class="dir__who">Факультет физической культуры, Институт непрерывного образования</span><span class="dir__arrow icon icon--arrow-right" aria-hidden="true"></span></a></li>
+        </ul>
+        <p class="programs__note" data-m="up">[N] программ — число в каждой группе уточняется по каталогу; всего в университете 129 программ.</p>
+      </div>
+    </section>
+
+    <!-- 6. Сегодня: новости, неделя, медиа -->
+    <section class="section section--grey today" aria-labelledby="today-title">
+      <div class="container">
+        <div class="today__head">
+          <h2 id="today-title" data-m="words">Сегодня в ТвГУ</h2>
+          <a class="btn btn--text" href="#">Все новости <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+        </div>
+        <div data-tabs>
+          <div class="tabs__list today__tablist" role="tablist" aria-label="Новости, неделя, медиа">
+            <button class="tab" role="tab" id="t-news" aria-controls="p-news" aria-selected="true">Новости</button>
+            <button class="tab" role="tab" id="t-week" aria-controls="p-week" aria-selected="false">Неделя</button>
+            <button class="tab" role="tab" id="t-media" aria-controls="p-media" aria-selected="false">Медиа</button>
+          </div>
+          <div class="today__grid">
+            <div class="tabs__panel today__news" role="tabpanel" id="p-news" aria-labelledby="t-news" tabindex="0">
+              <h3 class="today__col">Новости</h3>
+              <ul class="nrow" role="list" data-m-stagger style="--m-step: 90ms">
+                <li data-m="up"><a class="nrow__link" href="#">
+                  <img class="nrow__img" src="../../../assets/stub/photos/800/event-forum-znanie-zal.jpg" alt="Зал форума «Знание» со зрителями и сценой" loading="lazy" width="800" height="533">
+                  <span class="nrow__date">[дата]</span>
+                  <span class="nrow__title">Студенты выступили на форуме «Знание»: [заголовок новости]</span>
+                </a></li>
+                <li data-m="up"><a class="nrow__link" href="#">
+                  <img class="nrow__img" src="../../../assets/stub/photos/800/students-kovorking-bloknoty.jpg" alt="Участники с блокнотами в светлом коворкинге" loading="lazy" width="800" height="533">
+                  <span class="nrow__date">[дата]</span>
+                  <span class="nrow__title">В коворкинге прошла проектная сессия: [заголовок]</span>
+                </a></li>
+                <li data-m="up"><a class="nrow__link" href="#">
+                  <img class="nrow__img" src="../../../assets/stub/photos/800/sport-beg-lesnaya-doroga.jpg" alt="Бегун на лесной дороге" loading="lazy" width="800" height="533">
+                  <span class="nrow__date">[дата]</span>
+                  <span class="nrow__title">Осенний забег университета: [заголовок]</span>
+                </a></li>
+              </ul>
+            </div>
+            <div class="tabs__panel today__media" role="tabpanel" id="p-media" aria-labelledby="t-media" tabindex="0" hidden>
+              <h3 class="today__col">Университет в медиа</h3>
+              <ul class="posts" role="list">
+                <li class="post"><span class="post__src">ВКонтакте</span><p class="post__text">[Текст поста: 2–3 строки о жизни университета]</p><a class="post__link" href="#">Открыть пост</a></li>
+                <li class="post"><span class="post__src">Telegram</span><p class="post__text">[Текст поста из канала университета]</p><a class="post__link" href="#">Открыть канал</a></li>
+              </ul>
+            </div>
+            <div class="tabs__panel today__week" role="tabpanel" id="p-week" aria-labelledby="t-week" tabindex="0" hidden>
+              <h3 class="today__col">Эта неделя</h3>
+              <ol class="week" role="list">
+                <li class="week__day"><span class="week__dow">Пн</span><span class="week__what">Открытая лекция: [тема]</span><span class="week__where">[аудитория]</span></li>
+                <li class="week__day"><span class="week__dow">Вт</span><span class="week__what">Экскурсия по Твери для первокурсников</span><span class="week__where">[место сбора]</span></li>
+                <li class="week__day"><span class="week__dow">Ср</span><span class="week__what">[Событие]</span><span class="week__where">[место]</span></li>
+                <li class="week__day"><span class="week__dow">Чт</span><span class="week__what">Встреча с работодателями: [компания]</span><span class="week__where">[место]</span></li>
+                <li class="week__day"><span class="week__dow">Пт</span><span class="week__what">[Событие]</span><span class="week__where">[место]</span></li>
+                <li class="week__day is-key"><span class="week__dow">Сб</span><span class="week__what">День открытых дверей</span><span class="week__where">ул. Желябова, 33</span></li>
+                <li class="week__day"><span class="week__dow">Вс</span><span class="week__what week__what--empty">Нет событий</span></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Наука и люди -->
+    <section class="section people" aria-labelledby="people-title">
+      <div class="container people__grid">
+        <figure class="people__photo" data-m="mask">
+          <img src="../../../assets/stub/photos/800/portrait-professor-krupno.jpg" alt="Профессор в очках в своём кабинете" loading="lazy" width="800" height="533">
+        </figure>
+        <div class="people__text">
+          <h2 id="people-title" data-m="words">Наука, которую делают рядом с вами</h2>
+          <blockquote class="people__quote" data-m="up" data-m-delay="120">«[Цитата преподавателя о том, чем первокурсник может заняться в его лаборатории, до трёх строк]»</blockquote>
+          <p class="people__who" data-m="up" data-m-delay="200"><strong>[Имя Фамилия]</strong><br>[должность], [факультет]</p>
+          <dl class="people__nums" data-m-stagger>
+            <div data-m="up" data-m-delay="260"><dt>лабораторий и центров</dt><dd class="num">[N]</dd></div>
+            <div data-m="up" data-m-delay="260"><dt>студентов в научных проектах</dt><dd class="num">[N]</dd></div>
+          </dl>
+          <a class="btn btn--outline" href="#">Наука в ТвГУ <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. История: линия с точками -->
+    <section class="section section--rule history" aria-labelledby="history-title">
+      <div class="container">
+        <h2 id="history-title" data-m="words">История в лицах</h2>
+        <ol class="line" role="list" data-m-stagger style="--m-step: 110ms">
+          <li class="line__stop" data-m="up"><span class="line__when num">1870</span><span class="line__what">Открывается учительская школа Максимовича — отсюда начинается университет.</span></li>
+          <li class="line__stop" data-m="up"><span class="line__when">Николай Кун</span><span class="line__what">Автор «Легенд и мифов Древней Греции», по которым учатся до сих пор.</span></li>
+          <li class="line__stop" data-m="up"><span class="line__when">Александр Александров</span><span class="line__what">Композитор, автор музыки гимна России.</span></li>
+          <li class="line__stop line__stop--now" data-m="up"><span class="line__when">Сегодня</span><span class="line__what">Поэт Андрей Дементьев и олимпийская чемпионка Наталья Непряева — тоже часть этой истории. Следующая строка — ваша.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 9. Вопросы -->
+    <section class="section section--grey faq" aria-labelledby="faq-title">
+      <div class="container band">
+        <h2 class="band-label" id="faq-title" data-m="up">Вопросы перед поступлением</h2>
+        <div class="band__body accordion" data-m="up" data-m-delay="120">
+          <details class="accordion__item" name="faq">
+            <summary class="accordion__summary">Дадут ли общежитие, если я не из Твери?</summary>
+            <div class="accordion__body"><p>Иногородним студентам очной формы: [N мест] в студенческом городке, стоимость [N ₽ в месяц]. Заявление на заселение подаётся вместе с документами.</p></div>
+          </details>
+          <details class="accordion__item" name="faq">
+            <summary class="accordion__summary">Сколько бюджетных мест и какие проходные баллы?</summary>
+            <div class="accordion__body"><p>[N бюджетных мест] по всем программам. Проходные баллы прошлых лет по каждому направлению — в каталоге программ.</p></div>
+          </details>
+          <details class="accordion__item" name="faq">
+            <summary class="accordion__summary">Сколько стоит платное обучение?</summary>
+            <div class="accordion__body"><p>От [N ₽ в год] в зависимости от программы. Скидки и рассрочка: [условия].</p></div>
+          </details>
+          <details class="accordion__item" name="faq">
+            <summary class="accordion__summary">Можно подать документы через Госуслуги?</summary>
+            <div class="accordion__body"><p>Да: через Госуслуги, в личном кабинете абитуриента или лично в приёмной комиссии на Желябова, 33.</p></div>
+          </details>
+          <details class="accordion__item" name="faq">
+            <summary class="accordion__summary">Как добраться до Твери из Москвы или Петербурга?</summary>
+            <div class="accordion__body"><p>Тверь стоит на трассе и железной дороге между двумя столицами: время в пути — [N ч] от Москвы и [N ч] от Петербурга. Маршрут от вокзала до главного корпуса пришлём по запросу ниже.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. Срочность: маршрут кампании + мягкий лид -->
+    <section class="section campaign" id="campaign" aria-labelledby="campaign-title">
+      <div class="container">
+        <div class="campaign__head">
+          <h2 id="campaign-title" data-m="words">Маршрут поступления 2027</h2>
+          <p class="campaign__soon" data-m="up" data-m-delay="200">Первая остановка — День открытых дверей 27 сентября, <span class="num" data-countdown="09-27"></span>.</p>
+        </div>
+        <ol class="route" role="list" data-m-stagger style="--m-step: 90ms">
+          <li data-m="up" class="route__stop route__stop--now"><span class="route__when">27 сентября</span><span class="route__what">День открытых дверей, ул. Желябова, 33</span></li>
+          <li class="route__stop" data-m="up"><span class="route__when">[дата]</span><span class="route__what">Старт приёма документов</span></li>
+          <li data-m="up" class="route__stop route__stop--deadline"><span class="route__when">[дата]</span><span class="route__what">Последний день подачи на бюджет</span></li>
+          <li class="route__stop" data-m="up"><span class="route__when">[дата]</span><span class="route__what">Конкурсные списки</span></li>
+          <li class="route__stop" data-m="up"><span class="route__when">[дата]</span><span class="route__what">Зачисление</span></li>
+        </ol>
+
+        <form class="ask" action="#" data-lead novalidate data-m="up" data-m-delay="200">
+          <div class="ask__copy">
+            <h3 class="ask__title">Пришлём маршрут на День открытых дверей</h3>
+            <p class="ask__text">Как дойти от вокзала до Желябова, 33, и программа дня — одним сообщением накануне. Без рассылок.</p>
+          </div>
+          <div class="ask__fields">
+            <div class="field">
+              <label class="field__label" for="lead-contact">Телефон или ник в Telegram</label>
+              <input class="input" id="lead-contact" name="contact" type="text" autocomplete="tel" placeholder="+7 900 000-00-00 или @username" aria-describedby="lead-err" required>
+              <p class="field__error" id="lead-err" hidden>Укажите номер из 11 цифр или ник, начинающийся с @</p>
+            </div>
+            <button class="btn btn--primary" type="submit">Прислать маршрут</button>
+            <p class="ask__done" role="status" hidden>Готово. Маршрут придёт за день до события.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Мобильная липкая панель действия -->
+  <div class="action-bar" data-action-bar aria-hidden="true">
+    <a class="btn btn--accent btn--block" href="#programs" tabindex="-1">Поступить</a>
+  </div>
+
+  <div data-include="footer"></div>
+</body>
+</html>

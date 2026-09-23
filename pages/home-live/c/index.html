@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Тверской государственный университет · с 1870 года · Плакат 1870</title>
+  <meta name="description" content="Тверской государственный университет: 15 факультетов и институтов, 129 программ, с 1870 года. Подберите программу и задайте вопрос приёмной комиссии.">
+  <meta name="theme-color" content="#E10447">
+  <link rel="preload" href="../../../assets/fonts/live-c-sofia-sans-xcond.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../../assets/fonts/live-c-onest.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../../system/tokens.css">
+  <link rel="stylesheet" href="../../../system/base.css">
+  <link rel="stylesheet" href="../../../system/stub.css">
+  <link rel="stylesheet" href="../../../system/motion.css">
+  <link rel="stylesheet" href="../../../system/vendor/lenis/lenis.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="../../../system/motion.js"></script>
+  <script src="../../../system/vendor/gsap/gsap.min.js" defer></script>
+  <script src="../../../system/vendor/gsap/ScrollTrigger.min.js" defer></script>
+  <script src="../../../system/vendor/lenis/lenis.min.js" defer></script>
+  <script src="../../../system/partials.js" defer></script>
+  <script src="../../../system/ui.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div data-include="header"></div>
+
+  <main id="main">
+
+    <!-- ───── Полоса ближайших событий ───── -->
+    <section class="events" aria-labelledby="events-title">
+      <div class="container events__inner">
+        <p class="events__title" id="events-title">Скоро <span class="events__tag">даты: пример</span></p>
+        <ul class="events__list" role="list">
+          <li><a class="events__item" href="#ask"><time class="events__date">[дата]</time><span>День открытых дверей</span></a></li>
+          <li><a class="events__item" href="#ask"><time class="events__date">[дата]</time><span>Старт приёма документов</span></a></li>
+          <li><a class="events__item" href="#today"><time class="events__date">[дата]</time><span>Экскурсия по университету</span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ───── Плакат 1: hero ───── -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="hero__sheet" data-hero-sheet>
+        <div class="container hero__grid">
+          <div class="hero__copy">
+            <h1 class="hero__title" id="hero-title">
+              <span class="hero__pre">Тверской университет.</span>
+              <span class="hero__big"><span class="hero__line">Классика, которая</span> <span class="hero__line">учит <mark>смело</mark></span></span>
+            </h1>
+            <p class="hero__lead">129 программ: бакалавриат, специалитет, магистратура и&nbsp;аспирантура. В&nbsp;Твери, между Москвой и&nbsp;Петербургом.</p>
+            <div class="hero__actions">
+              <a class="pbtn pbtn--red" href="#programs" data-magnetic="0.18">Подобрать программу<span class="pbtn__arrow" aria-hidden="true"></span></a>
+              <a class="plink" href="#ask">Задать вопрос</a>
+            </div>
+          </div>
+
+          <div class="hero__stage">
+          <figure class="hero__photo" data-hero-photo>
+            <img src="../../../assets/stub/photos/archive-klass-nachalo-veka.jpg" width="2000" height="1115"
+                 alt="Архивный снимок: воспитанницы школы Максимовича на занятиях" fetchpriority="high">
+          </figure>
+          <div class="hero__art" data-hero-art aria-hidden="true">
+            <span class="hero__vert">ТвГУ</span>
+            <svg class="numart numart--1870" viewBox="-12 -12 880 424" focusable="false" data-assemble="hero">
+              <g class="lay" data-depth="16">
+                <rect data-part x="82" y="0" width="52" height="400"/>
+                <circle data-part class="ring" cx="288" cy="102" r="76"/>
+                <polygon data-part points="566,52 626,52 520,400 460,400"/>
+                <rect data-part x="654" y="100" width="52" height="200"/>
+                <rect data-part x="802" y="100" width="52" height="200"/>
+              </g>
+              <g class="lay" data-depth="-11">
+                <polygon data-part points="82,0 82,80 8,154 8,74"/>
+                <path data-part class="ring" d="M288 206A84 84 0 0 0 288 374"/>
+                <path data-part class="ring" d="M288 206A84 84 0 0 1 288 374"/>
+                <rect data-part x="426" y="0" width="200" height="52"/>
+                <path data-part class="ring" d="M680 100A74 74 0 0 1 828 100"/>
+                <path data-part class="ring" d="M680 300A74 74 0 0 0 828 300"/>
+              </g>
+              <g class="lay" data-depth="28">
+                <rect data-part class="echo" x="44" y="176" width="8" height="224"/>
+                <circle data-part class="echo-ring" cx="288" cy="290" r="38"/>
+                <circle data-part class="sun" cx="288" cy="102" r="44"/>
+                <polygon data-part class="tri" points="426,52 504,52 426,130"/>
+                <polygon data-part class="echo" points="623,120 631,120 546,400 538,400"/>
+                <rect data-part class="echo-ring" x="718" y="112" width="72" height="176" rx="36"/>
+              </g>
+            </svg>
+          </div>
+          </div>
+        </div>
+
+        <div class="hero__imprint">
+          <dl class="container hero__facts">
+            <div><dt>факультетов и институтов</dt><dd>15</dd></div>
+            <div><dt>программ всех уровней</dt><dd>129</dd></div>
+            <div><dt>место в России, RUR&nbsp;2026</dt><dd>93-е</dd></div>
+            <div><dt>НАР&nbsp;2026, 2-я лига</dt><dd>топ-200</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───── Плакат 2: кому что нужно ───── -->
+    <section class="who" id="who" aria-labelledby="who-title" data-cover>
+      <svg class="who__wedge" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><polygon points="62,0 100,0 100,100 88,100"/></svg>
+      <div class="container who__inner">
+        <h2 class="who__title" id="who-title">Кому что нужно</h2>
+        <div class="who__grid">
+          <nav class="who__col" aria-labelledby="who-a">
+            <h3 class="who__name" id="who-a">Абитуриенту</h3>
+            <ul role="list">
+              <li><a href="#programs">Программы и направления</a></li>
+              <li><a href="#faq">Баллы, бюджет, общежитие</a></li>
+              <li><a href="#">Подать документы через Госуслуги</a></li>
+            </ul>
+          </nav>
+          <nav class="who__col" aria-labelledby="who-s">
+            <h3 class="who__name" id="who-s">Студенту</h3>
+            <ul role="list">
+              <li><a href="#">Расписание занятий</a></li>
+              <li><a href="#">Личный кабинет и СДО</a></li>
+              <li><a href="#">Стипендии и общежитие</a></li>
+            </ul>
+          </nav>
+          <nav class="who__col" aria-labelledby="who-e">
+            <h3 class="who__name" id="who-e">Сотруднику</h3>
+            <ul role="list">
+              <li><a href="#">Вакансии и конкурсы</a></li>
+              <li><a href="#">Повышение квалификации</a></li>
+              <li><a href="#">Документы и приказы</a></li>
+            </ul>
+          </nav>
+          <nav class="who__col" aria-labelledby="who-p">
+            <h3 class="who__name" id="who-p">Партнёру</h3>
+            <ul role="list">
+              <li><a href="#">Целевое обучение</a></li>
+              <li><a href="#">Практика и стажировки</a></li>
+              <li><a href="#">Совместные проекты</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───── Плакат 3: направления ───── -->
+    <section class="dirs" id="programs" aria-labelledby="dirs-title">
+      <div class="container">
+        <div class="dirs__head">
+          <h2 class="ptitle" id="dirs-title">129 программ. <span class="ptitle__red">Шесть направлений</span></h2>
+          <p class="dirs__lead">Выберите направление: покажем программы, форму обучения и&nbsp;проходные баллы прошлых лет [N].</p>
+        </div>
+        <ul class="dirs__grid" role="list" data-dirs>
+          <li class="dir dir--it">
+            <a class="dir__link" href="#">
+              <svg class="dir__fig" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><rect x="8" y="64" width="26" height="48"/><rect x="47" y="36" width="26" height="76"/><rect x="86" y="8" width="26" height="104"/></svg>
+              <span class="dir__name">IT и&nbsp;математика</span>
+              <span class="dir__meta">[N] программ</span>
+            </a>
+          </li>
+          <li class="dir dir--nat">
+            <a class="dir__link" href="#">
+              <svg class="dir__fig" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><circle cx="60" cy="60" r="50"/><circle class="dir__fig-hole" cx="60" cy="60" r="18"/></svg>
+              <span class="dir__name">Естественные науки</span>
+              <span class="dir__meta">[N] программ</span>
+            </a>
+          </li>
+          <li class="dir dir--hum">
+            <a class="dir__link" href="#">
+              <svg class="dir__fig" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><path d="M8 112A52 52 0 0 1 112 112Z"/><rect x="52" y="8" width="16" height="44"/></svg>
+              <span class="dir__name">Гуманитарные науки</span>
+              <span class="dir__meta">[N] программ</span>
+            </a>
+          </li>
+          <li class="dir dir--ped">
+            <a class="dir__link" href="#">
+              <svg class="dir__fig" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><polygon points="60,8 112,112 8,112"/></svg>
+              <span class="dir__name">Педагогика</span>
+              <span class="dir__meta">[N] программ</span>
+            </a>
+          </li>
+          <li class="dir dir--eco">
+            <a class="dir__link" href="#">
+              <svg class="dir__fig" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><rect x="8" y="8" width="48" height="48"/><rect x="64" y="64" width="48" height="48"/><rect x="8" y="104" width="104" height="8"/></svg>
+              <span class="dir__name">Экономика и&nbsp;право</span>
+              <span class="dir__meta">[N] программ</span>
+            </a>
+          </li>
+          <li class="dir dir--sport">
+            <a class="dir__link" href="#">
+              <svg class="dir__fig" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><circle cx="52" cy="60" r="36" fill="none" stroke-width="20"/><polygon points="92,4 116,4 60,116 36,116"/></svg>
+              <span class="dir__name">Спорт</span>
+              <span class="dir__meta">[N] программ</span>
+            </a>
+          </li>
+        </ul>
+        <p class="dirs__more"><a class="plink" href="#">Все 129 программ списком</a> <a class="plink" href="#">Подбор по баллам ЕГЭ</a></p>
+      </div>
+    </section>
+
+    <!-- ───── Плакат 4: 15 факультетов ───── -->
+    <section class="fac" id="faculties" aria-labelledby="fac-title">
+      <div class="container fac__grid">
+        <div class="fac__head">
+          <svg class="numart numart--15" viewBox="-12 -12 426 424" aria-hidden="true" focusable="false" data-assemble="scroll">
+            <g class="lay" data-depth="12">
+              <rect data-part x="82" y="0" width="52" height="400"/>
+              <rect data-part x="196" y="0" width="206" height="52"/>
+              <path data-part class="ring" d="M222 201.4A96 96 0 1 1 201.4 333.1"/>
+            </g>
+            <g class="lay" data-depth="-9">
+              <polygon data-part points="82,0 82,80 8,154 8,74"/>
+              <rect data-part x="196" y="0" width="52" height="240"/>
+            </g>
+            <g class="lay" data-depth="22">
+              <rect data-part class="echo" x="44" y="176" width="8" height="224"/>
+              <path data-part class="echo-ring" d="M248.7 236.5A52 52 0 1 1 237.4 307.8"/>
+              <circle data-part class="sun" cx="280" cy="278" r="34"/>
+            </g>
+          </svg>
+          <h2 class="ptitle" id="fac-title"><span class="visually-hidden">15 </span>Факультетов <span class="ptitle__br">и&nbsp;институтов</span></h2>
+          <p class="fac__lead">От математики до физической культуры. В&nbsp;каждой строке число программ и&nbsp;переход на страницу факультета.</p>
+        </div>
+        <ol class="fac__list" role="list">
+          <li><a class="fac__row" href="#"><span class="fac__name">Биологический факультет</span><span class="fac__count">[N] программ</span></a></li>
+          <li><a class="fac__row" href="#"><span class="fac__name">Исторический факультет</span><span class="fac__count">[N] программ</span></a></li>
+          <li><a class="fac__row" href="#"><span class="fac__name">Факультет географии и геоэкологии</span><span class="fac__count">[N] программ</span></a></li>
+          <li><a class="fac__row" href="#"><span class="fac__name">Факультет иностранных языков и международной коммуникации</span><span class="fac__count">[N] программ</span></a></li>
+          <li><a class="fac__row" href="#"><span class="fac__name">Факультет прикладной математики и кибернетики</span><span class="fac__count">[N] программ</span></a></li>
+          <li><a class="fac__row" href="#"><span class="fac__name">Факультет физической культуры</span><span class="fac__count">[N] программ</span></a></li>
+          <li><a class="fac__row" href="#"><span class="fac__name">Филологический факультет</span><span class="fac__count">[N] программ</span></a></li>
+          <li><a class="fac__row" href="#"><span class="fac__name">Химико-технологический факультет</span><span class="fac__count">[N] программ</span></a></li>
+          <li><a class="fac__row" href="#"><span class="fac__name">Математический факультет</span><span class="fac__count">[N] программ</span></a></li>
+          <li><a class="fac__row" href="#"><span class="fac__name">Институт экономики и управления</span><span class="fac__count">[N] программ</span></a></li>
+          <li><a class="fac__row" href="#"><span class="fac__name">Юридический факультет</span><span class="fac__count">[N] программ</span></a></li>
+          <li><a class="fac__row" href="#"><span class="fac__name">Институт педагогического образования и социальных технологий</span><span class="fac__count">[N] программ</span></a></li>
+          <li><a class="fac__row" href="#"><span class="fac__name">Факультет психологии</span><span class="fac__count">[N] программ</span></a></li>
+          <li><a class="fac__row" href="#"><span class="fac__name">Физико-технический факультет</span><span class="fac__count">[N] программ</span></a></li>
+          <li><a class="fac__row" href="#"><span class="fac__name">Институт непрерывного образования</span><span class="fac__count">[N] программ</span></a></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ───── Плакат 5: наука и люди + табло ───── -->
+    <section class="sci" id="science" aria-labelledby="sci-title">
+      <div class="container sci__grid">
+        <figure class="sci__photo" data-shutter>
+          <img src="../../../assets/stub/photos/lecture-amfiteatr-sverhu.jpg" width="2000" height="1333" loading="lazy"
+               alt="Поточная аудитория-амфитеатр: преподавательница у доски, студенты на рядах">
+        </figure>
+        <div class="sci__copy">
+          <h2 class="ptitle" id="sci-title">Наука <span class="ptitle__yellow">и&nbsp;люди</span></h2>
+          <p class="sci__lead">Научные школы и&nbsp;лаборатории: [N] исследовательских центров, [N] грантов в&nbsp;год. Здесь появятся руководители, проекты и&nbsp;то, как в&nbsp;них попасть студенту.</p>
+          <dl class="board" data-board>
+            <div class="board__row">
+              <dt class="board__key">лет университету: основан в&nbsp;1870</dt>
+              <dd class="board__val"><span class="flap" data-flap>156</span></dd>
+            </div>
+            <div class="board__row">
+              <dt class="board__key">место в&nbsp;России, Round University Ranking 2026</dt>
+              <dd class="board__val"><span class="flap" data-flap>93</span><span class="board__suffix">-е</span></dd>
+            </div>
+            <div class="board__row">
+              <dt class="board__key">Национальный агрегированный рейтинг 2026, 2-я лига</dt>
+              <dd class="board__val"><span class="board__prefix">топ-</span><span class="flap" data-flap>200</span></dd>
+            </div>
+          </dl>
+          <a class="pbtn pbtn--yellow" href="#">Наука в&nbsp;ТвГУ<span class="pbtn__arrow" aria-hidden="true"></span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───── Плакат 6: история в лицах ───── -->
+    <section class="hist" id="history" aria-labelledby="hist-title">
+      <div class="container">
+        <div class="ribbon ribbon--bleed stamps" data-ribbon>
+          <div class="ribbon__head stamps__head">
+            <div>
+              <h2 class="ptitle" id="hist-title">История <span class="ptitle__red">в&nbsp;лицах</span></h2>
+              <p class="hist__lead">С&nbsp;1870 года: от учительской школы Максимовича до классического университета. Среди выпускников и&nbsp;сотрудников:</p>
+            </div>
+            <div class="ribbon__nav">
+              <button class="rbtn" type="button" data-ribbon-prev><span class="icon icon--arrow-left" aria-hidden="true"></span><span class="visually-hidden">Назад</span></button>
+              <button class="rbtn" type="button" data-ribbon-next><span class="icon icon--arrow-right" aria-hidden="true"></span><span class="visually-hidden">Вперёд</span></button>
+            </div>
+          </div>
+          <ol class="ribbon__track stamps__track" role="list" aria-label="История в лицах">
+            <li class="stamp stamp--photo">
+              <div class="stamp__art"><img src="../../../assets/stub/photos/800/archive-vospitannicy-shkoly.jpg" width="652" height="416" loading="lazy" alt="Архивный снимок: воспитанницы школы Максимовича с наставницей"></div>
+              <p class="stamp__year">1870</p>
+              <h3 class="stamp__name">Учительская школа Максимовича</h3>
+              <p class="stamp__note">С неё начинается университет</p>
+            </li>
+            <li class="stamp stamp--red">
+              <div class="stamp__art stub" role="img" aria-label="Заглушка: портрет Николая Куна">
+                <svg class="stamp__geo" viewBox="0 0 200 240" aria-hidden="true" focusable="false"><circle cx="100" cy="92" r="52"/><rect x="36" y="160" width="128" height="80"/></svg>
+                <span class="stub__caption">фото: Николай Кун, архивный портрет</span>
+              </div>
+              <p class="stamp__year">[годы]</p>
+              <h3 class="stamp__name">Николай Кун</h3>
+              <p class="stamp__note">Автор книги «Легенды и&nbsp;мифы Древней Греции»</p>
+            </li>
+            <li class="stamp stamp--blue">
+              <div class="stamp__art stub" role="img" aria-label="Заглушка: портрет Александра Александрова">
+                <svg class="stamp__geo" viewBox="0 0 200 240" aria-hidden="true" focusable="false"><path d="M28 240V120A72 72 0 0 1 172 120V240Z"/><rect x="92" y="18" width="16" height="70"/></svg>
+                <span class="stub__caption">фото: Александр Александров, архивный портрет</span>
+              </div>
+              <p class="stamp__year">[годы]</p>
+              <h3 class="stamp__name">Александр Александров</h3>
+              <p class="stamp__note">Композитор, автор музыки гимна России</p>
+            </li>
+            <li class="stamp stamp--yellow">
+              <div class="stamp__art stub" role="img" aria-label="Заглушка: портрет Андрея Дементьева">
+                <svg class="stamp__geo" viewBox="0 0 200 240" aria-hidden="true" focusable="false"><polygon points="100,20 180,240 20,240"/><rect x="0" y="200" width="200" height="12"/></svg>
+                <span class="stub__caption">фото: Андрей Дементьев, портрет</span>
+              </div>
+              <p class="stamp__year">[годы]</p>
+              <h3 class="stamp__name">Андрей Дементьев</h3>
+              <p class="stamp__note">Поэт</p>
+            </li>
+            <li class="stamp stamp--graphite">
+              <div class="stamp__art stub" role="img" aria-label="Заглушка: портрет Натальи Непряевой">
+                <svg class="stamp__geo" viewBox="0 0 200 240" aria-hidden="true" focusable="false"><circle cx="100" cy="100" r="64" fill="none" stroke-width="26"/><polygon points="150,150 196,150 120,240 74,240"/></svg>
+                <span class="stub__caption">фото: Наталья Непряева, портрет</span>
+              </div>
+              <p class="stamp__year">[годы]</p>
+              <h3 class="stamp__name">Наталья Непряева</h3>
+              <p class="stamp__note">Олимпийская чемпионка</p>
+            </li>
+            <li class="stamp stamp--photo">
+              <div class="stamp__art"><img src="../../../assets/stub/photos/800/archive-prepodavateli-1920e.jpg" width="800" height="520" loading="lazy" alt="Архивный снимок: преподаватели пединститута, 1920-е годы"></div>
+              <p class="stamp__year">1920-е</p>
+              <h3 class="stamp__name">Педагогический институт</h3>
+              <p class="stamp__note">Преподаватели, архивный снимок</p>
+            </li>
+            <li class="stamp stamp--today">
+              <div class="stamp__art stamp__art--type" aria-hidden="true"><span>2026</span></div>
+              <p class="stamp__year">Сегодня</p>
+              <h3 class="stamp__name">Классический университет</h3>
+              <p class="stamp__note">15 факультетов и&nbsp;институтов, 129 программ. <a href="#">Об университете</a></p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───── Плакат 7: сегодня в ТвГУ ───── -->
+    <section class="today" id="today" aria-labelledby="today-title">
+      <div class="container">
+        <div class="today__head">
+          <h2 class="ptitle" id="today-title">Сегодня <span class="ptitle__blue">в&nbsp;ТвГУ</span></h2>
+          <p class="today__month"><span>Сентябрь 2026</span> <span class="today__tag">расписание: пример</span></p>
+        </div>
+        <div class="cal" data-cal>
+          <ol class="cal__days" role="list" aria-label="Дни сентября 2026">
+            <li><button class="cal__day" type="button" aria-pressed="false" data-day="1" aria-label="1 сентября, вт: 3 события"><span class="cal__wd" aria-hidden="true">вт</span><span class="cal__num" aria-hidden="true">1</span><span class="cal__dots" aria-hidden="true"><i></i><i></i><i></i></span></button></li>
+            <li><button class="cal__day" type="button" aria-pressed="false" data-day="2" aria-label="2 сентября, ср: 2 события"><span class="cal__wd" aria-hidden="true">ср</span><span class="cal__num" aria-hidden="true">2</span><span class="cal__dots" aria-hidden="true"><i></i><i></i></span></button></li>
+            <li><button class="cal__day" type="button" aria-pressed="false" data-day="3" aria-label="3 сентября, чт: 1 событие"><span class="cal__wd" aria-hidden="true">чт</span><span class="cal__num" aria-hidden="true">3</span><span class="cal__dots" aria-hidden="true"><i></i></span></button></li>
+            <li><button class="cal__day" type="button" aria-pressed="false" data-day="4" aria-label="4 сентября, пт: 2 события"><span class="cal__wd" aria-hidden="true">пт</span><span class="cal__num" aria-hidden="true">4</span><span class="cal__dots" aria-hidden="true"><i></i><i></i></span></button></li>
+            <li><button class="cal__day cal__day--off" type="button" aria-pressed="false" data-day="5" aria-label="5 сентября, сб: 1 событие"><span class="cal__wd" aria-hidden="true">сб</span><span class="cal__num" aria-hidden="true">5</span><span class="cal__dots" aria-hidden="true"><i></i></span></button></li>
+            <li><button class="cal__day cal__day--off" type="button" aria-pressed="false" data-day="6" aria-label="6 сентября, вс: нет событий"><span class="cal__wd" aria-hidden="true">вс</span><span class="cal__num" aria-hidden="true">6</span><span class="cal__dots" aria-hidden="true"></span></button></li>
+            <li><button class="cal__day" type="button" aria-pressed="false" data-day="7" aria-label="7 сентября, пн: 2 события"><span class="cal__wd" aria-hidden="true">пн</span><span class="cal__num" aria-hidden="true">7</span><span class="cal__dots" aria-hidden="true"><i></i><i></i></span></button></li>
+            <li><button class="cal__day" type="button" aria-pressed="false" data-day="8" aria-label="8 сентября, вт: 1 событие"><span class="cal__wd" aria-hidden="true">вт</span><span class="cal__num" aria-hidden="true">8</span><span class="cal__dots" aria-hidden="true"><i></i></span></button></li>
+            <li><button class="cal__day" type="button" aria-pressed="false" data-day="9" aria-label="9 сентября, ср: 3 события"><span class="cal__wd" aria-hidden="true">ср</span><span class="cal__num" aria-hidden="true">9</span><span class="cal__dots" aria-hidden="true"><i></i><i></i><i></i></span></button></li>
+            <li><button class="cal__day" type="button" aria-pressed="false" data-day="10" aria-label="10 сентября, чт: 2 события"><span class="cal__wd" aria-hidden="true">чт</span><span class="cal__num" aria-hidden="true">10</span><span class="cal__dots" aria-hidden="true"><i></i><i></i></span></button></li>
+            <li><button class="cal__day" type="button" aria-pressed="false" data-day="11" aria-label="11 сентября, пт: 1 событие"><span class="cal__wd" aria-hidden="true">пт</span><span class="cal__num" aria-hidden="true">11</span><span class="cal__dots" aria-hidden="true"><i></i></span></button></li>
+            <li><button class="cal__day cal__day--off" type="button" aria-pressed="false" data-day="12" aria-label="12 сентября, сб: 1 событие"><span class="cal__wd" aria-hidden="true">сб</span><span class="cal__num" aria-hidden="true">12</span><span class="cal__dots" aria-hidden="true"><i></i></span></button></li>
+            <li><button class="cal__day cal__day--off" type="button" aria-pressed="false" data-day="13" aria-label="13 сентября, вс: нет событий"><span class="cal__wd" aria-hidden="true">вс</span><span class="cal__num" aria-hidden="true">13</span><span class="cal__dots" aria-hidden="true"></span></button></li>
+            <li><button class="cal__day" type="button" aria-pressed="false" data-day="14" aria-label="14 сентября, пн: 2 события"><span class="cal__wd" aria-hidden="true">пн</span><span class="cal__num" aria-hidden="true">14</span><span class="cal__dots" aria-hidden="true"><i></i><i></i></span></button></li>
+            <li><button class="cal__day cal__day--today" type="button" aria-pressed="true" data-day="15" aria-label="15 сентября, вт: 3 события"><span class="cal__wd" aria-hidden="true">вт</span><span class="cal__num" aria-hidden="true">15</span><span class="cal__dots" aria-hidden="true"><i></i><i></i><i></i></span></button></li>
+            <li><button class="cal__day" type="button" aria-pressed="false" data-day="16" aria-label="16 сентября, ср: 2 события"><span class="cal__wd" aria-hidden="true">ср</span><span class="cal__num" aria-hidden="true">16</span><span class="cal__dots" aria-hidden="true"><i></i><i></i></span></button></li>
+            <li><button class="cal__day" type="button" aria-pressed="false" data-day="17" aria-label="17 сентября, чт: 1 событие"><span class="cal__wd" aria-hidden="true">чт</span><span class="cal__num" aria-hidden="true">17</span><span class="cal__dots" aria-hidden="true"><i></i></span></button></li>
+            <li><button class="cal__day" type="button" aria-pressed="false" data-day="18" aria-label="18 сентября, пт: 2 события"><span class="cal__wd" aria-hidden="true">пт</span><span class="cal__num" aria-hidden="true">18</span><span class="cal__dots" aria-hidden="true"><i></i><i></i></span></button></li>
+            <li><button class="cal__day cal__day--off" type="button" aria-pressed="false" data-day="19" aria-label="19 сентября, сб: 1 событие"><span class="cal__wd" aria-hidden="true">сб</span><span class="cal__num" aria-hidden="true">19</span><span class="cal__dots" aria-hidden="true"><i></i></span></button></li>
+            <li><button class="cal__day cal__day--off" type="button" aria-pressed="false" data-day="20" aria-label="20 сентября, вс: нет событий"><span class="cal__wd" aria-hidden="true">вс</span><span class="cal__num" aria-hidden="true">20</span><span class="cal__dots" aria-hidden="true"></span></button></li>
+            <li><button class="cal__day" type="button" aria-pressed="false" data-day="21" aria-label="21 сентября, пн: 1 событие"><span class="cal__wd" aria-hidden="true">пн</span><span class="cal__num" aria-hidden="true">21</span><span class="cal__dots" aria-hidden="true"><i></i></span></button></li>
+            <li><button class="cal__day" type="button" aria-pressed="false" data-day="22" aria-label="22 сентября, вт: 2 события"><span class="cal__wd" aria-hidden="true">вт</span><span class="cal__num" aria-hidden="true">22</span><span class="cal__dots" aria-hidden="true"><i></i><i></i></span></button></li>
+            <li><button class="cal__day" type="button" aria-pressed="false" data-day="23" aria-label="23 сентября, ср: 3 события"><span class="cal__wd" aria-hidden="true">ср</span><span class="cal__num" aria-hidden="true">23</span><span class="cal__dots" aria-hidden="true"><i></i><i></i><i></i></span></button></li>
+            <li><button class="cal__day" type="button" aria-pressed="false" data-day="24" aria-label="24 сентября, чт: 1 событие"><span class="cal__wd" aria-hidden="true">чт</span><span class="cal__num" aria-hidden="true">24</span><span class="cal__dots" aria-hidden="true"><i></i></span></button></li>
+            <li><button class="cal__day" type="button" aria-pressed="false" data-day="25" aria-label="25 сентября, пт: 2 события"><span class="cal__wd" aria-hidden="true">пт</span><span class="cal__num" aria-hidden="true">25</span><span class="cal__dots" aria-hidden="true"><i></i><i></i></span></button></li>
+            <li><button class="cal__day cal__day--off" type="button" aria-pressed="false" data-day="26" aria-label="26 сентября, сб: 1 событие"><span class="cal__wd" aria-hidden="true">сб</span><span class="cal__num" aria-hidden="true">26</span><span class="cal__dots" aria-hidden="true"><i></i></span></button></li>
+            <li><button class="cal__day cal__day--off" type="button" aria-pressed="false" data-day="27" aria-label="27 сентября, вс: нет событий"><span class="cal__wd" aria-hidden="true">вс</span><span class="cal__num" aria-hidden="true">27</span><span class="cal__dots" aria-hidden="true"></span></button></li>
+            <li><button class="cal__day" type="button" aria-pressed="false" data-day="28" aria-label="28 сентября, пн: 2 события"><span class="cal__wd" aria-hidden="true">пн</span><span class="cal__num" aria-hidden="true">28</span><span class="cal__dots" aria-hidden="true"><i></i><i></i></span></button></li>
+            <li><button class="cal__day" type="button" aria-pressed="false" data-day="29" aria-label="29 сентября, вт: 1 событие"><span class="cal__wd" aria-hidden="true">вт</span><span class="cal__num" aria-hidden="true">29</span><span class="cal__dots" aria-hidden="true"><i></i></span></button></li>
+            <li><button class="cal__day" type="button" aria-pressed="false" data-day="30" aria-label="30 сентября, ср: 2 события"><span class="cal__wd" aria-hidden="true">ср</span><span class="cal__num" aria-hidden="true">30</span><span class="cal__dots" aria-hidden="true"><i></i><i></i></span></button></li>
+          </ol>
+        </div>
+        <div class="today__grid">
+          <div class="today__main">
+          <div class="agenda" aria-live="polite">
+            <h3 class="agenda__title" data-agenda-title>15 сентября, вторник</h3>
+            <ul class="agenda__list" role="list" data-agenda>
+              <li class="agenda__item"><time>11:00</time><div><p class="agenda__name">Открытая лекция для школьников: [тема]</p><p class="agenda__place">Главный корпус, ауд. [N]</p></div><span class="agenda__kind">Абитуриенту</span></li>
+              <li class="agenda__item"><time>15:30</time><div><p class="agenda__name">Экскурсия по кампусу для первокурсников</p><p class="agenda__place">[место сбора]</p></div><span class="agenda__kind">Всем</span></li>
+              <li class="agenda__item"><time>18:00</time><div><p class="agenda__name">Онлайн-встреча с приёмной комиссией</p><p class="agenda__place">Трансляция [ссылка]</p></div><span class="agenda__kind">Абитуриенту</span></li>
+            </ul>
+          </div>
+          <div class="visit">
+            <svg class="visit__geo" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><circle cx="140" cy="60" r="44"/><polygon points="0,200 200,200 200,70"/></svg>
+            <p class="visit__kicker">День открытых дверей · [дата]</p>
+            <p class="visit__big">Приходите посмотреть сами</p>
+            <p class="visit__text">Тверь, ул.&nbsp;Желябова,&nbsp;33. Аудитории, лаборатории и&nbsp;разговор с&nbsp;приёмной комиссией в&nbsp;один день.</p>
+            <a class="pbtn pbtn--yellow visit__btn" href="#ask">Записаться<span class="pbtn__arrow" aria-hidden="true"></span></a>
+          </div>
+          </div>
+          <div class="news">
+            <article class="newsc newsc--big">
+              <div class="newsc__img duo duo--red"><img src="../../../assets/stub/photos/800/ceremony-den-znaniy-studbilet-scena.jpg" width="800" height="533" loading="lazy" alt="День знаний: первокурснице вручают символический студенческий билет на сцене"></div>
+              <p class="newsc__date">[дата]</p>
+              <h3 class="newsc__title"><a href="#">Первокурсникам вручили студенческие билеты: [заголовок новости]</a></h3>
+            </article>
+            <article class="newsc">
+              <div class="newsc__img duo duo--blue"><img src="../../../assets/stub/photos/800/lecture-bolshaya-auditoriya.jpg" width="800" height="533" loading="lazy" alt="Большая аудитория с высокими окнами, полная студентов"></div>
+              <p class="newsc__date">[дата]</p>
+              <h3 class="newsc__title"><a href="#">[Заголовок новости о науке или учёбе]</a></h3>
+            </article>
+            <p class="news__all"><a class="plink" href="#">Все новости</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───── Партнёры ───── -->
+    <section class="partn" aria-labelledby="partn-title">
+      <div class="container">
+        <div class="partners ribbon" data-ribbon>
+          <div class="ribbon__head">
+            <h2 class="partn__title" id="partn-title">Партнёры и&nbsp;работодатели</h2>
+            <div class="ribbon__nav">
+              <button class="rbtn rbtn--sm" type="button" data-ribbon-prev><span class="icon icon--arrow-left" aria-hidden="true"></span><span class="visually-hidden">Назад</span></button>
+              <button class="rbtn rbtn--sm" type="button" data-ribbon-next><span class="icon icon--arrow-right" aria-hidden="true"></span><span class="visually-hidden">Вперёд</span></button>
+            </div>
+          </div>
+          <ul class="ribbon__track" role="list" aria-label="Партнёры, заглушки логотипов">
+            <li><a class="partner" href="#"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 1]</span></a></li>
+            <li><a class="partner" href="#"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 2]</span></a></li>
+            <li><a class="partner" href="#"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 3]</span></a></li>
+            <li><a class="partner" href="#"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 4]</span></a></li>
+            <li><a class="partner" href="#"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 5]</span></a></li>
+            <li><a class="partner" href="#"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 6]</span></a></li>
+            <li><a class="partner" href="#"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 7]</span></a></li>
+            <li><a class="partner" href="#"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 8]</span></a></li>
+            <li><a class="partner" href="#"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 9]</span></a></li>
+            <li><a class="partner" href="#"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 10]</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───── Плакат 8: вопросы ───── -->
+    <section class="faq" id="faq" aria-labelledby="faq-title">
+      <div class="container faq__grid">
+        <div class="faq__head">
+          <svg class="numart numart--q" viewBox="-12 -12 234 424" aria-hidden="true" focusable="false" data-assemble="scroll">
+            <g class="lay" data-depth="12">
+              <path data-part class="ring" d="M26 105A79 79 0 1 1 132 179.2"/>
+              <circle data-part cx="122" cy="352" r="30"/>
+            </g>
+            <g class="lay" data-depth="-9">
+              <rect data-part x="96" y="172" width="52" height="112"/>
+            </g>
+            <g class="lay" data-depth="20">
+              <path data-part class="echo-ring" d="M70 105A35 35 0 1 1 117 137.9"/>
+              <polygon data-part class="tri" points="166,400 210,400 210,356"/>
+            </g>
+          </svg>
+          <h2 class="ptitle" id="faq-title">Частые вопросы</h2>
+          <p class="faq__lead">Не нашли ответ? <a href="#ask">Спросите приёмную комиссию</a>, ответим в&nbsp;течение [N]&nbsp;часов.</p>
+        </div>
+        <div class="accordion faq__acc">
+          <details class="accordion__item">
+            <summary class="accordion__summary">Есть ли бюджетные места?</summary>
+            <div class="accordion__body">
+              <p>Да. Число бюджетных мест по каждой программе на 2027 год: [N]. Их публикуют в разделе «Абитуриенту» до старта приёма, [дата].</p>
+            </div>
+          </details>
+          <details class="accordion__item">
+            <summary class="accordion__summary">Дают ли общежитие иногородним?</summary>
+            <div class="accordion__body">
+              <p>Места в общежитиях распределяют после зачисления: [N] мест, стоимость [₽ в месяц]. Порядок заселения и список документов появятся здесь.</p>
+            </div>
+          </details>
+          <details class="accordion__item">
+            <summary class="accordion__summary">Сколько стоит платное обучение?</summary>
+            <div class="accordion__body">
+              <p>Стоимость зависит от программы и формы обучения: [₽ в год]. Полный прайс по программам — в разделе «Абитуриенту».</p>
+            </div>
+          </details>
+          <details class="accordion__item">
+            <summary class="accordion__summary">Какие баллы ЕГЭ нужны?</summary>
+            <div class="accordion__body">
+              <p>Минимальные баллы и проходные баллы прошлых лет указаны у каждой программы: [N]. Подбор по баллам покажет, куда вы проходите на бюджет и на платное.</p>
+            </div>
+          </details>
+          <details class="accordion__item">
+            <summary class="accordion__summary">Можно подать документы через Госуслуги?</summary>
+            <div class="accordion__body">
+              <p>Да, через сервис «Поступление в вуз онлайн» на Госуслугах. Сроки подачи на 2027 год: [дата]. Лично — в приёмной комиссии, ул. Желябова, 33.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───── Плакат 9: кампания + лид ───── -->
+    <section class="ask" id="ask" aria-labelledby="ask-title">
+      <div class="container ask__grid">
+        <div class="ask__camp">
+          <h2 class="ptitle ptitle--paper" id="ask-title">Приёмная кампания 2027</h2>
+          <ol class="steps" role="list">
+            <li class="steps__item"><time class="steps__date">[дата]</time><span class="steps__name">День открытых дверей</span></li>
+            <li class="steps__item"><time class="steps__date">[дата]</time><span class="steps__name">Старт приёма документов</span></li>
+            <li class="steps__item steps__item--hot"><time class="steps__date">[дата]</time><span class="steps__name">Последний день приёма по ЕГЭ</span></li>
+          </ol>
+          <p class="ask__count">До дня открытых дверей <strong>[N] дней</strong></p>
+        </div>
+
+        <div class="lead" data-lead>
+          <form class="lead__form" action="#" novalidate data-lead-form>
+            <h3 class="lead__title">Спросите приёмную комиссию</h3>
+            <div class="field">
+              <label class="field__label" for="lead-contact">Телефон или Telegram</label>
+              <input class="input" id="lead-contact" name="contact" type="text" autocomplete="tel" required aria-describedby="lead-contact-err">
+              <p class="field__error" id="lead-contact-err" hidden>Оставьте телефон или @ник в Telegram, чтобы мы могли ответить.</p>
+            </div>
+            <div class="field">
+              <label class="field__label" for="lead-q">Ваш вопрос</label>
+              <textarea class="textarea" id="lead-q" name="question" rows="3" placeholder="Например: какие баллы нужны на юрфак?"></textarea>
+            </div>
+            <div class="lead__actions">
+              <button class="pbtn pbtn--red" type="submit">Отправить вопрос<span class="pbtn__arrow" aria-hidden="true"></span></button>
+              <a class="plink" href="#">Написать в&nbsp;Telegram</a>
+            </div>
+            <p class="lead__legal">Нажимая кнопку, вы соглашаетесь с&nbsp;<a href="#">политикой обработки персональных данных</a>.</p>
+          </form>
+          <div class="lead__done" data-lead-done hidden tabindex="-1">
+            <p class="lead__stamp" aria-hidden="true">Принято</p>
+            <h3 class="lead__title">Вопрос у&nbsp;приёмной комиссии</h3>
+            <p>Ответим по указанному контакту в&nbsp;течение [N]&nbsp;часов. Пока можно посмотреть <a href="#programs">направления и программы</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="footer"></div>
+
+  <div class="dock" data-dock aria-hidden="true">
+    <a class="pbtn pbtn--red dock__btn" href="#programs" tabindex="-1">Подобрать программу<span class="pbtn__arrow" aria-hidden="true"></span></a>
+  </div>
+</body>
+</html>

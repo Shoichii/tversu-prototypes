@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Орбита 129 · Живая главная ТвГУ · прототип</title>
+  <meta name="theme-color" content="#141416">
+  <link rel="preload" href="../../../assets/fonts/live-f-roboto-flex-display.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../../assets/fonts/live-f-commissioner-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../../system/tokens.css">
+  <link rel="stylesheet" href="../../../system/base.css">
+  <link rel="stylesheet" href="../../../system/stub.css">
+  <link rel="stylesheet" href="../../../system/motion.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="../../../system/motion.js"></script>
+  <script type="importmap">{"imports":{"three":"../../../system/vendor/three/three.module.js","three/addons/":"../../../system/vendor/three/addons/"}}</script>
+  <script src="../../../system/partials.js" defer></script>
+  <script src="../../../system/ui.js" defer></script>
+  <script type="module" src="script.js"></script>
+</head>
+<body data-header="dark" data-nav="applicants" class="f-page">
+  <div data-include="header"></div>
+
+  <main id="main">
+    <!-- ═════ Первый экран: оффер, ось с уровнями, видеосцена с вырезом под «Поступить» ═════ -->
+    <section class="f-hero" aria-labelledby="hero-title">
+      <div class="container f-hero__inner">
+        <h1 class="f-hero__title f-breathe" id="hero-title" data-m="words">Университет,<br class="f-br-m"> где ты<br class="f-br-d"> <em>в&nbsp;центре</em><br class="f-br-m"> внимания</h1>
+        <p class="f-hero__lead" data-m="up" data-m-delay="260">129 программ бакалавриата, магистратуры и аспирантуры. 15 факультетов и институтов, учим с 1870 года.</p>
+
+        <div class="f-axis" data-m="draw" aria-hidden="true"><span class="f-axis__dot"></span></div>
+        <nav class="f-levels" aria-label="Уровень образования" data-m="up" data-m-delay="520">
+          <a class="f-pill" href="#programs" data-level="b">Бакалавриат</a>
+          <a class="f-pill" href="#programs" data-level="m">Магистратура</a>
+          <a class="f-pill" href="#programs" data-level="a">Аспирантура</a>
+        </nav>
+
+        <div class="f-stage" data-notch>
+          <div class="f-stage__card" data-notch-card>
+            <div class="f-stage__media" data-m="wipe">
+              <video class="f-stage__video" muted loop playsinline preload="none" aria-hidden="true"
+                poster="../../../assets/stub/video/gala-studvesna-2026-tanec-scena.jpg"
+                data-src="../../../assets/stub/video/gala-studvesna-2026-tanec-scena.mp4"
+                data-src-small="../../../assets/stub/video/480/gala-studvesna-2026-tanec-scena.mp4"
+                data-poster-small="../../../assets/stub/video/480/gala-studvesna-2026-tanec-scena.jpg"
+                data-video></video>
+            </div>
+            <p class="f-stage__caption">Гала-концерт Студвесны<span class="f-stage__cap-x"> · видео без звука</span></p>
+            <button class="f-round f-stage__pause" type="button" data-video-toggle hidden>
+              <svg class="i f-i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg>
+              <svg class="i f-i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
+              <span class="visually-hidden" data-video-label>Поставить видео на паузу</span>
+            </button>
+          </div>
+          <div class="f-stage__slot">
+            <a class="f-btn f-btn--lime f-btn--xl" href="#" data-notch-btn data-magnetic="0.08">Поступить <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════ Полоса ближайших событий ═════ -->
+    <section class="f-events" aria-labelledby="events-title">
+      <div class="container">
+        <h2 class="visually-hidden" id="events-title">Ближайшие даты</h2>
+        <ul class="f-events__list" role="list" data-m-scroller>
+          <li class="f-event" data-m="up">
+            <span class="f-badge f-badge--red">до [дата]</span>
+            <a class="f-event__link" href="#">Приём документов на бюджет</a>
+          </li>
+          <li class="f-event" data-m="up">
+            <span class="f-badge">[дата]</span>
+            <a class="f-event__link" href="#">День открытых дверей, ул. Желябова, 33</a>
+          </li>
+          <li class="f-event" data-m="up">
+            <span class="f-badge">[дата]</span>
+            <a class="f-event__link" href="#">Олимпиада для школьников: [предмет]</a>
+          </li>
+          <li class="f-event" data-m="up">
+            <span class="f-badge">[дата]</span>
+            <a class="f-event__link" href="#">Старт подготовительных курсов</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ═════ Доказательства ═════ -->
+    <section class="f-proof" aria-labelledby="proof-title">
+      <div class="container">
+        <h2 class="visually-hidden" id="proof-title">ТвГУ в фактах</h2>
+        <dl class="f-proof__list" data-m-stagger>
+          <div class="f-fact" data-m="up"><dt>основан как учительская школа Максимовича</dt><dd class="f-fact__num f-breathe" data-count data-count-from="1700">1870</dd></div>
+          <div class="f-fact" data-m="up"><dt>факультетов и институтов</dt><dd class="f-fact__num f-breathe" data-count>15</dd></div>
+          <div class="f-fact" data-m="up"><dt>место в России, Round University Ranking 2026</dt><dd class="f-fact__num f-breathe" data-count>93-е</dd></div>
+          <div class="f-fact" data-m="up"><dt>Национальный агрегированный рейтинг 2026, 2-я лига</dt><dd class="f-fact__num f-breathe" data-count>топ-200</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ═════ Кому что нужно ═════ -->
+    <section class="f-sec f-who" aria-labelledby="who-title">
+      <div class="container">
+        <h2 class="f-h2 f-breathe" id="who-title" data-m="draw">Свой вход для&nbsp;каждого</h2>
+        <div class="f-who__grid" data-m-stagger>
+          <nav class="f-who__col" aria-labelledby="who-a" data-m="up">
+            <h3 class="f-who__title" id="who-a">Абитуриенту</h3>
+            <ul role="list">
+              <li><a href="#programs">Подобрать программу <span class="icon icon--arrow-right" aria-hidden="true"></span></a></li>
+              <li><a href="#">Проходные баллы прошлых лет <span class="icon icon--arrow-right" aria-hidden="true"></span></a></li>
+              <li><a href="#">Подать документы через Госуслуги <span class="icon icon--arrow-right" aria-hidden="true"></span></a></li>
+            </ul>
+          </nav>
+          <nav class="f-who__col" aria-labelledby="who-s" data-m="up">
+            <h3 class="f-who__title" id="who-s">Студенту</h3>
+            <ul role="list">
+              <li><a href="#">Расписание занятий <span class="icon icon--arrow-right" aria-hidden="true"></span></a></li>
+              <li><a href="#">Общежитие и стипендии <span class="icon icon--arrow-right" aria-hidden="true"></span></a></li>
+              <li><a href="#">Электронная библиотека <span class="icon icon--arrow-right" aria-hidden="true"></span></a></li>
+            </ul>
+          </nav>
+          <nav class="f-who__col" aria-labelledby="who-e" data-m="up">
+            <h3 class="f-who__title" id="who-e">Сотруднику</h3>
+            <ul role="list">
+              <li><a href="#">Вакансии и конкурсы <span class="icon icon--arrow-right" aria-hidden="true"></span></a></li>
+              <li><a href="#">Гранты и научные фонды <span class="icon icon--arrow-right" aria-hidden="true"></span></a></li>
+              <li><a href="#">Повышение квалификации <span class="icon icon--arrow-right" aria-hidden="true"></span></a></li>
+            </ul>
+          </nav>
+          <nav class="f-who__col" aria-labelledby="who-p" data-m="up">
+            <h3 class="f-who__title" id="who-p">Партнёру</h3>
+            <ul role="list">
+              <li><a href="#">Практика и стажировки <span class="icon icon--arrow-right" aria-hidden="true"></span></a></li>
+              <li><a href="#">Целевое обучение <span class="icon icon--arrow-right" aria-hidden="true"></span></a></li>
+              <li><a href="#">Заказать исследование <span class="icon icon--arrow-right" aria-hidden="true"></span></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════ Вау: орбита 129 программ ═════ -->
+    <section class="f-sec f-orbit" id="programs" aria-labelledby="orbit-title">
+      <div class="container">
+        <div class="f-orbit__head">
+          <h2 class="f-h2 f-breathe" id="orbit-title" data-m="draw">129 программ<br> на&nbsp;одной орбите</h2>
+          <p class="f-orbit__lead" data-m="up">Каждая плашка на кольце — программа. Выбери направление: орбита развернётся к нему, а рядом появится список.</p>
+        </div>
+
+        <div class="f-orbit__chips" role="group" aria-label="Направления программ" data-orbit-chips>
+          <button class="f-pill" type="button" aria-pressed="true" data-dir="0">IT и математика</button>
+          <button class="f-pill" type="button" aria-pressed="false" data-dir="1">Естественные науки</button>
+          <button class="f-pill" type="button" aria-pressed="false" data-dir="2">Гуманитарные</button>
+          <button class="f-pill" type="button" aria-pressed="false" data-dir="3">Педагогика</button>
+          <button class="f-pill" type="button" aria-pressed="false" data-dir="4">Экономика и право</button>
+          <button class="f-pill" type="button" aria-pressed="false" data-dir="5">Спорт</button>
+        </div>
+
+        <div class="f-orbit__body">
+          <div class="f-orbit__viz" data-orbit-viz>
+            <div class="f-orbit__core" aria-hidden="true">
+              <span class="f-orbit__num">129</span>
+              <span class="f-orbit__cap">программ</span>
+            </div>
+            <div class="f-orbit__stage" data-orbit-stage>
+              <canvas aria-hidden="true"></canvas>
+              <div class="stage__fallback f-orbit__fallback" aria-hidden="true">
+                <svg class="f-orbit__svg" data-orbit-svg aria-hidden="true" focusable="false"></svg>
+              </div>
+            </div>
+            <p class="f-orbit__hint"><span class="f-hint-fine">Тяни мышью, чтобы вращать</span><span class="f-hint-touch">Веди пальцем по дуге</span></p>
+          </div>
+
+          <div class="f-orbit__panel" data-orbit-panel>
+            <div class="f-orbit__panel-head">
+              <h3 class="f-orbit__name" data-orbit-name>IT и математика</h3>
+              <span class="f-tag">пример</span>
+            </div>
+            <p class="f-orbit__meta" data-orbit-meta>[N] программ · Математический факультет, факультет прикладной математики и кибернетики</p>
+            <div class="f-orbit__levels" role="group" aria-label="Уровень образования" data-orbit-levels>
+              <button class="f-pill f-pill--sm" type="button" aria-pressed="true" data-lv="all">Все</button>
+              <button class="f-pill f-pill--sm" type="button" aria-pressed="false" data-lv="b">Бакалавриат</button>
+              <button class="f-pill f-pill--sm" type="button" aria-pressed="false" data-lv="m">Магистратура</button>
+              <button class="f-pill f-pill--sm" type="button" aria-pressed="false" data-lv="a">Аспирантура</button>
+            </div>
+            <ul class="f-progs" role="list" data-orbit-list>
+              <li><a href="#"><span class="f-progs__name">Прикладная математика и информатика</span><span class="f-progs__lvl">бакалавриат</span></a></li>
+              <li><a href="#"><span class="f-progs__name">Фундаментальная информатика и информационные технологии</span><span class="f-progs__lvl">бакалавриат</span></a></li>
+              <li><a href="#"><span class="f-progs__name">Математика</span><span class="f-progs__lvl">бакалавриат</span></a></li>
+              <li><a href="#"><span class="f-progs__name">Прикладная информатика</span><span class="f-progs__lvl">бакалавриат</span></a></li>
+              <li><a href="#"><span class="f-progs__name">Математическое моделирование</span><span class="f-progs__lvl">магистратура</span></a></li>
+              <li><a href="#"><span class="f-progs__name">Дискретная математика и математическая кибернетика</span><span class="f-progs__lvl">аспирантура</span></a></li>
+            </ul>
+            <a class="f-btn f-btn--ghost f-orbit__all" href="#">Все программы направления <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+            <p class="visually-hidden" aria-live="polite" data-orbit-status></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════ Наука и люди: аккордеон с выезжающим портретом ═════ -->
+    <section class="f-sec f-sci" aria-labelledby="sci-title">
+      <div class="container">
+        <div class="f-sci__head">
+          <h2 class="f-h2 f-breathe" id="sci-title" data-m="draw">Наука, у&nbsp;которой<br> есть лица</h2>
+          <p class="f-sci__lead" data-m="up">За каждым направлением стоит руководитель, к которому можно прийти со своей идеей уже на первом курсе.</p>
+        </div>
+        <div class="f-sci__body">
+          <div class="accordion f-sci__acc" data-sci>
+            <details class="accordion__item f-sci__item" name="sci" open>
+              <summary class="accordion__summary">Математика и IT</summary>
+              <div class="accordion__body f-sci__text">
+                <p>Математическое моделирование, анализ данных и кибернетика. [N] научных групп, студенческие проекты с первого курса.</p>
+                <a class="f-link" href="#">Лаборатории направления <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+                <figure class="f-sci__fig">
+                  <div class="f-sci__photo">
+                    <img src="../../../assets/stub/photos/800/portrait-professor-krupno.jpg"
+                      srcset="../../../assets/stub/photos/800/portrait-professor-krupno.jpg 800w, ../../../assets/stub/photos/portrait-professor-krupno.jpg 2000w"
+                      sizes="(min-width: 1024px) 44vw, 100vw" width="800" height="533" loading="lazy"
+                      alt="Преподаватель в очках говорит за столом" style="object-position: 38% 40%">
+                  </div>
+                  <figcaption><strong>[ФИО]</strong> руководитель направления</figcaption>
+                </figure>
+              </div>
+            </details>
+            <details class="accordion__item f-sci__item" name="sci">
+              <summary class="accordion__summary">Науки о жизни и Земле</summary>
+              <div class="accordion__body f-sci__text">
+                <p>Биология, химия, география и геоэкология. Полевые практики, [N] экспедиций в год, лаборатории на базе факультетов.</p>
+                <a class="f-link" href="#">Лаборатории направления <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+                <figure class="f-sci__fig">
+                  <div class="f-sci__photo">
+                    <img src="../../../assets/stub/photos/800/portrait-professor-zhest.jpg"
+                      srcset="../../../assets/stub/photos/800/portrait-professor-zhest.jpg 800w, ../../../assets/stub/photos/portrait-professor-zhest.jpg 2000w"
+                      sizes="(min-width: 1024px) 44vw, 100vw" width="800" height="533" loading="lazy"
+                      alt="Преподавательница увлечённо рассказывает, жестикулируя" style="object-position: 50% 30%">
+                  </div>
+                  <figcaption><strong>[ФИО]</strong> руководитель направления</figcaption>
+                </figure>
+              </div>
+            </details>
+            <details class="accordion__item f-sci__item" name="sci">
+              <summary class="accordion__summary">Студенческое научное общество</summary>
+              <div class="accordion__body f-sci__text">
+                <p>Конференции, гранты для молодых исследователей и проектные команды. Вступить можно с первого семестра.</p>
+                <a class="f-link" href="#">Как вступить <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+                <figure class="f-sci__fig">
+                  <div class="f-sci__photo">
+                    <img src="../../../assets/stub/photos/800/portrait-studentka-v-ochkah.jpg"
+                      srcset="../../../assets/stub/photos/800/portrait-studentka-v-ochkah.jpg 800w, ../../../assets/stub/photos/portrait-studentka-v-ochkah.jpg 2000w"
+                      sizes="(min-width: 1024px) 44vw, 100vw" width="800" height="533" loading="lazy"
+                      alt="Студентка в очках внимательно слушает доклад" style="object-position: 78% 35%">
+                  </div>
+                  <figcaption><strong>[ФИО]</strong> председатель научного общества</figcaption>
+                </figure>
+              </div>
+            </details>
+            <details class="accordion__item f-sci__item" name="sci">
+              <summary class="accordion__summary">Гуманитарные исследования</summary>
+              <div class="accordion__body f-sci__text">
+                <p>История, филология, психология и право. Архивы региона, диалектологические экспедиции [N], публикации студентов.</p>
+                <a class="f-link" href="#">Лаборатории направления <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+                <figure class="f-sci__fig">
+                  <div class="f-sci__photo stub" role="img" aria-label="Заглушка: портрет руководителя гуманитарного направления">
+                    <span class="stub__caption">фото: руководитель направления, портрет по пояс</span>
+                  </div>
+                  <figcaption><strong>[ФИО]</strong> руководитель направления</figcaption>
+                </figure>
+              </div>
+            </details>
+          </div>
+          <div class="f-sci__stage" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════ Сегодня в ТвГУ: ленты по категориям ═════ -->
+    <section class="f-sec f-today" aria-labelledby="today-title">
+      <div class="container">
+        <div class="f-today__head">
+          <h2 class="f-h2 f-breathe" id="today-title" data-m="draw">Сегодня в&nbsp;ТвГУ</h2>
+          <a class="f-btn f-btn--ghost" href="#">Все новости <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+        </div>
+
+        <div class="f-row ribbon ribbon--bleed" data-ribbon>
+          <div class="ribbon__head">
+            <h3 class="f-row__title" id="row-events">События</h3>
+            <div class="ribbon__nav">
+              <button class="btn-circle" type="button" data-ribbon-prev><span class="icon icon--arrow-left" aria-hidden="true"></span><span class="visually-hidden">Назад: события</span></button>
+              <button class="btn-circle" type="button" data-ribbon-next><span class="icon icon--arrow-right" aria-hidden="true"></span><span class="visually-hidden">Вперёд: события</span></button>
+            </div>
+          </div>
+          <ul class="ribbon__track f-row__track" role="list" aria-labelledby="row-events" data-drag>
+            <li data-m="up"><a class="f-card" href="#">
+              <span class="f-card__media"><img src="../../../assets/stub/photos/800/event-forum-znanie-zal.jpg" width="800" height="533" loading="lazy" alt="Зал форума, слушатели смотрят на сцену"></span>
+              <span class="f-card__date">[дата]</span>
+              <span class="f-card__title">Форум в главном корпусе: [тема], вход по регистрации</span>
+            </a></li>
+            <li data-m="up"><a class="f-card" href="#">
+              <span class="f-card__media"><img src="../../../assets/stub/photos/800/students-tochka-kipeniya.jpg" width="800" height="533" loading="lazy" alt="Студенты на встрече в пространстве для проектов"></span>
+              <span class="f-card__date">[дата]</span>
+              <span class="f-card__title">Встреча студенческих проектов: приходи со своей идеей</span>
+            </a></li>
+            <li data-m="up"><a class="f-card" href="#">
+              <span class="f-card__media"><img src="../../../assets/stub/photos/800/ceremony-den-znaniy-studbilet-scena.jpg" width="800" height="533" loading="lazy" alt="Вручение студенческих билетов на сцене"></span>
+              <span class="f-card__date">[дата]</span>
+              <span class="f-card__title">Посвящение в студенты: вручение студбилетов первокурсникам</span>
+            </a></li>
+            <li data-m="up"><a class="f-card" href="#">
+              <span class="f-card__media"><img src="../../../assets/stub/photos/800/students-meropriyatie-shariki.jpg" width="800" height="533" loading="lazy" alt="Студенты с воздушными шарами на празднике"></span>
+              <span class="f-card__date">[дата]</span>
+              <span class="f-card__title">Студвесна: как попасть в команду своего факультета</span>
+            </a></li>
+          </ul>
+        </div>
+
+        <div class="f-row ribbon ribbon--bleed" data-ribbon>
+          <div class="ribbon__head">
+            <h3 class="f-row__title" id="row-science">Наука</h3>
+            <div class="ribbon__nav">
+              <button class="btn-circle" type="button" data-ribbon-prev><span class="icon icon--arrow-left" aria-hidden="true"></span><span class="visually-hidden">Назад: наука</span></button>
+              <button class="btn-circle" type="button" data-ribbon-next><span class="icon icon--arrow-right" aria-hidden="true"></span><span class="visually-hidden">Вперёд: наука</span></button>
+            </div>
+          </div>
+          <ul class="ribbon__track f-row__track" role="list" aria-labelledby="row-science" data-drag>
+            <li data-m="up"><a class="f-card" href="#">
+              <span class="f-card__media"><img src="../../../assets/stub/photos/800/lab-opyt-nauka-shou.jpg" width="800" height="534" loading="lazy" alt="Химический опыт на научном шоу"></span>
+              <span class="f-card__date">[дата]</span>
+              <span class="f-card__title">Научное шоу для школьников: опыты химико-технологического факультета</span>
+            </a></li>
+            <li data-m="up"><a class="f-card" href="#">
+              <span class="f-card__media"><img src="../../../assets/stub/photos/800/portrait-studentka-tehnoprom.jpg" width="800" height="534" loading="lazy" alt="Студентка на технологическом форуме"></span>
+              <span class="f-card__date">[дата]</span>
+              <span class="f-card__title">Студентка ТвГУ выступила на технологическом форуме: [тема доклада]</span>
+            </a></li>
+            <li data-m="up"><a class="f-card" href="#">
+              <span class="f-card__media"><img src="../../../assets/stub/photos/800/students-kovorking-bloknoty.jpg" width="800" height="533" loading="lazy" alt="Студенты с блокнотами работают в коворкинге"></span>
+              <span class="f-card__date">[дата]</span>
+              <span class="f-card__title">Проектная школа: [N] команд готовят исследования</span>
+            </a></li>
+            <li data-m="up"><a class="f-card" href="#">
+              <span class="f-card__media"><img src="../../../assets/stub/photos/800/students-za-noutbukom.jpg" width="800" height="533" loading="lazy" alt="Студенты за ноутбуком"></span>
+              <span class="f-card__date">[дата]</span>
+              <span class="f-card__title">Хакатон по анализу данных: регистрация команд до [даты]</span>
+            </a></li>
+          </ul>
+        </div>
+
+        <div class="f-row ribbon ribbon--bleed" data-ribbon>
+          <div class="ribbon__head">
+            <h3 class="f-row__title" id="row-sport">Спорт</h3>
+            <div class="ribbon__nav">
+              <button class="btn-circle" type="button" data-ribbon-prev><span class="icon icon--arrow-left" aria-hidden="true"></span><span class="visually-hidden">Назад: спорт</span></button>
+              <button class="btn-circle" type="button" data-ribbon-next><span class="icon icon--arrow-right" aria-hidden="true"></span><span class="visually-hidden">Вперёд: спорт</span></button>
+            </div>
+          </div>
+          <ul class="ribbon__track f-row__track" role="list" aria-labelledby="row-sport" data-drag>
+            <li data-m="up"><a class="f-card" href="#">
+              <span class="f-card__media"><img src="../../../assets/stub/photos/800/sport-voleybol-zhenskaya-komanda.jpg" width="800" height="551" loading="lazy" alt="Женская волейбольная команда"></span>
+              <span class="f-card__date">[дата]</span>
+              <span class="f-card__title">Женская сборная по волейболу: [результат турнира]</span>
+            </a></li>
+            <li data-m="up"><a class="f-card" href="#">
+              <span class="f-card__media"><img src="../../../assets/stub/photos/800/sport-drakony-lodka.jpg" width="600" height="800" loading="lazy" alt="Гребцы в лодке-драконе" style="object-position: 50% 60%"></span>
+              <span class="f-card__date">[дата]</span>
+              <span class="f-card__title">Гребля на лодках-драконах: набор в секцию</span>
+            </a></li>
+            <li data-m="up"><a class="f-card" href="#">
+              <span class="f-card__media"><img src="../../../assets/stub/photos/800/sport-grebcy-komanda.jpg" width="600" height="800" loading="lazy" alt="Команда гребцов на берегу" style="object-position: 50% 45%"></span>
+              <span class="f-card__date">[дата]</span>
+              <span class="f-card__title">Гребцы открывают сезон: старт [дата]</span>
+            </a></li>
+            <li data-m="up"><a class="f-card" href="#">
+              <span class="f-card__media"><img src="../../../assets/stub/photos/800/sport-beg-lesnaya-doroga.jpg" width="800" height="533" loading="lazy" alt="Бегуны на лесной дороге"></span>
+              <span class="f-card__date">[дата]</span>
+              <span class="f-card__title">Университетский забег: [дистанция], регистрация открыта</span>
+            </a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════ Традиции: видео вальса ═════ -->
+    <section class="f-sec f-trad" aria-labelledby="trad-title">
+      <div class="container">
+        <div class="f-trad__card">
+          <div class="f-trad__copy">
+            <h2 class="f-h2 f-breathe" id="trad-title" data-m="draw">Сцена, на&nbsp;которой<br> тебя видно</h2>
+            <p data-m="up">Бал, Студвесна, посвящение в студенты. У каждого факультета свои номера и своя команда, а в творческих коллективах ждут с первого курса.</p>
+            <a class="f-link" href="#" data-m="up">Творческие коллективы <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+          </div>
+          <div class="f-trad__media" data-m="wipe">
+            <video class="f-trad__video" muted loop playsinline preload="none" aria-hidden="true"
+              poster="../../../assets/stub/video/vals-para-krupno.jpg"
+              data-src="../../../assets/stub/video/vals-para-krupno.mp4"
+              data-src-small="../../../assets/stub/video/480/vals-para-krupno.mp4"
+              data-poster-small="../../../assets/stub/video/480/vals-para-krupno.jpg"
+              data-video data-lazy></video>
+            <button class="f-round f-trad__pause" type="button" data-video-toggle hidden>
+              <svg class="i f-i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg>
+              <svg class="i f-i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
+              <span class="visually-hidden" data-video-label>Поставить видео на паузу</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════ История в лицах ═════ -->
+    <section class="f-sec f-hist" aria-labelledby="hist-title">
+      <div class="container ribbon ribbon--bleed" data-ribbon>
+        <div class="f-hist__head">
+          <div>
+            <h2 class="f-h2 f-breathe" id="hist-title" data-m="draw">156 лет в&nbsp;лицах</h2>
+            <p class="f-hist__lead" data-m="up">От учительской школы Максимовича до 15 факультетов и институтов.</p>
+          </div>
+          <div class="ribbon__nav">
+            <button class="btn-circle" type="button" data-ribbon-prev><span class="icon icon--arrow-left" aria-hidden="true"></span><span class="visually-hidden">Назад по истории</span></button>
+            <button class="btn-circle" type="button" data-ribbon-next><span class="icon icon--arrow-right" aria-hidden="true"></span><span class="visually-hidden">Вперёд по истории</span></button>
+          </div>
+        </div>
+        <ol class="ribbon__track f-hist__track" data-drag aria-label="История университета в лицах">
+          <li class="f-face" data-m="up">
+            <span class="f-face__year">1870</span>
+            <span class="f-face__media"><img src="../../../assets/stub/photos/800/archive-portret-komin.jpg" width="578" height="800" loading="lazy" alt="Архивный портрет мужчины в тёмном костюме" style="object-position: 50% 30%"></span>
+            <span class="f-face__name">Учительская школа Максимовича</span>
+            <span class="f-face__role">С неё начинается университет. На снимке: [подпись архива]</span>
+          </li>
+          <li class="f-face" data-m="up">
+            <span class="f-face__year">[годы]</span>
+            <span class="f-face__media stub" role="img" aria-label="Заглушка: портрет Николая Куна"><span class="stub__caption">портрет: Николай Кун</span></span>
+            <span class="f-face__name">Николай Кун</span>
+            <span class="f-face__role">Автор книги «Мифы Древней Греции»</span>
+          </li>
+          <li class="f-face" data-m="up">
+            <span class="f-face__year">[годы]</span>
+            <span class="f-face__media stub" role="img" aria-label="Заглушка: портрет Александра Александрова"><span class="stub__caption">портрет: Александр Александров</span></span>
+            <span class="f-face__name">Александр Александров</span>
+            <span class="f-face__role">Композитор, автор музыки гимна России</span>
+          </li>
+          <li class="f-face" data-m="up">
+            <span class="f-face__year">[годы]</span>
+            <span class="f-face__media"><img src="../../../assets/stub/photos/800/archive-studenty-frontoviki.jpg" width="672" height="544" loading="lazy" alt="Архивное групповое фото студентов в шинелях и пиджаках"></span>
+            <span class="f-face__name">Студенты-фронтовики</span>
+            <span class="f-face__role">Вернулись в аудитории после войны. [подпись архива]</span>
+          </li>
+          <li class="f-face" data-m="up">
+            <span class="f-face__year">[годы]</span>
+            <span class="f-face__media stub" role="img" aria-label="Заглушка: портрет Андрея Дементьева"><span class="stub__caption">портрет: Андрей Дементьев</span></span>
+            <span class="f-face__name">Андрей Дементьев</span>
+            <span class="f-face__role">Поэт</span>
+          </li>
+          <li class="f-face" data-m="up">
+            <span class="f-face__year">[годы]</span>
+            <span class="f-face__media stub" role="img" aria-label="Заглушка: портрет Натальи Непряевой"><span class="stub__caption">портрет: Наталья Непряева</span></span>
+            <span class="f-face__name">Наталья Непряева</span>
+            <span class="f-face__role">Олимпийская чемпионка</span>
+          </li>
+          <li class="f-face f-face--now" data-m="up">
+            <span class="f-face__year">2026</span>
+            <span class="f-face__media f-face__today">
+              <span class="f-face__big">15</span><span>факультетов и институтов</span>
+              <span class="f-face__big">129</span><span>программ</span>
+            </span>
+            <span class="f-face__name">Следующее лицо в этой ленте</span>
+            <a class="f-link" href="#">Поступить <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ═════ Партнёры ═════ -->
+    <section class="f-sec f-sec--tight f-partners" aria-labelledby="partners-title">
+      <div class="container partners ribbon" data-ribbon>
+        <div class="ribbon__head">
+          <h2 class="f-row__title" id="partners-title">Партнёры и работодатели</h2>
+          <div class="ribbon__nav">
+            <button class="btn-circle" type="button" data-ribbon-prev><span class="icon icon--arrow-left" aria-hidden="true"></span><span class="visually-hidden">Назад: партнёры</span></button>
+            <button class="btn-circle" type="button" data-ribbon-next><span class="icon icon--arrow-right" aria-hidden="true"></span><span class="visually-hidden">Вперёд: партнёры</span></button>
+          </div>
+        </div>
+        <div class="ribbon__track" role="list" aria-label="Логотипы партнёров, листаются" data-drag>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 1]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 2]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 3]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 4]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 5]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 6]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 7]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 8]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 9]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 10]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 11]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 12]</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════ FAQ и даты кампании ═════ -->
+    <section class="f-sec f-faq" aria-labelledby="faq-title">
+      <div class="container f-faq__grid">
+        <div class="f-faq__aside">
+          <h2 class="f-h2 f-breathe" id="faq-title" data-m="draw">Спокойно о&nbsp;главном</h2>
+          <div class="f-dates" data-m="up">
+            <h3 class="f-dates__title">Приёмная кампания 2026</h3>
+            <ul class="f-dates__list" role="list">
+              <li><span class="f-badge f-badge--red">[дата]</span><span>Последний день подачи документов на бюджет</span></li>
+              <li><span class="f-badge">[дата]</span><span>День открытых дверей в главном корпусе</span></li>
+              <li><span class="f-badge">[дата]</span><span>Публикация приказов о зачислении</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion f-faq__acc" data-m-stagger>
+          <details class="accordion__item" name="faq" data-m="up">
+            <summary class="accordion__summary">Сколько бюджетных мест в 2026 году?</summary>
+            <div class="accordion__body"><p>[N бюджетных мест] по всем программам. Точные цифры по каждому направлению публикуются в правилах приёма.</p></div>
+          </details>
+          <details class="accordion__item" name="faq" data-m="up">
+            <summary class="accordion__summary">Дают ли общежитие первокурсникам?</summary>
+            <div class="accordion__body"><p>Иногородним студентам очной формы: [N мест], стоимость [N ₽ в месяц]. Заявление на общежитие подают вместе с документами.</p></div>
+          </details>
+          <details class="accordion__item" name="faq" data-m="up">
+            <summary class="accordion__summary">Сколько стоит платное обучение?</summary>
+            <div class="accordion__body"><p>От [N ₽ в год] в зависимости от программы. Условия оплаты и скидок: [ссылка на приказ о стоимости].</p></div>
+          </details>
+          <details class="accordion__item" name="faq" data-m="up">
+            <summary class="accordion__summary">Какие баллы нужны для поступления?</summary>
+            <div class="accordion__body"><p>Проходные баллы прошлого года по направлениям: [N]. Минимальные баллы ЕГЭ и список вступительных испытаний — в правилах приёма.</p></div>
+          </details>
+          <details class="accordion__item" name="faq" data-m="up">
+            <summary class="accordion__summary">Можно ли подать документы через Госуслуги?</summary>
+            <div class="accordion__body"><p>Да, заявление подаётся через Госуслуги или лично в приёмной комиссии: Тверь, ул. Желябова, 33, +7 (4822) 32-15-14.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════ Мягкий лид ═════ -->
+    <section class="f-sec f-sec--tight f-lead" id="lead" aria-labelledby="lead-title">
+      <div class="container">
+        <div class="f-lead__card">
+          <div class="f-lead__copy">
+            <h2 class="f-h2 f-breathe" id="lead-title" data-m="draw">Спроси приёмную комиссию</h2>
+            <p>Ответим в течение [N часов] в рабочие дни. Удобнее в мессенджере? Напиши <a class="f-lead__tg" href="#">Telegram-боту приёмной</a>.</p>
+          </div>
+          <form class="f-lead__form" action="#" data-lead novalidate>
+            <div class="field">
+              <label class="field__label" for="lead-q">Твой вопрос</label>
+              <input class="input" id="lead-q" name="q" type="text" placeholder="Например: бюджет на психологии" autocomplete="off" required>
+            </div>
+            <div class="field">
+              <label class="field__label" for="lead-c">Telegram или телефон</label>
+              <input class="input" id="lead-c" name="c" type="text" placeholder="@username или +7" autocomplete="tel" required aria-describedby="lead-err">
+              <p class="field__error" id="lead-err" hidden>Оставь ник в Telegram или номер из 11 цифр</p>
+            </div>
+            <button class="f-btn f-btn--light" type="submit">Отправить вопрос</button>
+            <p class="f-lead__note">Нажимая кнопку, соглашаешься на обработку персональных данных.</p>
+            <p class="f-lead__ok" role="status" data-lead-ok></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="footer"></div>
+
+  <div class="f-dock" data-dock inert>
+    <a class="f-btn f-btn--lime f-btn--block" href="#">Поступить <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+  </div>
+</body>
+</html>

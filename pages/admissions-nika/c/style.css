@@ -1,0 +1,157 @@
+/* admissions-nika / c — «Маршрут первым»: первый экран — сама линия поступления. */
+
+/* ───── Hero ───── */
+.c-hero { padding-block: clamp(40px, 2rem + 4vw, 88px) clamp(48px, 2rem + 3vw, 80px); }
+.c-hero__top { display: grid; gap: 28px; align-items: end; }
+.c-hero__copy { display: grid; gap: 20px; }
+.c-hero__copy h1 { max-width: 12em; }
+.c-hero__copy .lead { max-width: 38rem; }
+.c-hero__side { display: grid; gap: 20px; }
+@media (min-width: 1024px) {
+  .c-hero__top { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--grid-gap); }
+  .c-hero__side { padding-bottom: 6px; }
+}
+
+/* ───── Маршрут: мобильный — вертикальная линия; от 768 — SVG-кривая через весь экран ───── */
+.c-route { position: relative; margin-top: clamp(40px, 2rem + 3vw, 72px); }
+.c-route .c-route__line { display: none; }
+.c-route__list { list-style: none; padding: 0; position: relative; }
+.c-route__step { position: relative; display: grid; gap: 4px; padding: 0 0 32px 44px; }
+.c-route__step:last-child { padding-bottom: 0; }
+.c-route__step::before {                         /* сегмент вертикальной линии */
+  content: ""; position: absolute; left: 11px; top: 14px; bottom: -14px; width: 1px;
+  background: var(--c-blue); transform-origin: top;
+}
+.c-route__step:last-child::before { display: none; }
+.c-route__dot {
+  position: absolute; left: 4px; top: 6px; width: 15px; height: 15px; border-radius: 50%;
+  background: #fff; border: 1px solid var(--c-blue);
+}
+.c-route__step.is-current .c-route__dot { background: var(--c-blue); box-shadow: 0 0 0 5px var(--c-blue-tint); }
+.c-route__step.is-deadline .c-route__dot { border-color: var(--c-red-text); box-shadow: 0 0 0 5px #fde6ed; }
+.c-route__num { display: none; }
+.c-route__when { font-size: 0.8125rem; font-weight: 500; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--c-text-2); }
+.c-route__when strong { color: var(--c-red-text); font-weight: 600; }
+.theme-nika main .c-route__what { font-family: var(--font-serif); font-weight: 400; font-size: clamp(1.5rem, 1.3rem + 0.7vw, 2rem); line-height: 1.15; }
+.c-route__note { color: var(--c-text-2); font-size: var(--fs-small); max-width: 30ch; }
+.c-route__go { justify-self: start; min-height: 44px; margin-left: -2px; }
+
+@media (min-width: 768px) {
+  .c-route .c-route__line { display: block; position: absolute; left: 0; right: 0; top: 0; width: 100%; height: 120px; }
+  .c-route__list { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .c-route__step { padding: 148px 20px 0 0; align-content: start; }
+  .c-route__step::before { display: none; }
+  .c-route__dot { left: calc(6% - 8px); top: calc(var(--y) - 8px); width: 17px; height: 17px; }  /* узел кривой: x = 200·i + 12 из 1000 */
+  .c-route__num {
+    display: block; position: absolute; left: 0; top: calc(var(--y) + 20px);
+    font-family: var(--font-serif); font-size: 0.9375rem; color: var(--c-text-2); font-variant-numeric: lining-nums;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .c-route__note { display: none; }
+  .theme-nika main .c-route__what { font-size: 1.25rem; }
+  .c-route__step { padding-right: 12px; }
+  .c-route__go { white-space: normal; font-size: var(--fs-small); gap: 6px; }
+}
+
+/* ───── Авторский момент c: маршрут ведёт прокрутка (script.js initRoute ставит .is-live) ─────
+   Линия: при загрузке сама доходит до шага 2, дальше stroke-dashoffset = прогресс прокрутки. Впереди — бледный след всей кривой.
+   Шаг «зажигается» резко, когда линия дошла: обводка синеет, внутри встаёт точка, от неё расходится одно кольцо; номер — табло 0 → n.
+   Мобильный: вертикальные сегменты заполняются от «пера» на 70 % высоты экрана. Без .is-live — финальный рисунок. */
+.c-route__dot::before, .c-route__dot::after { content: ""; position: absolute; border-radius: 50%; pointer-events: none; }
+/* vector-effect: none — с non-scaling-stroke Chrome считает штрих в экранных единицах, и узор повторяется в хвосте кривой */
+.c-route.is-live .c-route__path { vector-effect: none; stroke-dasharray: 1; stroke-dashoffset: 1; }
+.c-route.is-live .c-route__dot { border-color: var(--c-line-strong); transition: border-color 90ms linear; }
+.c-route.is-live .c-route__step.is-current:not(.is-lit) .c-route__dot { background: #fff; box-shadow: none; }
+.c-route.is-live .c-route__step.is-lit .c-route__dot { border-color: var(--c-blue); }
+.c-route.is-live .c-route__step.is-deadline.is-lit .c-route__dot { border-color: var(--c-red-text); }
+.c-route.is-live .c-route__dot::after { inset: 3px; background: var(--c-blue); opacity: 0; transform: scale(2); transition: opacity 0ms linear, transform 180ms var(--ease-out); }
+.c-route.is-live .c-route__step.is-deadline .c-route__dot::after { background: var(--c-red-text); }
+.c-route.is-live .c-route__step.is-current .c-route__dot::after { display: none; }
+.c-route.is-live .c-route__step.is-lit .c-route__dot::after { opacity: 1; transform: none; }
+.c-route.is-live .c-route__dot::before { inset: -1px; border: 1px solid var(--c-blue); opacity: 0; }
+.c-route.is-live .c-route__step.is-deadline .c-route__dot::before { border-color: var(--c-red-text); }
+.c-route.is-live .c-route__step.is-lit .c-route__dot::before { animation: c-ring 560ms var(--ease-out) both; }
+@keyframes c-ring { from { opacity: 0.9; transform: scale(1); } to { opacity: 0; transform: scale(3.2); } }
+.c-route.is-live .c-route__num { color: var(--c-line-strong); transition: color 90ms linear; }
+.c-route.is-live .c-route__step.is-lit .c-route__num { color: var(--c-text); }
+@media (max-width: 767.98px) {
+  .c-route.is-live .c-route__step:not(:last-child)::after { content: ""; position: absolute; left: 11px; top: 14px; bottom: -14px; width: 1px; background: var(--c-line); }
+  .c-route.is-live .c-route__step::before { z-index: 1; }
+  .c-route.is-live .c-route__step::before { transform: scaleY(var(--seg, 0)); }
+}
+
+.c-hero__foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--c-line); }
+
+/* ───── Уровни на орбите ───── */
+.c-levels .n-orbit__intro .adm-note { max-width: 32rem; }
+
+/* ───── Доказательства: ведомость в одну строку ───── */
+.c-proof .n-band-head { flex-wrap: wrap; }
+.c-proof__rank { font-size: var(--fs-small); color: var(--c-text-2); }
+.c-proof__rank b { color: var(--c-text); font-weight: 600; }
+.c-proof__row { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--c-text); border-bottom: 1px solid var(--c-line); }
+.c-proof__row > li { display: grid; gap: 8px; align-content: start; padding: 20px 16px 20px 0; }
+.c-proof__row > li:nth-child(even) { padding-left: 16px; border-left: 1px solid var(--c-line); }
+.c-proof__row > li:nth-child(n+3) { border-top: 1px solid var(--c-line); }
+.c-proof__num { font-family: var(--font-serif); font-size: clamp(2rem, 1.6rem + 1.4vw, 3rem); line-height: 1; font-variant-numeric: lining-nums; }
+.c-proof__txt { font-size: var(--fs-small); color: var(--c-text-2); line-height: 1.45; }
+.c-proof__txt b { display: block; color: var(--c-text); font-weight: 500; font-size: 1rem; }
+.c-proof__alumni { margin-top: 20px; color: var(--c-text-2); max-width: 60rem; }
+@media (min-width: 1024px) {
+  .c-proof__row { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .c-proof__row > li { padding: 24px 24px 24px 0; }
+  .c-proof__row > li + li { padding-left: 24px; border-left: 1px solid var(--c-line); }
+  .c-proof__row > li:nth-child(n+3) { border-top: 0; }
+}
+
+/* ───── Калькулятор: предметы в строку, ответ под карточкой ───── */
+.c-calc { display: grid; gap: 32px; }
+@media (min-width: 768px) {
+  .c-calc .calc__rows { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .c-calc .calc__checks { grid-template-columns: repeat(3, auto); justify-content: start; column-gap: 28px; }
+  .c-calc .calc__checks legend { grid-column: 1 / -1; }
+}
+@media (min-width: 768px) {
+  .c-calc .calc-res { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 var(--grid-gap); }
+  .c-calc .calc-res__item { align-content: start; }
+}
+
+/* ───── Стоимость: таблица + вертикальное фото ───── */
+.c-cost { display: grid; gap: 32px var(--grid-gap); align-items: start; }
+.c-cost__num { display: block; font-size: 1.75rem; }
+.c-cost__unit { display: block; font-size: var(--fs-small); color: var(--c-text-2); }
+.c-cost__table th[scope="row"] { font-weight: 500; }
+.c-cost__media { display: grid; gap: 12px; }
+.c-cost__photo { aspect-ratio: 4 / 3; }
+.c-cost__photo img { object-position: 50% 60%; }
+@media (min-width: 1024px) {
+  .c-cost { grid-template-columns: minmax(0, 1fr) 260px; gap: 48px; }
+  .c-cost__photo { aspect-ratio: 3 / 4; }
+}
+.c-cost .n-table { min-width: 0; }
+/* мобильный: ведомость превращается в список «статья — сумма — что входит», без прокрутки вбок */
+@media (max-width: 767.98px) {
+  .c-cost__table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .c-cost__table, .c-cost__table tbody { display: block; }
+  .c-cost__table tbody { border-top: 1px solid var(--c-text); }
+  .c-cost__table tr { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 16px; padding: 18px 0; border-bottom: 1px solid var(--c-line); }
+  .theme-nika .c-cost__table :is(th, td) { display: block; padding: 0; border: 0; }
+  .theme-nika .c-cost__table tbody th[scope="row"] { grid-column: 1; grid-row: 1; padding: 0; border: 0; align-self: baseline; }
+  .c-cost__table td.num { grid-column: 2; grid-row: 1 / span 2; text-align: right; }
+  .c-cost__table td:not(.num) { grid-column: 1; grid-row: 2; color: var(--c-text-2); font-size: var(--fs-small); }
+  .c-cost__table caption { display: block; }
+}
+@media (min-width: 768px) { .c-cost__wrap { overflow-x: auto; } .c-cost .n-table { min-width: 560px; } }
+
+/* орбита уровней: окружности прочерчиваются изнутри наружу (data-m-line), точки встают на них */
+.n-orbit__art circle[data-m] { transform-box: fill-box; transform-origin: center; }
+
+/* ───── Контакты и вопрос ───── */
+.c-contacts > *, .c-contacts__info > * { min-width: 0; }
+.c-hero__foot .btn { white-space: normal; text-align: left; }
+.c-contacts { display: grid; gap: 40px var(--grid-gap); align-items: start; }
+.c-contacts__info { display: grid; gap: 28px; }
+.c-contacts__ask { display: grid; gap: 20px; }
+.c-contacts__ask .ask-form { grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 1024px) { .c-contacts { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; } }

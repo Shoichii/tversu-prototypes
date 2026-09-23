@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Мобильный вид · ТвГУ прототипы</title>
+  <link rel="stylesheet" href="system/tokens.css">
+  <link rel="stylesheet" href="system/base.css">
+  <style>
+    body { background: var(--c-bg-grey); }
+    .m-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; min-height: 64px; border-bottom: 1px solid var(--c-line); background: #fff; }
+    .m-bar code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.875rem; color: var(--c-text-2); }
+    .m-widths { display: flex; gap: 8px; }
+    .m-stage { display: grid; justify-items: center; padding: 24px 12px 48px; }
+    .m-frame { width: var(--w, 390px); max-width: calc(100vw - 24px); height: min(844px, calc(100dvh - 140px)); border: 1px solid var(--c-line); border-radius: 8px; overflow: hidden; background: #fff; box-shadow: var(--shadow-pop); }
+    .m-frame iframe { width: 100%; height: 100%; border: 0; display: block; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1 class="visually-hidden">Мобильный вид страницы</h1>
+    <div class="m-bar container">
+      <a class="btn btn--text" href="./"><span class="icon icon--arrow-left" aria-hidden="true"></span> Галерея</a>
+      <code id="m-src"></code>
+      <div class="m-widths" role="group" aria-label="Ширина">
+        <button class="chip" type="button" data-w="360" aria-pressed="false">360</button>
+        <button class="chip" type="button" data-w="390" aria-pressed="true">390</button>
+        <button class="chip" type="button" data-w="768" aria-pressed="false">768</button>
+      </div>
+      <a class="btn btn--text" id="m-open" href="#">Открыть на весь экран</a>
+    </div>
+    <div class="m-stage"><div class="m-frame"><iframe id="m-frame" title="Страница прототипа"></iframe></div></div>
+  </main>
+  <script>
+    (function () {
+      const raw = new URLSearchParams(location.search).get("src") || "pages/_shell/a/";
+      // только относительные пути внутри проекта
+      const src = /^(pages\/)[\w\-\/.?=&,]*$/.test(raw) && !raw.includes("..") ? raw : "pages/_shell/a/";
+      document.getElementById("m-frame").src = src;
+      document.getElementById("m-src").textContent = src;
+      document.getElementById("m-open").href = src;
+      const stage = document.querySelector(".m-frame");
+      document.querySelectorAll("[data-w]").forEach((b) => b.addEventListener("click", () => {
+        document.querySelectorAll("[data-w]").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+        stage.style.setProperty("--w", b.dataset.w + "px");
+      }));
+    })();
+  </script>
+</body>
+</html>

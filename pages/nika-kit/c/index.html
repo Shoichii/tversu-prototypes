@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Язык Ники: кит компонентов, вариант c · ТвГУ прототипы</title>
+  <link rel="preload" href="../../../assets/fonts/golos-text-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../../assets/fonts/source-serif-4-regular-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../../system/tokens.css">
+  <link rel="stylesheet" href="../../../system/base.css">
+  <link rel="stylesheet" href="../../../system/stub.css">
+  <link rel="stylesheet" href="../../../system/theme-nika.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="../../../system/partials.js" defer></script>
+  <script src="../../../system/ui.js" defer></script>
+</head>
+<body class="theme-nika nika-serif-source nika-compact" data-header="dark" data-nav="about">
+  <div data-include="header"></div>
+
+  <main id="main">
+    <!-- ═══ Тёмная полоса hero ═══ -->
+    <section class="section section--slate kit-hero" aria-labelledby="hero-title">
+      <div class="container grid kit-hero__grid">
+        <div class="span-7 md-span-6 kit-hero__copy">
+          <p class="band-label kit-hero__kit">Кит языка Ники · вариант c: Source Serif 4, полосы 96 px</p>
+          <h1 id="hero-title">Классический университет Твери <em>с&nbsp;1870&nbsp;года</em></h1>
+          <p class="lead">15 факультетов и институтов, 129 программ. Выбери свою и подай документы онлайн.</p>
+          <div class="kit-actions">
+            <a class="btn btn--primary btn--lg" href="#">Подобрать программу <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+            <a class="btn btn--outline btn--lg" href="#">Задать вопрос</a>
+          </div>
+        </div>
+        <figure class="span-5 md-span-6 n-figure kit-hero__art" aria-label="Схема: год основания, число факультетов и программ на концентрических окружностях">
+          <svg class="n-art n-draw" viewBox="0 0 560 560" aria-hidden="true">
+            <line class="l-soft draw" pathLength="1" x1="0" y1="280" x2="560" y2="280" style="--i:0"/>
+            <line class="l-soft draw" pathLength="1" x1="280" y1="0" x2="280" y2="560" style="--i:0"/>
+            <circle class="l draw" pathLength="1" cx="280" cy="280" r="60" style="--i:1"/>
+            <circle class="l draw" pathLength="1" cx="280" cy="280" r="120" style="--i:2"/>
+            <circle class="l draw" pathLength="1" cx="280" cy="280" r="180" style="--i:3"/>
+            <circle class="l draw" pathLength="1" cx="280" cy="280" r="240" style="--i:4"/>
+            <circle class="dot-open pop" cx="340" cy="280" r="4" style="--i:1"/>
+            <circle class="dot-open pop" cx="280" cy="400" r="4" style="--i:2"/>
+            <circle class="dot-open pop" cx="100" cy="280" r="4" style="--i:3"/>
+            <circle class="dot-accent pop" cx="476.6" cy="142.3" r="6" style="--i:4"/>
+            <circle class="dot pop" cx="449.1" cy="341.6" r="5" style="--i:3"/>
+            <circle class="dot pop" cx="220" cy="176.1" r="5" style="--i:2"/>
+          </svg>
+          <span class="n-figure__label n-draw" style="--x:85.1%; --y:25.4%; --tx:calc(-100% - 16px)"><span class="fade" style="--i:4; display:block"><b>1870</b>основан</span></span>
+          <span class="n-figure__label n-draw" style="--x:80.2%; --y:61%; --tx:calc(-100% - 14px)"><span class="fade" style="--i:3; display:block"><b>15</b>факультетов и&nbsp;институтов</span></span>
+          <span class="n-figure__label n-draw" style="--x:39.3%; --y:31.4%"><span class="fade" style="--i:2; display:block"><b>129</b>программ</span></span>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ═══ Полоса с лейблом ═══ -->
+    <section class="section section--grey" aria-labelledby="mission-label">
+      <div class="container band">
+        <div class="band__aside">
+          <h2 class="band-label" id="mission-label">Миссия</h2>
+          <p class="kit-classes"><code>.section--grey</code> <code>.band</code> <code>.band__aside</code> <code>.band-label</code> <code>.band__body</code> <code>.n-statement</code></p>
+        </div>
+        <div class="band__body">
+          <p class="n-statement">Учить так, чтобы выпускник мог остаться в Твери и строить здесь город, или уехать и везде быть сильным специалистом. Мы делаем это 156 лет и открываем 129 программ для тех, кто начинает сейчас.</p>
+          <p class="kit-after"><a class="btn btn--outline btn--caps" href="#">Об университете <span class="icon icon--arrow-right" aria-hidden="true"></span></a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Типографическая шкала ═══ -->
+    <section class="section" aria-labelledby="type-label">
+      <div class="container band">
+        <div class="band__aside">
+          <h2 class="band-label" id="type-label">Типографика</h2>
+          <p class="kit-classes">h1–h2 в <code>main</code> — антиква из <code>--nika-serif</code>, остальное — Golos Text. Курсив антиквы — одна фраза в hero.</p>
+        </div>
+        <div class="band__body">
+          <dl class="kit-scale">
+            <div><dt>h1 · антиква Regular · 36 → 72 / 1.15</dt><dd><p class="h1 n-serif">Поступай туда, где учатся с&nbsp;1870&nbsp;года</p></dd></div>
+            <div><dt>h2 · антиква Regular · 28 → 44 / 1.15</dt><dd><p class="h2 n-serif">Проходные баллы и бюджетные места</p></dd></div>
+            <div><dt>курсив антиквы · одна фраза</dt><dd><p class="h2 n-serif"><em>Жёлтый щит и красная крыша</em></p></dd></div>
+            <div><dt>h3 · Golos Text 500 · 20 → 24 / 1.3</dt><dd><p class="h3">Общежитие для иногородних студентов</p></dd></div>
+            <div><dt>lead · Golos Text 400 · 18 → 21 / 1.55</dt><dd><p class="lead measure">Бюджетные места есть на [N] программах. Посчитай свои баллы и узнай, куда проходишь.</p></dd></div>
+            <div><dt>текст · 16 → 18 / 1.6 · колонка до 720 px</dt><dd><p class="n-text">Заявление подаётся через Госуслуги или лично в приёмной комиссии на Желябова, 33. Оригинал аттестата приносить не нужно: достаточно согласия на зачисление до [дата].</p></dd></div>
+            <div><dt>лейбл полосы · капс 13 · разрядка 0.08em</dt><dd><p class="band-label">Действующие партнёры</p></dd></div>
+            <div><dt>подпись · 13 / 1.45</dt><dd><p class="caption">Фото: tversu.ru, заглушка. Главный корпус, ул. Желябова, 33.</p></dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Карточки проектов + табы ═══ -->
+    <section class="section section--grey" aria-labelledby="projects-label">
+      <div class="container band">
+        <div class="band__aside">
+          <h2 class="band-label" id="projects-label">Проекты с партнёрами</h2>
+          <p class="kit-classes"><code>.tabs</code> <code>.tab</code> <code>.n-cards</code> <code>.n-card</code> <code>.n-card__mark</code> <code>.n-card__logo</code> <code>.n-card__title</code> <code>.n-card__arrow</code>; наведение для скриншота — <code>.is-hover</code></p>
+        </div>
+        <div class="band__body" data-tabs>
+          <div class="tabs__list" role="tablist" aria-label="Проекты">
+            <button class="tab" role="tab" id="tab-done" aria-controls="panel-done" aria-selected="true">Реализованные проекты</button>
+            <button class="tab" role="tab" id="tab-new" aria-controls="panel-new" aria-selected="false">Новые проекты</button>
+          </div>
+          <div class="tabs__panel" role="tabpanel" id="panel-done" aria-labelledby="tab-done" tabindex="0">
+            <ul class="n-cards n-cards--3" role="list">
+              <li><a class="n-card" href="#">
+                <span class="n-card__mark"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21h14"/><path d="M6 18h2"/><path d="M7 18v3"/><path d="M9 11l3 3l6 -6l-3 -3z"/><path d="M10.5 12.5l-1.5 1.5"/><path d="M17 3l3 3"/><path d="M12 21a6 6 0 0 0 3.715 -10.712"/></svg></span>
+                <span class="n-card__body"><span class="n-card__meta">Химико-технологический факультет · [год]</span><span class="n-card__title">Лаборатория анализа полимеров с [предприятием-партнёром]</span></span>
+                <span class="icon icon--arrow-up-right n-card__arrow" aria-hidden="true"></span>
+              </a></li>
+              <li><a class="n-card is-hover" href="#">
+                <span class="n-card__mark"><span class="n-card__logo">лого</span></span>
+                <span class="n-card__body"><span class="n-card__meta">Институт экономики и управления · [год]</span><span class="n-card__title">Целевое обучение для [банка-партнёра]: практика с первого курса</span></span>
+                <span class="icon icon--arrow-up-right n-card__arrow" aria-hidden="true"></span>
+              </a></li>
+              <li><a class="n-card" href="#">
+                <span class="n-card__mark"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0"/><path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0"/><path d="M3 6l0 13"/><path d="M12 6l0 13"/><path d="M21 6l0 13"/></svg></span>
+                <span class="n-card__body"><span class="n-card__meta">Филологический факультет · [год]</span><span class="n-card__title">Летняя школа для учителей Тверской области</span></span>
+                <span class="icon icon--arrow-up-right n-card__arrow" aria-hidden="true"></span>
+              </a></li>
+            </ul>
+          </div>
+          <div class="tabs__panel" role="tabpanel" id="panel-new" aria-labelledby="tab-new" tabindex="0" hidden>
+            <ul class="n-cards n-cards--3" role="list">
+              <li><a class="n-card" href="#">
+                <span class="n-card__mark"><span class="n-card__logo">лого</span></span>
+                <span class="n-card__body"><span class="n-card__meta">Факультет прикладной математики и кибернетики · набор до [дата]</span><span class="n-card__title">Базовая кафедра [IT-компании-партнёра]</span></span>
+                <span class="icon icon--arrow-up-right n-card__arrow" aria-hidden="true"></span>
+              </a></li>
+              <li><a class="n-card" href="#">
+                <span class="n-card__mark"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"/><path d="M19 7a2 2 0 1 0 0 -4a2 2 0 0 0 0 4z"/><path d="M11 19h5.5a3.5 3.5 0 0 0 0 -7h-8a3.5 3.5 0 0 1 0 -7h4.5"/></svg></span>
+                <span class="n-card__body"><span class="n-card__meta">Факультет географии и геоэкологии · [год]</span><span class="n-card__title">Экологический мониторинг Верхней Волги</span></span>
+                <span class="icon icon--arrow-up-right n-card__arrow" aria-hidden="true"></span>
+              </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Лента партнёров ═══ -->
+    <section class="section" aria-labelledby="partners-label">
+      <div class="container partners ribbon" data-ribbon>
+        <div class="n-band-head">
+          <h2 class="band-label" id="partners-label">Действующие партнёры</h2>
+          <div class="ribbon__nav">
+            <button class="btn-circle" type="button" data-ribbon-prev><span class="icon icon--arrow-left" aria-hidden="true"></span><span class="visually-hidden">Назад</span></button>
+            <button class="btn-circle" type="button" data-ribbon-next><span class="icon icon--arrow-right" aria-hidden="true"></span><span class="visually-hidden">Вперёд</span></button>
+          </div>
+        </div>
+        <div class="ribbon__track" role="list" aria-label="Логотипы партнёров, листаются">
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 1]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 2]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 3]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 4]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 5]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 6]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 7]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 8]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 9]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 10]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 11]</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 12]</span></div>
+        </div>
+        <p class="kit-classes kit-classes--below"><code>.partners.ribbon[data-ribbon]</code> <code>.n-band-head</code> <code>.ribbon__nav</code> <code>.btn-circle</code> <code>.ribbon__track</code> <code>.partner</code> <code>.partner__logo</code></p>
+      </div>
+    </section>
+
+    <!-- ═══ Аккордеон ═══ -->
+    <section class="section section--grey" aria-labelledby="faq-label">
+      <div class="container band">
+        <div class="band__aside">
+          <h2 class="band-label" id="faq-label">Вопросы абитуриента</h2>
+          <p class="kit-classes"><code>.accordion</code> на <code>&lt;details class="accordion__item"&gt;</code>, <code>.accordion__summary</code>, <code>.accordion__body</code>. Раскрыть первый: <code>?state=accordion-open</code></p>
+        </div>
+        <div class="band__body accordion">
+          <details class="accordion__item">
+            <summary class="accordion__summary">Сколько бюджетных мест в 2026 году?</summary>
+            <div class="accordion__body"><p>[N бюджетных мест] по всем программам. Цифры по каждому направлению публикуются в правилах приёма до [дата].</p><p><a href="#">Правила приёма 2026</a></p></div>
+          </details>
+          <details class="accordion__item" open>
+            <summary class="accordion__summary">Дают ли общежитие первокурсникам?</summary>
+            <div class="accordion__body"><p>Иногородним студентам очной формы: [N мест] в [N] общежитиях, стоимость [N ₽ в месяц]. Заявление на заселение подаётся вместе с согласием на зачисление.</p></div>
+          </details>
+          <details class="accordion__item">
+            <summary class="accordion__summary">Можно ли подать документы через Госуслуги?</summary>
+            <div class="accordion__body"><p>Да. Заявление, согласие на зачисление и отзыв документов доступны через Госуслуги.</p></div>
+          </details>
+          <details class="accordion__item">
+            <summary class="accordion__summary">Сколько стоит платное обучение?</summary>
+            <div class="accordion__body"><p>От [N ₽ в год] в зависимости от программы. Есть скидки для [условия].</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Тёмная полоса: обращение с портретом ═══ -->
+    <section class="section section--slate" aria-labelledby="address-label">
+      <div class="container band">
+        <div class="band__aside">
+          <h2 class="band-label" id="address-label">Обращение ректора</h2>
+          <a class="btn btn--outline btn--caps" href="#">Руководство <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+        </div>
+        <div class="band__body kit-address">
+          <figure class="n-person kit-address__person">
+            <div class="n-person__photo">
+              <div class="stub stub--dark stub--fill" role="img" aria-label="Заглушка: портрет ректора по пояс, чёрно-белый"><span class="stub__caption">фото: ректор, портрет по пояс, ч/б</span></div>
+            </div>
+            <figcaption><p class="n-person__name">[ФИО ректора]</p><p class="n-person__role">Ректор Тверского государственного университета</p></figcaption>
+          </figure>
+          <div class="kit-address__text">
+            <p class="n-statement">[Текст обращения ректора к абитуриентам: два-три предложения о том, почему стоит выбрать ТвГУ.]</p>
+            <p class="kit-classes"><code>.section--slate</code> <code>.n-person</code> <code>.n-person__photo</code> <code>.n-mono</code> <code>.n-person__name</code> <code>.n-person__role</code></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Портреты ═══ -->
+    <section class="section" aria-labelledby="people-label">
+      <div class="container band">
+        <div class="band__aside">
+          <h2 class="band-label" id="people-label">Люди университета</h2>
+          <p class="kit-classes">Фото ч/б: <code>.n-mono</code> на <code>img</code> из assets/stub или на <code>.stub</code>; приглушённое — <code>.n-muted</code>. Круглых аватаров нет.</p>
+        </div>
+        <div class="band__body">
+          <ul class="kit-people" role="list">
+            <li><figure class="n-person">
+              <div class="n-person__photo">
+                <img class="n-mono" src="../../../assets/stub/photos/800/archive-portret-komin.jpg" alt="Василий Комин, архивный портрет" width="600" height="800" loading="lazy">
+                <button class="btn-circle n-person__more" type="button"><span class="icon icon--plus" aria-hidden="true"></span><span class="visually-hidden">Подробнее о Василии Комине</span></button>
+              </div>
+              <figcaption><p class="n-person__name">Василий Комин</p><p class="n-person__role">Первый ректор университета</p></figcaption>
+            </figure></li>
+            <li><figure class="n-person">
+              <div class="n-person__photo">
+                <img class="n-mono" src="../../../assets/stub/photos/800/portrait-professor-krupno.jpg" alt="Профессор, крупный портрет" width="600" height="800" loading="lazy">
+                <button class="btn-circle n-person__more" type="button"><span class="icon icon--plus" aria-hidden="true"></span><span class="visually-hidden">Подробнее о профессоре</span></button>
+              </div>
+              <figcaption><p class="n-person__name">[ФИО профессора]</p><p class="n-person__role">Профессор кафедры [название], [факультет]</p></figcaption>
+            </figure></li>
+            <li><figure class="n-person">
+              <div class="n-person__photo">
+                <img class="n-muted" src="../../../assets/stub/photos/800/portrait-studentka-v-ochkah.jpg" alt="Студентка в очках" width="600" height="800" loading="lazy">
+                <button class="btn-circle n-person__more" type="button"><span class="icon icon--plus" aria-hidden="true"></span><span class="visually-hidden">Подробнее о студентке</span></button>
+              </div>
+              <figcaption><p class="n-person__name">[Имя Фамилия]</p><p class="n-person__role">Студентка [N] курса, [направление]. Фото приглушено: <code>.n-muted</code></p></figcaption>
+            </figure></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Новости / События ═══ -->
+    <section class="section section--grey" aria-labelledby="news-label">
+      <div class="container" data-tabs>
+        <div class="n-band-head kit-news-head">
+          <h2 class="band-label visually-hidden" id="news-label">Новости и события</h2>
+          <div class="tabs__list" role="tablist" aria-label="Новости и события">
+            <button class="tab" role="tab" id="tab-news" aria-controls="panel-news" aria-selected="true">Новости</button>
+            <button class="tab" role="tab" id="tab-events" aria-controls="panel-events" aria-selected="false">События</button>
+          </div>
+          <a class="btn btn--text" href="#">Все новости <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+        </div>
+        <div class="tabs__panel" role="tabpanel" id="panel-news" aria-labelledby="tab-news" tabindex="0">
+          <ul class="kit-news" role="list">
+            <li><a class="n-news" href="#">
+              <div class="n-news__media"><img class="n-mono" src="../../../assets/stub/photos/800/campus-den-znaniy-yarmarka.jpg" alt="Ярмарка Дня знаний во дворе университета" width="800" height="533" loading="lazy"></div>
+              <p class="n-news__date">[1 сентября]</p>
+              <p class="n-news__title">Первокурсники ТвГУ получили студенческие билеты у главного корпуса</p>
+              <p class="n-news__text">[Анонс новости в две строки: что произошло и зачем читать дальше.]</p>
+            </a></li>
+            <li><a class="n-news" href="#">
+              <div class="n-news__media"><img class="n-mono" src="../../../assets/stub/photos/800/lecture-bolshaya-auditoriya.jpg" alt="Полная лекционная аудитория с высокими окнами" width="800" height="533" loading="lazy"></div>
+              <p class="n-news__date">[дата]</p>
+              <p class="n-news__title">[Заголовок новости о науке: открытие лаборатории или грант]</p>
+              <p class="n-news__text">[Анонс новости в две строки.]</p>
+            </a></li>
+            <li><a class="n-news" href="#">
+              <div class="n-news__media"><img class="n-mono" src="../../../assets/stub/photos/800/event-zal-slushateli.jpg" alt="Слушатели в зале на открытой лекции" width="800" height="533" loading="lazy"></div>
+              <p class="n-news__date">[дата]</p>
+              <p class="n-news__title">[Заголовок: открытая лекция для школьников]</p>
+              <p class="n-news__text">[Анонс новости в две строки.]</p>
+            </a></li>
+          </ul>
+        </div>
+        <div class="tabs__panel" role="tabpanel" id="panel-events" aria-labelledby="tab-events" tabindex="0" hidden>
+          <p class="muted">День открытых дверей: [дата], главный корпус, ул. Желябова, 33.</p>
+        </div>
+        <p class="kit-classes kit-classes--below"><code>.n-news</code> <code>.n-news__media</code> <code>.n-news__date</code> <code>.n-news__title</code> <code>.n-news__text</code>; фото ч/б — <code>.n-mono</code></p>
+      </div>
+    </section>
+
+    <!-- ═══ Кнопки ═══ -->
+    <section class="section" aria-labelledby="buttons-label">
+      <div class="container band">
+        <div class="band__aside">
+          <h2 class="band-label" id="buttons-label">Кнопки и дедлайн</h2>
+          <p class="kit-classes">Контур — основная форма. Заливка одна на экран: <code>.btn--primary</code>; красная <code>.btn--accent</code> — одна на страницу. Красный текст — только <code>.n-deadline</code>.</p>
+        </div>
+        <div class="band__body kit-buttons">
+          <div class="kit-row">
+            <a class="btn btn--accent btn--lg" href="#">Подать документы <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+            <p class="n-deadline">Приём документов <strong>до [20 июля]</strong></p>
+          </div>
+          <div class="kit-row">
+            <a class="btn btn--outline" href="#">Все программы <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+            <a class="btn btn--primary" href="#">Посчитать баллы</a>
+            <a class="btn btn--outline btn--caps" href="#">Состав совета <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+          </div>
+          <div class="kit-row">
+            <a class="btn btn--text" href="#">Открыть расписание <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+            <button class="btn-circle" type="button"><span class="icon icon--arrow-right" aria-hidden="true"></span><span class="visually-hidden">Далее</span></button>
+            <button class="btn btn--outline" type="button" disabled>Недоступно</button>
+          </div>
+          <dl class="kit-legend">
+            <div><dt><code>.btn--outline</code></dt><dd>контур 1 px синий, r 6</dd></div>
+            <div><dt><code>.btn--caps</code></dt><dd>малая капсом, 44 px</dd></div>
+            <div><dt><code>.btn-circle</code></dt><dd>стрелка в тонком кружке, 44 px</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Поля и чекбокс ═══ -->
+    <section class="section section--grey" aria-labelledby="form-label">
+      <div class="container band">
+        <div class="band__aside">
+          <h2 class="band-label" id="form-label">Вопрос приёмной комиссии</h2>
+          <p class="kit-classes"><code>.field</code> <code>.field__label</code> <code>.input</code> <code>.select</code> <code>.field__error</code> <code>.check</code> — из base.css, рамки и радиусы из темы</p>
+        </div>
+        <div class="band__body">
+          <form class="kit-form" action="#" onsubmit="return false">
+            <div class="field">
+              <label class="field__label" for="f-name">Как к вам обращаться</label>
+              <input class="input" id="f-name" type="text" placeholder="Имя" autocomplete="given-name">
+            </div>
+            <div class="field">
+              <label class="field__label" for="f-contact">Телефон или Telegram</label>
+              <input class="input" id="f-contact" type="text" value="+7 915" aria-invalid="true" aria-describedby="f-contact-err">
+              <p class="field__error" id="f-contact-err">Укажите номер из 11 цифр или ник в Telegram</p>
+            </div>
+            <div class="field kit-form__wide">
+              <label class="field__label" for="f-level">Уровень</label>
+              <select class="select" id="f-level">
+                <option>Бакалавриат</option><option>Магистратура</option><option>Специалитет</option><option>Аспирантура</option>
+              </select>
+            </div>
+            <div class="field kit-form__wide">
+              <label class="field__label" for="f-q">Вопрос</label>
+              <textarea class="textarea" id="f-q" rows="3" placeholder="Например: есть ли бюджет на заочной форме"></textarea>
+            </div>
+            <label class="check kit-form__wide"><input type="checkbox" checked> <span>Согласен на обработку персональных данных</span></label>
+            <div class="kit-form__wide"><button class="btn btn--primary" type="submit">Отправить вопрос</button></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Таблица ═══ -->
+    <section class="section" aria-labelledby="table-label">
+      <div class="container band">
+        <div class="band__aside">
+          <h2 class="band-label" id="table-label">Места и баллы</h2>
+          <p class="kit-classes"><code>.n-table-wrap</code> (скролл внутри на мобильном) <code>.n-table</code> <code>.num</code> — только горизонтальные линии</p>
+        </div>
+        <div class="band__body">
+          <div class="n-table-wrap" role="region" aria-label="Таблица мест и баллов, прокручивается" tabindex="0">
+            <table class="n-table">
+              <caption class="caption">Бакалавриат, очная форма, 2026. Цифры появятся после публикации правил приёма.</caption>
+              <thead><tr><th scope="col">Направление</th><th scope="col">Факультет</th><th scope="col" class="num">Бюджет</th><th scope="col" class="num">Платно</th><th scope="col" class="num">Проходной 2025</th></tr></thead>
+              <tbody>
+                <tr><td>Прикладная математика и информатика</td><td>ПМиК</td><td class="num">[N]</td><td class="num">[N]</td><td class="num">[N]</td></tr>
+                <tr><td>Юриспруденция</td><td>Юридический</td><td class="num">[N]</td><td class="num">[N]</td><td class="num">[N]</td></tr>
+                <tr><td>Биология</td><td>Биологический</td><td class="num">[N]</td><td class="num">[N]</td><td class="num">[N]</td></tr>
+                <tr><td>Лингвистика</td><td>ФИЯиМК</td><td class="num">[N]</td><td class="num">[N]</td><td class="num">[N]</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Документы с ЭП ═══ -->
+    <section class="section section--grey" aria-labelledby="docs-label">
+      <div class="container band">
+        <div class="band__aside">
+          <h2 class="band-label" id="docs-label">Документы</h2>
+          <p class="kit-classes"><code>.n-docs</code> <code>.n-doc</code> <code>.n-doc__title</code> <code>.n-doc__meta</code> <code>.n-sign</code> <code>.n-doc__action</code></p>
+        </div>
+        <div class="band__body">
+          <ul class="n-docs" role="list">
+            <li class="n-doc">
+              <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"/><path d="M9 9h1"/><path d="M9 13h6"/><path d="M9 17h6"/></svg>
+              <a class="n-doc__title" href="#">Правила приёма на обучение в 2026 году</a>
+              <p class="n-doc__meta">PDF, [N] МБ · утверждены [дата]</p>
+              <span class="n-sign" title="Подписано ЭП: [ФИО], [дата]"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.46 20.846a12 12 0 0 1 -7.96 -14.846a12 12 0 0 0 8.5 -3a12 12 0 0 0 8.5 3a12 12 0 0 1 -.09 7.06"/><path d="M15 19l2 2l4 -4"/></svg>Подписан ЭП</span>
+              <a class="btn btn--text n-doc__action" href="#"><span class="icon icon--download" aria-hidden="true"></span>Скачать<span class="visually-hidden"> правила приёма</span></a>
+            </li>
+            <li class="n-doc">
+              <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"/><path d="M9 9h1"/><path d="M9 13h6"/><path d="M9 17h6"/></svg>
+              <a class="n-doc__title" href="#">Перечень вступительных испытаний и минимальные баллы</a>
+              <p class="n-doc__meta">PDF, [N] КБ · утверждён [дата]</p>
+              <span class="n-sign" title="Подписано ЭП: [ФИО], [дата]"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.46 20.846a12 12 0 0 1 -7.96 -14.846a12 12 0 0 0 8.5 -3a12 12 0 0 0 8.5 3a12 12 0 0 1 -.09 7.06"/><path d="M15 19l2 2l4 -4"/></svg>Подписан ЭП</span>
+              <a class="btn btn--text n-doc__action" href="#"><span class="icon icon--download" aria-hidden="true"></span>Скачать<span class="visually-hidden"> перечень испытаний</span></a>
+            </li>
+            <li class="n-doc">
+              <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"/><path d="M9 9h1"/><path d="M9 13h6"/><path d="M9 17h6"/></svg>
+              <a class="n-doc__title" href="#">Стоимость платного обучения на 2026/27 учебный год</a>
+              <p class="n-doc__meta">PDF, [N] КБ · приказ № [N] от [дата]</p>
+              <span class="n-sign" title="Подписано ЭП: [ФИО], [дата]"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.46 20.846a12 12 0 0 1 -7.96 -14.846a12 12 0 0 0 8.5 -3a12 12 0 0 0 8.5 3a12 12 0 0 1 -.09 7.06"/><path d="M15 19l2 2l4 -4"/></svg>Подписан ЭП</span>
+              <a class="btn btn--text n-doc__action" href="#"><span class="icon icon--download" aria-hidden="true"></span>Скачать<span class="visually-hidden"> стоимость обучения</span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Линейная графика 1: орбита с направлениями ═══ -->
+    <section class="section" aria-labelledby="orbit-title">
+      <div class="container">
+        <div class="n-orbit">
+          <svg class="n-art n-orbit__art" viewBox="0 0 480 480" aria-hidden="true">
+            <circle class="l-soft" cx="160" cy="300" r="40"/>
+            <circle class="l" cx="160" cy="300" r="90"/>
+            <circle class="l" cx="160" cy="300" r="150"/>
+            <circle class="l" cx="160" cy="300" r="210"/>
+            <circle class="l" cx="160" cy="300" r="270"/>
+            <circle class="dot" cx="227" cy="240" r="4.5"/>
+            <circle class="dot" cx="308.7" cy="320" r="4.5"/>
+            <circle class="dot" cx="344.7" cy="400" r="4.5"/>
+            <circle class="dot-accent" cx="361" cy="480" r="5.5"/>
+          </svg>
+          <div class="n-orbit__intro">
+            <p class="band-label">Уровни образования</p>
+            <h2 id="orbit-title">С чего начать</h2>
+          </div>
+          <ul class="n-links" role="list">
+            <li><a href="#"><span>Бакалавриат и специалитет<small>после школы или колледжа</small></span><span class="btn-circle" aria-hidden="true"><span class="icon icon--arrow-right"></span></span></a></li>
+            <li><a href="#"><span>Магистратура<small>после бакалавриата</small></span><span class="btn-circle" aria-hidden="true"><span class="icon icon--arrow-right"></span></span></a></li>
+            <li><a href="#"><span>Аспирантура<small>исследовательская карьера</small></span><span class="btn-circle" aria-hidden="true"><span class="icon icon--arrow-right"></span></span></a></li>
+            <li><a href="#"><span>Дополнительное образование<small>курсы и переподготовка</small></span><span class="btn-circle" aria-hidden="true"><span class="icon icon--arrow-right"></span></span></a></li>
+          </ul>
+        </div>
+        <p class="kit-classes kit-classes--below">Графика 1: <code>.n-orbit</code> <code>.n-orbit__art</code> <code>.n-orbit__intro</code> <code>.n-links</code>. SVG-классы: <code>.l</code> <code>.l-soft</code> <code>.dot</code> <code>.dot-accent</code> <code>.dot-open</code></p>
+      </div>
+    </section>
+
+    <!-- ═══ Линейная графика 2: маршрут ═══ -->
+    <section class="section section--grey" aria-labelledby="route-label">
+      <div class="container band">
+        <div class="band__aside">
+          <h2 class="band-label" id="route-label">Маршрут поступления</h2>
+          <p class="kit-classes">Графика 2: <code>.n-route</code> <code>.n-route__step</code> <code>.is-current</code> <code>.n-route__when</code> <code>.n-route__what</code> <code>.n-route__note</code>; число шагов <code>--steps</code></p>
+        </div>
+        <div class="band__body">
+          <ol class="n-route" style="--steps:4">
+            <li class="n-route__step"><span class="n-route__when">[20 июня]</span><span class="n-route__what">Подай заявление</span><span class="n-route__note">Через Госуслуги или в приёмной комиссии, до пяти направлений</span></li>
+            <li class="n-route__step is-current"><span class="n-route__when">[до 25 июля]</span><span class="n-route__what">Сдай вступительные</span><span class="n-route__note">ЕГЭ засчитываются автоматически, внутренние испытания по расписанию</span></li>
+            <li class="n-route__step"><span class="n-route__when">[до 3 августа]</span><span class="n-route__what">Дай согласие</span><span class="n-route__note">Одно согласие на зачисление на выбранную программу</span></li>
+            <li class="n-route__step"><span class="n-route__when">[9 августа]</span><span class="n-route__what">Проверь приказ</span><span class="n-route__note">Списки зачисленных на сайте и в личном кабинете</span></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Линейная графика 3: схема между столицами ═══ -->
+    <section class="section" aria-labelledby="map-label">
+      <div class="container band">
+        <div class="band__aside">
+          <h2 class="band-label" id="map-label">Где мы</h2>
+          <p class="kit-classes">Графика 3: <code>.n-map</code> + <code>.n-figure__label</code> (<code>--x</code>, <code>--y</code> в % от рисунка); узкая схема — <code>.n-only-narrow</code>, широкая — <code>.n-only-wide</code></p>
+        </div>
+        <div class="band__body">
+          <figure class="kit-map">
+            <div class="n-map n-figure n-only-wide" style="--ratio:1000/400">
+              <svg class="n-art" viewBox="0 0 1000 400" preserveAspectRatio="none" aria-hidden="true">
+                <circle class="l-soft" cx="560" cy="250" r="44"/>
+                <circle class="l-soft" cx="560" cy="250" r="96"/>
+                <circle class="l-soft" cx="560" cy="250" r="156"/>
+                <polyline class="l" points="60,80 250,132 420,205 560,250 720,300 940,340"/>
+                <line class="l-soft" x1="0" y1="250" x2="1000" y2="250"/>
+                <circle class="dot" cx="60" cy="80" r="5"/>
+                <circle class="dot" cx="940" cy="340" r="5"/>
+                <circle class="dot-open" cx="560" cy="250" r="12"/>
+                <circle class="dot-accent" cx="560" cy="250" r="5"/>
+              </svg>
+              <span class="n-figure__label" style="--x:6%; --y:20%"><b>Санкт-Петербург</b>[N ч] на поезде</span>
+              <span class="n-figure__label" style="--x:56%; --y:62.5%; --tx:20px"><b>Тверь</b>ТвГУ, ул. Желябова, 33</span>
+              <span class="n-figure__label" style="--x:94%; --y:85%; --tx:calc(-100% - 12px)"><b>Москва</b>[N ч] на поезде</span>
+            </div>
+            <div class="n-map n-figure n-only-narrow" style="--ratio:360/460">
+              <svg class="n-art" viewBox="0 0 360 460" preserveAspectRatio="none" aria-hidden="true">
+                <circle class="l-soft" cx="150" cy="250" r="40"/>
+                <circle class="l-soft" cx="150" cy="250" r="86"/>
+                <circle class="l-soft" cx="150" cy="250" r="140"/>
+                <polyline class="l" points="60,30 90,120 130,190 150,250 180,340 230,430"/>
+                <circle class="dot" cx="60" cy="30" r="5"/>
+                <circle class="dot" cx="230" cy="430" r="5"/>
+                <circle class="dot-open" cx="150" cy="250" r="11"/>
+                <circle class="dot-accent" cx="150" cy="250" r="4.5"/>
+              </svg>
+              <span class="n-figure__label" style="--x:16.7%; --y:6.5%; --tx:16px"><b>Санкт-Петербург</b>[N ч] на поезде</span>
+              <span class="n-figure__label" style="--x:41.7%; --y:54.3%; --tx:20px"><b>Тверь</b>ул. Желябова, 33</span>
+              <span class="n-figure__label" style="--x:63.9%; --y:93.5%; --tx:calc(-100% - 14px)"><b>Москва</b>[N ч] на поезде</span>
+            </div>
+            <figcaption class="caption kit-map__cap">Тверь на железной дороге Москва — Санкт-Петербург. Время в пути — плейсхолдеры.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="footer"></div>
+</body>
+</html>

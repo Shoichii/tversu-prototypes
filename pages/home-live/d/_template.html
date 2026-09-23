@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ТвГУ — 15 факультетов. Найди свой цвет</title>
+  <meta name="description" content="Тверской государственный университет: 15 факультетов и институтов, 129 программ. Найди свой факультет по цвету и подбери программу за минуту.">
+  <meta name="theme-color" content="#FEF3F1">
+  <link rel="preload" href="../../../assets/fonts/live-d-geologica.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../../assets/fonts/live-d-wixmadefor.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../../system/tokens.css">
+  <link rel="stylesheet" href="../../../system/base.css">
+  <link rel="stylesheet" href="../../../system/stub.css">
+  <link rel="stylesheet" href="../../../system/motion.css">
+  <link rel="stylesheet" href="../../../system/vendor/lenis/lenis.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="../../../system/motion.js"></script>
+  <script src="../../../system/partials.js" defer></script>
+  <script src="../../../system/ui.js" defer></script>
+  <script src="../../../system/vendor/gsap/gsap.min.js" defer></script>
+  <script src="../../../system/vendor/gsap/ScrollTrigger.min.js" defer></script>
+  <script src="../../../system/vendor/gsap/Flip.min.js" defer></script>
+  <script src="../../../system/vendor/gsap/MorphSVGPlugin.min.js" defer></script>
+  <script src="../../../system/vendor/gsap/CustomEase.min.js" defer></script>
+  <script src="../../../system/vendor/lenis/lenis.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div data-include="header"></div>
+
+  <main id="main">
+    <!-- Ближайшие события -->
+    <section class="events" aria-label="Ближайшие события">
+      <div class="container">
+        <ul class="events__list" role="list">
+          {{EVENTS}}
+        </ul>
+      </div>
+    </section>
+
+    <!-- Первый экран -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <h1 id="hero-title" class="hero__title" data-m="words"><span class="hero__l">15 факультетов.</span> <span class="hero__l">Найди свой <span class="hero__accent">цвет</span></span></h1>
+          <p class="hero__lead" data-m="up" data-m-delay="160">Биология и право, код и спорт, языки и педагогика. У каждого факультета ТвГУ свой цвет и свой знак. Пройди подбор или нажми на плитку щита, чтобы увидеть, где тебе будет интересно.</p>
+          <div class="hero__actions" data-m="up" data-m-delay="240">
+            <a class="btn btn--primary btn--lg" href="#quiz" data-magnetic>Подобрать программу {{I_ARROW}}</a>
+            <a class="btn btn--text hero__all" href="#faculties">Все факультеты</a>
+          </div>
+          <dl class="proof" data-m-stagger>
+            <div class="proof__item" data-m="up"><dt class="proof__label"><span>год</span> <span>основания</span></dt><dd class="proof__num"><span data-count data-count-from="1800" data-count-dur="1300">1870</span></dd></div>
+            <div class="proof__item" data-m="up"><dt class="proof__label"><span>факультетов</span> <span>и институтов</span></dt><dd class="proof__num"><span data-count>15</span></dd></div>
+            <div class="proof__item" data-m="up"><dt class="proof__label"><span>образовательных</span> <span>программ</span></dt><dd class="proof__num"><span data-count>129</span></dd></div>
+            <div class="proof__item" data-m="up"><dt class="proof__label"><span>место в России,</span> <span>RUR 2026</span></dt><dd class="proof__num"><span data-count>93</span>-е</dd></div>
+            <div class="proof__item" data-m="up"><dt class="proof__label"><span>НАР 2026,</span> <span>2-я лига</span></dt><dd class="proof__num">топ-200</dd></div>
+          </dl>
+        </div>
+        <div class="hero__shield">
+          {{SHIELD}}
+          <p class="hero__hint"><span class="hint-fine">Наведи на плитку, чтобы узнать факультет, нажми, чтобы открыть</span><span class="hint-touch">Нажми на плитку, чтобы открыть факультет</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Мини-подбор -->
+    <section class="quiz section" id="quiz" aria-labelledby="quiz-title">
+      <div class="container quiz__grid">
+        <div class="quiz__copy">
+          <h2 id="quiz-title" data-m="words">Что тебе нравится?</h2>
+          <p class="quiz__lead" data-m="up">Отметь одно или несколько, и щит подсветит факультеты, где это изучают. Полный подбор учитывает предметы ЕГЭ и баллы.</p>
+          <ul class="quiz__chips" role="list" aria-label="Интересы">
+            {{CHIPS}}
+          </ul>
+          <div class="quiz__result" aria-live="polite">
+            <p class="quiz__empty" data-quiz-empty>Пока ничего не выбрано. Нажми на то, что отзывается.</p>
+            <div class="quiz__found" data-quiz-found hidden>
+              <p class="quiz__count"><b data-quiz-count>0</b> <span data-quiz-word>факультетов</span> подходят</p>
+              <ul class="quiz__list" role="list" data-quiz-list></ul>
+            </div>
+            <a class="btn btn--primary" href="#">Полный подбор по баллам ЕГЭ {{I_ARROW}}</a>
+          </div>
+        </div>
+        <div class="quiz__board">
+          <span class="quiz__tag">пример подбора</span>
+          {{SHIELD_MINI}}
+        </div>
+      </div>
+    </section>
+
+    <!-- Факультеты: цвет страницы по прокрутке -->
+    <section class="faculties section" id="faculties" aria-labelledby="fac-title-list">
+      <div class="container">
+        <div class="faculties__head">
+          <h2 id="fac-title-list" data-m="words">Все 15 факультетов и&nbsp;институтов</h2>
+          <p class="faculties__lead" data-m="up">Листай: страница перекрашивается в цвет того факультета, который перед тобой. Открой любой, чтобы увидеть программы.</p>
+        </div>
+        <div class="faculties__grid">
+          <div class="lens" aria-hidden="true">
+            <div class="lens__tile" data-lens>
+              {{LENS}}
+            </div>
+            <p class="lens__num"><span data-lens-num>01</span> / 15</p>
+            <p class="lens__name" data-lens-name>Биологический факультет</p>
+          </div>
+          <ol class="faclist" role="list" data-faclist>
+            {{FACS}}
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Кому что нужно -->
+    <section class="audience section" aria-labelledby="aud-title">
+      <div class="container">
+        <h2 id="aud-title" class="section-title" data-m="words">Кому что нужно</h2>
+        <ul class="aud__grid" role="list" data-m-stagger>
+          {{AUD}}
+        </ul>
+      </div>
+    </section>
+
+    <!-- Направления программ -->
+    <section class="dirs section" aria-labelledby="dirs-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="dirs-title" class="section-title" data-m="words">129 программ в шести направлениях</h2>
+          <a class="btn btn--text" href="#">Каталог программ {{I_ARROW}}</a>
+        </div>
+        <ul class="dirs__grid" role="list" data-m-stagger>
+          {{DIRS}}
+        </ul>
+      </div>
+    </section>
+
+    <!-- Сегодня в ТвГУ -->
+    <section class="today section" aria-labelledby="today-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="today-title" class="section-title" data-m="words">Сегодня в ТвГУ</h2>
+          <a class="btn btn--text" href="#">Все новости {{I_ARROW}}</a>
+        </div>
+        <ul class="news__grid" role="list" data-m-stagger data-m-scroller>
+          {{NEWS}}
+        </ul>
+      </div>
+    </section>
+
+    <!-- Наука и люди -->
+    <section class="science section" aria-labelledby="sci-title">
+      <div class="container science__grid">
+        <div class="science__copy">
+          <h2 id="sci-title" class="section-title" data-m="words">Наука и люди</h2>
+          <p class="science__lead" data-m="up">На 15 факультетах работают [N] научных школ и [N] лабораторий. Студенты приходят в них с первого курса.</p>
+          <ul class="ranks" role="list" data-m-stagger>
+            <li class="rank" data-m="up" style="--fc:#2A3DAD;--fc-fg:#FFFFFF"><span class="rank__num">93-е</span><span class="rank__text">место в России, Round University Ranking 2026</span></li>
+            <li class="rank" data-m="up" style="--fc:#E6AA1F;--fc-fg:#0A1329"><span class="rank__num">топ-200</span><span class="rank__text">Национальный агрегированный рейтинг 2026, 2-я лига</span></li>
+            <li class="rank" data-m="up" style="--fc:#9D7CF2;--fc-fg:#0A1329"><span class="rank__num">[N]</span><span class="rank__text">докторов и кандидатов наук среди преподавателей</span></li>
+          </ul>
+        </div>
+        <figure class="science__media" data-m="mask">
+          <img src="../../../assets/stub/photos/800/lecture-klass-seminar.jpg" alt="Семинар в учебной аудитории" width="800" height="603" loading="lazy" decoding="async">
+          <figcaption>Семинар в аудитории. Здесь будет фото научной лаборатории.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- История в лицах -->
+    <section class="history section" aria-labelledby="hist-title">
+      <div class="container">
+        <div class="ribbon ribbon--bleed" data-ribbon>
+          <div class="ribbon__head">
+            <h2 id="hist-title" class="section-title" data-m="words">История в лицах: 1870&nbsp;→ сегодня</h2>
+            <div class="ribbon__nav">
+              <button class="round-btn" type="button" data-ribbon-prev>{{I_ARROW_L}}<span class="visually-hidden">Назад</span></button>
+              <button class="round-btn" type="button" data-ribbon-next>{{I_ARROW}}<span class="visually-hidden">Вперёд</span></button>
+            </div>
+          </div>
+          <ol class="ribbon__track hist__track" role="list" aria-label="История университета">
+            {{HIST}}
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Партнёры -->
+    <section class="partners-sec section" aria-labelledby="partners-title">
+      <div class="container">
+        <div class="partners ribbon" data-ribbon>
+          <div class="ribbon__head">
+            <h2 id="partners-title" class="section-title section-title--sm">С кем работаем</h2>
+            <div class="ribbon__nav">
+              <button class="round-btn" type="button" data-ribbon-prev>{{I_ARROW_L}}<span class="visually-hidden">Назад</span></button>
+              <button class="round-btn" type="button" data-ribbon-next>{{I_ARROW}}<span class="visually-hidden">Вперёд</span></button>
+            </div>
+          </div>
+          <div class="ribbon__track" role="region" aria-label="Партнёры, листается">
+            {{PARTNERS}}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq section" id="faq" aria-labelledby="faq-title">
+      <div class="container faq__grid">
+        <div class="faq__head">
+          <h2 id="faq-title" class="section-title" data-m="words">Частые вопросы</h2>
+          <p class="faq__lead" data-m="up">Про бюджет, общежитие, деньги и баллы. Не нашёл ответ — спроси приёмную комиссию ниже.</p>
+        </div>
+        <div class="accordion">
+          {{FAQ}}
+        </div>
+      </div>
+    </section>
+
+    <!-- Лид + сроки -->
+    <section class="lead-sec" id="ask" aria-labelledby="ask-title">
+      <div class="container">
+        <div class="lead-box">
+          <div class="lead-box__dates">
+            <h2 id="ask-title" class="lead-box__title">Спроси приёмную комиссию</h2>
+            <p class="lead-box__text">Ответ придёт в Telegram или звонком. Сроки кампании рядом, чтобы ничего не пропустить.</p>
+            <ul class="dates" role="list">
+              <li class="date" style="--fc:#FE5C2B"><span class="date__d">[дата]</span><span class="date__t">старт приёма документов</span></li>
+              <li class="date" style="--fc:#A3BE34"><span class="date__d">[дата]</span><span class="date__t">день открытых дверей</span></li>
+              <li class="date" style="--fc:#64B4EE"><span class="date__d">[дата]</span><span class="date__t">последний день подачи на бюджет</span></li>
+            </ul>
+          </div>
+          <form class="lead-form" action="#" method="post" novalidate data-lead>
+            <div class="field">
+              <label class="field__label" for="lead-contact">Телефон или ник в Telegram</label>
+              <input class="input" id="lead-contact" name="contact" type="text" autocomplete="tel" placeholder="+7 900 000-00-00 или @nickname" required aria-describedby="lead-contact-err">
+              <p class="field__error" id="lead-contact-err" hidden>Оставь телефон или ник, иначе не сможем ответить.</p>
+            </div>
+            <div class="field">
+              <label class="field__label" for="lead-q">Вопрос</label>
+              <textarea class="textarea" id="lead-q" name="question" rows="3" placeholder="Например: какие экзамены нужны на психологию?"></textarea>
+            </div>
+            <label class="check"><input type="checkbox" name="agree" required> <span>Согласен на обработку персональных данных</span></label>
+            <div class="lead-form__actions">
+              <button class="btn btn--light btn--lg" type="submit">Отправить вопрос {{I_SEND}}</button>
+              <a class="btn btn--text lead-form__tg" href="#">или написать в Telegram</a>
+            </div>
+            <p class="lead-form__ok" data-lead-ok hidden role="status">Вопрос отправлен. Это пример формы, в макете ничего не уходит.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="footer"></div>
+
+  <!-- Карточка факультета (разворот плитки) -->
+  <div class="fac" id="fac" role="dialog" aria-modal="true" aria-labelledby="fac-title" hidden>
+    <div class="fac__surface" data-fac-surface>
+      <div class="fac__bar container">
+        <p class="fac__count"><span data-fac-num>01</span> / 15</p>
+        <div class="fac__nav">
+          <button class="round-btn round-btn--on" type="button" data-fac-prev>{{I_ARROW_L}}<span class="visually-hidden">Предыдущий факультет</span></button>
+          <button class="round-btn round-btn--on" type="button" data-fac-next>{{I_ARROW}}<span class="visually-hidden">Следующий факультет</span></button>
+          <button class="round-btn round-btn--on" type="button" data-fac-close>{{I_CLOSE}}<span class="visually-hidden">Закрыть карточку</span></button>
+        </div>
+      </div>
+      <div class="fac__body container">
+        <div class="fac__main">
+          <div class="fac__iconbox">{{FAC_ICON}}</div>
+          <h2 class="fac__title" id="fac-title" data-fac-title>Биологический факультет</h2>
+          <p class="fac__about" data-fac-about></p>
+          <dl class="fac__facts">
+            <div><dt>Программ бакалавриата и специалитета</dt><dd>[N]</dd></div>
+            <div><dt>Программ магистратуры</dt><dd>[N]</dd></div>
+            <div><dt>Бюджетных мест в 2026</dt><dd>[N]</dd></div>
+          </dl>
+          <div class="fac__actions">
+            <a class="btn btn--on btn--lg" href="#">Программы факультета {{I_ARROW}}</a>
+            <a class="btn btn--text fac__link" href="#">Страница факультета</a>
+          </div>
+        </div>
+        <figure class="fac__media" data-fac-media></figure>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

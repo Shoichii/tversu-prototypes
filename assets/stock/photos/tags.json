@@ -1,0 +1,1001 @@
+{
+ "02aeff13bf": {
+  "slug": "lecture-klass-seminar",
+  "tags": [
+   "lecture",
+   "students"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Семинар в учебной аудитории: студенты за партами, проектор"
+ },
+ "02fd72c3eb": {
+  "slug": "portrait-prepodavatel-profil",
+  "tags": [
+   "people-portrait",
+   "event"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Преподавательница в профиль на встрече, крупный план"
+ },
+ "056be4be65": {
+  "slug": "students-slushayut-vstrecha",
+  "tags": [
+   "students",
+   "people-portrait"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Студенты слушают на встрече, крупные планы лиц"
+ },
+ "06d6313e69": {
+  "slug": "event-vystuplenie-za-stolom",
+  "tags": [
+   "event"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Выступление за столом переговоров в кабинете"
+ },
+ "0e4f5f2e4c": {
+  "slug": "portrait-dve-prepodavatelnicy-ulica",
+  "tags": [
+   "people-portrait",
+   "event"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Две женщины на открытом воздухе, крупный план, зелень"
+ },
+ "15057b4c1e": {
+  "slug": "city-pamyatnik-pushkinu-volga",
+  "tags": [
+   "city",
+   "people-portrait"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Мужчина у памятника Пушкину на набережной Волги, небо и река"
+ },
+ "157d1bf199": {
+  "slug": "ceremony-vruchenie-diploma-rukopozhatie",
+  "tags": [
+   "ceremony"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Вручение диплома, рукопожатие, флаги"
+ },
+ "162a249896": {
+  "slug": "students-intensiv-smeyutsya",
+  "tags": [
+   "students"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Студенты на интенсиве сидят и смеются"
+ },
+ "17086745ff": {
+  "slug": "students-vstrecha-s-rektorom-kabinet",
+  "tags": [
+   "students",
+   "event"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Встреча студентов с руководителем в кабинете с кубками"
+ },
+ "179a9ca74d": {
+  "slug": "students-aplodiruyut-intensiv",
+  "tags": [
+   "students"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Студентка аплодирует, команда за столом с ноутбуком"
+ },
+ "1dbea094be": {
+  "slug": "portrait-professor-u-doski",
+  "tags": [
+   "people-portrait",
+   "lecture"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Преподаватель у доски с формулами, эмоционально объясняет"
+ },
+ "1fb0eaaca6": {
+  "slug": "sport-turslet-zaryadka-pole",
+  "tags": [
+   "students",
+   "sport",
+   "nature"
+  ],
+  "hero": true,
+  "tone": "light",
+  "what": "Турслёт: студенты делают разминку на поле у леса"
+ },
+ "22320cbfbd": {
+  "slug": "portrait-zhenshchina-za-stolom",
+  "tags": [
+   "people-portrait"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Портрет женщины за столом на встрече"
+ },
+ "22ca635369": {
+  "slug": "ceremony-cvety-u-pamyatnika",
+  "tags": [
+   "ceremony",
+   "people-portrait"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Студенты и преподаватели с гвоздиками у памятника во дворе"
+ },
+ "243ba031fe": {
+  "slug": "campus-stela-dvor",
+  "tags": [
+   "campus",
+   "building",
+   "city"
+  ],
+  "hero": true,
+  "tone": "light",
+  "what": "Памятная стела во дворе, деревья и старый дом, солнечно"
+ },
+ "25472e3125": {
+  "slug": "people-tri-sobesednicy",
+  "tags": [
+   "people-portrait",
+   "event"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Три женщины беседуют на стульях у окна"
+ },
+ "26ec3babae": {
+  "slug": "students-inostrannye-slushayut",
+  "tags": [
+   "students",
+   "lecture"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Иностранные студенты слушают, крупные планы"
+ },
+ "28403f9106": {
+  "slug": "event-forum-znanie-zal",
+  "tags": [
+   "event"
+  ],
+  "hero": false,
+  "tone": "dark",
+  "what": "Форум «Знание»: зал со зрителями и сцена с экранами"
+ },
+ "296f636606": {
+  "slug": "portrait-studentka-v-ochkah",
+  "tags": [
+   "people-portrait",
+   "students"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Студентка в очках слушает, крупный план"
+ },
+ "29ea44f78d": {
+  "slug": "nature-turisty-na-utese",
+  "tags": [
+   "nature",
+   "students"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Студенты-туристы на скале над долиной (вертикаль)"
+ },
+ "36e74f5fb4": {
+  "slug": "students-idut-park-leto",
+  "tags": [
+   "students",
+   "city"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Иностранные студенты идут по летнему парку, солнце"
+ },
+ "37acf5b601": {
+  "slug": "ceremony-vypusknik-s-diplomom",
+  "tags": [
+   "ceremony",
+   "people-portrait"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Выпускник с дипломом рядом с преподавательницей"
+ },
+ "383e0f150d": {
+  "slug": "students-za-stolom-ulybayutsya",
+  "tags": [
+   "students"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Студентки за столом, улыбаются, рабочие листы"
+ },
+ "3a5ec17709": {
+  "slug": "students-biblioteka-diskussiya",
+  "tags": [
+   "students",
+   "lecture"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Студенты обсуждают в библиотеке на фоне книжных полок"
+ },
+ "3e66c8ce79": {
+  "slug": "ceremony-den-znaniy-gosti",
+  "tags": [
+   "ceremony",
+   "event"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "День знаний: почётные гости и студенты во дворе"
+ },
+ "49a483ce63": {
+  "slug": "students-biblioteka-tablichki",
+  "tags": [
+   "students",
+   "event"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Студентки с хештег-табличками в библиотеке"
+ },
+ "4a3a6d0ea0": {
+  "slug": "portrait-studentka-tehnoprom",
+  "tags": [
+   "people-portrait",
+   "event"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Студентка с бейджем на форуме «Технопром»"
+ },
+ "4d15308fd9": {
+  "slug": "sport-turslet-komanda",
+  "tags": [
+   "students",
+   "sport",
+   "nature"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Турслёт: команда студентов на поляне у сцены"
+ },
+ "4fd75ca2c5": {
+  "slug": "lecture-auditoriya-proektor",
+  "tags": [
+   "lecture",
+   "students"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Занятие в аудитории, презентация на экране, флаги"
+ },
+ "54ca05c466": {
+  "slug": "portrait-professor-zhest",
+  "tags": [
+   "people-portrait",
+   "lecture"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Пожилая преподавательница объясняет с жестом, светлый фон"
+ },
+ "55365aa3e4": {
+  "slug": "city-naberezhnaya-inostrannye-studenty",
+  "tags": [
+   "city",
+   "students"
+  ],
+  "hero": true,
+  "tone": "light",
+  "what": "Иностранные студенты на набережной Волги, мост и большое небо"
+ },
+ "583f5ced9b": {
+  "slug": "lecture-amfiteatr-sverhu",
+  "tags": [
+   "lecture",
+   "students",
+   "campus"
+  ],
+  "hero": true,
+  "tone": "light",
+  "what": "Поточная аудитория-амфитеатр сверху, доска и экран"
+ },
+ "5956f6994b": {
+  "slug": "portrait-oficialnyy-za-stolom",
+  "tags": [
+   "people-portrait"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Официальный портрет мужчины в костюме за столом (вертикаль)"
+ },
+ "5be82b3d29": {
+  "slug": "students-igra-za-stolom",
+  "tags": [
+   "students"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Студентки играют в образовательную игру за столом"
+ },
+ "5f707dc737": {
+  "slug": "students-slushayut-krupno",
+  "tags": [
+   "students"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Студентки слушают, крупный план"
+ },
+ "635de27f31": {
+  "slug": "ceremony-vypusknica-s-diplomom",
+  "tags": [
+   "ceremony",
+   "people-portrait"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Выпускница с дипломом и преподавательница"
+ },
+ "63e0122a7d": {
+  "slug": "students-kovorking-bloknoty",
+  "tags": [
+   "students",
+   "lecture"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Участники с блокнотами в светлом коворкинге"
+ },
+ "641e4054d1": {
+  "slug": "portrait-student-s-mikrofonom",
+  "tags": [
+   "people-portrait",
+   "event"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Студент в бабочке с микрофоном"
+ },
+ "70ae541525": {
+  "slug": "students-biblioteka-chetvero",
+  "tags": [
+   "students"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Четверо студентов в библиотеке"
+ },
+ "7b87348412": {
+  "slug": "ceremony-den-znaniy-studbilet-scena",
+  "tags": [
+   "ceremony",
+   "event"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "День знаний: вручение символического студбилета на сцене"
+ },
+ "7be4b02778": {
+  "slug": "portrait-rukovoditel-za-stolom",
+  "tags": [
+   "people-portrait"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Руководительница за столом переговоров, крупно"
+ },
+ "7d402eab7e": {
+  "slug": "students-inostrannye-u-pamyatnika",
+  "tags": [
+   "students",
+   "city"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Иностранные студенты у памятника на набережной"
+ },
+ "8fe3918eca": {
+  "slug": "portrait-student-vedushchiy",
+  "tags": [
+   "people-portrait",
+   "event"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Студент-ведущий у трибуны с микрофоном"
+ },
+ "9068181d7e": {
+  "slug": "students-tochka-kipeniya",
+  "tags": [
+   "students",
+   "lecture"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Студенты в зале «Точки кипения»"
+ },
+ "907bb39f07": {
+  "slug": "nature-studenty-na-more",
+  "tags": [
+   "nature",
+   "students"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Студенты на морском берегу (маленький, только карточки)"
+ },
+ "955925f1c8": {
+  "slug": "students-za-noutbukom",
+  "tags": [
+   "students"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Студентка за столом с ноутбуком и карточками"
+ },
+ "9bad6181ea": {
+  "slug": "city-inostrannye-studenty-naberezhnaya-2",
+  "tags": [
+   "city",
+   "students",
+   "people-portrait"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Иностранные студенты обнимаются на набережной, небо"
+ },
+ "9c292ad155": {
+  "slug": "city-dobro-pozhalovat-tver-noch",
+  "tags": [
+   "city",
+   "sport",
+   "students"
+  ],
+  "hero": false,
+  "tone": "dark",
+  "what": "Команда студентов у стелы «Добро пожаловать в Тверь», ночь"
+ },
+ "9d4fd90508": {
+  "slug": "students-meropriyatie-shariki",
+  "tags": [
+   "students",
+   "event"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Студенты в зале с шариками, общение"
+ },
+ "9dae0192b3": {
+  "slug": "lecture-studenty-v-auditorii",
+  "tags": [
+   "lecture",
+   "students"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Студенты за партами в поточной аудитории"
+ },
+ "9fe63661a6": {
+  "slug": "ceremony-vypusknica-2",
+  "tags": [
+   "ceremony",
+   "people-portrait"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Выпускница получает диплом"
+ },
+ "a4dc4efc7d": {
+  "slug": "ceremony-vruchenie-rukopozhatie-2",
+  "tags": [
+   "ceremony"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Вручение диплома, рукопожатие"
+ },
+ "a5e17e00eb": {
+  "slug": "portrait-muzhchina-za-stolom",
+  "tags": [
+   "people-portrait"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Мужчина в костюме за столом переговоров"
+ },
+ "a86f93f8f7": {
+  "slug": "sport-turslet-komanda-kostyumy",
+  "tags": [
+   "students",
+   "sport",
+   "nature"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Турслёт: команда в ярких костюмах на траве"
+ },
+ "a93924e593": {
+  "slug": "portrait-muzhchina-ulica",
+  "tags": [
+   "people-portrait"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Мужчина в светлом пиджаке на улице среди деревьев"
+ },
+ "a9a8aa7afb": {
+  "slug": "ceremony-vruchenie-nagrad",
+  "tags": [
+   "ceremony"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Вручение дипломов, группа у стола"
+ },
+ "b1c5840cb8": {
+  "slug": "lecture-bolshaya-auditoriya",
+  "tags": [
+   "lecture",
+   "students",
+   "campus"
+  ],
+  "hero": true,
+  "tone": "light",
+  "what": "Большая аудитория, полная студентов, высокие окна"
+ },
+ "b1e27bba23": {
+  "slug": "ceremony-vozlozhenie-cvetov",
+  "tags": [
+   "ceremony",
+   "students"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Студенты возлагают гвоздики"
+ },
+ "b380bdbaeb": {
+  "slug": "ceremony-vruchenie-3",
+  "tags": [
+   "ceremony"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Вручение диплома в аудитории"
+ },
+ "b58825d082": {
+  "slug": "students-inostrannye-v-zale",
+  "tags": [
+   "students",
+   "lecture"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Иностранные студенты в зале"
+ },
+ "b8ed1dcc98": {
+  "slug": "ceremony-vruchenie-4",
+  "tags": [
+   "ceremony"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Вручение дипломов, выпускники в очереди"
+ },
+ "b9e2b96c20": {
+  "slug": "students-aplodismenty",
+  "tags": [
+   "students",
+   "event"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Иностранные студенты аплодируют"
+ },
+ "bcaa5293b9": {
+  "slug": "portrait-professor-krupno",
+  "tags": [
+   "people-portrait"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Профессор в очках, крупный портрет, тёплый кабинет"
+ },
+ "bd01231e3d": {
+  "slug": "lecture-zal-s-muralom",
+  "tags": [
+   "lecture",
+   "students"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Лекция в зале с муралом «Тверская область»"
+ },
+ "c555afc93e": {
+  "slug": "portrait-studentka-u-tribuny",
+  "tags": [
+   "people-portrait",
+   "event"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Улыбающаяся девушка у трибуны с микрофоном"
+ },
+ "cce27a53f8": {
+  "slug": "event-zal-slushateli",
+  "tags": [
+   "event"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Полный зал слушателей"
+ },
+ "ce2b40d368": {
+  "slug": "portrait-vedushchaya-bordo",
+  "tags": [
+   "people-portrait",
+   "event"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Ведущая в бордовом платье с микрофоном"
+ },
+ "cfe42b4689": {
+  "slug": "sport-turslet-estafeta",
+  "tags": [
+   "sport",
+   "students",
+   "nature"
+  ],
+  "hero": true,
+  "tone": "light",
+  "what": "Турслёт: эстафета с фишками на поле у леса"
+ },
+ "d09660ee01": {
+  "slug": "sport-voleybol-zhenskaya-komanda",
+  "tags": [
+   "sport",
+   "students"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Женская волейбольная команда с кубком в зале"
+ },
+ "d65389d14a": {
+  "slug": "portrait-professor-zhestikuliruet",
+  "tags": [
+   "people-portrait"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Преподаватель с бородой объясняет жестом"
+ },
+ "d9e446e4d1": {
+  "slug": "lecture-studenty-telefony",
+  "tags": [
+   "lecture",
+   "students"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Студенты в аудитории-амфитеатре"
+ },
+ "da656ca7c0": {
+  "slug": "students-telefon-krupno",
+  "tags": [
+   "students"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Студент фотографирует на телефон, крупный план"
+ },
+ "e723236926": {
+  "slug": "portrait-inostrannye-studenty-ulica",
+  "tags": [
+   "people-portrait",
+   "students",
+   "city"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Трое иностранных студентов улыбаются на улице"
+ },
+ "e7aca04b49": {
+  "slug": "people-dve-sobesednicy",
+  "tags": [
+   "people-portrait"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Студентка и преподавательница беседуют"
+ },
+ "ee3634ca12": {
+  "slug": "ceremony-gvozdiki-detal",
+  "tags": [
+   "ceremony"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Красные гвоздики в руке, деталь"
+ },
+ "efa97d911d": {
+  "slug": "nature-turslet-palatka",
+  "tags": [
+   "students",
+   "nature",
+   "sport"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Турслёт: студентки ставят палатку"
+ },
+ "f0811b8b31": {
+  "slug": "campus-den-znaniy-dvor-flagi",
+  "tags": [
+   "campus",
+   "ceremony",
+   "students"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "День знаний: толпа первокурсников во дворе, флаги, корпус"
+ },
+ "f22c4ba13a": {
+  "slug": "students-za-partami-profil",
+  "tags": [
+   "students",
+   "lecture"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Студентки за столом в профиль"
+ },
+ "f22d8aaa07": {
+  "slug": "people-tri-zhenshchiny-ulybayutsya",
+  "tags": [
+   "people-portrait"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Три женщины улыбаются на встрече"
+ },
+ "f58069ecde": {
+  "slug": "sport-beg-lesnaya-doroga",
+  "tags": [
+   "sport",
+   "nature",
+   "students"
+  ],
+  "hero": true,
+  "tone": "light",
+  "what": "Бегун на лесной дороге, спокойный фон"
+ },
+ "f58c6d5bde": {
+  "slug": "students-inostrannye-ryad",
+  "tags": [
+   "students",
+   "lecture"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Иностранные студенты в ряд на стульях"
+ },
+ "f5da820b13": {
+  "slug": "city-ekskursiya-u-pamyatnika",
+  "tags": [
+   "city",
+   "event"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Экскурсовод у памятника на набережной Волги"
+ },
+ "0309382379": {
+  "slug": "sport-voleybol-muzhskaya-komanda",
+  "tags": [
+   "sport",
+   "students"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Мужская волейбольная команда с медалями"
+ },
+ "10e7d52b81": {
+  "slug": "archive-klass-nachalo-veka",
+  "tags": [
+   "lecture",
+   "archive"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Архив: класс учительской школы, ч/б"
+ },
+ "18ee34fa70": {
+  "slug": "archive-uchenicy-v-klasse",
+  "tags": [
+   "lecture",
+   "archive"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Архив: ученицы за партами, ч/б"
+ },
+ "23f49c6c5a": {
+  "slug": "building-obshchezhitiya-nebo",
+  "tags": [
+   "building",
+   "campus"
+  ],
+  "hero": true,
+  "tone": "light",
+  "what": "Корпуса общежитий, пасмурное небо, ёлки"
+ },
+ "54a4143a4d": {
+  "slug": "archive-studenty-frontoviki",
+  "tags": [
+   "archive",
+   "students"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Архив: студенты-фронтовики 1945, сепия"
+ },
+ "56aaa33ac3": {
+  "slug": "sport-voleybol-komanda-u-steny",
+  "tags": [
+   "sport",
+   "students"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Волейбольная команда у кирпичной стены"
+ },
+ "7ce35106ce": {
+  "slug": "sport-drakony-lodka",
+  "tags": [
+   "sport",
+   "city"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Гребля на лодке-драконе (вертикаль)"
+ },
+ "8739656422": {
+  "slug": "archive-vospitannicy-shkoly",
+  "tags": [
+   "archive",
+   "people-portrait"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Архив: воспитанницы школы Максимовича"
+ },
+ "8ded3e7549": {
+  "slug": "building-obshchezhitie-derevo",
+  "tags": [
+   "building",
+   "campus"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Корпус общежития за деревом (маленький)"
+ },
+ "8ebb55e7e4": {
+  "slug": "archive-prepodavateli-1920e",
+  "tags": [
+   "archive",
+   "people-portrait"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Архив: преподаватели пединститута, 1920-е"
+ },
+ "994f4f0ad4": {
+  "slug": "building-obshchezhitie-ograda",
+  "tags": [
+   "building",
+   "campus"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Общежитие с оградой и машинами"
+ },
+ "a56d79d121": {
+  "slug": "campus-obshchezhitie-stolovaya",
+  "tags": [
+   "campus",
+   "dorm"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Общежитие: столовая-кафе"
+ },
+ "a8b3cea024": {
+  "slug": "sport-grebcy-komanda",
+  "tags": [
+   "sport",
+   "students"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Команда гребцов (вертикаль)"
+ },
+ "bd82b11b19": {
+  "slug": "campus-den-znaniy-yarmarka",
+  "tags": [
+   "campus",
+   "students",
+   "event"
+  ],
+  "hero": true,
+  "tone": "light",
+  "what": "День знаний: ярмарка объединений во дворе, оранжевый корпус"
+ },
+ "d1bd0a7539": {
+  "slug": "archive-portret-komin",
+  "tags": [
+   "archive",
+   "people-portrait"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Архив: первый ректор университета В. В. Комин (вертикаль)"
+ },
+ "e8b6400376": {
+  "slug": "lab-opyt-nauka-shou",
+  "tags": [
+   "lab",
+   "event"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Научное шоу: опыт на столе перед зрителями"
+ },
+ "69609ac39a": {
+  "slug": "sport-trenazhernyy-zal",
+  "tags": [
+   "sport",
+   "campus",
+   "dorm"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Тренажёрный зал в общежитии"
+ },
+ "af29a741b9": {
+  "slug": "campus-obshchezhitie-kuhnya",
+  "tags": [
+   "campus",
+   "dorm"
+  ],
+  "hero": false,
+  "tone": "dark",
+  "what": "Общая кухня общежития"
+ },
+ "cec930a523": {
+  "slug": "campus-obshchezhitie-komnata",
+  "tags": [
+   "campus",
+   "dorm"
+  ],
+  "hero": false,
+  "tone": "light",
+  "what": "Комната в общежитии (вертикаль)"
+ }
+}
