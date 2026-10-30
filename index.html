@@ -54,6 +54,10 @@
 
     .g-empty { padding: 24px; border: 1px dashed var(--c-line-strong); border-radius: var(--radius-3); color: var(--c-text-2); }
 
+    /* «Разработка»: скриншотов нет, превью — сама страница в уменьшенном iframe, поэтому всегда свежее */
+    .card__shot--live iframe { position: absolute; top: 0; left: 0; width: 1440px; height: 900px; border: 0;
+      transform: scale(var(--k, 0.25)); transform-origin: 0 0; pointer-events: none; background: #fff; }
+
     /* мобильный просмотр */
     .phone { border: 0; padding: 0; background: transparent; max-width: none; max-height: none; margin: auto; overflow: visible; }
     .phone::backdrop { background: rgb(16 26 77 / 0.72); }
@@ -79,6 +83,7 @@
       </a>
       <nav aria-label="Разделы галереи">
         <ul class="g-jump">
+          <li><a href="#razrabotka">Разработка</a></li>
           <li><a href="#live">Живые</a></li>
           <li><a href="#home">Главная</a></li>
           <li><a href="#admissions">Приёмка</a></li>
@@ -98,6 +103,12 @@
     </div>
 
     <div class="container">
+      <section class="g-section" id="razrabotka" aria-labelledby="dev-title">
+        <div class="g-section__head"><h2 id="dev-title">Разработка дизайна</h2><span class="g-count" data-dev-count></span></div>
+        <p class="lead measure" style="margin:-8px 0 24px;font-size:1rem">Рабочая зона: части прототипов в доработке и свежие правки. Обновите страницу, чтобы увидеть последнее.</p>
+        <ul class="g-cards" data-dev role="list"></ul>
+      </section>
+
       <section class="g-section" id="live" aria-labelledby="live-title">
         <div class="g-section__head"><h2 id="live-title">Живая главная</h2><span class="g-count" data-count="Живые"></span></div>
         <p class="lead measure" style="margin:-8px 0 24px;font-size:1rem">По мотивам сайтов российских частных школ и вузов: свободная палитра, 3D, физика и много движения.</p>
@@ -124,7 +135,6 @@
         <ul class="g-cards" data-group="Каркас" role="list"></ul>
       </section>
 
-      <!-- Медиатеку заполняет media-library.js (агент CC-Медиа), если файл есть -->
       <section class="g-section" id="media-library" aria-labelledby="media-title">
         <div class="g-section__head"><h2 id="media-title">Медиатека</h2></div>
         <p class="g-empty" data-media-empty>Медиатека появится после сбора заглушек из assets/stub.</p>
@@ -221,6 +231,47 @@
       })
       .catch(() => {
         document.getElementById("g-legend").textContent = "Не удалось прочитать pages/manifest.json. Откройте галерею через http-сервер: python3 -m http.server 8000.";
+      });
+
+    const liveFit = new ResizeObserver((entries) => entries.forEach((e) =>
+      e.target.style.setProperty("--k", (e.contentRect.width / 1440).toFixed(4))));
+
+    function devCard(item) {
+      const path = "razrabotka/" + item.path + "/";
+      const li = document.createElement("li");
+      li.className = "card";
+      li.innerHTML =
+        '<a class="card__shot card__shot--live" href="' + esc(path) + '" tabindex="-1" aria-hidden="true">' +
+          '<iframe src="' + esc(path) + '" loading="lazy" tabindex="-1" title=""></iframe>' +
+        "</a>" +
+        '<div class="card__body">' +
+          '<div class="card__meta"><code>' + esc(item.path) + "</code>" +
+            (item.updated ? "<span>обновлено " + esc(item.updated) + "</span>" : "") +
+            '<span class="status">' + esc(item.status || "в работе") + "</span></div>" +
+          '<h3><a href="' + esc(path) + '">' + esc(item.title || item.path) + "</a></h3>" +
+          (item.about ? '<p class="card__one">' + esc(item.about) + "</p>" : "") +
+          '<div class="card__actions">' +
+            '<a class="btn btn--text" href="' + esc(path) + '">Открыть <span class="icon icon--arrow-right" aria-hidden="true"></span></a>' +
+            '<button class="btn btn--text" type="button" data-phone>Мобильный вид</button>' +
+            (item.base ? '<a class="btn btn--text" href="pages/' + esc(item.base) + '/">Исходный вариант</a>' : "") +
+          "</div>" +
+        "</div>";
+      liveFit.observe(li.querySelector(".card__shot"));
+      li.querySelector("[data-phone]").addEventListener("click", () => openPhone(path, item.title || item.path));
+      return li;
+    }
+
+    const devList = document.querySelector("[data-dev]");
+    fetch("razrabotka/manifest.json", { cache: "no-store" })
+      .then((r) => (r.ok ? r.json() : []))
+      .catch(() => [])
+      .then((items) => {
+        // path из манифеста идёт в адрес — пускаем только «папка/папка», без выхода наверх
+        const ok = (Array.isArray(items) ? items : []).filter((it) => /^[\w-]+(\/[\w-]+)*$/.test(it.path || ""));
+        ok.sort((a, b) => String(b.updated || "").localeCompare(String(a.updated || "")));
+        ok.forEach((it) => devList.appendChild(devCard(it)));
+        if (!ok.length) devList.outerHTML = '<p class="g-empty">Пока пусто. Здесь появятся части прототипов, над которыми идёт работа.</p>';
+        document.querySelector("[data-dev-count]").textContent = ok.length ? ok.length + " в работе" : "";
       });
 
     // Медиатека: подключаем, только если файл существует

@@ -36,7 +36,7 @@
     (function () {
       const raw = new URLSearchParams(location.search).get("src") || "pages/_shell/a/";
       // только относительные пути внутри проекта
-      const src = /^(pages\/)[\w\-\/.?=&,]*$/.test(raw) && !raw.includes("..") ? raw : "pages/_shell/a/";
+      const src = /^(pages|razrabotka)\/[\w\-\/.?=&,]*$/.test(raw) && !raw.includes("..") ? raw : "pages/_shell/a/";
       document.getElementById("m-frame").src = src;
       document.getElementById("m-src").textContent = src;
       document.getElementById("m-open").href = src;

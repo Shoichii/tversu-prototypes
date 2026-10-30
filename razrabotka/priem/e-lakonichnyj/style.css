@@ -1,0 +1,104 @@
+/* priem/e-lakonichnyj — второй дизайн той же страницы, что c-po-skrinu (структура та же).
+   Лаконичнее: белый фон без клетки, меньше подложек и теней, линии 1 px, светло-серые полосы.
+   Дружелюбие держат рукописные пометки, скругления и ромбы из фирменного узора приёмки. */
+
+body.e-page { background: #fff; }
+.e-page main .section + .section { border-top: 0; }
+.e-grey { background: var(--c-bg-grey); }
+.e-page .block { box-shadow: none; border: 1px solid var(--c-line); }
+
+/* ═════════ Обложка ═════════ */
+.e-cover { background: var(--c-bg-grey); padding-block: clamp(36px, 1.5rem + 3vw, 72px); overflow: hidden; }
+.e-cover__inner { display: grid; gap: 24px; align-items: center; }
+.e-cover__note { font-size: clamp(1.5rem, 1.25rem + 0.9vw, 2rem); color: var(--rose); rotate: -2deg; transform-origin: left center; margin-bottom: 10px; }
+.e-cover__title {
+  display: grid; font-size: clamp(3rem, 1.6rem + 5.4vw, 6rem); font-weight: 800; line-height: 0.98; letter-spacing: -0.045em;
+  color: var(--c-navy);
+}
+.e-cover__title span { color: var(--pen); }
+.e-cover__sub { margin-top: 20px; max-width: 34ch; font-size: var(--fs-lead); line-height: 1.5; color: var(--ink-2); }
+.e-cover__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+@media (max-width: 479px) { .e-cover__actions .btn { flex: 1 1 100%; } }
+.e-cover__art { width: min(100%, 520px); height: auto; justify-self: center; }
+.e-rh .r { fill: var(--c-blue-tint); }
+.e-rh .r--l { fill: #c9d2f5; }
+.e-rh .r--red { fill: var(--rose); }
+@media (prefers-reduced-motion: no-preference) {
+  .m-on .e-rh .r { animation: e-fade 600ms var(--ease-out) both; animation-delay: calc(var(--i, 0) * 50ms + 200ms); }
+}
+@keyframes e-fade { from { opacity: 0; } }
+@media (min-width: 1024px) {
+  .e-cover__inner { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 40px; }
+  .e-cover__art { justify-self: end; width: 100%; max-width: 560px; margin-block: -24px; }
+}
+
+/* ═════════ Калькулятор: строка ═════════ */
+.e-calc { background: #fff; border-bottom: 1px solid var(--c-line); padding-block: 24px; }
+.e-calc__form { display: grid; gap: 12px; align-items: center; }
+.e-calc__title { font-size: var(--fs-h4); font-weight: 800; }
+.e-calc__sub { font-size: var(--fs-small); color: var(--ink-2); }
+.e-calc__f { display: grid; grid-template-columns: minmax(0, 1fr) 88px; gap: 8px; }
+.e-calc__subj { display: flex; align-items: center; min-height: var(--control-h); padding: 0 14px; border-radius: 12px; background: var(--c-blue-tint); color: var(--pen); font-weight: 600; }
+.e-calc .input, .e-calc .select { min-height: var(--control-h); border-radius: 12px; }
+.e-calc__score { text-align: center; font-family: var(--mono); }
+.e-calc__go.btn--accent { --btn-bg: var(--rose); width: 100%; } /* белый на #D7194F — 5:1 */
+@media (min-width: 768px) { .e-calc__form { grid-template-columns: repeat(3, minmax(0, 1fr)); } .e-calc__head, .e-calc__go { grid-column: 1 / -1; } }
+@media (min-width: 1200px) {
+  .e-calc__form { grid-template-columns: 170px repeat(3, minmax(0, 1fr)) auto; gap: 14px; }
+  .e-calc__head, .e-calc__go { grid-column: auto; }
+  .e-calc__go { width: auto; }
+}
+
+/* ═════════ Объявления: заголовок слева, строки справа ═════════ */
+.e-split { display: grid; gap: 8px; }
+.e-split__head { display: grid; align-content: start; gap: 6px; }
+.e-split__head .card__link { justify-self: start; }
+.e-ads { margin: 0; padding: 0; border-top: 1px solid var(--c-line); }
+.e-ads a { display: grid; gap: 4px; padding: 18px 0; border-bottom: 1px solid var(--c-line); color: var(--ink); text-decoration: none; }
+.e-ads time { font-size: var(--fs-caption); color: var(--rose); }
+.e-ads b { font-size: 1.125rem; line-height: 1.35; }
+.e-ads a > span { font-size: 0.9375rem; color: var(--ink-2); }
+.e-ads a:hover b { color: var(--pen); }
+.e-ads a:focus-visible { outline: 3px solid var(--pen); outline-offset: 2px; }
+@media (min-width: 900px) { .e-ads a { grid-template-columns: 120px 1fr; column-gap: 24px; } .e-ads a > span { grid-column: 2; } }
+@media (min-width: 1100px) { .e-split { grid-template-columns: 4fr 8fr; gap: 48px; } .e-split__head { margin-bottom: 0; } }
+
+/* ═════════ Документы: синяя полоса, текстом ═════════ */
+main .e-docs { background: var(--c-blue); color: #fff; }
+.e-docs h2 { color: #fff; }
+.e-docs .sec-note { color: var(--rose-light); }
+.e-docs__cols { display: grid; gap: 32px; }
+.e-docs__h { font-size: var(--fs-h4); font-weight: 800; color: #fff; padding-bottom: 12px; border-bottom: 2px solid rgb(255 255 255 / 0.9); }
+.e-docs__list { margin: 0; padding: 0; }
+.e-docs__list a {
+  display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 10px 0;
+  border-bottom: 1px solid rgb(255 255 255 / 0.2); color: #fff; font-weight: 600; text-decoration: none;
+}
+.e-docs__list small { margin-left: auto; padding: 2px 8px; border-radius: 6px; background: rgb(255 255 255 / 0.14); font-size: var(--fs-caption); font-weight: 500; color: #dde3ff; }
+.e-docs__list a:hover { color: #dde3ff; }
+.e-docs :focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+@media (min-width: 1024px) { .e-docs__cols { grid-template-columns: repeat(3, 1fr); gap: 40px; } }
+
+/* ═════════ Новости: без подложек ═════════ */
+.e-news { display: grid; gap: 28px; }
+.e-news__item { display: grid; align-content: start; gap: 8px; color: var(--ink); text-decoration: none; }
+.e-news__item img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 16px; margin-bottom: 8px; transition: transform 500ms var(--ease-out); }
+.e-news__h { font-size: 1.1875rem; line-height: 1.3; }
+.e-news__item:hover .e-news__h { color: var(--pen); }
+.e-news__item:focus-visible { outline: 3px solid var(--pen); outline-offset: 4px; border-radius: 16px; }
+@media (min-width: 768px) { .e-news { grid-template-columns: repeat(3, 1fr); gap: 24px; } }
+
+/* ═════════ Сотрудники без подложки ═════════ */
+.e-page .c-ava { background-color: #fff; }
+
+/* ═════════ Вопрос ═════════ */
+.e-ask { display: grid; gap: 32px; }
+.e-ask__tel { display: inline-block; font-size: clamp(1.75rem, 1.3rem + 1.6vw, 2.5rem); font-weight: 800; letter-spacing: -0.03em; color: var(--pen); text-decoration: none; }
+.e-ask__info { margin: 20px 0 0; }
+.e-ask__info div { display: grid; gap: 2px; padding: 12px 0; border-top: 1px solid var(--c-line); }
+.e-ask__info dt { font-size: var(--fs-caption); color: var(--c-text-3); }
+.e-ask__info dd { margin: 0; font-weight: 600; overflow-wrap: anywhere; }
+.e-ask__form { padding: var(--block-pad); border-radius: var(--block-r); background: var(--c-bg-grey); }
+@media (min-width: 1024px) { .e-ask { grid-template-columns: 1fr 1.3fr; gap: 64px; align-items: start; } }
+
+@media (prefers-reduced-motion: reduce) { .e-news__item img { transition: none; } }

@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Гипс · Живая главная ТвГУ · прототип</title>
+  <meta name="description" content="Тверской государственный университет: с 1870 года, 15 факультетов и институтов, 129 программ.">
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="preload" href="../../../assets/fonts/live-h-manrope.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../../system/tokens.css">
+  <link rel="stylesheet" href="../../../system/base.css">
+  <link rel="stylesheet" href="../../../system/stub.css">
+  <link rel="stylesheet" href="../../../system/motion.css">
+  <link rel="stylesheet" href="../../../system/vendor/lenis/lenis.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="../../../system/motion.js"></script>
+  <script type="importmap">{"imports":{"three":"../../../system/vendor/three/three.module.js","three/addons/":"../../../system/vendor/three/addons/"}}</script>
+  <script src="../../../system/partials.js" defer></script>
+  <script src="../../../system/ui.js" defer></script>
+  <script src="../../../system/vendor/gsap/gsap.min.js" defer></script>
+  <script src="../../../system/vendor/gsap/ScrollTrigger.min.js" defer></script>
+  <script src="../../../system/vendor/lenis/lenis.min.js" defer></script>
+  <script type="module" src="script.js"></script>
+  <script src="slider.js" defer></script>
+</head>
+<body class="h-page">
+  <div data-include="header"></div>
+
+  <main id="main">
+    <!-- ═════ Ближайшие даты: одна тихая строка ═════ -->
+    <section class="h-events" aria-labelledby="events-title">
+      <div class="container h-events__inner">
+        <h2 class="h-events__title" id="events-title">Ближайшее</h2>
+        <ul class="h-events__list" role="list" tabindex="0" aria-label="Ближайшие события">
+          <li><time>[дата]</time> День открытых дверей</li>
+          <li><time>[дата]</time> Старт приёма документов</li>
+          <li><time>[дата]</time> Посвящение в студенты</li>
+        </ul>
+        <a class="h-link h-events__all" href="#">Все события</a>
+      </div>
+    </section>
+
+    <!-- ═════ Первый экран: оффер слева, справа синяя панель с «таблетками» 15 факультетов ═════ -->
+    <section class="h-hero h-hero--pills" id="hero" aria-labelledby="hero-title">
+      <div class="sl" data-slider data-delay="7000" role="region" aria-roledescription="карусель" aria-label="Главное в ТвГУ">
+      <div class="sl__track">
+      <div class="sl__slide container h-hero2 is-active" data-slide role="group" aria-roledescription="слайд" aria-label="1 из 3">
+          <div class="h-hero__copy">
+            <p class="h-hero__badge" data-m="up" data-m-delay="150">Приём 2026 уже скоро</p>
+            <h1 class="h-hero__title" id="hero-title" data-m="words" data-m-delay="250"><span class="h-hero__line">Найди то, что</span> <span class="h-hero__line"><span class="h-hl">нравится</span> тебе</span></h1>
+            <p class="h-hero__lead" data-m="up" data-m-delay="650">15&nbsp;факультетов и&nbsp;институтов, 129&nbsp;программ: от&nbsp;IT и&nbsp;биологии до&nbsp;иностранных языков и&nbsp;спорта. В&nbsp;Твери, с&nbsp;1870 года.</p>
+            <div class="h-hero__actions" data-m="up" data-m-delay="800">
+              <a class="h-btn" href="#programs">Подобрать программу</a>
+              <a class="h-link h-link--arrow" href="#lead">Задать вопрос</a>
+            </div>
+          </div>
+
+          <nav class="h-pills" aria-labelledby="facs-title" data-m="up" data-m-delay="300">
+            <h2 class="visually-hidden" id="facs-title">15 факультетов и&nbsp;институтов</h2>
+            <div class="h-pills__field">
+              <span class="h-pill h-pill--empty" style="--w:120px" aria-hidden="true"></span>
+              <a class="h-pill h-pill--white" href="#">Биология</a>
+              <span class="h-pill h-pill--empty" style="--w:70px" aria-hidden="true"></span>
+              <a class="h-pill h-pill--line" href="#">История</a>
+              <a class="h-pill h-pill--sky" href="#">География</a>
+              <span class="h-pill h-pill--empty" style="--w:150px" aria-hidden="true"></span>
+              <a class="h-pill h-pill--navy" href="#">Иностранные языки</a>
+              <span class="h-pill h-pill--empty" style="--w:60px" aria-hidden="true"></span>
+              <a class="h-pill h-pill--white" href="#">Прикладная математика</a>
+              <a class="h-pill h-pill--line" href="#">Спорт</a>
+              <span class="h-pill h-pill--empty" style="--w:110px" aria-hidden="true"></span>
+              <a class="h-pill h-pill--sky" href="#">Филология</a>
+              <a class="h-pill h-pill--navy" href="#">Химия</a>
+              <span class="h-pill h-pill--empty" style="--w:90px" aria-hidden="true"></span>
+              <a class="h-pill h-pill--line" href="#">Математика</a>
+              <span class="h-pill h-pill--empty" style="--w:140px" aria-hidden="true"></span>
+              <a class="h-pill h-pill--white" href="#">Экономика</a>
+              <a class="h-pill h-pill--sky" href="#">Право</a>
+              <span class="h-pill h-pill--empty" style="--w:80px" aria-hidden="true"></span>
+              <a class="h-pill h-pill--navy" href="#">Педагогика</a>
+              <span class="h-pill h-pill--empty" style="--w:130px" aria-hidden="true"></span>
+              <a class="h-pill h-pill--white" href="#">Психология</a>
+              <a class="h-pill h-pill--line" href="#">Физика</a>
+              <span class="h-pill h-pill--empty" style="--w:100px" aria-hidden="true"></span>
+              <a class="h-pill h-pill--sky" href="#">Непрерывное образование</a>
+              <span class="h-pill h-pill--empty" style="--w:160px" aria-hidden="true"></span>
+            </div>
+            <p class="h-pills__cap">15 факультетов и&nbsp;институтов: нажми, чтобы узнать больше</p>
+          </nav>
+      </div>
+
+      <!-- Слайд 2: День открытых дверей -->
+      <div class="sl__slide container h-hero2 h-banner" data-slide role="group" aria-roledescription="слайд" aria-label="2 из 3">
+        <div class="h-hero__copy">
+          <p class="h-hero__badge">[дата] · главный корпус</p>
+          <h2 class="h-hero__title h-banner__title">День открытых <span class="h-hl">дверей</span></h2>
+          <p class="h-hero__lead">Познакомься с&nbsp;факультетами, задай вопросы приёмной комиссии и&nbsp;студентам, загляни в&nbsp;лаборатории и&nbsp;общежитие.</p>
+          <div class="h-hero__actions">
+            <a class="h-btn" href="#lead">Записаться</a>
+            <a class="h-link h-link--arrow" href="#">Программа дня</a>
+          </div>
+        </div>
+        <figure class="h-banner__media">
+          <img src="../../../assets/stub/photos/800/campus-den-znaniy-dvor-flagi.jpg" alt="Двор главного корпуса ТвГУ с флагами, гости праздника" width="800" height="533" loading="lazy">
+          <figcaption class="h-banner__card">
+            <span class="h-banner__card-row"><b>[время]</b> начало</span>
+            <span class="h-banner__card-row"><b>ул.&nbsp;Желябова,&nbsp;33</b> главный корпус</span>
+          </figcaption>
+        </figure>
+      </div>
+
+      <!-- Слайд 3: День студента -->
+      <div class="sl__slide container h-hero2 h-banner" data-slide role="group" aria-roledescription="слайд" aria-label="3 из 3">
+        <div class="h-hero__copy">
+          <p class="h-hero__badge">25 января</p>
+          <h2 class="h-hero__title h-banner__title">День студента в&nbsp;<span class="h-hl">ТвГУ</span></h2>
+          <p class="h-hero__lead">Концерт, конкурсы факультетов и&nbsp;[программа праздника]. Отмечаем всем университетом.</p>
+          <div class="h-hero__actions">
+            <a class="h-btn" href="#news">Подробнее</a>
+          </div>
+        </div>
+        <figure class="h-banner__media h-banner__media--blue">
+          <img src="../../../assets/stub/photos/800/students-meropriyatie-shariki.jpg" alt="Студенты на празднике с воздушными шарами" width="800" height="533" loading="lazy">
+          <figcaption class="h-banner__sticker" aria-hidden="true">25.01</figcaption>
+        </figure>
+      </div>
+      </div>
+
+      <div class="container">
+        <div class="sl__nav" data-slider-nav>
+          <button class="sl__arrow" type="button" data-prev aria-label="Предыдущий слайд"><span class="icon icon--arrow-left" aria-hidden="true"></span></button>
+          <div class="sl__dots">
+            <button class="sl__dot" type="button" data-dot aria-label="Слайд 1: Найди то, что нравится тебе"></button>
+            <button class="sl__dot" type="button" data-dot aria-label="Слайд 2: День открытых дверей"></button>
+            <button class="sl__dot" type="button" data-dot aria-label="Слайд 3: День студента"></button>
+          </div>
+          <button class="sl__arrow" type="button" data-next aria-label="Следующий слайд"><span class="icon icon--arrow-right" aria-hidden="true"></span></button>
+          <p class="visually-hidden" aria-live="polite" data-live></p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- ═════ Доказательства: одна высеченная надпись ═════ -->
+    <section class="h-band h-proof" id="proof" aria-labelledby="proof-title">
+      <div class="container">
+        <h2 class="visually-hidden" id="proof-title">Университет в цифрах</h2>
+        <p class="h-inscr" data-m="up"><span class="h-inscr__num">156</span> лет учим в&nbsp;Твери. <span class="h-inscr__num">93-е</span> место в&nbsp;России в&nbsp;Round University Ranking 2026. <span class="h-inscr__num">Топ-200</span> Национального агрегированного рейтинга 2026.</p>
+        <p class="h-proof__src" data-m="up" data-m-delay="120">Университет ведёт историю от&nbsp;учительской школы Максимовича, открытой в&nbsp;1870 году. НАР 2026: вторая лига.</p>
+      </div>
+    </section>
+
+    <!-- ═════ Кому что нужно: четыре строки ═════ -->
+    <section class="h-band h-aud" id="audiences" aria-labelledby="aud-title">
+      <div class="container h-split">
+        <h2 class="h-h2 h-split__head" id="aud-title">Для кого</h2>
+        <ul class="h-aud__list" role="list" data-m-stagger>
+          <li class="h-aud__row" data-m="up">
+            <h3 class="h-aud__title"><a href="#">Абитуриенту<span class="h-arrow" aria-hidden="true"></span></a></h3>
+            <ul class="h-aud__links" role="list">
+              <li><a href="#programs">Программы и&nbsp;направления</a></li>
+              <li><a href="#">Правила приёма 2026</a></li>
+              <li><a href="#">Общежитие</a></li>
+            </ul>
+          </li>
+          <li class="h-aud__row" data-m="up">
+            <h3 class="h-aud__title"><a href="#">Студенту<span class="h-arrow" aria-hidden="true"></span></a></h3>
+            <ul class="h-aud__links" role="list">
+              <li><a href="#">Расписание</a></li>
+              <li><a href="#">Личный кабинет</a></li>
+              <li><a href="#">Стипендии и&nbsp;поддержка</a></li>
+            </ul>
+          </li>
+          <li class="h-aud__row" data-m="up">
+            <h3 class="h-aud__title"><a href="#">Сотруднику<span class="h-arrow" aria-hidden="true"></span></a></h3>
+            <ul class="h-aud__links" role="list">
+              <li><a href="#">Кадровые документы</a></li>
+              <li><a href="#">Конкурсы и&nbsp;гранты</a></li>
+              <li><a href="#">Повышение квалификации</a></li>
+            </ul>
+          </li>
+          <li class="h-aud__row" data-m="up">
+            <h3 class="h-aud__title"><a href="#">Партнёру<span class="h-arrow" aria-hidden="true"></span></a></h3>
+            <ul class="h-aud__links" role="list">
+              <li><a href="#">Заказ исследований</a></li>
+              <li><a href="#">Практики и&nbsp;стажировки</a></li>
+              <li><a href="#">Целевое обучение</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ═════ 129 программ: колоннада направлений ═════ -->
+    <section class="h-band h-prog" id="programs" aria-labelledby="prog-title">
+      <div class="container h-prog__grid">
+        <div class="h-prog__head">
+          <h2 class="h-h2" id="prog-title">129 программ</h2>
+          <p class="h-prog__intro">Шесть направлений. Выбери своё: камера подъедет к&nbsp;колонне, а&nbsp;рядом появятся программы.</p>
+          <div class="h-dirs" role="group" aria-label="Направления" data-dirs>
+            <button class="h-dir" type="button" aria-pressed="true" data-dir="0"><span>IT и&nbsp;математика</span><span class="h-dir__n">24</span></button>
+            <button class="h-dir" type="button" aria-pressed="false" data-dir="1"><span>Естественные науки</span><span class="h-dir__n">22</span></button>
+            <button class="h-dir" type="button" aria-pressed="false" data-dir="2"><span>Гуманитарные науки</span><span class="h-dir__n">30</span></button>
+            <button class="h-dir" type="button" aria-pressed="false" data-dir="3"><span>Педагогика и&nbsp;психология</span><span class="h-dir__n">20</span></button>
+            <button class="h-dir" type="button" aria-pressed="false" data-dir="4"><span>Экономика и&nbsp;право</span><span class="h-dir__n">21</span></button>
+            <button class="h-dir" type="button" aria-pressed="false" data-dir="5"><span>Физкультура и&nbsp;спорт</span><span class="h-dir__n">12</span></button>
+          </div>
+          <p class="h-note">Пример: число программ и&nbsp;высота колонн условные, до&nbsp;выгрузки из&nbsp;каталога.</p>
+        </div>
+
+        <div class="h-prog__visual">
+          <div class="h-stage h-stage--cols" data-cols-stage>
+            <canvas aria-hidden="true"></canvas>
+          </div>
+          <svg class="h-colsvg" viewBox="0 0 640 380" role="img" aria-label="Колоннада направлений: высота колонны показывает долю программ (пример)" data-colsvg></svg>
+        </div>
+
+        <div class="h-prog__list" data-prog-list>
+          <h3 class="h-prog__dir" id="prog-dir" data-prog-name>IT и&nbsp;математика</h3>
+          <ul class="h-progs" role="list" aria-labelledby="prog-dir" data-prog-items>
+            <li><a href="#"><span>Прикладная математика и&nbsp;информатика</span><span class="h-progs__lvl">бакалавриат</span></a></li>
+            <li><a href="#"><span>Фундаментальная информатика и&nbsp;информационные технологии</span><span class="h-progs__lvl">бакалавриат</span></a></li>
+            <li><a href="#"><span>Математика</span><span class="h-progs__lvl">бакалавриат</span></a></li>
+            <li><a href="#"><span>Прикладная информатика</span><span class="h-progs__lvl">бакалавриат</span></a></li>
+            <li><a href="#"><span>Математическое моделирование</span><span class="h-progs__lvl">магистратура</span></a></li>
+          </ul>
+          <a class="h-link h-link--arrow" href="#">Все 129 программ</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════ ТвГУ в цифрах: лента карточек ═════ -->
+    <section class="h-band h-hist" id="numbers" aria-labelledby="hist-title">
+      <div class="container">
+        <div class="ribbon" data-ribbon>
+          <div class="h-hist__head">
+            <div>
+              <h2 class="h-h2" id="hist-title">ТвГУ в&nbsp;цифрах</h2>
+              <p class="h-hist__intro">Коротко о&nbsp;том, где ты будешь учиться.</p>
+            </div>
+            <div class="h-hist__nav">
+              <button class="h-round" type="button" data-ribbon-prev aria-label="Назад"><span class="icon icon--arrow-left" aria-hidden="true"></span></button>
+              <button class="h-round" type="button" data-ribbon-next aria-label="Вперёд"><span class="icon icon--arrow-right" aria-hidden="true"></span></button>
+            </div>
+          </div>
+          <ol class="ribbon__track h-hist__track" role="list">
+            <li class="h-hist__item h-hist__item--photo">
+              <figure class="h-photo" data-m="mask">
+                <img src="../../../assets/stub/photos/800/archive-prepodavateli-1920e.jpg" alt="Преподаватели пединститута, групповой снимок 1920-х годов" width="800" height="520" loading="lazy">
+              </figure>
+              <p class="h-hist__year">1870</p>
+              <p class="h-hist__text">Год основания: всё началось с&nbsp;учительской школы Максимовича. На&nbsp;снимке преподаватели пединститута, 1920-е.</p>
+            </li>
+            <li class="h-hist__item">
+              <p class="h-carve" data-m="draw">15</p>
+              <p class="h-hist__text">факультетов и&nbsp;институтов: от&nbsp;биологии и&nbsp;химии до&nbsp;права и&nbsp;психологии.</p>
+            </li>
+            <li class="h-hist__item">
+              <p class="h-carve" data-m="draw">129</p>
+              <p class="h-hist__text">программ от&nbsp;бакалавриата до&nbsp;аспирантуры.</p>
+              <figure class="h-photo" data-m="mask">
+                <img src="../../../assets/stub/photos/800/lecture-studenty-v-auditorii.jpg" alt="Студенты на занятии в аудитории" width="800" height="533" loading="lazy">
+              </figure>
+            </li>
+            <li class="h-hist__item">
+              <p class="h-carve" data-m="draw">93-е</p>
+              <p class="h-hist__text">место в&nbsp;России в&nbsp;Round University Ranking 2026.</p>
+            </li>
+            <li class="h-hist__item">
+              <p class="h-carve" data-m="draw">Топ-200</p>
+              <p class="h-hist__text">Национального агрегированного рейтинга 2026, вторая лига.</p>
+            </li>
+            <li class="h-hist__item h-hist__item--next">
+              <p class="h-carve h-carve--quiet" data-m="draw">2026</p>
+              <p class="h-hist__text">Следующий первокурсник может быть тобой.</p>
+              <a class="h-link h-link--arrow" href="#admission">Поступление 2026</a>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════ Сегодня в ТвГУ: три строки и один кадр ═════ -->
+    <section class="h-band h-news" id="news" aria-labelledby="news-title">
+      <div class="container h-news__grid">
+        <div class="h-news__main">
+          <div class="h-news__head">
+            <h2 class="h-h2" id="news-title">Сегодня в&nbsp;ТвГУ</h2>
+          </div>
+          <ul class="h-news__list" role="list" data-m-stagger>
+            <li class="h-news__row" data-m="up">
+              <time class="h-news__date">[дата]</time>
+              <h3 class="h-news__title"><a href="#">В&nbsp;университете торжественно открыли новый учебный год</a></h3>
+              <p class="h-news__tag">Событие</p>
+            </li>
+            <li class="h-news__row" data-m="up">
+              <time class="h-news__date">[дата]</time>
+              <h3 class="h-news__title"><a href="#">Встреча студентов с&nbsp;Нелли Гайдухиной</a></h3>
+              <p class="h-news__tag">Встреча</p>
+            </li>
+            <li class="h-news__row" data-m="up">
+              <time class="h-news__date">[дата]</time>
+              <h3 class="h-news__title"><a href="#">Команда проекта «Свет науки в&nbsp;детский дом» побывала в&nbsp;Бологовском округе</a></h3>
+              <p class="h-news__tag">Наука</p>
+            </li>
+          </ul>
+          <a class="h-link h-link--arrow h-news__all" href="#">Все новости</a>
+        </div>
+        <figure class="h-news__fig">
+          <div class="h-photo h-photo--tall" data-m="mask">
+            <img src="../../../assets/stub/photos/800/lecture-amfiteatr-sverhu.jpg" alt="Поточная аудитория-амфитеатр сверху: студенты на рядах, доска и экран" width="800" height="533" loading="lazy">
+          </div>
+          <figcaption>Поточная аудитория. Встреча студентов с&nbsp;Нелли Гайдухиной.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ═════ Поступление 2026: даты, вопросы, лид ═════ -->
+    <section class="h-band h-adm" id="admission" aria-labelledby="adm-title">
+      <div class="container">
+        <div class="h-adm__grid">
+          <div class="h-adm__dates">
+            <h2 class="h-h2" id="adm-title">Поступление 2026</h2>
+            <ol class="h-dates" role="list">
+              <li class="h-dates__row"><span class="h-dates__d">[дата]</span><span class="h-dates__t">Начало приёма документов</span></li>
+              <li class="h-dates__row"><span class="h-dates__d">[дата]</span><span class="h-dates__t">День открытых дверей, запись на&nbsp;сайте</span></li>
+              <li class="h-dates__row h-dates__row--deadline"><span class="h-dates__d">[дата]</span><span class="h-dates__t">Последний день приёма документов на&nbsp;бюджет</span></li>
+            </ol>
+            <p class="h-note">До конца приёма на&nbsp;бюджет осталось [N] дней.</p>
+          </div>
+
+          <div class="h-adm__faq">
+            <h3 class="h-adm__sub" id="faq-title">Частые вопросы</h3>
+            <div class="accordion h-acc" aria-labelledby="faq-title">
+              <details class="accordion__item" name="faq">
+                <summary class="accordion__summary">Сколько бюджетных мест?</summary>
+                <div class="accordion__body"><p>На&nbsp;2026 год: [N] бюджетных мест. Распределение по&nbsp;программам публикуется в&nbsp;правилах приёма и&nbsp;в&nbsp;карточке каждой программы.</p></div>
+              </details>
+              <details class="accordion__item" name="faq">
+                <summary class="accordion__summary">Дадут ли общежитие?</summary>
+                <div class="accordion__body"><p>Иногородним студентам предоставляется место в&nbsp;студенческом общежитии: [N] корпусов, [N] мест. Заявление подаётся вместе с&nbsp;документами.</p></div>
+              </details>
+              <details class="accordion__item" name="faq">
+                <summary class="accordion__summary">Сколько стоит обучение?</summary>
+                <div class="accordion__body"><p>Стоимость зависит от&nbsp;программы: от&nbsp;[N]&nbsp;₽ в&nbsp;год. Точные цены закреплены в&nbsp;приказе о&nbsp;стоимости обучения на&nbsp;2026 год.</p></div>
+              </details>
+              <details class="accordion__item" name="faq">
+                <summary class="accordion__summary">Какие нужны баллы ЕГЭ?</summary>
+                <div class="accordion__body"><p>Минимальные баллы и&nbsp;проходные баллы прошлого года указаны в&nbsp;карточке каждой программы: [N] баллов по&nbsp;профильному предмету.</p></div>
+              </details>
+              <details class="accordion__item" name="faq">
+                <summary class="accordion__summary">Можно подать документы через Госуслуги?</summary>
+                <div class="accordion__body"><p>Да, через сервис «Поступление в&nbsp;вуз онлайн» на&nbsp;Госуслугах. Лично документы принимает приёмная комиссия: Тверь, ул.&nbsp;Желябова,&nbsp;33.</p></div>
+              </details>
+            </div>
+          </div>
+        </div>
+
+        <div class="h-lead" id="lead" data-lead>
+          <div class="h-lead__copy">
+            <h3 class="h-lead__title">Остался вопрос?</h3>
+            <p class="h-lead__text">Спроси что угодно: приёмная комиссия ответит на&nbsp;почту или в&nbsp;Telegram. Можно и&nbsp;сразу <a class="h-link" href="#">написать в&nbsp;Telegram</a>.</p>
+          </div>
+          <form class="h-form" action="#" novalidate data-lead-form>
+            <div class="h-form__line">
+              <div class="h-field h-field--q">
+                <label class="h-field__label" for="lead-q">Ваш вопрос</label>
+                <input class="h-field__input" id="lead-q" name="question" type="text" autocomplete="off" required aria-describedby="lead-err">
+              </div>
+              <div class="h-field">
+                <label class="h-field__label" for="lead-c">E-mail или Telegram</label>
+                <input class="h-field__input" id="lead-c" name="contact" type="text" autocomplete="email" required aria-describedby="lead-err">
+              </div>
+              <button class="h-btn" type="submit">Отправить</button>
+            </div>
+            <p class="h-form__err" id="lead-err" role="alert" data-lead-err></p>
+            <p class="h-form__legal">Нажимая «Отправить», вы соглашаетесь с&nbsp;<a class="h-link" href="#">политикой обработки персональных данных</a>.</p>
+          </form>
+          <div class="h-plaque-wrap" hidden data-plaque-wrap>
+            <div class="h-plaque" tabindex="-1" data-plaque>
+              <p class="h-plaque__title">Вопрос принят</p>
+              <p class="h-plaque__text">Ответ придёт в&nbsp;рабочее время приёмной комиссии.</p>
+            </div>
+            <button class="h-link h-plaque__again" type="button" data-plaque-reset>Задать ещё вопрос</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════ Партнёры: одна тихая лента ═════ -->
+    <section class="h-band h-band--tight h-partners" aria-labelledby="partners-title">
+      <div class="container">
+        <div class="partners ribbon" data-ribbon>
+          <div class="ribbon__head">
+            <h2 class="h-partners__title" id="partners-title">Партнёры и&nbsp;работодатели</h2>
+            <div class="ribbon__nav">
+              <button class="h-round" type="button" data-ribbon-prev aria-label="Предыдущие партнёры"><span class="icon icon--arrow-left" aria-hidden="true"></span></button>
+              <button class="h-round" type="button" data-ribbon-next aria-label="Следующие партнёры"><span class="icon icon--arrow-right" aria-hidden="true"></span></button>
+            </div>
+          </div>
+          <div class="ribbon__track" role="list">
+            <a class="partner" href="#" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 1]</span></a>
+            <a class="partner" href="#" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 2]</span></a>
+            <a class="partner" href="#" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 3]</span></a>
+            <a class="partner" href="#" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 4]</span></a>
+            <a class="partner" href="#" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 5]</span></a>
+            <a class="partner" href="#" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 6]</span></a>
+            <a class="partner" href="#" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 7]</span></a>
+            <a class="partner" href="#" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 8]</span></a>
+            <a class="partner" href="#" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 9]</span></a>
+            <a class="partner" href="#" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">[Партнёр 10]</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="footer"></div>
+</body>
+</html>

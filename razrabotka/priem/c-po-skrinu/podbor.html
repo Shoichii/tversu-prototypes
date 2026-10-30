@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Подбор программ по баллам ЕГЭ · Приёмная комиссия ТвГУ</title>
+  <link rel="stylesheet" href="../../../system/tokens.css">
+  <link rel="stylesheet" href="../../../system/base.css">
+  <link rel="stylesheet" href="../../../system/stub.css">
+  <link rel="stylesheet" href="../../home-live/g-spokojnee/style.css">
+  <link rel="stylesheet" href="../obshchee.css">
+  <script src="../../../system/partials.js" defer></script>
+  <script src="../../../system/ui.js" defer></script>
+  <style>
+    .pb { padding-block: clamp(32px, 1.5rem + 3vw, 72px); }
+    .pb h1 { font-size: clamp(2rem, 1.4rem + 2.4vw, 3.25rem); font-weight: 800; letter-spacing: -0.035em; line-height: 1.05; }
+    .pb__scores { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 28px; padding: 0; }
+    .pb__scores li { padding: 10px 16px; border-radius: 999px; background: var(--c-blue-tint); color: var(--pen); font-weight: 700; }
+    .pb .stub { min-height: 280px; border-radius: 16px; }
+    .pb__back { margin-top: 24px; }
+  </style>
+</head>
+<body>
+  <div data-include="header"></div>
+  <main id="main" class="pb">
+    <div class="container">
+      <p class="hand hero__date">подбор программ</p>
+      <h1>Куда ты проходишь</h1>
+      <ul class="pb__scores" role="list" data-scores></ul>
+      <div class="stub" role="img" aria-label="Заглушка: список подходящих программ"><span class="stub__caption">список программ, куда проходишь с&nbsp;этими баллами</span></div>
+      <p class="pb__back"><a class="card__link" href="index.html#calc">Изменить баллы</a></p>
+    </div>
+  </main>
+  <div data-include="footer"></div>
+  <script>
+    (function () {
+      var names = { rus: "Русский язык", math: "Математика", soc: "Обществознание", bio: "Биология", chem: "Химия", hist: "История", phys: "Физика", inf: "Информатика", lit: "Литература", eng: "Иностранный язык", geo: "География" };
+      var q = new URLSearchParams(location.search), ul = document.querySelector("[data-scores]");
+      [1, 2, 3].forEach(function (n) {
+        var s = q.get("s" + n), b = q.get("b" + n);
+        if (!s || !b) return;
+        var li = document.createElement("li");
+        li.textContent = (names[s] || s) + ": " + b;
+        ul.appendChild(li);
+      });
+    })();
+  </script>
+</body>
+</html>

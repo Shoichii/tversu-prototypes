@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Тверской государственный университет · главная, язык Ники, вариант a «Чертёж» · ТвГУ прототипы</title>
+  <meta name="description" content="Классический университет Твери с 1870 года: 15 факультетов и институтов, 129 программ. Подбери программу и подай документы.">
+  <link rel="preload" href="../../../assets/fonts/golos-text-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../../assets/fonts/source-serif-4-regular-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../../system/tokens.css">
+  <link rel="stylesheet" href="../../../system/base.css">
+  <link rel="stylesheet" href="../../../system/stub.css">
+  <link rel="stylesheet" href="../../../system/theme-nika.css">
+  <link rel="stylesheet" href="../../../system/motion.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="../../../system/motion.js"></script>
+  <script src="../../../system/partials.js" defer></script>
+  <script src="../../../system/ui.js" defer></script>
+  <script src="script.js" defer></script>
+  <script src="slider.js" defer></script>
+</head>
+<body class="theme-nika" data-header="dark">
+  <div data-include="header"></div>
+
+  <main id="main">
+    <!-- ═══ 2. Hero: цветная сцена из b + цифры из a ═══ -->
+    <section class="section section--slate cine" aria-labelledby="hero-title">
+      <div class="sl" data-slider data-delay="8000" role="region" aria-roledescription="карусель" aria-label="Главное в ТвГУ">
+      <div class="sl__track">
+      <div class="sl__slide cine__slide is-active" data-slide role="group" aria-roledescription="слайд" aria-label="1 из 3">
+      <div class="cine__media" data-cine-media>
+        <picture>
+          <source media="(min-width: 768px)" srcset="../../../assets/stub/video/den-znaniy-obzor-2-dvor-pervokursniki.jpg">
+          <img class="cine__poster" src="../../../assets/stub/video/480/den-znaniy-obzor-2-dvor-pervokursniki.jpg" alt="" width="854" height="480" fetchpriority="high">
+        </picture>
+      </div>
+      <svg class="n-art n-draw cine__rings" viewBox="0 0 800 800" aria-hidden="true">
+        <circle class="l draw" pathLength="1" cx="400" cy="400" r="150" style="--i:0"/>
+        <circle class="l draw" pathLength="1" cx="400" cy="400" r="260" style="--i:1"/>
+        <circle class="l draw" pathLength="1" cx="400" cy="400" r="370" style="--i:2"/>
+        <circle class="dot-accent pop" cx="583.9" cy="216.1" r="6" style="--i:2"/>
+        <circle class="dot-open pop" cx="400" cy="400" r="5" style="--i:1"/>
+      </svg>
+
+      <div class="container cine__inner">
+        <div class="cine__copy">
+          <h1 id="hero-title" data-m="words" data-m-delay="250">Тверской государственный университет&nbsp;— классическое образование в&nbsp;Твери с&nbsp;1870&nbsp;года, <em>которое открывает город, науку и&nbsp;профессию</em></h1>
+          <div class="cine__row">
+            <p class="lead cine__lead" data-m="up" data-m-delay="900">129 программ, бюджет на&nbsp;[N] направлениях и&nbsp;общежитие иногородним. 93-е место в&nbsp;России по&nbsp;Round University Ranking&nbsp;2026.</p>
+            <div class="cine__act" data-m="up" data-m-delay="1050">
+              <p class="n-deadline cine__deadline">Приём документов: <strong>с&nbsp;[20&nbsp;июня] по&nbsp;[дата]</strong></p>
+              <div class="cine__buttons" id="hero-actions">
+                <a class="btn btn--primary btn--lg cine__go" href="#admission" data-magnetic>Поступить <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+                <a class="btn btn--text btn--lg" href="#programs">Каталог программ <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cine__foot" data-m="wipe" data-m-delay="1200">
+          <ul class="cine__facts" role="list" aria-label="ТвГУ в цифрах">
+            <li><b>1870</b>год основания</li>
+            <li><b>15</b>факультетов и&nbsp;институтов</li>
+            <li><b>129</b>программ</li>
+            <li><b>[N]</b>студентов</li>
+          </ul>
+          <button class="btn-circle cine__pause" type="button" data-cine-toggle aria-pressed="false" hidden>
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true" data-icon-pause><path d="M9 6v12M15 6v12"/></svg>
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true" data-icon-play hidden><path d="M8 5.5v13l10.5-6.5z"/></svg>
+            <span class="visually-hidden" data-cine-label>Поставить видео на паузу</span>
+          </button>
+        </div>
+      </div>
+      </div>
+
+      <!-- Слайд 2: День открытых дверей -->
+      <div class="sl__slide cine__slide" data-slide role="group" aria-roledescription="слайд" aria-label="2 из 3">
+        <div class="cine__media">
+          <img class="cine__poster" src="../../../assets/stub/photos/800/campus-den-znaniy-dvor-flagi.jpg" alt="" width="800" height="533" loading="lazy">
+        </div>
+        <div class="container cine__inner">
+          <div class="cine__copy">
+            <p class="cine__kicker">[дата] · главный корпус, ул.&nbsp;Желябова,&nbsp;33</p>
+            <h2 class="h1 cine__h">День открытых дверей: <em>познакомься с&nbsp;университетом до&nbsp;поступления</em></h2>
+            <div class="cine__row">
+              <p class="lead cine__lead">Факультеты, лаборатории и&nbsp;общежитие в&nbsp;один день. Задай вопросы приёмной комиссии и&nbsp;студентам.</p>
+              <div class="cine__act">
+                <div class="cine__buttons">
+                  <a class="btn btn--primary btn--lg" href="#contacts">Записаться <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+                  <a class="btn btn--text btn--lg" href="#">Программа дня <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cine__foot">
+            <ul class="cine__facts" role="list" aria-label="Коротко о дне открытых дверей">
+              <li><b>[время]</b>начало</li>
+              <li><b>[N]</b>факультетов на&nbsp;площадке</li>
+              <li><b>[условия]</b>вход</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Слайд 3: День студента -->
+      <div class="sl__slide cine__slide" data-slide role="group" aria-roledescription="слайд" aria-label="3 из 3">
+        <div class="cine__media">
+          <img class="cine__poster" src="../../../assets/stub/photos/800/students-meropriyatie-shariki.jpg" alt="" width="800" height="533" loading="lazy">
+        </div>
+        <div class="container cine__inner">
+          <div class="cine__copy">
+            <p class="cine__kicker">25 января · Татьянин день</p>
+            <h2 class="h1 cine__h">День студента&nbsp;— <em>праздник всего университета</em></h2>
+            <div class="cine__row">
+              <p class="lead cine__lead">Концерт, конкурсы факультетов и&nbsp;[программа праздника].</p>
+              <div class="cine__act">
+                <div class="cine__buttons">
+                  <a class="btn btn--primary btn--lg" href="#">Подробнее <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cine__foot">
+            <ul class="cine__facts" role="list" aria-label="Коротко о Дне студента">
+              <li><b>[время]</b>начало</li>
+              <li><b>[место]</b>площадка</li>
+              <li><b>[N]</b>факультетов участвуют</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="container cine__navwrap">
+        <div class="sl__nav" data-slider-nav>
+          <button class="sl__arrow" type="button" data-prev aria-label="Предыдущий слайд"><span class="icon icon--arrow-left" aria-hidden="true"></span></button>
+          <div class="sl__dots">
+            <button class="sl__dot" type="button" data-dot aria-label="Слайд 1: Тверской государственный университет"></button>
+            <button class="sl__dot" type="button" data-dot aria-label="Слайд 2: День открытых дверей"></button>
+            <button class="sl__dot" type="button" data-dot aria-label="Слайд 3: День студента"></button>
+          </div>
+          <button class="sl__arrow" type="button" data-next aria-label="Следующий слайд"><span class="icon icon--arrow-right" aria-hidden="true"></span></button>
+          <p class="visually-hidden" aria-live="polite" data-live></p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- ═══ 3. Миссия ═══ -->
+    <section class="section section--grey" aria-labelledby="mission-label">
+      <div class="container band">
+        <h2 class="band-label" id="mission-label">Миссия</h2>
+        <div class="band__body">
+          <div class="n-text mission__text" data-m-stagger>
+            <p data-m="up">ТвГУ&nbsp;— классический университет и&nbsp;правопреемник учительской школы Максимовича, открытой в&nbsp;Твери в&nbsp;1870&nbsp;году. Сегодня это 15 факультетов и&nbsp;институтов, 129 программ от&nbsp;бакалавриата до&nbsp;аспирантуры и&nbsp;сайт на&nbsp;английском, французском и&nbsp;китайском.</p>
+            <p data-m="up">Здесь готовят тех, кто нужен городу и&nbsp;области: учителей, химиков-технологов, программистов, юристов, экономистов и&nbsp;психологов. Наука идёт рядом с&nbsp;учёбой, а&nbsp;город становится площадкой для практики. Среди выпускников и&nbsp;преподавателей университета&nbsp;— Николай Кун, Александр Александров, Андрей Дементьев и&nbsp;Наталья Непряева.</p>
+          </div>
+          <ul class="entries" role="list" data-m-stagger>
+            <li data-m="up"><a class="entries__link" href="#">
+              <span class="entries__title">Абитуриенту <span class="icon icon--arrow-right" aria-hidden="true"></span></span>
+              <span class="entries__text">Программы, баллы, бюджет, общежитие</span>
+            </a></li>
+            <li data-m="up"><a class="entries__link" href="#">
+              <span class="entries__title">Студенту <span class="icon icon--arrow-right" aria-hidden="true"></span></span>
+              <span class="entries__text">Расписание, личный кабинет, стипендии</span>
+            </a></li>
+            <li data-m="up"><a class="entries__link" href="#">
+              <span class="entries__title">Партнёру <span class="icon icon--arrow-right" aria-hidden="true"></span></span>
+              <span class="entries__text">Целевое обучение, практика, проекты</span>
+            </a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 4. Обращение ═══ -->
+    <section class="section" aria-labelledby="address-label">
+      <div class="container band">
+        <div class="band__aside">
+          <h2 class="band-label" id="address-label">Обращение</h2>
+          <a class="btn btn--outline btn--caps" href="#">Состав руководства <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+        </div>
+        <div class="band__body">
+          <p class="n-statement address__lead" data-m="up">Выбрать университет&nbsp;— значит выбрать город, людей и&nbsp;первую профессию. Мы отвечаем за&nbsp;все три.</p>
+          <ul class="faces" role="list">
+            <li><figure class="n-person face">
+              <div class="n-person__photo face__photo" data-m="mask">
+                <div class="stub stub--fill" role="img" aria-label="Заглушка: портрет ректора, по пояс, в цвете"><span class="stub__caption">фото: ректор, портрет по&nbsp;пояс, цветной</span></div>
+              </div>
+              <figcaption class="face__cap">
+                <blockquote class="face__quote" data-m="up" data-m-delay="300">«[Цитата ректора абитуриентам: одно-два предложения о&nbsp;том, почему стоит выбрать ТвГУ.]»</blockquote>
+                <p class="n-person__name">[ФИО ректора]</p>
+                <p class="n-person__role">Ректор Тверского государственного университета</p>
+              </figcaption>
+            </figure></li>
+            <li><figure class="n-person face">
+              <div class="n-person__photo face__photo" data-m="mask" data-m-delay="140">
+                <img src="../../../assets/stub/photos/800/portrait-oficialnyy-za-stolom.jpg" alt="Мужчина в костюме за рабочим столом, заглушка портрета ответственного секретаря" width="800" height="1200" loading="lazy">
+              </div>
+              <figcaption class="face__cap">
+                <blockquote class="face__quote" data-m="up" data-m-delay="300">«[Цитата ответственного секретаря: как приёмная комиссия помогает с&nbsp;выбором программы и&nbsp;документами.]»</blockquote>
+                <p class="n-person__name">[ФИО секретаря]</p>
+                <p class="n-person__role">Ответственный секретарь приёмной комиссии</p>
+              </figcaption>
+            </figure></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 5. Программы ═══ -->
+    <section class="section section--grey" id="programs" aria-labelledby="programs-label">
+      <div class="container band">
+        <div class="band__aside">
+          <h2 class="band-label" id="programs-label">Программы</h2>
+          <p class="caption">Число программ по&nbsp;направлениям появится после сверки с&nbsp;каталогом.</p>
+        </div>
+        <div class="band__body">
+          <form class="find" role="search" action="#" data-filter-form data-m="up">
+            <label class="field__label" for="find-q">Найти программу</label>
+            <div class="find__row">
+              <svg class="i find__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"/><path d="M21 21l-6 -6"/></svg>
+              <input class="input find__input" id="find-q" type="search" placeholder="Название, код или предмет ЕГЭ" autocomplete="off" data-filter-input aria-describedby="find-status">
+            </div>
+          </form>
+          <div class="prog">
+            <div class="prog__head" aria-hidden="true" data-m="wipe"><span>Направление</span><span>Программ</span><span>Уровни</span><span></span></div>
+            <ul class="prog__list" role="list" data-filter-list data-m-stagger>
+              <li data-m="wipe" data-keys="it математика информатика программирование кибернетика 01.03.02 02.03.02 профильная математика информатика"><a class="prog__row" href="#">
+                <span class="prog__name">IT и&nbsp;математика</span>
+                <span class="prog__count"><b>[N]</b> <span class="prog__unit">программ</span></span>
+                <span class="prog__levels">бакалавриат, магистратура, аспирантура</span>
+                <span class="btn-circle prog__arrow" aria-hidden="true"><span class="icon icon--arrow-right"></span></span>
+              </a></li>
+              <li data-m="wipe" data-keys="естественные науки биология химия физика география геоэкология химия биология"><a class="prog__row" href="#">
+                <span class="prog__name">Естественные науки</span>
+                <span class="prog__count"><b>[N]</b> <span class="prog__unit">программ</span></span>
+                <span class="prog__levels">бакалавриат, специалитет, магистратура</span>
+                <span class="btn-circle prog__arrow" aria-hidden="true"><span class="icon icon--arrow-right"></span></span>
+              </a></li>
+              <li data-m="wipe" data-keys="гуманитарные науки история филология лингвистика иностранные языки литература обществознание"><a class="prog__row" href="#">
+                <span class="prog__name">Гуманитарные науки</span>
+                <span class="prog__count"><b>[N]</b> <span class="prog__unit">программ</span></span>
+                <span class="prog__levels">бакалавриат, магистратура, аспирантура</span>
+                <span class="btn-circle prog__arrow" aria-hidden="true"><span class="icon icon--arrow-right"></span></span>
+              </a></li>
+              <li data-m="wipe" data-keys="педагогика психология педагогическое образование учитель обществознание биология"><a class="prog__row" href="#">
+                <span class="prog__name">Педагогика и&nbsp;психология</span>
+                <span class="prog__count"><b>[N]</b> <span class="prog__unit">программ</span></span>
+                <span class="prog__levels">бакалавриат, магистратура</span>
+                <span class="btn-circle prog__arrow" aria-hidden="true"><span class="icon icon--arrow-right"></span></span>
+              </a></li>
+              <li data-m="wipe" data-keys="экономика право юриспруденция менеджмент управление 38.03.01 40.03.01 обществознание"><a class="prog__row" href="#">
+                <span class="prog__name">Экономика и&nbsp;право</span>
+                <span class="prog__count"><b>[N]</b> <span class="prog__unit">программ</span></span>
+                <span class="prog__levels">бакалавриат, магистратура, аспирантура</span>
+                <span class="btn-circle prog__arrow" aria-hidden="true"><span class="icon icon--arrow-right"></span></span>
+              </a></li>
+              <li data-m="wipe" data-keys="физическая культура спорт тренер 49.03.01"><a class="prog__row" href="#">
+                <span class="prog__name">Физическая культура</span>
+                <span class="prog__count"><b>[N]</b> <span class="prog__unit">программ</span></span>
+                <span class="prog__levels">бакалавриат, магистратура</span>
+                <span class="btn-circle prog__arrow" aria-hidden="true"><span class="icon icon--arrow-right"></span></span>
+              </a></li>
+            </ul>
+            <div class="prog__empty" data-filter-empty hidden>
+              <p class="prog__empty-title">По&nbsp;запросу «<span data-filter-echo></span>» направлений нет</p>
+              <p class="caption">Попробуйте предмет ЕГЭ («химия»), код («38.03.01») или откройте весь каталог.</p>
+            </div>
+            <p class="visually-hidden" id="find-status" role="status" data-filter-status></p>
+          </div>
+          <p class="prog__all"><a class="btn btn--outline" href="#">Все 129 программ <span class="icon icon--arrow-right" aria-hidden="true"></span></a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 6. Партнёры и работодатели ═══ -->
+    <section class="section section--slate section--blue" aria-labelledby="partners-label">
+      <div class="container partners ribbon" data-ribbon>
+        <div class="n-band-head">
+          <h2 class="band-label" id="partners-label">Партнёры и&nbsp;работодатели</h2>
+          <div class="ribbon__nav">
+            <button class="btn-circle" type="button" data-ribbon-prev><span class="icon icon--arrow-left" aria-hidden="true"></span><span class="visually-hidden">Предыдущие партнёры</span></button>
+            <button class="btn-circle" type="button" data-ribbon-next><span class="icon icon--arrow-right" aria-hidden="true"></span><span class="visually-hidden">Следующие партнёры</span></button>
+          </div>
+        </div>
+        <div class="ribbon__track" role="list" aria-label="Партнёры и работодатели, лента листается" data-m="up">
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">Правительство Тверской области</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">Сбер</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">Тверской вагоностроительный завод</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">Ростелеком</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">Яндекс</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">1С</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">Тверская областная клиническая больница</span></div>
+          <div class="partner" role="listitem"><span class="partner__logo">лого</span><span class="partner__name">Газпром</span></div>
+        </div>
+        <p class="partners__facts"><span><b>[N]</b> организаций-партнёров</span><span><b>[N]</b> договоров о&nbsp;целевом обучении</span></p>
+      </div>
+    </section>
+
+    <!-- ═══ 7. Новости | События ═══ -->
+    <section class="section section--grey" aria-labelledby="news-label">
+      <div class="container" data-tabs>
+        <div class="n-band-head news-head">
+          <h2 class="band-label" id="news-label">Жизнь университета</h2>
+          <div class="tabs__list" role="tablist" aria-label="Новости и события">
+            <button class="tab" role="tab" id="tab-news" aria-controls="panel-news" aria-selected="true">Новости</button>
+            <button class="tab" role="tab" id="tab-events" aria-controls="panel-events" aria-selected="false">События</button>
+          </div>
+          <a class="btn btn--text news-head__all" href="#">Все новости <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+        </div>
+        <div class="tabs__panel" role="tabpanel" id="panel-news" aria-labelledby="tab-news" tabindex="0">
+          <ul class="reel" role="list" data-m-stagger style="--m-step:140ms">
+            <li class="reel__lead" data-m="up"><a class="n-news reel__item" href="#" data-hover-demo>
+              <div class="n-news__media" data-m="mask"><img src="../../../assets/stub/photos/800/ceremony-vruchenie-nagrad.jpg" alt="Вручение наград в зале университета" width="800" height="533" loading="lazy"></div>
+              <p class="n-news__date">[12 сентября] · Студенты</p>
+              <p class="n-news__title reel__title">Семь первокурсниц ТвГУ стали лауреатами премии Губернатора Тверской области <span class="icon icon--arrow-right reel__arrow" aria-hidden="true"></span></p>
+              <p class="n-news__text">[Лид: за&nbsp;что вручили премию и&nbsp;на&nbsp;каких факультетах учатся лауреаты.]</p>
+            </a></li>
+            <li data-m="up"><a class="n-news reel__item" href="#">
+              <div class="n-news__media" data-m="mask"><img src="../../../assets/stub/photos/800/event-forum-znanie-zal.jpg" alt="Зал форума «Знание», слушатели перед сценой" width="800" height="533" loading="lazy"></div>
+              <p class="n-news__date">[9 сентября] · Волонтёры</p>
+              <p class="n-news__title reel__title">Проект ТвГУ «Свет науки в&nbsp;детский дом» представили на&nbsp;форуме <span class="icon icon--arrow-right reel__arrow" aria-hidden="true"></span></p>
+            </a></li>
+            <li data-m="up"><a class="n-news reel__item" href="#">
+              <div class="n-news__media" data-m="mask"><img src="../../../assets/stub/photos/800/students-za-partami-profil.jpg" alt="Ученики за партами в классе, вид сбоку" width="800" height="533" loading="lazy"></div>
+              <p class="n-news__date">[1 сентября] · Гимназия</p>
+              <p class="n-news__title reel__title">В&nbsp;Академической гимназии ТвГУ прозвенел первый звонок <span class="icon icon--arrow-right reel__arrow" aria-hidden="true"></span></p>
+            </a></li>
+          </ul>
+        </div>
+        <div class="tabs__panel" role="tabpanel" id="panel-events" aria-labelledby="tab-events" tabindex="0" hidden>
+          <ul class="events" role="list">
+            <li><a class="events__row" href="#">
+              <span class="events__date"><b>[N]</b> [октября]</span>
+              <span class="events__what"><span class="events__title">День открытых дверей</span><span class="caption">Главный корпус, ул. Желябова, 33 · для школьников и&nbsp;родителей</span></span>
+              <span class="btn-circle" aria-hidden="true"><span class="icon icon--arrow-right"></span></span>
+            </a></li>
+            <li><a class="events__row" href="#">
+              <span class="events__date"><b>[N]</b> [ноября]</span>
+              <span class="events__what"><span class="events__title">Отборочный этап олимпиады ТвГУ для 10–11 классов</span><span class="caption">Онлайн · победители получают [льготу при поступлении]</span></span>
+              <span class="btn-circle" aria-hidden="true"><span class="icon icon--arrow-right"></span></span>
+            </a></li>
+            <li><a class="events__row" href="#">
+              <span class="events__date"><b>[N]</b> [ноября]</span>
+              <span class="events__what"><span class="events__title">Открытая лекция «[Тема лекции]»</span><span class="caption">Научная библиотека ТвГУ · вход по&nbsp;регистрации</span></span>
+              <span class="btn-circle" aria-hidden="true"><span class="icon icon--arrow-right"></span></span>
+            </a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 8. Направления ═══ -->
+    <section class="section" aria-labelledby="dir-title">
+      <div class="container grid dir">
+        <div class="dir__intro">
+          <p class="band-label" id="dir-label">Направления</p>
+          <h2 class="dir__title" id="dir-title" data-m="words">Университет&nbsp;— это наука, образование и&nbsp;город</h2>
+        </div>
+        <div class="dir__figure">
+          <svg class="n-art dir__art" viewBox="0 0 600 300" aria-hidden="true">
+            <circle class="l-soft" cx="640" cy="150" r="110" data-m-line/>
+            <circle class="l-soft" cx="640" cy="150" r="210" data-m-line/>
+            <circle class="l-soft" cx="640" cy="150" r="310" data-m-line/>
+            <circle class="l-soft" cx="640" cy="150" r="410" data-m-line/>
+            <line class="l" x1="0" y1="99.5" x2="436" y2="99.5" data-m-line data-m-delay="200"/>
+            <line class="l" x1="0" y1="199.5" x2="334" y2="199.5" data-m-line data-m-delay="320"/>
+            <line class="l" x1="0" y1="299.5" x2="258.4" y2="299.5" data-m-line data-m-delay="440"/>
+            <circle class="dot-accent" cx="436" cy="99.5" r="5"/>
+            <circle class="dot-accent" cx="334" cy="199.5" r="5"/>
+            <circle class="dot-accent" cx="258.4" cy="299.5" r="5"/>
+          </svg>
+          <ul class="n-links dir__list" role="list" aria-labelledby="dir-title" data-m-stagger>
+            <li data-m="up" style="--end:72.7%"><a href="#"><span class="dir__name">Наука<small>лаборатории, гранты, студенческие проекты</small></span><span class="btn-circle" aria-hidden="true"><span class="icon icon--arrow-right"></span></span></a></li>
+            <li data-m="up" style="--end:55.7%"><a href="#"><span class="dir__name">Образование<small>129 программ, от&nbsp;гимназии до&nbsp;аспирантуры</small></span><span class="btn-circle" aria-hidden="true"><span class="icon icon--arrow-right"></span></span></a></li>
+            <li data-m="up" style="--end:43.1%"><a href="#"><span class="dir__name">Город<small>практика, партнёры, жизнь в&nbsp;центре Твери</small></span><span class="btn-circle" aria-hidden="true"><span class="icon icon--arrow-right"></span></span></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 9. В цифрах: лист чертежа ═══ -->
+    <section class="section section--grey" aria-labelledby="facts-label">
+      <div class="container band">
+        <div class="band__aside">
+          <h2 class="band-label" id="facts-label">В&nbsp;цифрах</h2>
+          <p class="caption">Каждая цифра нарисована в&nbsp;масштабе. [N]&nbsp;— данные, которые университет ещё не&nbsp;опубликовал.</p>
+        </div>
+        <div class="band__body">
+          <ul class="sheet" role="list" data-m-stagger>
+            <li class="sheet__cell" data-m="wipe">
+              <svg class="n-art sheet__fig" viewBox="0 0 200 56" aria-hidden="true">
+                <line class="l" x1="4" y1="36" x2="196" y2="36"/>
+                <line class="l" x1="4" y1="28" x2="4" y2="44"/><line class="l" x1="196" y1="28" x2="196" y2="44"/>
+                <line class="l-accent" x1="4" y1="36" x2="196" y2="36"/>
+                <circle class="dot-accent" cx="4" cy="36" r="4"/><circle class="dot-open" cx="196" cy="36" r="4"/>
+              </svg>
+              <p class="sheet__num" data-count data-count-from="1700" data-count-dur="1800">1870</p>
+              <p class="sheet__cap">год основания: учительская школа Максимовича, 156&nbsp;лет назад</p>
+            </li>
+            <li class="sheet__cell" data-m="wipe">
+              <svg class="n-art sheet__fig" viewBox="0 0 200 56" aria-hidden="true">
+                <circle class="l-soft" cx="28" cy="28" r="24"/>
+                <line class="l-accent" x1="28.0" y1="13.0" x2="28.0" y2="4.0"/><line class="l" x1="34.1" y1="14.3" x2="37.8" y2="6.1"/><line class="l" x1="39.1" y1="18.0" x2="45.8" y2="11.9"/><line class="l" x1="42.3" y1="23.4" x2="50.8" y2="20.6"/><line class="l" x1="42.9" y1="29.6" x2="51.9" y2="30.5"/><line class="l" x1="41.0" y1="35.5" x2="48.8" y2="40.0"/><line class="l" x1="36.8" y1="40.1" x2="42.1" y2="47.4"/><line class="l" x1="31.1" y1="42.7" x2="33.0" y2="51.5"/><line class="l" x1="24.9" y1="42.7" x2="23.0" y2="51.5"/><line class="l" x1="19.2" y1="40.1" x2="13.9" y2="47.4"/><line class="l" x1="15.0" y1="35.5" x2="7.2" y2="40.0"/><line class="l" x1="13.1" y1="29.6" x2="4.1" y2="30.5"/><line class="l" x1="13.7" y1="23.4" x2="5.2" y2="20.6"/><line class="l" x1="16.9" y1="18.0" x2="10.2" y2="11.9"/><line class="l" x1="21.9" y1="14.3" x2="18.2" y2="6.1"/>
+              </svg>
+              <p class="sheet__num" data-count>15</p>
+              <p class="sheet__cap">факультетов и&nbsp;институтов, одна риска&nbsp;— один</p>
+            </li>
+            <li class="sheet__cell" data-m="wipe">
+              <svg class="n-art sheet__fig" viewBox="0 0 200 56" aria-hidden="true">
+                <defs><pattern id="dots-129" width="9" height="9" patternUnits="userSpaceOnUse"><circle class="dot" cx="4.5" cy="4.5" r="1.6"/></pattern></defs>
+                <rect x="1" y="1" width="198" height="45" fill="url(#dots-129)"/>
+                <rect x="1" y="46" width="171" height="9" fill="url(#dots-129)"/>
+              </svg>
+              <p class="sheet__num" data-count data-count-dur="1600">129</p>
+              <p class="sheet__cap">образовательных программ, одна точка&nbsp;— одна программа</p>
+            </li>
+            <li class="sheet__cell" data-m="wipe">
+              <svg class="n-art sheet__fig" viewBox="0 0 200 56" aria-hidden="true">
+                <line class="l-soft" x1="20" y1="6.5" x2="196" y2="6.5"/>
+                <line class="l-soft" x1="20" y1="17.5" x2="196" y2="17.5"/>
+                <line class="l-accent" x1="20" y1="28.5" x2="196" y2="28.5"/>
+                <line class="l-soft" x1="20" y1="39.5" x2="196" y2="39.5"/>
+                <line class="l-soft" x1="20" y1="50.5" x2="196" y2="50.5"/>
+                <circle class="dot-accent" cx="8" cy="28.5" r="4"/>
+              </svg>
+              <p class="sheet__num" data-count>93-е</p>
+              <p class="sheet__cap">место в&nbsp;России, Round University Ranking 2026; НАР&nbsp;2026&nbsp;— топ-200, 2‑я&nbsp;лига</p>
+            </li>
+            <li class="sheet__cell sheet__cell--open" data-m="wipe">
+              <svg class="n-art sheet__fig" viewBox="0 0 200 56" aria-hidden="true">
+                <circle class="l-soft" cx="28" cy="28" r="24"/><circle class="l-soft" cx="28" cy="28" r="14"/><circle class="dot-open" cx="28" cy="28" r="4"/>
+              </svg>
+              <p class="sheet__num">[N]</p>
+              <p class="sheet__cap">студентов всех форм обучения</p>
+            </li>
+            <li class="sheet__cell sheet__cell--open" data-m="wipe">
+              <svg class="n-art sheet__fig" viewBox="0 0 200 56" aria-hidden="true">
+                <rect class="l-soft" x="4.5" y="8.5" width="48" height="40"/><line class="l-soft" x1="4.5" y1="28.5" x2="52.5" y2="28.5"/><line class="l-soft" x1="28.5" y1="8.5" x2="28.5" y2="48.5"/>
+              </svg>
+              <p class="sheet__num">[N]</p>
+              <p class="sheet__cap">бюджетных мест в&nbsp;2026&nbsp;году</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Срочность: Приём 2026 ═══ -->
+    <section class="section" id="admission" aria-labelledby="adm-label">
+      <div class="container band">
+        <div class="band__aside">
+          <h2 class="band-label" id="adm-label">Приём 2026</h2>
+          <p class="n-deadline">Документы принимаем <strong>до&nbsp;[дата]</strong></p>
+        </div>
+        <div class="band__body">
+          <div class="adm__top">
+            <p class="adm__count" data-m="up"><span class="adm__days">[N]</span> <span class="adm__days-cap">дней до&nbsp;конца приёма документов на&nbsp;бюджет</span></p>
+            <div class="adm__cta" data-m="up" data-m-delay="120">
+              <a class="btn btn--accent btn--lg" href="#">Подать документы <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+              <p class="caption">Через Госуслуги или лично на&nbsp;Желябова,&nbsp;33</p>
+            </div>
+          </div>
+          <ol class="n-route route-draw" style="--steps:4" data-m="wipe" data-m-delay="160">
+            <li class="n-route__step is-current"><span class="n-route__when">с&nbsp;[20 июня]</span><span class="n-route__what">Подай заявление</span><span class="n-route__note">До&nbsp;пяти направлений, через Госуслуги или в&nbsp;приёмной комиссии</span></li>
+            <li class="n-route__step"><span class="n-route__when">до&nbsp;[25 июля]</span><span class="n-route__what">Сдай вступительные</span><span class="n-route__note">ЕГЭ засчитываются автоматически, внутренние испытания по&nbsp;расписанию</span></li>
+            <li class="n-route__step"><span class="n-route__when">до&nbsp;[3 августа]</span><span class="n-route__what">Дай согласие</span><span class="n-route__note">Одно согласие на&nbsp;зачисление на&nbsp;выбранную программу</span></li>
+            <li class="n-route__step"><span class="n-route__when">[9 августа]</span><span class="n-route__what">Проверь приказ</span><span class="n-route__note">Списки зачисленных на&nbsp;сайте и&nbsp;в&nbsp;личном кабинете</span></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 10. Вопросы абитуриента ═══ -->
+    <section class="section section--slate section--blue" aria-labelledby="faq-label">
+      <div class="container band">
+        <div class="band__aside">
+          <h2 class="band-label" id="faq-label">Вопросы абитуриента</h2>
+          <a class="btn btn--outline btn--caps" href="#ask">Задать свой <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+        </div>
+        <div class="band__body accordion" data-m-stagger>
+          <details data-m="up" class="accordion__item" open>
+            <summary class="accordion__summary">Какие ЕГЭ нужны на&nbsp;Прикладную информатику?</summary>
+            <div class="accordion__body"><p>[Предмет 1], [предмет 2] и&nbsp;[предмет по&nbsp;выбору]. Минимальные баллы&nbsp;— [N], [N] и&nbsp;[N]; проходной на&nbsp;бюджет в&nbsp;2025&nbsp;году&nbsp;— [N]. Точный перечень публикуется в&nbsp;правилах приёма до&nbsp;[дата].</p><p><a href="#">Все вступительные испытания</a></p></div>
+          </details>
+          <details data-m="up" class="accordion__item">
+            <summary class="accordion__summary">Есть ли общежитие первокурснику?</summary>
+            <div class="accordion__body"><p>Да, иногородним студентам очной формы: [N мест] в&nbsp;[N] общежитиях, от&nbsp;[N&nbsp;₽ в&nbsp;месяц]. Заявление на&nbsp;заселение подаётся вместе с&nbsp;согласием на&nbsp;зачисление.</p></div>
+          </details>
+          <details data-m="up" class="accordion__item">
+            <summary class="accordion__summary">Сколько стоит обучение?</summary>
+            <div class="accordion__body"><p>От&nbsp;[N&nbsp;₽ в&nbsp;год] в&nbsp;зависимости от&nbsp;программы. Стоимость фиксируется в&nbsp;договоре, есть скидки для&nbsp;[условия] и&nbsp;оплата по&nbsp;семестрам.</p><p><a href="#">Стоимость по&nbsp;программам</a></p></div>
+          </details>
+          <details data-m="up" class="accordion__item">
+            <summary class="accordion__summary">Как поступить по&nbsp;целевому?</summary>
+            <div class="accordion__body"><p>Заключите договор о&nbsp;целевом обучении с&nbsp;организацией-заказчиком на&nbsp;портале «Работа России» и&nbsp;подайте заявление на&nbsp;целевую квоту. Заказчики, с&nbsp;которыми работает ТвГУ,&nbsp;— [список], всего [N] договоров.</p></div>
+          </details>
+          <details data-m="up" class="accordion__item">
+            <summary class="accordion__summary">Можно ли подать документы через Госуслуги?</summary>
+            <div class="accordion__body"><p>Да. Заявление, согласие на&nbsp;зачисление и&nbsp;отзыв документов доступны через Госуслуги, приезжать в&nbsp;Тверь для&nbsp;этого не&nbsp;нужно.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 11. Контакты + мягкий лид ═══ -->
+    <section class="section" id="contacts" aria-labelledby="contacts-label">
+      <div class="container band">
+        <h2 class="band-label" id="contacts-label">Контакты</h2>
+        <div class="band__body contacts">
+          <div class="contacts__info">
+            <dl class="contacts__list" data-m="up">
+              <div><dt>Адрес</dt><dd>170100, Тверь, ул.&nbsp;Желябова,&nbsp;33</dd></div>
+              <div><dt>Телефон</dt><dd><a href="tel:+74822321514">+7 (4822) 32-15-14</a></dd></div>
+              <div><dt>Почта</dt><dd><a href="#">[e-mail приёмной комиссии]</a></dd></div>
+              <div><dt>Приёмная комиссия</dt><dd>[часы работы]</dd></div>
+            </dl>
+            <div class="stub stub--4x3 contacts__map" data-m="mask" role="img" aria-label="Заглушка: карта, главный корпус на улице Желябова, 33"><span class="stub__caption">карта: главный корпус, ул.&nbsp;Желябова,&nbsp;33</span></div>
+          </div>
+          <form class="ask" id="ask" action="#" novalidate data-ask data-m="up" data-m-delay="120">
+            <h3 class="ask__title">Ещё выбираете? Спросите приёмную комиссию</h3>
+            <p class="ask__text">Ответим на&nbsp;вопрос о&nbsp;баллах, бюджете или общежитии в&nbsp;течение [N] рабочих дней.</p>
+            <div class="field">
+              <label class="field__label" for="ask-contact">Телефон или Telegram</label>
+              <input class="input" id="ask-contact" name="contact" type="text" autocomplete="tel" placeholder="+7 900 000-00-00 или @ник" aria-describedby="ask-contact-err">
+              <p class="field__error" id="ask-contact-err" hidden>Укажите телефон из 11 цифр или ник в&nbsp;Telegram</p>
+            </div>
+            <div class="field">
+              <label class="field__label" for="ask-q">Вопрос</label>
+              <textarea class="textarea" id="ask-q" name="q" rows="3" placeholder="Например: есть ли бюджет на заочной форме"></textarea>
+            </div>
+            <div class="ask__foot">
+              <button class="btn btn--primary" type="submit">Отправить вопрос</button>
+              <a class="btn btn--text" href="#">Или спросить в&nbsp;Telegram-боте <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+            </div>
+            <p class="caption">Отправляя форму, вы соглашаетесь на&nbsp;<a href="#">обработку персональных данных</a>.</p>
+            <p class="ask__done" role="status" data-ask-done hidden></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- липкая панель действия на мобильном -->
+  <div class="dock" data-dock aria-hidden="true">
+    <p class="dock__when">Приём до&nbsp;<strong>[дата]</strong></p>
+    <a class="btn btn--primary dock__btn" href="#admission" tabindex="-1">Поступить <span class="icon icon--arrow-right" aria-hidden="true"></span></a>
+  </div>
+
+  <div data-include="footer"></div>
+</body>
+</html>

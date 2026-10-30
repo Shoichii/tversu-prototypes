@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Приёмная кампания 2026 · Приёмная комиссия ТвГУ</title>
+  <meta name="description" content="Приёмная комиссия Тверского государственного университета: подбор программ по баллам ЕГЭ, объявления, документы приёма, календарь событий, контакты.">
+  <link rel="preload" href="../../../assets/fonts/golos-text-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../../assets/fonts/live-g-caveat.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../../system/tokens.css">
+  <link rel="stylesheet" href="../../../system/base.css">
+  <link rel="stylesheet" href="../../../system/stub.css">
+  <link rel="stylesheet" href="../../../system/motion.css">
+  <link rel="stylesheet" href="../../home-live/g-spokojnee/style.css">
+  <link rel="stylesheet" href="../obshchee.css">
+  <link rel="stylesheet" href="../c-po-skrinu/style.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="../../../system/motion.js"></script>
+  <script src="../../../system/partials.js" defer></script>
+  <script src="../../../system/ui.js" defer></script>
+  <script src="../../home-live/g-spokojnee/script.js" defer></script>
+  <script src="../c-po-skrinu/script.js" defer></script>
+</head>
+<body class="e-page">
+  <div data-include="header"></div>
+
+  <main id="main">
+
+    <!-- ═════════ Обложка: светлая, фото в большом ромбе ═════════ -->
+    <section class="e-cover" aria-labelledby="hero-title">
+      <div class="container e-cover__inner">
+        <div class="e-cover__text">
+          <p class="hand e-cover__note">приёмная кампания 2026</p>
+          <h1 class="e-cover__title" id="hero-title">Сделай <span>правильный</span> выбор</h1>
+          <p class="e-cover__sub">129 программ в&nbsp;15 факультетах и&nbsp;институтах классического университета Твери.</p>
+          <div class="e-cover__actions">
+            <a class="btn btn--primary btn--lg" href="#calc">Выбрать направление</a>
+            <a class="btn btn--outline btn--lg" href="#">Подать документы</a>
+          </div>
+        </div>
+        <svg class="e-cover__art" viewBox="0 0 560 520" role="img" aria-label="Студенты ТвГУ во дворе главного корпуса" data-rhombs>
+          <defs>
+            <clipPath id="e-big"><rect x="-130" y="-130" width="260" height="260" rx="28" transform="translate(300 250) rotate(45)"/></clipPath>
+          </defs>
+          <image href="../../../assets/stub/photos/800/campus-den-znaniy-dvor-flagi.jpg" x="110" y="60" width="380" height="380" preserveAspectRatio="xMidYMid slice" clip-path="url(#e-big)"/>
+          <g class="e-rh">
+            <rect class="r" x="-22" y="-22" width="44" height="44" rx="6" transform="translate(96 140) rotate(45)"/>
+            <rect class="r r--red" x="-22" y="-22" width="44" height="44" rx="6" transform="translate(150 86) rotate(45)"/>
+            <rect class="r r--l" x="-22" y="-22" width="44" height="44" rx="6" transform="translate(96 250) rotate(45)"/>
+            <rect class="r" x="-22" y="-22" width="44" height="44" rx="6" transform="translate(42 196) rotate(45)"/>
+            <rect class="r r--l" x="-22" y="-22" width="44" height="44" rx="6" transform="translate(150 410) rotate(45)"/>
+            <rect class="r r--red" x="-22" y="-22" width="44" height="44" rx="6" transform="translate(470 96) rotate(45)"/>
+            <rect class="r" x="-22" y="-22" width="44" height="44" rx="6" transform="translate(524 150) rotate(45)"/>
+            <rect class="r r--l" x="-22" y="-22" width="44" height="44" rx="6" transform="translate(470 404) rotate(45)"/>
+            <rect class="r" x="-22" y="-22" width="44" height="44" rx="6" transform="translate(416 458) rotate(45)"/>
+            <rect class="r r--red" x="-22" y="-22" width="44" height="44" rx="6" transform="translate(524 350) rotate(45)"/>
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ═════════ Калькулятор ЕГЭ: строка под обложкой ═════════ -->
+    <section class="e-calc" id="calc" aria-labelledby="calc-title">
+      <form class="container e-calc__form" action="../c-po-skrinu/podbor.html" method="get">
+        <div class="e-calc__head">
+          <h2 class="e-calc__title" id="calc-title">Куда я&nbsp;прохожу?</h2>
+          <p class="e-calc__sub">Введи баллы ЕГЭ</p>
+        </div>
+        <div class="e-calc__f">
+          <span class="e-calc__subj">Русский язык</span>
+          <input type="hidden" name="s1" value="rus">
+          <label class="visually-hidden" for="e-b1">Баллы по русскому языку</label>
+          <input class="input e-calc__score" id="e-b1" name="b1" type="number" inputmode="numeric" min="0" max="100" placeholder="баллы" required>
+        </div>
+        <div class="e-calc__f">
+          <label class="visually-hidden" for="e-s2">Второй предмет</label>
+          <select class="select" id="e-s2" name="s2" required>
+            <option value="">Предмет 2</option>
+            <option value="math">Математика профиль</option><option value="soc">Обществознание</option><option value="bio">Биология</option><option value="chem">Химия</option><option value="hist">История</option><option value="phys">Физика</option><option value="inf">Информатика</option><option value="lit">Литература</option><option value="eng">Иностранный язык</option><option value="geo">География</option>
+          </select>
+          <label class="visually-hidden" for="e-b2">Баллы по второму предмету</label>
+          <input class="input e-calc__score" id="e-b2" name="b2" type="number" inputmode="numeric" min="0" max="100" placeholder="баллы" required>
+        </div>
+        <div class="e-calc__f">
+          <label class="visually-hidden" for="e-s3">Третий предмет</label>
+          <select class="select" id="e-s3" name="s3">
+            <option value="">Предмет 3</option>
+            <option value="math">Математика профиль</option><option value="soc">Обществознание</option><option value="bio">Биология</option><option value="chem">Химия</option><option value="hist">История</option><option value="phys">Физика</option><option value="inf">Информатика</option><option value="lit">Литература</option><option value="eng">Иностранный язык</option><option value="geo">География</option>
+          </select>
+          <label class="visually-hidden" for="e-b3">Баллы по третьему предмету</label>
+          <input class="input e-calc__score" id="e-b3" name="b3" type="number" inputmode="numeric" min="0" max="100" placeholder="баллы">
+        </div>
+        <button class="btn btn--accent btn--lg e-calc__go" type="submit">Найти программы</button>
+      </form>
+    </section>
+
+    <!-- ═════════ Объявления: строки с датой ═════════ -->
+    <section class="section" id="ads" aria-labelledby="ads-title">
+      <div class="container e-split">
+        <div class="sec-head e-split__head">
+          <h2 id="ads-title">Объявления приёмной комиссии</h2>
+          <p class="sec-note hand" data-m="wipe">следи за&nbsp;сроками</p>
+          <a class="card__link" href="#">Все объявления</a>
+        </div>
+        <ul class="e-ads" role="list" data-m-stagger>
+          <li data-m="up"><a href="#"><time class="mono">[дата]</time><b>Опубликованы правила приёма на&nbsp;2026/27 учебный год</b><span>[Коротко: что изменилось по&nbsp;сравнению с&nbsp;прошлым годом.]</span></a></li>
+          <li data-m="up"><a href="#"><time class="mono">[дата]</time><b>День открытых дверей: запись открыта</b><span>[Коротко: дата, место и&nbsp;как записаться.]</span></a></li>
+          <li data-m="up"><a href="#"><time class="mono">[дата]</time><b>Расписание вступительных испытаний для&nbsp;поступающих без&nbsp;ЕГЭ</b><span>[Коротко: кто сдаёт внутренние испытания и&nbsp;когда.]</span></a></li>
+          <li data-m="up"><a href="#"><time class="mono">[дата]</time><b>Целевое обучение: перечень заказчиков</b><span>[Коротко: где смотреть предложения и&nbsp;как заключить договор.]</span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ═════════ Документы: синяя полоса, без карточек ═════════ -->
+    <section class="section e-docs" id="docs" aria-labelledby="docs-title">
+      <div class="container">
+        <div class="sec-head">
+          <h2 id="docs-title">Документы приёма</h2>
+          <p class="sec-note hand" data-m="wipe">всё официальное здесь</p>
+        </div>
+        <div class="e-docs__cols" data-m-stagger>
+          <div data-m="up">
+            <h3 class="e-docs__h">Правила и&nbsp;перечни</h3>
+            <ul class="e-docs__list" role="list">
+              <li><a href="#">Правила приёма 2026<small>PDF</small></a></li>
+              <li><a href="#">Направления и&nbsp;вступительные испытания<small>PDF</small></a></li>
+              <li><a href="#">Контрольные цифры приёма<small>PDF</small></a></li>
+              <li><a href="#">Особые права и&nbsp;льготы<small>PDF</small></a></li>
+              <li><a href="#">Учёт индивидуальных достижений<small>PDF</small></a></li>
+            </ul>
+          </div>
+          <div data-m="up">
+            <h3 class="e-docs__h">Ход приёма</h3>
+            <ul class="e-docs__list" role="list">
+              <li><a href="#">Расписание вступительных испытаний</a></li>
+              <li><a href="#">Количество поданных заявлений</a></li>
+              <li><a href="#">Конкурсные списки</a></li>
+              <li><a href="#">Приказы о&nbsp;зачислении</a></li>
+              <li><a href="#">Результаты испытаний</a></li>
+            </ul>
+          </div>
+          <div data-m="up">
+            <h3 class="e-docs__h">Оплата и&nbsp;договоры</h3>
+            <ul class="e-docs__list" role="list">
+              <li><a href="#">Стоимость обучения 2026<small>PDF</small></a></li>
+              <li><a href="#">Образец договора<small>PDF</small></a></li>
+              <li><a href="#">Целевое обучение</a></li>
+              <li><a href="#">Образовательный кредит</a></li>
+              <li><a href="#">Бланки заявлений<small>DOC</small></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ Жизнь в ТвГУ: заглушки ═════════ -->
+    <section class="section" id="photos" aria-labelledby="photos-title">
+      <div class="container">
+        <div class="sec-head">
+          <h2 id="photos-title">Жизнь в ТвГУ</h2>
+          <p class="sec-note hand" data-m="wipe">не&nbsp;только пары</p>
+        </div>
+        <ul class="gallery" role="list" data-m-stagger>
+          <li data-m="up"><div class="stub stub--fill" role="img" aria-label="Заглушка: фото клубов и объединений"><span class="stub__caption">фото: ярмарка клубов и&nbsp;объединений</span></div><span class="gallery__cap">клубы и&nbsp;объединения</span></li>
+          <li data-m="up"><div class="stub stub--fill" role="img" aria-label="Заглушка: фото библиотеки"><span class="stub__caption">фото: библиотека</span></div><span class="gallery__cap">библиотека</span></li>
+          <li data-m="up"><div class="stub stub--fill" role="img" aria-label="Заглушка: фото спорта"><span class="stub__caption">фото: команда</span></div><span class="gallery__cap">спорт</span></li>
+          <li data-m="up"><div class="stub stub--fill" role="img" aria-label="Заглушка: фото научной лаборатории"><span class="stub__caption">фото: лаборатория</span></div><span class="gallery__cap">наука</span></li>
+          <li data-m="up"><div class="stub stub--fill" role="img" aria-label="Заглушка: фото Твери"><span class="stub__caption">фото: набережная</span></div><span class="gallery__cap">Тверь</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ═════════ Календарь событий: светло-серая полоса ═════════ -->
+    <section class="section e-grey" id="calendar" aria-labelledby="cal-title">
+      <div class="container">
+        <div class="sec-head">
+          <h2 id="cal-title">Календарь событий</h2>
+          <p class="sec-note hand" data-m="wipe">отметь в&nbsp;своём</p>
+        </div>
+        <div class="block c-cal" data-m="up" data-cal>
+          <div class="c-cal__month">
+            <div class="c-cal__top">
+              <p class="c-cal__name">Сентябрь <span class="mono">2026</span></p>
+              <p class="c-cal__legend"><i aria-hidden="true"></i> есть событие</p>
+            </div>
+            <div class="c-cal__grid" role="grid" aria-label="Сентябрь 2026">
+              <div class="c-cal__row c-cal__dow" role="row"><span role="columnheader">Пн</span><span role="columnheader">Вт</span><span role="columnheader">Ср</span><span role="columnheader">Чт</span><span role="columnheader">Пт</span><span role="columnheader" class="we">Сб</span><span role="columnheader" class="we">Вс</span></div>
+              <div class="c-cal__row" role="row"><span role="gridcell" class="out">31</span><span role="gridcell"><button type="button" data-day="1" aria-pressed="false">1</button></span><span role="gridcell">2</span><span role="gridcell">3</span><span role="gridcell">4</span><span role="gridcell" class="we">5</span><span role="gridcell" class="we">6</span></div>
+              <div class="c-cal__row" role="row"><span role="gridcell">7</span><span role="gridcell">8</span><span role="gridcell">9</span><span role="gridcell"><button type="button" data-day="10" aria-pressed="false">10</button></span><span role="gridcell">11</span><span role="gridcell" class="we">12</span><span role="gridcell" class="we">13</span></div>
+              <div class="c-cal__row" role="row"><span role="gridcell">14</span><span role="gridcell">15</span><span role="gridcell">16</span><span role="gridcell">17</span><span role="gridcell">18</span><span role="gridcell" class="we"><button type="button" data-day="19" aria-pressed="false">19</button></span><span role="gridcell" class="we">20</span></div>
+              <div class="c-cal__row" role="row"><span role="gridcell">21</span><span role="gridcell">22</span><span role="gridcell">23</span><span role="gridcell"><button type="button" data-day="24" aria-pressed="false">24</button></span><span role="gridcell">25</span><span role="gridcell" class="we">26</span><span role="gridcell" class="we">27</span></div>
+              <div class="c-cal__row" role="row"><span role="gridcell">28</span><span role="gridcell">29</span><span role="gridcell"><button type="button" data-day="30" aria-pressed="false">30</button></span><span role="gridcell" class="out">1</span><span role="gridcell" class="out">2</span><span role="gridcell" class="out">3</span><span role="gridcell" class="out">4</span></div>
+            </div>
+            <p class="c-cal__note">Даты — пример, до&nbsp;выгрузки календаря приёмной комиссии.</p>
+          </div>
+          <div class="c-cal__events">
+            <div class="c-cal__events-top">
+              <p class="c-cal__events-h" data-cal-title>Все события месяца</p>
+              <button class="c-cal__reset" type="button" data-cal-reset hidden>Показать все</button>
+            </div>
+            <ul class="c-cal__list" role="list" aria-live="polite">
+              <li data-day="1"><span class="c-cal__date"><b>1</b>сен</span><span><b>День знаний</b><span>Торжественная линейка для&nbsp;первокурсников, двор главного корпуса</span></span></li>
+              <li data-day="10"><span class="c-cal__date"><b>10</b>сен</span><span><b>Приём документов в&nbsp;аспирантуру</b><span>Последний день подачи, [время]</span></span></li>
+              <li data-day="19"><span class="c-cal__date c-cal__date--red"><b>19</b>сен</span><span><b>День открытых дверей</b><span>Главный корпус, ул.&nbsp;Желябова,&nbsp;33, [время]</span></span></li>
+              <li data-day="24"><span class="c-cal__date"><b>24</b>сен</span><span><b>Олимпиада ТвГУ для&nbsp;школьников</b><span>Старт регистрации, онлайн</span></span></li>
+              <li data-day="30"><span class="c-cal__date"><b>30</b>сен</span><span><b>Подготовительные курсы к&nbsp;ЕГЭ</b><span>Первое занятие, [место]</span></span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ Сегодня в ТвГУ: без подложек ═════════ -->
+    <section class="section" id="today" aria-labelledby="today-title">
+      <div class="container">
+        <div class="sec-head">
+          <h2 id="today-title">Сегодня в ТвГУ</h2>
+          <p class="sec-note hand" data-m="wipe">что происходит прямо сейчас</p>
+        </div>
+        <div class="e-news" data-m-stagger>
+          <a class="e-news__item" href="#" data-m="up">
+            <img src="../../../assets/stub/photos/800/students-igra-za-stolom.jpg" alt="Студентки играют в образовательную игру за столом" width="800" height="533" loading="lazy">
+            <span class="news__meta mono"><time>[дата]</time> · пример</span>
+            <b class="e-news__h">Финал интенсива «От&nbsp;идеи к&nbsp;прототипу»: команды показали игры</b>
+            <span class="news__text">[Коротко: сколько команд участвовало и&nbsp;что они придумали.]</span>
+          </a>
+          <a class="e-news__item" href="#" data-m="up">
+            <img src="../../../assets/stub/photos/800/students-kovorking-bloknoty.jpg" alt="Участники книжного клуба с блокнотами в коворкинге" width="800" height="533" loading="lazy">
+            <span class="news__meta mono"><time>[дата]</time> · пример</span>
+            <b class="e-news__h">Книжный клуб собирается в&nbsp;коворкинге: приходи со&nbsp;своей книгой</b>
+            <span class="news__text">[Коротко: когда встречи и&nbsp;что читают в&nbsp;этом месяце.]</span>
+          </a>
+          <a class="e-news__item" href="#" data-m="up">
+            <img src="../../../assets/stub/photos/800/lab-opyt-nauka-shou.jpg" alt="Научное шоу: опыт на столе перед зрителями" width="800" height="533" loading="lazy">
+            <span class="news__meta mono"><time>[дата]</time> · пример</span>
+            <b class="e-news__h">«Свет науки»: студенты показали опыты школьникам</b>
+            <span class="news__text">[Коротко: где прошло шоу и&nbsp;как попасть в&nbsp;команду.]</span>
+          </a>
+        </div>
+        <p class="more"><a class="card__link" href="#">Все новости и&nbsp;события</a></p>
+      </div>
+    </section>
+
+    <!-- ═════════ Сотрудники ═════════ -->
+    <section class="section e-grey" id="people" aria-labelledby="people-title">
+      <div class="container">
+        <div class="sec-head">
+          <h2 id="people-title">Контакты</h2>
+          <p class="sec-note hand" data-m="wipe">к&nbsp;кому обратиться</p>
+        </div>
+        <p class="c-people__lead">По&nbsp;всем вопросам поступления можно обратиться в&nbsp;приёмную комиссию или&nbsp;к&nbsp;сотрудникам напрямую.</p>
+        <ul class="c-people__list" role="list" data-m-stagger>
+          <li data-m="up"><span class="c-ava" aria-hidden="true"></span><p class="c-people__name">[Фамилия И.&nbsp;О.]</p><p class="c-people__role">Ответственный секретарь приёмной комиссии</p><a class="c-people__tel" href="#">[телефон]</a></li>
+          <li data-m="up"><span class="c-ava" aria-hidden="true"></span><p class="c-people__name">[Фамилия И.&nbsp;О.]</p><p class="c-people__role">Заместитель ответственного секретаря</p><a class="c-people__tel" href="#">[телефон]</a></li>
+          <li data-m="up"><span class="c-ava" aria-hidden="true"></span><p class="c-people__name">[Фамилия И.&nbsp;О.]</p><p class="c-people__role">Приём иностранных граждан</p><a class="c-people__tel" href="#">[телефон]</a></li>
+          <li data-m="up"><span class="c-ava" aria-hidden="true"></span><p class="c-people__name">[Фамилия И.&nbsp;О.]</p><p class="c-people__role">Магистратура и&nbsp;аспирантура</p><a class="c-people__tel" href="#">[телефон]</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ═════════ Вопрос ═════════ -->
+    <section class="section" id="lead" aria-labelledby="lead-title">
+      <div class="container e-ask">
+        <div class="e-ask__side">
+          <div class="sec-head">
+            <h2 id="lead-title">Спроси приёмную комиссию</h2>
+            <p class="sec-note hand" data-m="wipe">ответим живым человеком</p>
+          </div>
+          <a class="e-ask__tel" href="tel:+74822321514">+7 (4822) 32-15-14</a>
+          <dl class="e-ask__info">
+            <div><dt>Почта</dt><dd class="mono">[e-mail приёмной комиссии]</dd></div>
+            <div><dt>Адрес</dt><dd>Тверь, ул.&nbsp;Желябова, 33</dd></div>
+            <div><dt>Часы работы</dt><dd class="mono">[часы работы]</dd></div>
+          </dl>
+        </div>
+        <div class="e-ask__form">
+          <form class="form" action="#" data-form>
+            <div class="field">
+              <label class="field__label" for="lead-name">Имя</label>
+              <input class="input" id="lead-name" name="name" type="text" required autocomplete="given-name" placeholder="Как к вам обращаться">
+            </div>
+            <div class="field">
+              <label class="field__label" for="lead-q">Ваш вопрос</label>
+              <textarea class="textarea" id="lead-q" name="question" rows="3" required placeholder="Например: какие экзамены сдавать на психологию?"></textarea>
+            </div>
+            <div class="field">
+              <label class="field__label" for="lead-contact">Telegram или e-mail для ответа</label>
+              <input class="input" id="lead-contact" name="contact" type="text" required autocomplete="email" placeholder="@username или почта">
+            </div>
+            <label class="check"><input type="checkbox" name="consent" required> <span>Согласен на обработку персональных данных</span></label>
+            <button class="btn btn--primary btn--lg" type="submit">Отправить вопрос</button>
+          </form>
+          <div class="form-done" data-form-done hidden tabindex="-1">
+            <p class="form-done__title hand">Вопрос отправлен!</p>
+            <p>Ответ придёт в Telegram или на почту в течение <span class="mono">[N]</span> рабочих дней. Это демо: вопрос никуда не отправлен.</p>
+            <button class="btn btn--outline" type="button" data-form-again>Задать ещё вопрос</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="footer"></div>
+</body>
+</html>
